@@ -18,3 +18,5 @@ Thumbs.db
 
 # Archivos de entorno y variables secretas
 .env
+
+node_modules/
