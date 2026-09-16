@@ -1,0 +1,20 @@
+# Archivos compilados
+/target/
+*.class
+
+# Carpetas de IDE (Eclipse, IntelliJ, VS Code)
+.idea/
+*.iml
+.vscode/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno y variables secretas
+.env
