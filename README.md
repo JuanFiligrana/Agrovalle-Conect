@@ -11,7 +11,7 @@ Para los productores agrícolas del Valle del Cauca, que necesitan vender sus co
 *   **Integrante 1:** [Juan Eduardo Filigrana Mindinero]
 *   **Integrante 2:** [Michael David Caicedo Mina]
 *   **Integrante 3:** [Juan Camilo Alvarez]
-*   **Integrante 4:** [Johan Aragon]
+*   **Integrante 4:** [Jhojan Aragon]
 
 ## 3. Estrategia de Control de Versiones: GitFlow
 Para este proyecto hemos seleccionado **GitFlow** como nuestra estrategia de ramificación. 
