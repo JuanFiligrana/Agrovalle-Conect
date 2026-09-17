@@ -1,8 +1,11 @@
 {
-  "devDependencies": {
-    "husky": "^8.0.0"
-  },
+  "name": "agrovalle-connect",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "9.1.7"
   }
 }

@@ -1,21 +1,33 @@
-# Definition of Done (DoD) - AgroValle Connect
+# Definition of Done
 
-Este documento representa el contrato innegociable del equipo para garantizar la calidad e integridad de cada incremento funcional de AgroValle Connect, cumpliendo con la norma ISO/IEC 25010.
+Contrato de calidad propuesto para aceptación del equipo. La lista define condiciones;
+las casillas se evalúan por cada incremento y no declaran que las historias estén terminadas.
 
-## Checklist de Cumplimiento Obligatorio
+- [ ] **Compilación:** El proyecto compila con JDK 25 y Maven Wrapper sin errores.
+- [ ] **Estilo:** Checkstyle basado en Google Java Style no reporta infracciones de nivel warning o superior.
+- [ ] **Pruebas:** Pasa el 100 % de las pruebas existentes de JUnit 5; verify exige al menos 60 % de cobertura de líneas con JaCoCo.
+- [ ] **Revisión por pares:** Cada Pull Request tiene revisión y aprobación explícita de otro integrante antes del merge.
+- [ ] **Documentación:** README, BACKLOG y docs reflejan el comportamiento y las decisiones vigentes.
+- [ ] **Commits:** Los commits nuevos siguen Conventional Commits y describen cambios concretos.
+- [ ] **Automatización:** Husky está instalado en cada equipo y bloquea el commit si fallan pruebas o estilo.
+- [ ] **Criterios BDD:** Los escenarios aplicables de la historia se verificaron, incluidos los errores relevantes.
+- [ ] **Seguridad del repositorio:** No se versionan contraseñas, tokens, archivos .env, node_modules, target ni ajustes personales del IDE.
+- [ ] **Integración:** Los checks exigidos en GitHub están aprobados y la rama principal permanece ejecutable.
 
-- [ ] **Build Local:** El proyecto compila o transpila sin errores en el entorno local (Java 17 / Spring Boot).
-- [ ] **Linter Pass (Modularity/Style):** El código cumple con las reglas estáticas. Cero advertencias en Checkstyle (usando checkstyle.xml basado en Google Java Style).
-- [ ] **Functional Correctness:** El 100% de las pruebas unitarias e integradas existentes (JUnit 5) pasan con éxito (mínimo 60% de cobertura verificada con JaCoCo).
-- [ ] **Peer Review:** Todo Pull Request ha sido revisado y aprobado por al menos un par (compañero de equipo) antes de ser fusionado.
-- [ ] **Documentation:** El `README.md` y la documentación técnica de la carpeta `/docs` están actualizados.
-- [ ] **Commits:** El historial de Git sigue estrictamente la convención de Conventional Commits (feat, fix, docs, etc.).
-- [ ] **Automatización:** Hooks de Husky activos que impiden el commit si falla el linter o los tests automáticos.
+## Relación con calidad
+La adecuación funcional se verifica con criterios BDD y pruebas; la mantenibilidad
+con estilo, modularidad, revisión y documentación. La protección de datos y permisos
+se verificará al implementar las funciones protegidas. Esta relación toma como guía
+ISO/IEC 25010; no afirma una certificación de cumplimiento.
 
-## Firmas de Compromiso del Equipo
-Al firmar este documento, los desarrolladores se comprometen a no integrar código a la rama principal (`main` o `develop`) que no cumpla con TODOS los puntos anteriores.
+## Aceptación formal
+Cada integrante declara que acepta este contrato y se compromete a aplicarlo.
+Registrar una firma real y fecha o un enlace a su aprobación explícita en GitHub.
+No se considera firmado por el simple hecho de listar los nombres.
 
-*   **[Juan Eduardo Filigrana Mindinero]** - 
-*   **[Michael David Caicedo Mina]** - 
-*   **[Juan Camilo Alvarez]** - 
-*   **[Jhojan Aragon]** - 
+| Integrante | Firma o enlace de aceptación | Fecha |
+|---|---|---|
+| Juan Eduardo Filigrana Mindinero | Pendiente de aceptación | Pendiente |
+| Michael David Caicedo Mina | Pendiente de aceptación | Pendiente |
+| Juan Camilo Álvarez | Pendiente de aceptación | Pendiente |
+| Jhojan Aragón | Pendiente de aceptación | Pendiente |
