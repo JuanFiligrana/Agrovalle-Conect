@@ -1,22 +1,17 @@
-# Archivos compilados
 /target/
-*.class
-
-# Carpetas de IDE (Eclipse, IntelliJ, VS Code)
+node_modules/
+.husky/_/
 .idea/
-*.iml
 .vscode/
-
-# Maven
-.mvn/
-mvnw
-mvnw.cmd
-
-# Archivos del Sistema Operativo
+*.iml
+*.class
+*.log
+.env
+.env.*
+!.env.example
 .DS_Store
 Thumbs.db
+# El Wrapper .mvn, mvnw y mvnw.cmd SI se versiona.
 
-# Archivos de entorno y variables secretas
-.env
-
-node_modules/
+# Informes generados localmente
+/documentos/

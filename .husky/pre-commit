@@ -1,1 +1,1 @@
-mvn test && mvn checkstyle:check
+sh ./mvnw -B test checkstyle:check
