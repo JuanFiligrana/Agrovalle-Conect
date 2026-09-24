@@ -29,7 +29,7 @@ No fabricar fechas ni atribuir cambios a otros integrantes. Tras revisar cada gr
 
 ```powershell
 git add pom.xml mvnw mvnw.cmd .mvn .gitattributes src iniciar.cmd configurar-java.cmd verificar.cmd
-git commit -m "build: preparar base Java 25 y pruebas del Sprint 0"
+git commit -m "build: preparar base Java 25 y pruebas del Sprint 1"
 git add .gitignore checkstyle.xml package.json package-lock.json .husky .github
 git commit -m "build: automatizar calidad local e integracion continua"
 git add README.md BACKLOG.md docs

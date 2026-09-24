@@ -1,34 +1,47 @@
-# Verificación técnica de la base del Sprint 0
+# Verificación de la corrección del arranque
 
-## Resultados reproducibles
+Fecha: 24 de septiembre de 2026. Entorno de revisión: Linux, Temurin 25.0.4.1,
+Maven 3.9.9. Se ejecutó el ciclo `clean verify` con las reglas originales activas.
+Los scripts de Windows se incluyen para ejecución local; esta revisión no ejecutó Windows.
 
-La base se verificó con JDK 25.0.2 y Maven Wrapper 3.9.9:
+## Resultados observados
 
-- `clean verify`: BUILD SUCCESS.
-- Checkstyle 10.21.4 con reglas de Google Java Style: cero infracciones.
-- JUnit 5: tres pruebas, cero fallos y cero errores.
-- JaCoCo: supera el umbral mínimo del 60 % para el código de la base.
-- El JAR inicia y responde `GET /` con la portada y `GET /api/v1/estado` con un JSON cuyo estado es `OK`.
-- `npm ci` instala Husky 9.1.7 y configura el hook local.
-- El hook rechaza una importación comodín intencional y una prueba fallida; acepta el código restaurado.
-- `BACKLOG.md` contiene 15 historias y 40 escenarios Given-When-Then.
+- Compilación de 29 archivos Java de producción: BUILD SUCCESS.
+- Checkstyle: 0 infracciones.
+- JUnit: 5 pruebas, 0 fallos, 0 errores y 0 omitidas.
+- JaCoCo: 157 de 175 líneas cubiertas
+  (89.71 %), por encima del mínimo configurado del 60 %.
+- JAR generado: arranque correcto con Java 25.
+- GET `/`: HTTP 200, portada HTML de AgroValle Connect.
+- GET `/api/v1/estado`: HTTP 200, estado OK y etapa Sprint 1.
 
-## Alcance de la verificación
+Se conserva la salida real de Maven en `evidencias/verificacion-local.log` y
+el resumen de resultados en `evidencias/resumen.json`.
 
-La comprobación cubre la infraestructura del Sprint 0. La cobertura no representa las
-funcionalidades de negocio porque todavía están especificadas en el backlog y serán
-desarrolladas en incrementos posteriores. La base no conecta PostgreSQL, no emite JWT
-y no implementa registro, catálogo, pedidos ni logística.
+## Cambios que resuelven el fallo comunicado
 
-La ejecución de Windows se deja preparada con `configurar-java.cmd`, `iniciar.cmd` y
-`verificar.cmd`. El equipo debe ejecutarlos en su computador con JDK 25 y confirmar el
-resultado antes del commit. Los avisos de Java o Maven no sustituyen un `BUILD SUCCESS`.
+Se añadieron 28 comentarios Javadoc a constructores y métodos públicos, se corrigió
+el orden y la separación de importaciones en CosechaRequest y se renombraron dos
+pruebas. Esos cambios resuelven las 36 infracciones de Checkstyle del registro recibido.
+No se desactivaron Checkstyle, las pruebas, JaCoCo ni la comprobación de Java 25.
 
-## Evidencias que debe completar el equipo
+## Alcance real y trabajo pendiente
 
-- URL pública del repositorio después de integrar la rama.
-- Historial de commits semánticos.
-- Pull Request con comentarios técnicos y aprobación de otro integrante.
-- Check build exitoso en GitHub Actions.
-- Sesión de Planning Poker con fecha, participantes y acuerdos finales.
-- Aceptación firmada o aprobada del Definition of Done.
+Esta corrección permite compilar y arrancar el prototipo ya entregado. Las pruebas
+existentes verifican la portada, el estado del servicio y algunos flujos de la API.
+El porcentaje de cobertura mide ese código, no el cumplimiento de todas las historias.
+
+- Los repositorios guardan datos en memoria; se pierden al reiniciar. Falta PostgreSQL.
+- El contacto comprueba que exista una cabecera Authorization; no valida un JWT.
+  Faltan inicio de sesión, identidad autenticada y autorización real.
+- El promedio usa precios de ofertas activas; HU-03 solicita transacciones completadas
+  de las últimas 24 horas. Ese criterio continúa pendiente.
+- Faltan comprobaciones contra los catálogos de municipios y categorías.
+- La página inicial es informativa; no incorpora formularios para las operaciones.
+- La aprobación de un compañero, los checks remotos y las evidencias del tablero
+  deben registrarse en GitHub. No se consideran completados por esta prueba local.
+
+## Repetir la verificación en Windows
+
+Dentro de la carpeta que contiene pom.xml, ejecutar `verificar.cmd`.
+Para iniciar, ejecutar `iniciar.cmd` y abrir http://localhost:8081/.

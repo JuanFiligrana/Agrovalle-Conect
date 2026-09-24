@@ -1,0 +1,23 @@
+CORRECCION DEL ARRANQUE - AGROVALLE CONNECT
+
+1. Extrae este ZIP en una carpeta nueva.
+2. Abre Proyecto_AgroValle_Connect, donde estan pom.xml e iniciar.cmd.
+3. Haz doble clic en iniciar.cmd y espera a ver Started AgrovalleApplication.
+4. Abre http://localhost:8081/ en el navegador y deja la ventana negra abierta.
+
+Para abrir el codigo en Visual Studio Code:
+Archivo > Abrir carpeta > Proyecto_AgroValle_Connect.
+
+Para comprobar compilacion, estilo, pruebas y cobertura: verificar.cmd.
+Conserva tu JDK 25 instalado. Si 8081 ya esta ocupado, detén la otra ejecucion
+con Ctrl+C o ejecuta iniciar.cmd 8082 y abre http://localhost:8082/.
+
+Se corrigieron los 36 errores de Checkstyle del registro enviado:
+28 comentarios Javadoc faltantes, 6 avisos de importaciones y 2 nombres de pruebas.
+
+ALCANCE
+Esta version sigue siendo un prototipo de API con datos en memoria.
+La portada es informativa; no contiene formularios de registro ni publicacion.
+Quedan pendientes PostgreSQL, autenticacion JWT real y otros criterios BDD.
+La consulta de precios promedia ofertas publicadas, no ventas completadas.
+Consulta docs/verificacion.md y docs/sprint1.md para el detalle.

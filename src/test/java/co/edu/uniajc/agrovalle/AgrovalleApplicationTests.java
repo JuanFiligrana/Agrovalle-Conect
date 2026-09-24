@@ -27,7 +27,7 @@ class AgrovalleApplicationTests {
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
         .andExpect(jsonPath("$.aplicacion").value("AgroValle Connect"))
         .andExpect(jsonPath("$.estado").value("OK"))
-        .andExpect(jsonPath("$.etapa").value("Sprint 0"));
+        .andExpect(jsonPath("$.etapa").value("Sprint 1"));
   }
 
   @Test
