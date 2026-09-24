@@ -8,11 +8,7 @@
 
 ## Visión del producto
 Para los productores del Valle del Cauca que necesitan vender directamente sus cosechas, AgroValle Connect es una plataforma web empresarial en Java 25 y Spring Boot que conecta la oferta agrícola con compradores y comercios de Cali y sus alrededores. A diferencia de la intermediación tradicional, el producto propone información transparente sobre origen, precio y disponibilidad, junto con trazabilidad de los pedidos mediante contratos de API verificables.
-=======
-![Logo Automatic](assets/image_6871f9.jpg)
-## 1. Visión del Producto
-Para los productores agrícolas del Valle del Cauca, que necesitan vender sus cosechas de forma directa, AgroValle Connect es una plataforma web en Java, que conecta la oferta agrícola con la demanda comercial urbana a un precio justo. A diferencia de las cadenas con intermediarios tradicionales, nuestro producto garantiza trazabilidad logística y contratos de API transparentes.
->>>>>>> Stashed changes
+
 
 ## Integrantes
 - Juan Eduardo Filigrana Mindinero
