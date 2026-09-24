@@ -1,7 +1,12 @@
 # Product Backlog de AgroValle Connect
 
-Versión propuesta para Sprint 0. Las historias describen funcionalidades por desarrollar;
-no se presentan como implementadas. Los puntos son estimaciones fundamentadas que el
+El Sprint 1 implementa un primer incremento funcional para HU-01 a HU-05 mediante
+las tareas T02, T04, T06, T09, T11 y T14. La implementación actual usa repositorios
+temporales en memoria; la persistencia PostgreSQL y la autenticación JWT quedan
+identificadas como trabajo posterior.
+
+Versión base del Sprint 0 ampliada con el incremento del Sprint 1. Las historias que no
+están en el incremento continúan describiendo funcionalidades por desarrollar. Los puntos son estimaciones fundamentadas que el
 equipo debe ratificar mediante Planning Poker. No se inventan votos ni consensos.
 
 ## Priorización y estimación
