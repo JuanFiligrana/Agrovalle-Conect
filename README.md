@@ -4,7 +4,8 @@
 ![Java 25](https://img.shields.io/badge/Java-25-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.16-green)
 
-<<<<<<< Updated upstream
+![Logo Automatic](assets/logo-automatic.jpeg)
+
 ## Visión del producto
 Para los productores del Valle del Cauca que necesitan vender directamente sus cosechas, AgroValle Connect es una plataforma web empresarial en Java 25 y Spring Boot que conecta la oferta agrícola con compradores y comercios de Cali y sus alrededores. A diferencia de la intermediación tradicional, el producto propone información transparente sobre origen, precio y disponibilidad, junto con trazabilidad de los pedidos mediante contratos de API verificables.
 =======
