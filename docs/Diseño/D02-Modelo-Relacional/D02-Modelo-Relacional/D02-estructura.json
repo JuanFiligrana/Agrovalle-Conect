@@ -1,0 +1,1161 @@
+{
+  "municipio": {
+    "name": "municipio",
+    "entity": "Municipio",
+    "group": "usuarios",
+    "columns": [
+      {
+        "name": "id_municipio",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "nombre",
+        "type": "VARCHAR(120)",
+        "flags": [
+          "UQ",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Nombre del municipio del catálogo del Valle del Cauca."
+      }
+    ],
+    "pk": [
+      "id_municipio"
+    ],
+    "unique": [
+      [
+        "nombre"
+      ]
+    ],
+    "checks": [
+      "length(btrim(nombre)) > 0"
+    ],
+    "note": ""
+  },
+  "usuario": {
+    "name": "usuario",
+    "entity": "Usuario",
+    "group": "usuarios",
+    "columns": [
+      {
+        "name": "id_usuario",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "nombre",
+        "type": "VARCHAR(120)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Nombre de la persona o cuenta comercial."
+      },
+      {
+        "name": "correo",
+        "type": "VARCHAR(254)",
+        "flags": [
+          "UQ*",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Único tras aplicar lower y btrim; índice por expresión."
+      },
+      {
+        "name": "contrasena_hash",
+        "type": "VARCHAR(255)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Hash BCrypt generado por el servicio; nunca contraseña en claro."
+      },
+      {
+        "name": "activo",
+        "type": "BOOLEAN",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "TRUE",
+        "description": "Permite desactivar una cuenta conservando su historia."
+      },
+      {
+        "name": "fecha_registro",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": "Instante de creación con zona horaria."
+      }
+    ],
+    "pk": [
+      "id_usuario"
+    ],
+    "unique": [],
+    "checks": [
+      "length(btrim(nombre)) > 0",
+      "length(btrim(correo)) > 0",
+      "length(contrasena_hash) > 0"
+    ],
+    "note": "Correo único por índice lower(btrim(correo)). Especialización total y disjunta validada al registrar la cuenta."
+  },
+  "agricultor": {
+    "name": "agricultor",
+    "entity": "Agricultor",
+    "group": "usuarios",
+    "columns": [
+      {
+        "name": "id_usuario",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "FK",
+          "NN"
+        ],
+        "ref": "usuario.id_usuario",
+        "default": null,
+        "description": "Misma identidad que Usuario; no genera otro ID."
+      },
+      {
+        "name": "cedula",
+        "type": "VARCHAR(20)",
+        "flags": [
+          "UQ",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Texto para conservar ceros iniciales."
+      },
+      {
+        "name": "id_municipio",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "municipio.id_municipio",
+        "default": null,
+        "description": "Municipio de residencia del agricultor."
+      }
+    ],
+    "pk": [
+      "id_usuario"
+    ],
+    "unique": [
+      [
+        "cedula"
+      ]
+    ],
+    "checks": [
+      "length(btrim(cedula)) > 0"
+    ],
+    "note": ""
+  },
+  "comprador": {
+    "name": "comprador",
+    "entity": "Comprador",
+    "group": "usuarios",
+    "columns": [
+      {
+        "name": "id_usuario",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "FK",
+          "NN"
+        ],
+        "ref": "usuario.id_usuario",
+        "default": null,
+        "description": "Misma identidad que Usuario; subtipo comprador."
+      }
+    ],
+    "pk": [
+      "id_usuario"
+    ],
+    "unique": [],
+    "checks": [],
+    "note": "Los datos comunes se consultan en usuario; no se repiten nombre, correo ni hash."
+  },
+  "finca": {
+    "name": "finca",
+    "entity": "Finca",
+    "group": "produccion",
+    "columns": [
+      {
+        "name": "id_finca",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_agricultor",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "agricultor.id_usuario",
+        "default": null,
+        "description": "Propietario de la finca."
+      },
+      {
+        "name": "id_municipio",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "municipio.id_municipio",
+        "default": null,
+        "description": "Municipio donde está ubicada la finca."
+      },
+      {
+        "name": "nombre",
+        "type": "VARCHAR(120)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Nombre de la finca."
+      },
+      {
+        "name": "direccion",
+        "type": "VARCHAR(255)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Dirección descriptiva del origen agrícola."
+      }
+    ],
+    "pk": [
+      "id_finca"
+    ],
+    "unique": [],
+    "checks": [
+      "length(btrim(nombre)) > 0",
+      "length(btrim(direccion)) > 0"
+    ],
+    "note": ""
+  },
+  "categoria": {
+    "name": "categoria",
+    "entity": "Categoria",
+    "group": "produccion",
+    "columns": [
+      {
+        "name": "id_categoria",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "nombre",
+        "type": "VARCHAR(80)",
+        "flags": [
+          "UQ",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Categoría del catálogo de productos."
+      }
+    ],
+    "pk": [
+      "id_categoria"
+    ],
+    "unique": [
+      [
+        "nombre"
+      ]
+    ],
+    "checks": [
+      "length(btrim(nombre)) > 0"
+    ],
+    "note": ""
+  },
+  "producto": {
+    "name": "producto",
+    "entity": "Producto",
+    "group": "produccion",
+    "columns": [
+      {
+        "name": "id_producto",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_categoria",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "categoria.id_categoria",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "nombre",
+        "type": "VARCHAR(120)",
+        "flags": [
+          "UQ",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Tipo de producto, por ejemplo Café o Papa; no es la oferta individual."
+      }
+    ],
+    "pk": [
+      "id_producto"
+    ],
+    "unique": [
+      [
+        "nombre"
+      ]
+    ],
+    "checks": [
+      "length(btrim(nombre)) > 0"
+    ],
+    "note": ""
+  },
+  "cosecha": {
+    "name": "cosecha",
+    "entity": "Cosecha",
+    "group": "produccion",
+    "columns": [
+      {
+        "name": "id_cosecha",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_finca",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "finca.id_finca",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "id_producto",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "producto.id_producto",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "precio_cop_kg",
+        "type": "NUMERIC(14,2)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Precio actual en COP por kilogramo; positivo."
+      },
+      {
+        "name": "cantidad_fisica_kg",
+        "type": "NUMERIC(14,3)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Stock físico; admite cero después de las ventas."
+      },
+      {
+        "name": "fecha_cosecha",
+        "type": "DATE",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Fecha agrícola; se valida en el momento de publicar."
+      },
+      {
+        "name": "activa",
+        "type": "BOOLEAN",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "TRUE",
+        "description": "Oferta visible en catálogo mientras esté activa."
+      }
+    ],
+    "pk": [
+      "id_cosecha"
+    ],
+    "unique": [],
+    "checks": [
+      "precio_cop_kg > 0",
+      "cantidad_fisica_kg >= 0"
+    ],
+    "note": "Agricultor y municipio se obtienen por finca; categoría se obtiene por producto. Disponibilidad es derivada."
+  },
+  "carrito": {
+    "name": "carrito",
+    "entity": "Carrito",
+    "group": "pedidos",
+    "columns": [
+      {
+        "name": "id_carrito",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_comprador",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "comprador.id_usuario",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "fecha_creacion",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "estado",
+        "type": "VARCHAR(12)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "'ABIERTO'",
+        "description": "ABIERTO o CERRADO; las reservas históricas se conservan."
+      }
+    ],
+    "pk": [
+      "id_carrito"
+    ],
+    "unique": [],
+    "checks": [
+      "estado IN ('ABIERTO','CERRADO')"
+    ],
+    "note": ""
+  },
+  "reserva": {
+    "name": "reserva",
+    "entity": "Reserva",
+    "group": "pedidos",
+    "columns": [
+      {
+        "name": "id_reserva",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_carrito",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "carrito.id_carrito",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "id_cosecha",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "cosecha.id_cosecha",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "cantidad_kg",
+        "type": "NUMERIC(14,3)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Cantidad temporalmente comprometida; positiva."
+      },
+      {
+        "name": "precio_aceptado_cop_kg",
+        "type": "NUMERIC(14,2)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Precio que aceptó el comprador al reservar."
+      },
+      {
+        "name": "fecha_creacion",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "vence_en",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP + INTERVAL '15 minutes'",
+        "description": "Exactamente 15 minutos después de la creación."
+      },
+      {
+        "name": "estado",
+        "type": "VARCHAR(12)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "'ACTIVA'",
+        "description": "ACTIVA, CONSUMIDA o VENCIDA."
+      }
+    ],
+    "pk": [
+      "id_reserva"
+    ],
+    "unique": [],
+    "checks": [
+      "cantidad_kg > 0",
+      "precio_aceptado_cop_kg > 0",
+      "vence_en = fecha_creacion + INTERVAL '15 minutes'",
+      "estado IN ('ACTIVA','CONSUMIDA','VENCIDA')"
+    ],
+    "note": ""
+  },
+  "pedido": {
+    "name": "pedido",
+    "entity": "Pedido",
+    "group": "pedidos",
+    "columns": [
+      {
+        "name": "id_pedido",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_carrito",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "carrito.id_carrito",
+        "default": null,
+        "description": "Carrito de origen; permite conocer al comprador sin duplicarlo."
+      },
+      {
+        "name": "id_agricultor",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "agricultor.id_usuario",
+        "default": null,
+        "description": "Único agricultor que atiende este pedido."
+      },
+      {
+        "name": "fecha_confirmacion",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "estado",
+        "type": "VARCHAR(24)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "'PENDIENTE'",
+        "description": ""
+      },
+      {
+        "name": "fecha_completado",
+        "type": "TIMESTAMPTZ",
+        "flags": [],
+        "ref": null,
+        "default": null,
+        "description": "Obligatoria solo cuando el pedido está ENTREGADO."
+      }
+    ],
+    "pk": [
+      "id_pedido"
+    ],
+    "unique": [],
+    "checks": [
+      "estado IN ('PENDIENTE','LISTO_PARA_DESPACHO','EN_CAMINO','ENTREGADO','CANCELADA')",
+      "((estado = 'ENTREGADO' AND fecha_completado IS NOT NULL) OR (estado <> 'ENTREGADO' AND fecha_completado IS NULL))",
+      "fecha_completado >= fecha_confirmacion"
+    ],
+    "note": "No repite id_comprador ni total. Clave de reintento en idempotencia_pedido; total se calcula en una vista."
+  },
+  "detalle_pedido": {
+    "name": "detalle_pedido",
+    "entity": "DetallePedido",
+    "group": "pedidos",
+    "columns": [
+      {
+        "name": "id_detalle",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_pedido",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "pedido.id_pedido",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "id_reserva",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "UQ",
+          "NN"
+        ],
+        "ref": "reserva.id_reserva",
+        "default": null,
+        "description": "Una reserva consumida origina como máximo un detalle."
+      },
+      {
+        "name": "cantidad_kg",
+        "type": "NUMERIC(14,3)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Cantidad histórica confirmada, inmutable tras confirmar."
+      },
+      {
+        "name": "precio_unitario_cop_kg",
+        "type": "NUMERIC(14,2)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Precio histórico de la venta, no el precio actual de la oferta."
+      }
+    ],
+    "pk": [
+      "id_detalle"
+    ],
+    "unique": [
+      [
+        "id_reserva"
+      ]
+    ],
+    "checks": [
+      "cantidad_kg > 0",
+      "precio_unitario_cop_kg > 0"
+    ],
+    "note": "La cosecha se obtiene por reserva. El subtotal se calcula; no se almacena una copia del precio actual de cosecha."
+  },
+  "envio": {
+    "name": "envio",
+    "entity": "Envio",
+    "group": "logistica",
+    "columns": [
+      {
+        "name": "id_envio",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_pedido",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "UQ",
+          "NN"
+        ],
+        "ref": "pedido.id_pedido",
+        "default": null,
+        "description": "A lo sumo un envío por pedido."
+      },
+      {
+        "name": "fecha_programada",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Fecha futura validada al programar, no con CHECK dependiente de hoy."
+      },
+      {
+        "name": "ruta_descriptiva",
+        "type": "VARCHAR(500)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Descripción logística; no representa cálculo automático de rutas."
+      }
+    ],
+    "pk": [
+      "id_envio"
+    ],
+    "unique": [
+      [
+        "id_pedido"
+      ]
+    ],
+    "checks": [
+      "length(btrim(ruta_descriptiva)) > 0"
+    ],
+    "note": ""
+  },
+  "evento_seguimiento": {
+    "name": "evento_seguimiento",
+    "entity": "EventoSeguimiento",
+    "group": "logistica",
+    "columns": [
+      {
+        "name": "id_evento",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_pedido",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "pedido.id_pedido",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "estado",
+        "type": "VARCHAR(24)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "fecha_evento",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "descripcion",
+        "type": "VARCHAR(500)",
+        "flags": [],
+        "ref": null,
+        "default": null,
+        "description": "Detalle opcional del evento histórico."
+      }
+    ],
+    "pk": [
+      "id_evento"
+    ],
+    "unique": [],
+    "checks": [
+      "estado IN ('PENDIENTE','LISTO_PARA_DESPACHO','EN_CAMINO','ENTREGADO','CANCELADA')"
+    ],
+    "note": ""
+  },
+  "contacto": {
+    "name": "contacto",
+    "entity": "Contacto",
+    "group": "comunicacion",
+    "columns": [
+      {
+        "name": "id_contacto",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_comprador",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "comprador.id_usuario",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "id_cosecha",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "cosecha.id_cosecha",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "mensaje",
+        "type": "VARCHAR(1000)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Mensaje obligatorio, de hasta 1000 caracteres."
+      },
+      {
+        "name": "fecha_contacto",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "estado",
+        "type": "VARCHAR(12)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "'ENVIADO'",
+        "description": "ENVIADO, LEIDO o CONTESTADO."
+      }
+    ],
+    "pk": [
+      "id_contacto"
+    ],
+    "unique": [],
+    "checks": [
+      "length(btrim(mensaje)) > 0",
+      "estado IN ('ENVIADO','LEIDO','CONTESTADO')"
+    ],
+    "note": "El agricultor receptor se obtiene por cosecha → finca; no se duplica id_agricultor."
+  },
+  "notificacion": {
+    "name": "notificacion",
+    "entity": "Notificacion",
+    "group": "comunicacion",
+    "columns": [
+      {
+        "name": "id_notificacion",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "NN",
+          "ID"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Identificador generado por PostgreSQL."
+      },
+      {
+        "name": "id_destinatario",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "NN"
+        ],
+        "ref": "usuario.id_usuario",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "id_contacto",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "UQ"
+        ],
+        "ref": "contacto.id_contacto",
+        "default": null,
+        "description": "Origen opcional, exclusivo respecto del evento."
+      },
+      {
+        "name": "id_evento",
+        "type": "BIGINT",
+        "flags": [
+          "FK"
+        ],
+        "ref": "evento_seguimiento.id_evento",
+        "default": null,
+        "description": "Origen opcional, exclusivo respecto del contacto."
+      },
+      {
+        "name": "tipo",
+        "type": "VARCHAR(32)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "contenido",
+        "type": "TEXT",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Texto del aviso interno dirigido a una cuenta."
+      },
+      {
+        "name": "fecha_creacion",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      },
+      {
+        "name": "leida",
+        "type": "BOOLEAN",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "FALSE",
+        "description": ""
+      }
+    ],
+    "pk": [
+      "id_notificacion"
+    ],
+    "unique": [
+      [
+        "id_contacto"
+      ]
+    ],
+    "checks": [
+      "((id_contacto IS NOT NULL AND id_evento IS NULL) OR (id_contacto IS NULL AND id_evento IS NOT NULL))",
+      "length(btrim(tipo)) > 0",
+      "length(btrim(contenido)) > 0"
+    ],
+    "note": "CHECK XOR: exactamente un origen. UNIQUE(id_contacto): como máximo un aviso por contacto."
+  },
+  "idempotencia_pedido": {
+    "name": "idempotencia_pedido",
+    "entity": "IdempotenciaPedido",
+    "group": "idempotencia",
+    "columns": [
+      {
+        "name": "id_comprador",
+        "type": "BIGINT",
+        "flags": [
+          "PK",
+          "FK",
+          "NN"
+        ],
+        "ref": "comprador.id_usuario",
+        "default": null,
+        "description": ""
+      },
+      {
+        "name": "clave",
+        "type": "VARCHAR(128)",
+        "flags": [
+          "PK",
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "Clave de reintento enviada por el comprador."
+      },
+      {
+        "name": "id_pedido",
+        "type": "BIGINT",
+        "flags": [
+          "FK",
+          "UQ",
+          "NN"
+        ],
+        "ref": "pedido.id_pedido",
+        "default": null,
+        "description": "Pedido ya creado para esta combinación de comprador y clave."
+      },
+      {
+        "name": "huella_solicitud",
+        "type": "CHAR(64)",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": null,
+        "description": "SHA-256 de la solicitud canonizada; detecta cambios de contenido."
+      },
+      {
+        "name": "fecha_creacion",
+        "type": "TIMESTAMPTZ",
+        "flags": [
+          "NN"
+        ],
+        "ref": null,
+        "default": "CURRENT_TIMESTAMP",
+        "description": ""
+      }
+    ],
+    "pk": [
+      "id_comprador",
+      "clave"
+    ],
+    "unique": [
+      [
+        "id_pedido"
+      ]
+    ],
+    "checks": [
+      "length(btrim(clave)) > 0",
+      "huella_solicitud ~ '^[0-9a-f]{64}$'"
+    ],
+    "note": "Tabla técnica que permite UNIQUE por comprador y clave sin repetir id_comprador dentro de pedido."
+  }
+}

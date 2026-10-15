@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2900" height="1850" viewBox="0 0 2900 1850"><rect width="100%" height="100%" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="78" y="51.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="18" font-weight="normal">AGROVALLE CONNECT  /  D02  /  MODELO RELACIONAL EN 3FN</text>
+<text x="78" y="115.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="37" font-weight="bold">Tablas de producción y catálogo</text>
+<text x="78" y="171.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="23" font-weight="normal">La finca determina el municipio y el agricultor; el producto determina su categoría</text>
+<path d="M950,440 L800,440 L800,392 L660,392" stroke="white" stroke-width="7" fill="none"/>
+<path d="M950,440 L800,440 L800,392 L660,392" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,448.0 L935.0,440.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,440.0 L935.0,440.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,432.0 L935.0,440.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<circle cx="926.0" cy="440.0" r="5" fill="white" stroke="#37658c" stroke-width="2"/>
+<path d="M667.0,384.0 L667.0,400.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M676.0,384.0 L676.0,400.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<text x="895.0" y="415.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">0..N</text>
+<text x="715.0" y="367.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">1</text>
+<path d="M950,488 L750,488 L750,762 L660,762" stroke="white" stroke-width="7" fill="none"/>
+<path d="M950,488 L750,488 L750,762 L660,762" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,496.0 L935.0,488.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,488.0 L935.0,488.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,480.0 L935.0,488.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<circle cx="926.0" cy="488.0" r="5" fill="white" stroke="#37658c" stroke-width="2"/>
+<path d="M667.0,754.0 L667.0,770.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M676.0,754.0 L676.0,770.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<text x="895.0" y="463.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">0..N</text>
+<text x="709.5" y="737.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">1</text>
+<path d="M950,1160 L850,1160 L850,392 L950,392" stroke="white" stroke-width="7" fill="none"/>
+<path d="M950,1160 L850,1160 L850,392 L950,392" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,1168.0 L935.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,1160.0 L935.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M950.0,1152.0 L935.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<circle cx="926.0" cy="1160.0" r="5" fill="white" stroke="#37658c" stroke-width="2"/>
+<path d="M943.0,400.0 L943.0,384.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M934.0,400.0 L934.0,384.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<text x="895.0" y="1135.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">0..N</text>
+<text x="895.0" y="367.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">1</text>
+<path d="M1750,1208 L1800,1208 L1800,1112 L1850,1112" stroke="white" stroke-width="7" fill="none"/>
+<path d="M1750,1208 L1800,1208 L1800,1112 L1850,1112" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M1750.0,1200.0 L1765.0,1208.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M1750.0,1208.0 L1765.0,1208.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M1750.0,1216.0 L1765.0,1208.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<circle cx="1774.0" cy="1208.0" r="5" fill="white" stroke="#37658c" stroke-width="2"/>
+<path d="M1843.0,1120.0 L1843.0,1104.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M1834.0,1120.0 L1834.0,1104.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<text x="1777.5" y="1183.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">0..N</text>
+<text x="1822.5" y="1087.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">1</text>
+<path d="M2650,1160 L2750,1160 L2750,392 L2650,392" stroke="white" stroke-width="7" fill="none"/>
+<path d="M2650,1160 L2750,1160 L2750,392 L2650,392" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M2650.0,1152.0 L2665.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M2650.0,1160.0 L2665.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M2650.0,1168.0 L2665.0,1160.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<circle cx="2674.0" cy="1160.0" r="5" fill="white" stroke="#37658c" stroke-width="2"/>
+<path d="M2657.0,384.0 L2657.0,400.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<path d="M2666.0,384.0 L2666.0,400.0" stroke="#37658c" stroke-width="2" fill="none"/>
+<text x="2705.0" y="1135.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">0..N</text>
+<text x="2705.0" y="367.0" dominant-baseline="central" text-anchor="middle" fill="#37658c" font-size="18" font-weight="normal">1</text>
+<rect x="100" y="280" width="560" height="136" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="100" y="280" width="560" height="54" fill="#e5eaf0"/>
+<text x="118" y="307.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="25" font-weight="bold">agricultor</text>
+<rect x="100" y="334" width="78" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="108" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="178" y="334" width="252" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="186" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="430" y="334" width="168" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="438" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="598" y="334" width="62" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="606" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="100" y="368" width="560" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="108" y="392.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK FK</text>
+<text x="186" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_usuario</text>
+<text x="438" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="606" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<text x="108" y="264.5" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="normal">REFERENCIA · columnas seleccionadas de otra vista</text>
+<rect x="100" y="650" width="560" height="136" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="100" y="650" width="560" height="54" fill="#e5eaf0"/>
+<text x="118" y="677.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="25" font-weight="bold">municipio</text>
+<rect x="100" y="704" width="78" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="108" y="721.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="178" y="704" width="252" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="186" y="721.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="430" y="704" width="168" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="438" y="721.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="598" y="704" width="62" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="606" y="721.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="100" y="738" width="560" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="108" y="762.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK</text>
+<text x="186" y="762.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_municipio</text>
+<text x="438" y="762.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="606" y="762.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<text x="108" y="634.5" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="normal">REFERENCIA · columnas seleccionadas de otra vista</text>
+<rect x="950" y="280" width="800" height="328" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="950" y="280" width="800" height="54" fill="#226447"/>
+<text x="968" y="307.0" dominant-baseline="central" text-anchor="start" fill="#ffffff" font-size="25" font-weight="bold">finca</text>
+<rect x="950" y="334" width="112" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="958" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="1062" y="334" width="360" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1070" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="1422" y="334" width="240" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1430" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="1662" y="334" width="88" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1670" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="950" y="368" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="392.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK</text>
+<text x="1070" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_finca</text>
+<text x="1430" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="416" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="958" y="440.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">FK</text>
+<text x="1070" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">id_agricultor</text>
+<text x="1430" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="464" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="488.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">FK</text>
+<text x="1070" y="488.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">id_municipio</text>
+<text x="1430" y="488.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="488.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="512" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="958" y="536.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="536.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">nombre</text>
+<text x="1430" y="536.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">VARCHAR(120)</text>
+<text x="1670" y="536.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="560" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="584.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="584.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">direccion</text>
+<text x="1430" y="584.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">VARCHAR(255)</text>
+<text x="1670" y="584.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="1850" y="280" width="800" height="184" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="1850" y="280" width="800" height="54" fill="#226447"/>
+<text x="1868" y="307.0" dominant-baseline="central" text-anchor="start" fill="#ffffff" font-size="25" font-weight="bold">categoria</text>
+<rect x="1850" y="334" width="112" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1858" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="1962" y="334" width="360" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1970" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="2322" y="334" width="240" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="2330" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="2562" y="334" width="88" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="2570" y="351.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="1850" y="368" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1858" y="392.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK</text>
+<text x="1970" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_categoria</text>
+<text x="2330" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="2570" y="392.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="1850" y="416" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1858" y="440.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">UQ</text>
+<text x="1970" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">nombre</text>
+<text x="2330" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">VARCHAR(80)</text>
+<text x="2570" y="440.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1000" width="800" height="424" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="950" y="1000" width="800" height="54" fill="#226447"/>
+<text x="968" y="1027.0" dominant-baseline="central" text-anchor="start" fill="#ffffff" font-size="25" font-weight="bold">cosecha</text>
+<rect x="950" y="1054" width="112" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="958" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="1062" y="1054" width="360" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1070" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="1422" y="1054" width="240" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1430" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="1662" y="1054" width="88" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1670" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="950" y="1088" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK</text>
+<text x="1070" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_cosecha</text>
+<text x="1430" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1136" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="958" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">FK</text>
+<text x="1070" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">id_finca</text>
+<text x="1430" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1184" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">FK</text>
+<text x="1070" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">id_producto</text>
+<text x="1430" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="1670" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1232" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="958" y="1256.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="1256.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">precio_cop_kg</text>
+<text x="1430" y="1256.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">NUMERIC(14,2)</text>
+<text x="1670" y="1256.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1280" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="1304.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="1304.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">cantidad_fisica_kg</text>
+<text x="1430" y="1304.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">NUMERIC(14,3)</text>
+<text x="1670" y="1304.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1328" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="958" y="1352.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="1352.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">fecha_cosecha</text>
+<text x="1430" y="1352.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">DATE</text>
+<text x="1670" y="1352.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="950" y="1376" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="958" y="1400.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal"></text>
+<text x="1070" y="1400.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">activa</text>
+<text x="1430" y="1400.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BOOLEAN</text>
+<text x="1670" y="1400.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="1850" y="1000" width="800" height="232" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="1850" y="1000" width="800" height="54" fill="#226447"/>
+<text x="1868" y="1027.0" dominant-baseline="central" text-anchor="start" fill="#ffffff" font-size="25" font-weight="bold">producto</text>
+<rect x="1850" y="1054" width="112" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1858" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Clave</text>
+<rect x="1962" y="1054" width="360" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="1970" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Columna</text>
+<rect x="2322" y="1054" width="240" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="2330" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Tipo SQL</text>
+<rect x="2562" y="1054" width="88" height="34" fill="#eef3f8" stroke="#cbd5e1"/>
+<text x="2570" y="1071.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="17" font-weight="bold">Nulo</text>
+<rect x="1850" y="1088" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1858" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">PK</text>
+<text x="1970" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="bold">id_producto</text>
+<text x="2330" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="2570" y="1112.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="1850" y="1136" width="800" height="48" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1858" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">FK</text>
+<text x="1970" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">id_categoria</text>
+<text x="2330" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">BIGINT</text>
+<text x="2570" y="1160.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<rect x="1850" y="1184" width="800" height="48" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1858" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#37658c" font-size="17" font-weight="normal">UQ</text>
+<text x="1970" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">nombre</text>
+<text x="2330" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="20" font-weight="normal">VARCHAR(120)</text>
+<text x="2570" y="1208.0" dominant-baseline="central" text-anchor="start" fill="#23364b" font-size="17" font-weight="normal">NO</text>
+<text x="78" y="1601.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="21" font-weight="normal">COSECHA no repite id_municipio, id_agricultor ni id_categoria: se obtienen siguiendo las FK.</text>
+<text x="78" y="1661.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="21" font-weight="normal">La cantidad disponible y el precio promedio de las últimas 24 horas se calculan; no son columnas base.</text>
+<text x="78" y="1721.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="21" font-weight="normal">Cantidad física permite cero tras agotar existencias. Publicar exige cantidad inicial positiva en el servicio.</text>
+<text x="78" y="1775.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="19" font-weight="normal">PK: primaria · FK: foránea · UQ: única · NN / Nulo NO: obligatorio · UQ*: índice único sobre correo normalizado</text>
+<text x="78" y="1813.0" dominant-baseline="central" text-anchor="start" fill="#526477" font-size="18" font-weight="normal">Extremos: 1 = uno; 0..1 = opcional; 0..N = varios; 1..N = uno o más. Los mínimos de colecciones requieren la operación transaccional.</text>
+</g></svg>
