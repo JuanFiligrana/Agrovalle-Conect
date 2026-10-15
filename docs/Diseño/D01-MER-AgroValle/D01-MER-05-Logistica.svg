@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1900" viewBox="0 0 2400 1900">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif">
+<path d="M1595.0,438.0 L1787.3,514.9" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1431.1,362.0 L1258.5,266.7" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1549.9,362.0 L1673.6,267.7" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M540.0,400.0 L875.0,400.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1360.0,400.0 L1025.0,400.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M356.8,1062.0 L181.9,908.0" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M450.1,1062.0 L653.4,907.7" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M363.5,1138.0 L177.2,1331.7" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M446.8,1138.0 L685.7,1332.1" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M400.0,438.0 L400.0,694.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M400.0,1062.0 L400.0,786.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M540.0,1100.0 L875.0,1100.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1360.0,1100.0 L1025.0,1100.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<rect x="260.0" y="362.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="400.0" y="400.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">PEDIDO</text>
+<rect x="1360.0" y="362.0" width="280" height="76" fill="#f0eaff" stroke="#24354b" stroke-width="2"/>
+<text x="1500.0" y="400.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">ENVIO</text>
+<ellipse cx="1850" cy="540" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1850.0" y="540.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_envio</text>
+<ellipse cx="1210" cy="240" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1210.0" y="240.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">fecha_programada</text>
+<ellipse cx="1710" cy="240" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1710.0" y="240.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">ruta_descriptiva</text>
+<polygon points="950,354.0 1025.0,400 950,446.0 875.0,400" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="950.0" y="400.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">PROGRAMA</text>
+<rect x="260.0" y="1062.0" width="280" height="76" fill="#f0eaff" stroke="#24354b" stroke-width="2"/>
+<text x="400.0" y="1100.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">EVENTO_SEGUIMIENTO</text>
+<ellipse cx="150" cy="880" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="150.0" y="880.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_evento</text>
+<ellipse cx="690" cy="880" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="690.0" y="880.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">estado</text>
+<ellipse cx="150" cy="1360" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="150.0" y="1360.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">fecha_evento</text>
+<ellipse cx="720" cy="1360" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="720.0" y="1360.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">descripcion</text>
+<polygon points="400,694.0 475.0,740 400,786.0 325.0,740" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="400.0" y="740.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">REGISTRA</text>
+<rect x="1360.0" y="1062.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="1500.0" y="1100.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">NOTIFICACION</text>
+<polygon points="950,1054.0 1025.0,1100 950,1146.0 875.0,1100" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="950.0" y="1100.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">ORIGINA</text>
+<text x="75.0" y="55.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">AGROVALLE CONNECT  /  D01  /  MODELO CONCEPTUAL</text>
+<text x="75.0" y="117.5" font-size="36" fill="#24354b" text-anchor="start" dominant-baseline="central" font-weight="bold" text-decoration="none">Envíos, trazabilidad y precios</text>
+<text x="75.0" y="175.0" font-size="22" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">HU-03, HU-12, HU-13, HU-14 y HU-15 · Historial del pedido y ventas completadas</text>
+<text x="75.0" y="1832.0" font-size="19" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Lectura: (mín., máx.) junto a una entidad = cuántas veces participa cada instancia en esa relación.</text>
+<text x="75.0" y="1868.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Clave subrayada · Óvalo discontinuo: atributo calculado · Gris: entidad repetida de otra vista · N: muchos</text>
+<text x="595.0" y="374.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,1)</text>
+<text x="1305.0" y="374.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="460.0" y="493.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,N)</text>
+<text x="460.0" y="1007.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="595.0" y="1074.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="1305.0" y="1074.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,1)</text>
+<text x="75.0" y="1531.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Eventos del pedido: PENDIENTE → LISTO_PARA_DESPACHO → EN_CAMINO → ENTREGADO; PENDIENTE → CANCELADA.</text>
+<text x="75.0" y="1591.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">El envío es opcional mientras el pedido está pendiente. La trazabilidad se conserva incluso si el pedido se cancela antes del despacho.</text>
+<text x="75.0" y="1671.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">HU-03 · Decisión de diseño: una transacción completada es una línea de pedido ENTREGADO, con su precio histórico en COP/kg.</text>
+<text x="75.0" y="1721.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Promedio de producto = suma de precios unitarios de esas líneas / número de líneas, con fecha_completado en las últimas 24 horas.</text>
+<text x="75.0" y="1771.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Promedio no ponderado; redondeo a 2 decimales. Sin ventas: promedio null y cantidad 0. No se requieren pagos reales ni GPS.</text>
+</g></svg>
