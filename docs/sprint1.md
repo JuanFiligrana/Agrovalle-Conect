@@ -37,5 +37,10 @@ Spring Security/JWT y conservar los mismos contratos REST.
 
 ## Ejecución
 
+La tarea R01 separa la consulta de precios y desacopla `CosechaService` y
+`ContactoService` mediante interfaces. Su alcance y evidencia se describen en
+[Refactorización R01](refactorizacion-r01.md). Los pendientes funcionales del
+prototipo mantienen sus criterios BDD; esta tarea no acredita el cierre de HU01–HU05.
+
 Con JDK 25 configurado, ejecutar `mvnw.cmd clean verify` y luego `iniciar.cmd`. La
 aplicación queda disponible en `http://localhost:8081/`.
