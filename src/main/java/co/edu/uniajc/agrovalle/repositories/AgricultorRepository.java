@@ -1,6 +1,7 @@
 package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Agricultor;
+import co.edu.uniajc.agrovalle.ports.UsuarioPort;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 /** Repositorio temporal en memoria para el incremento demostrable. */
 @Repository
-public class AgricultorRepository {
+public class AgricultorRepository implements UsuarioPort {
 
   private final AtomicLong sequence = new AtomicLong();
   private final Map<Long, Agricultor> data = new ConcurrentHashMap<>();
@@ -25,6 +26,7 @@ public class AgricultorRepository {
   }
 
   /** Busca una cuenta por su identificador. */
+  @Override
   public Optional<Agricultor> findById(long id) {
     return Optional.ofNullable(data.get(id));
   }

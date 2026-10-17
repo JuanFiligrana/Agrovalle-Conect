@@ -1,5 +1,7 @@
 package co.edu.uniajc.agrovalle.controllers;
 
+import co.edu.uniajc.agrovalle.exceptions.OperacionNoPermitidaException;
+import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,22 @@ import org.springframework.web.server.ResponseStatusException;
 /** Respuestas de error uniformes para los endpoints del Sprint 1. */
 @RestControllerAdvice
 public class ApiExceptionHandler {
+
+  /** Traduce un recurso ausente sin trasladar HTTP a los servicios refactorizados. */
+  @ExceptionHandler(RecursoNoEncontradoException.class)
+  public ResponseEntity<Map<String, String>> handleNotFound(
+      RecursoNoEncontradoException exception) {
+    return ResponseEntity.status(HttpStatus.NOT_FOUND)
+        .body(error(HttpStatus.NOT_FOUND.toString(), exception.getMessage()));
+  }
+
+  /** Traduce restricciones de rol o propiedad manteniendo el JSON existente. */
+  @ExceptionHandler(OperacionNoPermitidaException.class)
+  public ResponseEntity<Map<String, String>> handleForbidden(
+      OperacionNoPermitidaException exception) {
+    return ResponseEntity.status(HttpStatus.FORBIDDEN)
+        .body(error(HttpStatus.FORBIDDEN.toString(), exception.getMessage()));
+  }
 
   /** Convierte errores de reglas de negocio en JSON con estado y mensaje. */
   @ExceptionHandler(ResponseStatusException.class)

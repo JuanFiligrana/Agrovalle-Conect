@@ -1,6 +1,7 @@
 package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Cosecha;
+import co.edu.uniajc.agrovalle.ports.CosechaPort;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,12 +11,13 @@ import org.springframework.stereotype.Repository;
 
 /** Repositorio temporal de cosechas publicadas. */
 @Repository
-public class CosechaRepository {
+public class CosechaRepository implements CosechaPort {
 
   private final AtomicLong sequence = new AtomicLong();
   private final Map<Long, Cosecha> data = new ConcurrentHashMap<>();
 
   /** Asigna un identificador y conserva la oferta en memoria. */
+  @Override
   public Cosecha save(Cosecha cosecha) {
     long id = sequence.incrementAndGet();
     Cosecha saved = new Cosecha(id, cosecha.agricultorId(), cosecha.fincaId(), cosecha.tipo(),
@@ -26,6 +28,7 @@ public class CosechaRepository {
   }
 
   /** Devuelve las ofertas almacenadas durante esta ejecución. */
+  @Override
   public Collection<Cosecha> findAll() {
     return data.values();
   }
@@ -36,6 +39,7 @@ public class CosechaRepository {
   }
 
   /** Busca una oferta por identificador; devuelve null si no existe. */
+  @Override
   public Cosecha findById(long id) {
     return data.get(id);
   }

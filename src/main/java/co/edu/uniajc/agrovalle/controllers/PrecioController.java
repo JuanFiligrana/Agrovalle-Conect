@@ -1,7 +1,7 @@
 package co.edu.uniajc.agrovalle.controllers;
 
 import co.edu.uniajc.agrovalle.dto.PrecioPromedioResponse;
-import co.edu.uniajc.agrovalle.services.CosechaService;
+import co.edu.uniajc.agrovalle.services.ConsultaPreciosService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +15,10 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping("/api/v1/precios")
 public class PrecioController {
 
-  private final CosechaService service;
+  private final ConsultaPreciosService service;
 
-  /** Conecta la consulta de precios con el servicio de cosechas. */
-  public PrecioController(CosechaService service) {
+  /** Conecta la consulta de precios con su caso de uso independiente. */
+  public PrecioController(ConsultaPreciosService service) {
     this.service = service;
   }
 

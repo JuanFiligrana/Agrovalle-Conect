@@ -1,6 +1,7 @@
 package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Finca;
+import co.edu.uniajc.agrovalle.ports.FincaPort;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 /** Repositorio temporal de fincas. */
 @Repository
-public class FincaRepository {
+public class FincaRepository implements FincaPort {
 
   private final AtomicLong sequence = new AtomicLong();
   private final Map<Long, Finca> data = new ConcurrentHashMap<>();
@@ -24,6 +25,7 @@ public class FincaRepository {
   }
 
   /** Busca una finca por su identificador. */
+  @Override
   public Optional<Finca> findById(long id) {
     return Optional.ofNullable(data.get(id));
   }
