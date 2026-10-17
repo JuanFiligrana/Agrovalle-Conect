@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1620" viewBox="0 0 1600 1620">
+<rect width="1600" height="1620" fill="#f1f4f0"/>
+<g font-family="DejaVu Sans, sans-serif">
+<text x="40" y="44.0" text-anchor="start" dominant-baseline="central" font-size="29" font-weight="700" fill="#153b2b">D07 / 07 · Estados de las consultas</text>
+<text x="40" y="90.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">HU03 y HU04 · Consultas sin datos y filtro inválido · Se mantiene la selección para corregirla</text>
+<rect x="1370" y="33" width="190" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1465.0" y="50.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">PROPUESTA</text>
+<text x="40" y="1589.5" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="400" fill="#53675a">AgroValle Connect · Diseño objetivo · Datos de ejemplo ficticios · Sprint de diseño · 17/10/2026</text>
+<rect x="40" y="140" width="1520" height="486" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<text x="66" y="172.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#53675a">HU03 · El producto no tiene ventas completadas en las últimas 24 horas</text>
+<line x1="66" y1="203" x2="1534" y2="203" stroke="#d5dfd1" stroke-width="1"/>
+<text x="80" y="247.0" text-anchor="start" dominant-baseline="central" font-size="29" font-weight="700" fill="#1b5137">Precios de referencia</text>
+<rect x="80" y="286" width="150" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="155.0" y="303.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Cacao</text>
+<text x="80" y="376.0" text-anchor="start" dominant-baseline="central" font-size="32" font-weight="700" fill="#1b5137">Aún no hay datos de este producto</text>
+<text x="80" y="445.0" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#53675a">No hay ventas completadas de cacao en las últimas 24 horas. No se puede calcular un promedio.</text>
+<text x="80" y="515.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="700" fill="#1b5137">Promedio: Sin datos · Registros de ventas: 0</text>
+<rect x="80" y="552" width="360" height="52" rx="8" fill="#ffffff" stroke="#1b5137" stroke-width="1.3"/>
+<text x="260.0" y="578.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Consultar otro producto</text>
+<rect x="40" y="664" width="1520" height="516" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<text x="66" y="696.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#53675a">HU04 · Ninguna oferta activa cumple ambos filtros</text>
+<line x1="66" y1="727" x2="1534" y2="727" stroke="#d5dfd1" stroke-width="1"/>
+<text x="80" y="771.0" text-anchor="start" dominant-baseline="central" font-size="29" font-weight="700" fill="#1b5137">Cosechas cerca de tu negocio</text>
+<rect x="80" y="811" width="180" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="170.0" y="828.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Dagua</text>
+<rect x="280" y="811" width="180" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="370.0" y="828.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Frutas</text>
+<text x="80" y="903.0" text-anchor="start" dominant-baseline="central" font-size="30" font-weight="700" fill="#1b5137">No encontramos cosechas con estos filtros</text>
+<text x="80" y="982.0" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#53675a">No hay ofertas activas que coincidan con municipio Dagua y categoría Frutas. Prueba otra combinación.</text>
+<rect x="80" y="1066" width="360" height="52" rx="8" fill="#ffffff" stroke="#1b5137" stroke-width="1.3"/>
+<text x="260.0" y="1092.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Limpiar filtros</text>
+<text x="480" y="1094.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#53675a">También puedes cambiar un filtro y volver a buscar.</text>
+<rect x="40" y="1216" width="1520" height="302" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<text x="66" y="1248.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#53675a">HU04 · La categoría enviada ya no pertenece al catálogo permitido</text>
+<line x1="66" y1="1279" x2="1534" y2="1279" stroke="#d5dfd1" stroke-width="1"/>
+<rect x="80" y="1299" width="1440" height="117" rx="10" fill="#fff3f0" stroke="none" stroke-width="1.3"/>
+<text x="98" y="1328.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="700" fill="#a22e27">Revisa la categoría seleccionada</text>
+<text x="98" y="1379.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#a22e27">Esa categoría no está disponible. Selecciona una categoría válida para volver a buscar.</text>
+<rect x="80" y="1440" width="360" height="52" rx="8" fill="#ffffff" stroke="#1b5137" stroke-width="1.3"/>
+<text x="260.0" y="1466.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Seleccionar categoría</text>
+</g></svg>
