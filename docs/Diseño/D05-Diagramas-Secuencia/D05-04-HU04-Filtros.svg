@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2628" viewBox="0 0 2500 2628">
+<defs><marker id="call" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13 Z" fill="#526477"/></marker><marker id="reply" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13" fill="none" stroke="#526477" stroke-width="2"/></marker></defs>
+<rect width="2500" height="2628" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="73" y="75.0" text-anchor="start" dominant-baseline="central" font-size="36" fill="#26374b" font-weight="700">D05 / HU04 · Filtro de ofertas</text>
+<text x="73" y="139.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">Actor: comprador que busca cosechas · Diseño objetivo coherente con D02 y D03; implementación pendiente</text>
+<text x="73" y="187.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">El tiempo avanza hacia abajo · API agrupa controlador, validación, seguridad prevista y traducción de errores</text>
+<rect x="25" y="235" width="2450" height="2213" fill="none" stroke="#8a9aac" stroke-width="2"/>
+<rect x="25" y="235" width="650" height="45" fill="#eef2f7" stroke="#8a9aac" stroke-width="1.7"/>
+<text x="43" y="257.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="700">sd D05-04-HU04-Filtros</text>
+<rect x="80" y="707" width="2340" height="418" fill="none" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="707" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="80" y="1161" width="2340" height="252" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="1161" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="1835" width="2340" height="501" fill="none" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="1835" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<path d="M 80 2089 L 2420 2089" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<path d="M 250 445 L 250 2413" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="55" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="250.0" y="377.5" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">vista:Interfaz</text>
+<path d="M 750 445 L 750 2413" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="555" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">api:Presentacion</text>
+<text x="750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">ProductoController</text>
+<path d="M 1250 445 L 1250 2413" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1055" y="310" width="390" height="135" fill="#edf7f1" stroke="#266b50" stroke-width="2"/>
+<text x="1250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">negocio:Servicio</text>
+<text x="1250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">CosechaService</text>
+<path d="M 1750 445 L 1750 2413" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1555" y="310" width="390" height="135" fill="#f4eff9" stroke="#70539b" stroke-width="2"/>
+<text x="1750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">datos:Persistencia</text>
+<text x="1750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">Puertos / JPA</text>
+<path d="M 2250 445 L 2250 2413" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="2055" y="310" width="390" height="135" fill="#fff7e9" stroke="#9a681f" stroke-width="2"/>
+<text x="2250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">bd:PostgreSQL</text>
+<text x="2250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">esquema agrovalle</text>
+<rect x="1241" y="669" width="18" height="1542" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="741" y="586" width="18" height="1708" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="241" y="586" width="18" height="1708" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="2241" y="911" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="828" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="2241" y="1631" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="1494" width="18" height="307" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="90" y="709" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="726.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">opt</text>
+<rect x="240" y="711" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="732.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">[se especificó una categoría]</text>
+<rect x="90" y="1163" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="1180.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="1165" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="1186.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[se indicó una categoría fuera del catálogo]</text>
+<rect x="90" y="1837" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="1854.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">alt</text>
+<rect x="240" y="1839" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="1860.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">[hay coincidencias]</text>
+<rect x="240" y="2101" width="2150" height="40" fill="#ffffff"/>
+<text x="243" y="2121.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">[no hay coincidencias]</text>
+<path d="M 259 586 L 741 586" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="500.0" y="533.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.01: GET /api/v1/productos</text>
+<text x="500.0" y="560.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">?municipio=Dagua&amp;categoria=Frutas</text>
+<path d="M 759 669 L 1241 669" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1000.0" y="643.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.02: listar ofertas con filtros opcionales</text>
+<path d="M 1259 828 L 1741 828" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="802.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.03: validar categoría si fue enviada</text>
+<path d="M 1759 911 L 2241 911" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="885.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.04: SELECT categoria por nombre</text>
+<path d="M 2241 994 L 1759 994" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="968.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.05: resultado de la operación</text>
+<path d="M 1741 1077 L 1259 1077" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="1051.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.06: categoría válida o inexistente</text>
+<path d="M 1241 1282 L 759 1282" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="1256.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.07: error de negocio</text>
+<path d="M 741 1365 L 259 1365" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="1339.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.08: 400 Bad Request: categoría inválida</text>
+<path d="M 1259 1494 L 1741 1494" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="1468.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.09: filtrarActivas(municipio, categoría)</text>
+<path d="M 1759 1631 L 2241 1631" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="1551.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">4.10: SELECT cosecha JOIN finca,</text>
+<text x="2000.0" y="1578.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">municipio,</text>
+<text x="2000.0" y="1605.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">producto y categoria</text>
+<path d="M 2241 1714 L 1759 1714" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="1688.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.11: resultado de la operación</text>
+<path d="M 1741 1797 L 1259 1797" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="1771.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.12: lista de ofertas activas coincidentes</text>
+<path d="M 1241 1956 L 759 1956" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="1930.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.13: lista de DTO de ofertas coincidentes</text>
+<path d="M 741 2039 L 259 2039" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="2013.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.14: 200 OK + arreglo de ofertas</text>
+<path d="M 1241 2205 L 759 2205" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="2179.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.15: lista vacía</text>
+<path d="M 741 2288 L 259 2288" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="2262.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">4.16: 200 OK + []</text>
+<text x="73" y="2508.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#26374b" font-weight="700">Línea continua y punta llena: llamada · Discontinua y punta abierta: retorno · Rectángulo estrecho: activación</text>
+<text x="73" y="2559.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">break interrumpe esta interacción si se cumple su condición; ref reutiliza la hoja 06. La numeración identifica cada mensaje.</text>
+</g></svg>

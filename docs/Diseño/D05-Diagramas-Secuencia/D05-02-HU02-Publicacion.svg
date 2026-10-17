@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="3682" viewBox="0 0 2500 3682">
+<defs><marker id="call" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13 Z" fill="#526477"/></marker><marker id="reply" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13" fill="none" stroke="#526477" stroke-width="2"/></marker></defs>
+<rect width="2500" height="3682" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="73" y="75.0" text-anchor="start" dominant-baseline="central" font-size="36" fill="#26374b" font-weight="700">D05 / HU02 · Publicación de cosechas</text>
+<text x="73" y="139.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">Actor: agricultor autenticado · Diseño objetivo coherente con D02 y D03; implementación pendiente</text>
+<text x="73" y="187.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">El tiempo avanza hacia abajo · API agrupa controlador, validación, seguridad prevista y traducción de errores</text>
+<rect x="25" y="235" width="2450" height="3267" fill="none" stroke="#8a9aac" stroke-width="2"/>
+<rect x="25" y="235" width="650" height="45" fill="#eef2f7" stroke="#8a9aac" stroke-width="1.7"/>
+<text x="43" y="257.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="700">sd D05-02-HU02-Publicacion</text>
+<rect x="80" y="751" width="2340" height="169" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="751" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="1552" width="2340" height="279" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="1552" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="2407" width="2340" height="211" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="2407" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="2489" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="80" y="2986" width="2340" height="211" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="2986" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="3068" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<path d="M 250 445 L 250 3467" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="55" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="250.0" y="377.5" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">vista:Interfaz</text>
+<path d="M 750 445 L 750 3467" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="555" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">api:Presentacion</text>
+<text x="750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">ProductoController</text>
+<path d="M 1250 445 L 1250 3467" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1055" y="310" width="390" height="135" fill="#edf7f1" stroke="#266b50" stroke-width="2"/>
+<text x="1250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">negocio:Servicio</text>
+<text x="1250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">CosechaService</text>
+<path d="M 1750 445 L 1750 3467" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1555" y="310" width="390" height="135" fill="#f4eff9" stroke="#70539b" stroke-width="2"/>
+<text x="1750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">datos:Persistencia</text>
+<text x="1750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">Puertos / JPA</text>
+<path d="M 2250 445 L 2250 3467" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="2055" y="310" width="390" height="135" fill="#fff7e9" stroke="#9a681f" stroke-width="2"/>
+<text x="2250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">bd:PostgreSQL</text>
+<text x="2250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">esquema agrovalle</text>
+<rect x="1241" y="1028" width="18" height="2283" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="741" y="586" width="18" height="2808" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="241" y="586" width="18" height="2808" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="2241" y="1194" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="1111" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="1741" y="1912" width="18" height="111" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="2241" y="1995" width="18" height="26" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="2241" y="2203" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="2093" width="18" height="280" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="2241" y="2782" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="2699" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="759" y="703" width="18" height="30" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="1259" y="1504" width="18" height="30" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="80" y="2489" width="2340" height="105" fill="#f3f6fa" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="2489" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="80" y="3068" width="2340" height="105" fill="#f3f6fa" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="3068" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="90" y="753" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="770.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="755" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="776.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[JWT inválido o datos de entrada inválidos]</text>
+<rect x="90" y="1554" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="1571.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="1556" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="1577.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[rol/finca ajena, finca ausente o regla inválida]</text>
+<rect x="90" y="2409" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="2426.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="2411" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="2432.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[error al guardar la oferta]</text>
+<rect x="90" y="2491" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="2508.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">ref</text>
+<rect x="240" y="2493" width="2150" height="42" fill="#f3f6fa"/>
+<text x="243" y="2514.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">FalloTransaccional(tipoError, estadoHTTP) · hoja 06</text>
+<rect x="90" y="2988" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="3005.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="2990" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="3011.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[no fue posible confirmar la transacción]</text>
+<rect x="90" y="3070" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="3087.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">ref</text>
+<rect x="240" y="3072" width="2150" height="42" fill="#f3f6fa"/>
+<text x="243" y="3093.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">FalloTransaccional(tipoError, estadoHTTP) · hoja 06</text>
+<path d="M 259 586 L 741 586" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="500.0" y="533.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.01: POST /api/v1/productos</text>
+<text x="500.0" y="560.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">(JWT y datos de la oferta)</text>
+<path d="M 759 669 L 865 669 L 865 703 L 777 703" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="793" y="643.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.02: verificar JWT y validar DTO</text>
+<path d="M 741 872 L 259 872" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="846.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.03: 401 por JWT / 400 por datos</text>
+<path d="M 759 1028 L 1241 1028" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1000.0" y="975.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.04: publicar oferta con identidad</text>
+<text x="1000.0" y="1002.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">autenticada</text>
+<path d="M 1259 1111 L 1741 1111" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="1085.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.05: consultar rol, finca y catálogo</text>
+<path d="M 1759 1194 L 2241 1194" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="1168.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.06: SELECT usuario, finca y producto</text>
+<path d="M 2241 1277 L 1759 1277" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="1251.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.07: resultado de la operación</text>
+<path d="M 1741 1360 L 1259 1360" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="1334.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.08: datos de autorización y catálogo</text>
+<path d="M 1259 1470 L 1365 1470 L 1365 1504 L 1277 1504" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1293" y="1417.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.09: validar rol, propiedad y fecha</text>
+<text x="1293" y="1444.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">en Colombia</text>
+<path d="M 1241 1673 L 759 1673" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="1647.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.10: error de negocio</text>
+<path d="M 741 1783 L 259 1783" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="1730.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.11: 403 por permiso / 404 finca / 400</text>
+<text x="500.0" y="1757.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">regla</text>
+<path d="M 1259 1912 L 1741 1912" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="1886.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.12: iniciar TX (infraestructura Spring)</text>
+<path d="M 1759 1995 L 2241 1995" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="1969.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.13: BEGIN</text>
+<path d="M 1259 2093 L 1741 2093" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="2067.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.14: guardar cosecha activa</text>
+<path d="M 1759 2203 L 2241 2203" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="2150.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.15: INSERT cosecha con FK a finca y</text>
+<text x="2000.0" y="2177.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">producto</text>
+<path d="M 2241 2286 L 1759 2286" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="2260.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.16: resultado de la operación</text>
+<path d="M 1741 2369 L 1259 2369" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="2343.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.17: ID provisional o excepción</text>
+<path d="M 1259 2699 L 1741 2699" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="2673.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.18: confirmar TX (proxy Spring)</text>
+<path d="M 1759 2782 L 2241 2782" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="2756.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">2.19: COMMIT</text>
+<path d="M 2241 2865 L 1759 2865" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="2839.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.20: resultado de confirmación</text>
+<path d="M 1741 2948 L 1259 2948" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="2922.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.21: confirmación o error de commit</text>
+<path d="M 1241 3305 L 759 3305" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="3252.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.22: oferta confirmada y asociada a su</text>
+<text x="1000.0" y="3279.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">finca</text>
+<path d="M 741 3388 L 259 3388" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="3362.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">2.23: 201 Created + ID de cosecha</text>
+<text x="73" y="3562.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#26374b" font-weight="700">Línea continua y punta llena: llamada · Discontinua y punta abierta: retorno · Rectángulo estrecho: activación</text>
+<text x="73" y="3613.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">break interrumpe esta interacción si se cumple su condición; ref reutiliza la hoja 06. La numeración identifica cada mensaje.</text>
+</g></svg>

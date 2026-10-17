@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="3728" viewBox="0 0 2500 3728">
+<defs><marker id="call" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13 Z" fill="#526477"/></marker><marker id="reply" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13" fill="none" stroke="#526477" stroke-width="2"/></marker></defs>
+<rect width="2500" height="3728" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<text x="73" y="75.0" text-anchor="start" dominant-baseline="central" font-size="36" fill="#26374b" font-weight="700">D05 / HU01 · Registro de agricultores</text>
+<text x="73" y="139.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">Actor: agricultor sin cuenta · Diseño objetivo coherente con D02 y D03; implementación pendiente</text>
+<text x="73" y="187.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">El tiempo avanza hacia abajo · API agrupa controlador, validación, seguridad prevista y traducción de errores</text>
+<rect x="25" y="235" width="2450" height="3313" fill="none" stroke="#8a9aac" stroke-width="2"/>
+<rect x="25" y="235" width="650" height="45" fill="#eef2f7" stroke="#8a9aac" stroke-width="1.7"/>
+<text x="43" y="257.0" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="700">sd D05-01-HU01-Registro</text>
+<rect x="80" y="778" width="2340" height="169" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="778" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="1525" width="2340" height="252" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="1525" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="2453" width="2340" height="211" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="2453" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="2535" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="80" y="3032" width="2340" height="211" fill="#fffaf4" stroke="#a2613d" stroke-width="1.7"/>
+<rect x="80" y="3032" width="135" height="40" fill="white" stroke="#a2613d" stroke-width="1.4"/>
+<rect x="80" y="3114" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<path d="M 250 445 L 250 3513" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="55" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="250.0" y="377.5" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">vista:Interfaz</text>
+<path d="M 750 445 L 750 3513" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="555" y="310" width="390" height="135" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<text x="750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">api:Presentacion</text>
+<text x="750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#245e96" font-weight="700">AuthController</text>
+<path d="M 1250 445 L 1250 3513" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1055" y="310" width="390" height="135" fill="#edf7f1" stroke="#266b50" stroke-width="2"/>
+<text x="1250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">negocio:Servicio</text>
+<text x="1250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#266b50" font-weight="700">AgricultorService</text>
+<path d="M 1750 445 L 1750 3513" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1555" y="310" width="390" height="135" fill="#f4eff9" stroke="#70539b" stroke-width="2"/>
+<text x="1750.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">datos:Persistencia</text>
+<text x="1750.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#70539b" font-weight="700">Puertos / JPA</text>
+<path d="M 2250 445 L 2250 3513" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="2055" y="310" width="390" height="135" fill="#fff7e9" stroke="#9a681f" stroke-width="2"/>
+<text x="2250.0" y="362.65" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">bd:PostgreSQL</text>
+<text x="2250.0" y="392.34999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#9a681f" font-weight="700">esquema agrovalle</text>
+<rect x="1241" y="1028" width="18" height="2329" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="741" y="586" width="18" height="2854" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="241" y="586" width="18" height="2854" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="2241" y="1321" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="1238" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="1741" y="1985" width="18" height="111" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="2241" y="2068" width="18" height="26" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="2241" y="2249" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="2166" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="2241" y="2828" width="18" height="87" fill="#ffffff" stroke="#9a681f" stroke-width="1.5"/>
+<rect x="1741" y="2745" width="18" height="253" fill="#ffffff" stroke="#70539b" stroke-width="1.5"/>
+<rect x="759" y="730" width="18" height="30" fill="#ffffff" stroke="#245e96" stroke-width="1.5"/>
+<rect x="1259" y="1145" width="18" height="30" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="1259" y="1892" width="18" height="30" fill="#ffffff" stroke="#266b50" stroke-width="1.5"/>
+<rect x="80" y="2535" width="2340" height="105" fill="#f3f6fa" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="2535" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="80" y="3114" width="2340" height="105" fill="#f3f6fa" stroke="#5b7189" stroke-width="1.7"/>
+<rect x="80" y="3114" width="135" height="40" fill="white" stroke="#5b7189" stroke-width="1.4"/>
+<rect x="90" y="780" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="797.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="782" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="803.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[formato inválido o rol no permitido]</text>
+<rect x="90" y="1527" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="1544.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="1529" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="1550.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[municipio inválido o correo/cédula existentes]</text>
+<rect x="90" y="2455" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="2472.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="2457" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="2478.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[error al insertar; incluye unicidad concurrente]</text>
+<rect x="90" y="2537" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="2554.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">ref</text>
+<rect x="240" y="2539" width="2150" height="42" fill="#f3f6fa"/>
+<text x="243" y="2560.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">FalloTransaccional(tipoError, estadoHTTP) · hoja 06</text>
+<rect x="90" y="3034" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="3051.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="700">break</text>
+<rect x="240" y="3036" width="2150" height="42" fill="#ffffff"/>
+<text x="243" y="3057.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#a2613d" font-weight="400">[no fue posible confirmar la transacción]</text>
+<rect x="90" y="3116" width="115" height="34" fill="#ffffff"/>
+<text x="93" y="3133.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="700">ref</text>
+<rect x="240" y="3118" width="2150" height="42" fill="#f3f6fa"/>
+<text x="243" y="3139.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#5b7189" font-weight="400">FalloTransaccional(tipoError, estadoHTTP) · hoja 06</text>
+<path d="M 259 586 L 741 586" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="500.0" y="533.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.01: POST /api/v1/auth/register</text>
+<text x="500.0" y="560.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">(datos del agricultor)</text>
+<path d="M 759 696 L 865 696 L 865 730 L 777 730" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="793" y="643.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.02: validar DTO y rol</text>
+<text x="793" y="670.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">AGRICULTOR</text>
+<path d="M 741 899 L 259 899" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="873.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.03: 400 Bad Request</text>
+<path d="M 759 1028 L 1241 1028" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1000.0" y="1002.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.04: registrar agricultor</text>
+<path d="M 1259 1111 L 1365 1111 L 1365 1145 L 1277 1145" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1293" y="1085.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.05: normalizar correo y cédula</text>
+<path d="M 1259 1238 L 1741 1238" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="1212.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.06: consultar municipio y unicidad</text>
+<path d="M 1759 1321 L 2241 1321" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="1295.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.07: SELECT municipio; correo y cédula</text>
+<path d="M 2241 1404 L 1759 1404" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="1378.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.08: resultado de la operación</text>
+<path d="M 1741 1487 L 1259 1487" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="1461.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.09: municipio válido / duplicados</text>
+<path d="M 1241 1646 L 759 1646" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="1620.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.10: error de negocio</text>
+<path d="M 741 1729 L 259 1729" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="1703.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.11: 400 por catálogo / 409 por duplicado</text>
+<path d="M 1259 1858 L 1365 1858 L 1365 1892 L 1277 1892" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1293" y="1832.5" text-anchor="start" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.12: generar hash BCrypt</text>
+<path d="M 1259 1985 L 1741 1985" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="1959.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.13: iniciar TX (infraestructura Spring)</text>
+<path d="M 1759 2068 L 2241 2068" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="2042.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.14: BEGIN</text>
+<path d="M 1259 2166 L 1741 2166" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="2140.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.15: guardar usuario y subtipo agricultor</text>
+<path d="M 1759 2249 L 2241 2249" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="2223.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.16: INSERT usuario; INSERT agricultor</text>
+<path d="M 2241 2332 L 1759 2332" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="2306.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.17: resultado de la operación</text>
+<path d="M 1741 2415 L 1259 2415" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="2389.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.18: ID provisional o excepción</text>
+<path d="M 1259 2745 L 1741 2745" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="1500.0" y="2719.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.19: confirmar TX (proxy Spring)</text>
+<path d="M 1759 2828 L 2241 2828" fill="none" stroke="#526477" stroke-width="2" marker-end="url(#call)"/>
+<text x="2000.0" y="2802.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#26374b" font-weight="400">1.20: COMMIT</text>
+<path d="M 2241 2911 L 1759 2911" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="2000.0" y="2885.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.21: resultado de confirmación</text>
+<path d="M 1741 2994 L 1259 2994" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1500.0" y="2968.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.22: confirmación o error de commit</text>
+<path d="M 1241 3351 L 759 3351" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="1000.0" y="3298.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.23: cuenta confirmada; sin contraseña ni</text>
+<text x="1000.0" y="3325.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">hash</text>
+<path d="M 741 3434 L 259 3434" fill="none" stroke="#526477" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#reply)"/>
+<text x="500.0" y="3408.5" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#596b7d" font-weight="400">1.24: 201 Created + ID de cuenta</text>
+<text x="73" y="3608.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#26374b" font-weight="700">Línea continua y punta llena: llamada · Discontinua y punta abierta: retorno · Rectángulo estrecho: activación</text>
+<text x="73" y="3659.0" text-anchor="start" dominant-baseline="central" font-size="19" fill="#596b7d" font-weight="400">break interrumpe esta interacción si se cumple su condición; ref reutiliza la hoja 06. La numeración identifica cada mensaje.</text>
+</g></svg>
