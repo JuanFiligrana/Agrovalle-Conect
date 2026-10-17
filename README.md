@@ -17,11 +17,24 @@ Para los productores del Valle del Cauca que necesitan vender directamente sus c
 - Jhojan Aragón
 
 ## Alcance de esta entrega
-Sprint 0: infraestructura, documentación y especificación BDD. La aplicación incluye
-una portada web y GET `/api/v1/estado`. Las 15 historias de negocio son el backlog futuro;
-no se declara implementado el registro, el catálogo, los pedidos, JWT ni PostgreSQL.
-El driver PostgreSQL está disponible para la próxima etapa, sin conexión activa ni
-credenciales. No hace falta una base de datos para iniciar esta base.
+Sprint 1: prototipo de API sobre la base del Sprint 0. Se implementan
+en memoria el registro de cuentas, el modelo de fincas, la publicación y consulta de
+cosechas, el promedio de precios, los filtros por municipio y categoría y el contacto
+entre comprador y agricultor. Las rutas y criterios están descritos en
+`docs/sprint1.md`. La corrección del arranque pasó `clean verify`: cero infracciones
+de Checkstyle y cinco pruebas aprobadas. Consulta [Verificación](docs/verificacion.md)
+para los resultados y los criterios pendientes. La persistencia PostgreSQL y la validación criptográfica de JWT se
+dejan como siguiente incremento; este prototipo no usa credenciales reales.
+
+### Rutas principales del Sprint 1
+
+- `POST /api/v1/auth/register`: registra un agricultor o comprador.
+- `POST /api/v1/fincas`: crea una finca de un agricultor.
+- `POST /api/v1/productos`: publica una cosecha.
+- `GET /api/v1/productos?municipio=&categoria=`: filtra ofertas activas.
+- `GET /api/v1/precios/promedio?producto=`: calcula el promedio en COP/kg.
+- `POST /api/v1/contacto/mensaje`: registra una solicitud de contacto con
+  encabezado `Authorization`.
 
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
@@ -90,7 +103,7 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [BACKLOG.md](BACKLOG.md): 15 historias, 40 escenarios y 76 puntos propuestos.
 - [Definition of Done](docs/dod.md): checklist y aceptación por los cuatro integrantes.
 - [Estimación](docs/estimacion.md): procedimiento y registro de Planning Poker.
-- [Arquitectura](docs/arquitectura.md): capas y límites del Sprint 0.
+- [Arquitectura](docs/arquitectura.md): capas y límites de los incrementos.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.

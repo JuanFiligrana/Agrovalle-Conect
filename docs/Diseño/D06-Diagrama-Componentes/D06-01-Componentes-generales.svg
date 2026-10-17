@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2880" viewBox="0 0 2600 2880">
+<defs><marker id="use" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13" fill="none" stroke="#52677e" stroke-width="2"/></marker><marker id="realize" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L16 9 L1 17 Z" fill="white" stroke="#52677e" stroke-width="2"/></marker></defs>
+<rect width="2600" height="2880" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<path d="M960 250 V210 H2520 V250 H2560 V2090 H960 Z M960 250 H2520" fill="#f9fbfd" stroke="#a8b6c7" stroke-width="1.6"/>
+<rect x="70" y="250" width="600" height="230" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<rect x="612" y="265" width="34" height="48" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="602" y="274" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="602" y="295" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<path d="M70 700 H830 L850 720 V1030 H70 Z M830 700 V720 H850" fill="#fffef5" stroke="#8798ab" stroke-width="1.6"/>
+<path d="M70 1180 H830 L850 1200 V1550 H70 Z M830 1180 V1200 H850" fill="#fffef5" stroke="#8798ab" stroke-width="1.6"/>
+<path d="M70 1700 H830 L850 1720 V2050 H70 Z M830 1700 V1720 H850" fill="#fffef5" stroke="#8798ab" stroke-width="1.6"/>
+<rect x="735" y="275" width="220" height="180" fill="#ffffff" stroke="#245e96" stroke-width="2"/>
+<rect x="1000" y="250" width="600" height="230" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<rect x="1542" y="265" width="34" height="48" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="1532" y="274" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="1532" y="295" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="1640" y="275" width="220" height="180" fill="#ffffff" stroke="#245e96" stroke-width="2"/>
+<rect x="1900" y="250" width="620" height="230" fill="#eef5fc" stroke="#245e96" stroke-width="2"/>
+<rect x="2462" y="265" width="34" height="48" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="2452" y="274" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="2452" y="295" width="19" height="10" fill="white" stroke="#245e96" stroke-width="1.6"/>
+<rect x="1060" y="650" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1930" y="700" width="540" height="180" fill="#ffffff" stroke="#245e96" stroke-width="2"/>
+<rect x="1000" y="960" width="1520" height="300" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="2462" y="975" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="2452" y="984" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="2452" y="1005" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="1400" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<path d="M1700 1410 H2440 L2460 1430 V1565 H1700 Z M2440 1410 V1430 H2460" fill="#fffef5" stroke="#8798ab" stroke-width="1.6"/>
+<rect x="1000" y="1730" width="1520" height="280" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2462" y="1745" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2452" y="1754" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2452" y="1775" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="1520" y="2150" width="480" height="180" fill="#ffffff" stroke="#9b681e" stroke-width="2"/>
+<rect x="1000" y="2460" width="1520" height="220" fill="#fff7e9" stroke="#9b681e" stroke-width="2"/>
+<rect x="2462" y="2475" width="34" height="48" fill="white" stroke="#9b681e" stroke-width="1.6"/>
+<rect x="2452" y="2484" width="19" height="10" fill="white" stroke="#9b681e" stroke-width="1.6"/>
+<rect x="2452" y="2505" width="19" height="10" fill="white" stroke="#9b681e" stroke-width="1.6"/>
+<path d="M 670 365 L 735 365" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1000 365 L 955 365" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 1600 365 L 1640 365" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1900 365 L 1860 365" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 2200 480 L 2200 700" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 2200 960 L 2200 880" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1300 480 L 1300 650" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1300 960 L 1300 830" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 1300 1260 L 1300 1400" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1300 1730 L 1300 1580" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 1760 2010 L 1760 2150" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1760 2460 L 1760 2330" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<text x="72" y="75.0" text-anchor="start" dominant-baseline="central" font-size="36" font-weight="700" fill="#26384b">D06 / Componentes de AgroValle Connect</text>
+<text x="72" y="142.5" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="400" fill="#586b7f">Diseño objetivo modular · Componentes e interfaces de un backend Spring Boot · HU01–05 y apoyo de fincas</text>
+<text x="72" y="2741.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Flecha abierta discontinua: usa o requiere · Triángulo vacío discontinuo: realiza o proporciona la interfaz</text>
+<text x="72" y="2796.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#586b7f">Los nombres de interfaces generales resumen contratos del diseño. JWT, JPA y PostgreSQL siguen por implementar.</text>
+<text x="72" y="2823.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#586b7f">CosechaPort se muestra como ejemplo; la hoja 02 despliega el detalle de los contratos de datos.</text>
+<text x="976" y="230.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#586b7f">«package» backend Spring Boot · un solo JAR</text>
+<text x="92" y="274.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«component»</text>
+<text x="370.0" y="323.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#245e96">Interfaz web</text>
+<text x="370.0" y="383.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">HTML, CSS y JavaScript</text>
+<text x="370.0" y="410.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Formularios previstos en D07</text>
+<text x="370.0" y="437.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Ejecución en el navegador</text>
+<text x="92" y="732.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Cómo leer las interfaces</text>
+<text x="92" y="849.025" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">El consumidor usa un contrato.</text>
+<text x="92" y="874.675" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">El proveedor lo implementa.</text>
+<text x="92" y="900.3249999999999" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Ambas relaciones apuntan a la interfaz.</text>
+<text x="92" y="925.975" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Las interfaces generales son contratos conceptuales.</text>
+<text x="92" y="1212.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Correspondencia con D03</text>
+<text x="92" y="1336.2" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Presentación: interfaz web y API.</text>
+<text x="92" y="1361.8500000000001" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Negocio: casos de uso.</text>
+<text x="92" y="1387.5" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Acceso a datos: persistencia JPA.</text>
+<text x="92" y="1413.15" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Persistencia relacional: PostgreSQL.</text>
+<text x="92" y="1438.8" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">Models y DTO representan tipos de datos compartidos.</text>
+<text x="92" y="1732.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Correspondencia con D05</text>
+<text x="92" y="1846.2" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">api:Presentacion se corresponde con la API.</text>
+<text x="92" y="1871.8500000000001" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">negocio:Servicio está en los casos de uso.</text>
+<text x="92" y="1897.5" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">datos:Persistencia agrupa los adaptadores.</text>
+<text x="92" y="1923.15" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">bd:PostgreSQL es el componente externo.</text>
+<text x="92" y="1948.8" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">El servicio coordina la transacción de contacto y aviso.</text>
+<text x="845.0" y="298.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«interface»</text>
+<text x="845.0" y="334.15" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#245e96">HTTP</text>
+<text x="845.0" y="363.84999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#245e96">AgroValle</text>
+<text x="845.0" y="415.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">HTML / JSON</text>
+<text x="1022" y="274.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«component»</text>
+<text x="1300.0" y="323.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#245e96">API REST y recursos web</text>
+<text x="1300.0" y="383.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Controladores y DTO</text>
+<text x="1300.0" y="410.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Validación y errores HTTP</text>
+<text x="1300.0" y="437.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Entrega de la vista estática</text>
+<text x="1750.0" y="298.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«interface»</text>
+<text x="1750.0" y="334.15" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#245e96">Identidad</text>
+<text x="1750.0" y="363.84999999999997" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#245e96">JWT</text>
+<text x="1750.0" y="415.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">Principal y rol</text>
+<text x="1922" y="274.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«component»</text>
+<text x="2210.0" y="323.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#245e96">Seguridad</text>
+<text x="2210.0" y="383.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Filtro JWT [previsto]</text>
+<text x="2210.0" y="410.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">BCrypt / PasswordEncoder</text>
+<text x="2210.0" y="437.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Identidad y protección de claves</text>
+<text x="1300.0" y="673.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="724.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">Casos de uso</text>
+<text x="1300.0" y="790.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">Contrato conceptual HU01–05</text>
+<text x="2200.0" y="723.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#245e96">«interface»</text>
+<text x="2200.0" y="774.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#245e96">PasswordEncoder</text>
+<text x="2200.0" y="840.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">encode · matches</text>
+<text x="1022" y="984.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="1760.0" y="1033.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso / negocio</text>
+<text x="1760.0" y="1114.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">AgricultorService · FincaService</text>
+<text x="1760.0" y="1141.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">CosechaService · ContactoService</text>
+<text x="1760.0" y="1168.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">ConsultaPreciosService [nuevo]</text>
+<text x="1760.0" y="1195.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Reglas del dominio y límites transaccionales</text>
+<text x="1300.0" y="1423.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="1474.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">CosechaPort</text>
+<text x="1300.0" y="1527.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">guardar · buscarPorId</text>
+<text x="1300.0" y="1552.1499999999999" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">filtrarActivas</text>
+<text x="1722" y="1442.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Ejemplo del acceso a datos</text>
+<text x="1722" y="1497.175" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">La hoja 02 detalla siete contratos pequeños</text>
+<text x="1722" y="1522.825" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#586b7f">y sus adaptadores; no es un repositorio único.</text>
+<text x="1022" y="1754.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="1760.0" y="1803.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">Persistencia JPA [propuesta]</text>
+<text x="1760.0" y="1888.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Adaptadores de Usuario, Finca, Cosecha, Precio, Contacto, Notificacion y Catalogo</text>
+<text x="1760.0" y="1915.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Spring Data JPA + Hibernate · entidades y proyecciones D02</text>
+<text x="1760.0" y="1942.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa los contratos; conserva las reglas en los servicios</text>
+<text x="1760.0" y="2173.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#9b681e">«interface»</text>
+<text x="1760.0" y="2224.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#9b681e">Servicio SQL</text>
+<text x="1760.0" y="2277.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">Protocolo PostgreSQL</text>
+<text x="1760.0" y="2302.15" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">acceso desde Java mediante JDBC</text>
+<text x="1022" y="2484.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#9b681e">«component»</text>
+<text x="1760.0" y="2533.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#9b681e">PostgreSQL · componente externo previsto</text>
+<text x="1760.0" y="2601.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Esquema agrovalle · tablas, vistas e índices de D02</text>
+<text x="1760.0" y="2628.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Conserva los datos y la integridad declarativa</text>
+</g></svg>

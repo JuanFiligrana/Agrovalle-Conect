@@ -12,7 +12,7 @@ ID de HU o tarea de infraestructura. Para cambios funcionales, indicar escenario
 - Captura o enlace al check de CI:
 
 ## Checklist
-- [ ] Java 25 y `verify` exitoso.
+- [ ] Java 17 y `verify` exitoso.
 - [ ] Cero infracciones de Checkstyle.
 - [ ] Pruebas existentes pasan.
 - [ ] Documentación y backlog coherentes.

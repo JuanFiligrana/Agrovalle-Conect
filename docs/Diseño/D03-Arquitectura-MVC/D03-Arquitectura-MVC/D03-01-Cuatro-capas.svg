@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1850" viewBox="0 0 1760 1850">
+<defs><marker id="call" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#526477"/></marker><marker id="realize" markerWidth="17" markerHeight="17" refX="15" refY="8.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L15 8.5 L1 16 Z" fill="white" stroke="#526477" stroke-width="1.7"/></marker></defs>
+<rect width="1760" height="1850" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif">
+<rect x="64" y="180" width="1632" height="330" rx="16" fill="#edf5fc" stroke="#245d95" stroke-width="2"/>
+<rect x="64" y="550" width="1632" height="440" rx="16" fill="#edf7f1" stroke="#25674e" stroke-width="2"/>
+<rect x="64" y="1030" width="1632" height="330" rx="16" fill="#f3eff8" stroke="#6a4c94" stroke-width="2"/>
+<rect x="64" y="1400" width="1632" height="220" rx="16" fill="#fff7e9" stroke="#986319" stroke-width="2"/>
+<rect x="360" y="235" width="470" height="190" rx="10" fill="#ffffff" stroke="#245d95" stroke-width="2"/>
+<text x="595.0" y="267.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#245d95" font-weight="700">VISTA · navegador</text>
+<text x="595.0" y="331.7" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">HTML, CSS y JavaScript</text><text x="595.0" y="356.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">resources/static/index.html</text><text x="595.0" y="380.3" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Formularios HU01–05: previstos</text>
+<rect x="1040" y="220" width="600" height="230" rx="10" fill="#ffffff" stroke="#245d95" stroke-width="2"/>
+<text x="1340.0" y="252.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#245d95" font-weight="700">CONTROLADOR · API REST</text>
+<text x="1340.0" y="324.55" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Auth · Finca · Producto</text><text x="1340.0" y="348.85" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Precio · Contacto · Estado</text><text x="1340.0" y="373.15000000000003" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">DTO + @Valid + ApiExceptionHandler</text><text x="1340.0" y="397.45000000000005" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">HTTP y respuesta JSON</text>
+<rect x="360" y="595" width="600" height="205" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="660.0" y="627.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">Servicios de aplicación</text>
+<text x="660.0" y="687.05" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">AgricultorService · FincaService</text><text x="660.0" y="711.3499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">CosechaService · ContactoService</text><text x="660.0" y="735.65" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">ConsultaPreciosService [nuevo]</text><text x="660.0" y="759.9499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Reglas y límites transaccionales</text>
+<rect x="1070" y="595" width="570" height="205" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="1355.0" y="627.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">Dominio · models / D02</text>
+<text x="1355.0" y="687.05" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Usuario · Agricultor · Comprador</text><text x="1355.0" y="711.3499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Finca · Producto · Cosecha</text><text x="1355.0" y="735.65" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Contacto · Notificacion</text><text x="1355.0" y="759.9499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Pedido y reservas: extensión prevista</text>
+<rect x="360" y="860" width="1280" height="100" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="1000.0" y="892.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">Contratos de repositorio [nuevos]</text>
+<text x="1000.0" y="936.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">UsuarioPort · FincaPort · CosechaPort · PrecioPort · ContactoPort · NotificacionPort</text>
+<rect x="360" y="1080" width="600" height="210" rx="10" fill="#ffffff" stroke="#6a4c94" stroke-width="2"/>
+<text x="660.0" y="1112.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#6a4c94" font-weight="700">Adaptadores JPA [nuevos]</text>
+<text x="660.0" y="1174.55" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Implementan contratos de la capa 2</text><text x="660.0" y="1198.85" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Guardado, consultas y proyecciones</text><text x="660.0" y="1223.1499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Usan las entidades JPA de D02</text><text x="660.0" y="1247.45" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Spring selecciona la implementación</text>
+<rect x="1070" y="1080" width="570" height="210" rx="10" fill="#ffffff" stroke="#6a4c94" stroke-width="2"/>
+<text x="1355.0" y="1112.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#6a4c94" font-weight="700">Spring Data JPA + Hibernate</text>
+<text x="1355.0" y="1174.55" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">JpaRepository y EntityManager</text><text x="1355.0" y="1198.85" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Data Mapper: entidad a fila SQL</text><text x="1355.0" y="1223.1499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Driver JDBC + pool de conexiones</text><text x="1355.0" y="1247.45" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Integración todavía pendiente</text>
+<rect x="360" y="1445" width="1280" height="135" rx="10" fill="#ffffff" stroke="#986319" stroke-width="2"/>
+<text x="1000.0" y="1477.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#986319" font-weight="700">PostgreSQL · esquema agrovalle</text>
+<text x="1000.0" y="1526.35" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">17 tablas y 3 vistas de D02 · PK, FK, UNIQUE, CHECK e índices</text><text x="1000.0" y="1550.6499999999999" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">El servicio coordina las transacciones y las reglas entre filas</text>
+<path d="M 830 290 L 1040 290" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="845" y="251" width="180" height="30" rx="5" fill="white"/>
+<text x="935.0" y="266.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">HTTP / JSON</text>
+<path d="M 1040 375 L 830 375" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="845" y="387" width="180" height="30" rx="5" fill="white"/>
+<text x="935.0" y="402.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">Respuesta JSON</text>
+<path d="M 1340 450 L 1340 530 L 660 530 L 660 595" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="810" y="514" width="240" height="30" rx="5" fill="white"/>
+<text x="930.0" y="529.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">Delega casos de uso</text>
+<path d="M 960 700 L 1070 700" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="975" y="661" width="80" height="30" rx="5" fill="white"/>
+<text x="1015.0" y="676.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">usa</text>
+<path d="M 660 800 L 660 860" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="680" y="815" width="80" height="30" rx="5" fill="white"/>
+<text x="720.0" y="830.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">usa</text>
+<path d="M 660 1080 L 660 960" fill="none" stroke="#526477" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<rect x="685" y="997" width="170" height="30" rx="5" fill="white"/>
+<text x="770.0" y="1012.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">implementa</text>
+<path d="M 960 1190 L 1070 1190" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="970" y="1150" width="90" height="30" rx="5" fill="white"/>
+<text x="1015.0" y="1165.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">delega</text>
+<path d="M 1355 1290 L 1355 1445" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="1380" y="1368" width="230" height="30" rx="5" fill="white"/>
+<text x="1495.0" y="1383.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">SQL mediante JDBC</text>
+<text x="66" y="70.0" dominant-baseline="central" text-anchor="start" font-size="36" fill="#223449" font-weight="700">D03 / Arquitectura MVC de cuatro capas</text>
+<text x="66" y="123.0" dominant-baseline="central" text-anchor="start" font-size="20" fill="#536477" font-weight="400">AgroValle Connect · Diseño objetivo basado en el prototipo y en el modelo relacional D02</text>
+<text x="90" y="230.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#245d95" font-weight="700">CAPA 1</text>
+<text x="90" y="292.15" dominant-baseline="central" text-anchor="start" font-size="22" fill="#245d95" font-weight="700">Presentación</text><text x="90" y="321.84999999999997" dominant-baseline="central" text-anchor="start" font-size="22" fill="#245d95" font-weight="700">y API REST</text>
+<text x="90" y="404.025" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">VISTA +</text><text x="90" y="426.97499999999997" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">CONTROLADOR</text>
+<text x="90" y="600.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#25674e" font-weight="700">CAPA 2</text>
+<text x="90" y="662.15" dominant-baseline="central" text-anchor="start" font-size="22" fill="#25674e" font-weight="700">Lógica de negocio</text><text x="90" y="691.85" dominant-baseline="central" text-anchor="start" font-size="22" fill="#25674e" font-weight="700">y dominio</text>
+<text x="90" y="774.025" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">MODELO · reglas,</text><text x="90" y="796.975" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">estado y contratos</text>
+<text x="90" y="1080.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#6a4c94" font-weight="700">CAPA 3</text>
+<text x="90" y="1157.0" dominant-baseline="central" text-anchor="start" font-size="22" fill="#6a4c94" font-weight="700">Acceso a datos</text>
+<text x="90" y="1254.025" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">MODELO · consultas</text><text x="90" y="1276.9750000000001" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">y mapeo relacional</text>
+<text x="90" y="1450.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#986319" font-weight="700">CAPA 4</text>
+<text x="90" y="1503.15" dominant-baseline="central" text-anchor="start" font-size="22" fill="#986319" font-weight="700">Persistencia</text><text x="90" y="1532.8500000000001" dominant-baseline="central" text-anchor="start" font-size="22" fill="#986319" font-weight="700">relacional</text>
+<text x="90" y="1583.0" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">DATOS DURABLES</text>
+<text x="66" y="1680.0" dominant-baseline="central" text-anchor="start" font-size="21" fill="#223449" font-weight="700">MVC: Vista = interfaz · Controlador = REST · Modelo = dominio, servicios y acceso a datos.</text>
+<text x="66" y="1728.0" dominant-baseline="central" text-anchor="start" font-size="19" fill="#536477" font-weight="400">Flecha continua: usa o delega. Flecha discontinua con triángulo vacío: implementa un contrato.</text>
+<text x="66" y="1778.0" dominant-baseline="central" text-anchor="start" font-size="19" fill="#536477" font-weight="400">Diseño objetivo: el prototipo actual usa memoria. JPA, PostgreSQL y las piezas nuevas requieren implementación.</text>
+</g></svg>

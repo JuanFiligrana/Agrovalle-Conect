@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1210" viewBox="0 0 1600 1210">
+<rect width="1600" height="1210" fill="#f1f4f0"/>
+<g font-family="DejaVu Sans, sans-serif">
+<text x="40" y="44.0" text-anchor="start" dominant-baseline="central" font-size="29" font-weight="700" fill="#153b2b">D07 / 04 · Búsqueda de cosechas</text>
+<text x="40" y="90.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">HU04 · Filtros combinados · Solo ofertas activas · Acceso al contacto desde la oferta seleccionada</text>
+<rect x="1370" y="33" width="190" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1465.0" y="50.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">PROPUESTA</text>
+<text x="40" y="1179.5" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="400" fill="#53675a">AgroValle Connect · Diseño objetivo · Datos de ejemplo ficticios · Sprint de diseño · 17/10/2026</text>
+<rect x="40" y="128" width="1520" height="1020" rx="16" fill="#f6f6ee" stroke="#d5dfd1" stroke-width="1.3"/>
+<rect x="41" y="129" width="1518" height="88" rx="14" fill="#ffffff" stroke="none" stroke-width="1.3"/>
+<line x1="40" y1="217" x2="1560" y2="217" stroke="#d5dfd1" stroke-width="1"/>
+<ellipse cx="98.5" cy="173.5" rx="22.5" ry="22.5" fill="#1b5137" stroke="none" stroke-width="1.3"/>
+<text x="98.5" y="173.5" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="700" fill="#ffffff">AV</text>
+<text x="135" y="173.0" text-anchor="start" dominant-baseline="central" font-size="24" font-weight="700" fill="#1b5137">AgroValle Connect</text>
+<text x="570" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Cosechas</text>
+<line x1="570" y1="211" x2="682" y2="211" stroke="#1b5137" stroke-width="3"/>
+<text x="725" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#53675a">Precios</text>
+<text x="870" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#53675a">Soy agricultor</text>
+<rect x="1290" y="151" width="222" height="46" rx="8" fill="#ffffff" stroke="#1b5137" stroke-width="1.3"/>
+<text x="1401.0" y="174.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Iniciar sesión</text>
+<text x="100" y="274.0" text-anchor="start" dominant-baseline="central" font-size="35" font-weight="700" fill="#1b5137">Cosechas cerca de tu negocio</text>
+<text x="100" y="332.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="400" fill="#53675a">Encuentra ofertas activas de productores del Valle del Cauca.</text>
+<rect x="100" y="387" width="1400" height="161" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<text x="126" y="418.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#153b2b">Municipio</text>
+<rect x="126" y="440" width="420" height="52" rx="7" fill="#ffffff" stroke="#a9b7a4" stroke-width="1.3"/>
+<text x="141" y="466.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#153b2b">Dagua</text>
+<text x="509" y="466.0" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#53675a">▾</text>
+<text x="575" y="418.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#153b2b">Categoría</text>
+<rect x="575" y="440" width="420" height="52" rx="7" fill="#ffffff" stroke="#a9b7a4" stroke-width="1.3"/>
+<text x="590" y="466.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#153b2b">Frutas</text>
+<text x="958" y="466.0" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#53675a">▾</text>
+<rect x="1025" y="440" width="245" height="52" rx="8" fill="#1b5137" stroke="#1b5137" stroke-width="1.3"/>
+<text x="1147.5" y="466.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#ffffff">Buscar cosechas</text>
+<text x="1387.5" y="466.5" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="700" fill="#1b5137">Limpiar filtros</text>
+<text x="100" y="594.5" text-anchor="start" dominant-baseline="central" font-size="24" font-weight="700" fill="#1b5137">2 ofertas activas</text>
+<rect x="1100" y="578" width="165" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1182.5" y="595.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Dagua</text>
+<rect x="1290" y="578" width="210" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1395.0" y="595.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Frutas</text>
+<rect x="100" y="644" width="680" height="436" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<rect x="126" y="669" width="100" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="176.0" y="686.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Activa</text>
+<text x="754" y="686.0" text-anchor="end" dominant-baseline="central" font-size="16" font-weight="400" fill="#53675a">Oferta #101</text>
+<text x="126" y="748.0" text-anchor="start" dominant-baseline="central" font-size="31" font-weight="700" fill="#1b5137">Mango</text>
+<text x="126" y="805.5" text-anchor="start" dominant-baseline="central" font-size="26" font-weight="700" fill="#1b5137">$3.500,00 / kg</text>
+<text x="126" y="857.5" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#53675a">Frutas · Dagua · 250 kg</text>
+<text x="126" y="901.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#153b2b">La Esperanza · Luis Andrés Rojas</text>
+<text x="126" y="944.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">Fecha de cosecha: 24 oct 2026</text>
+<rect x="126" y="995" width="628" height="52" rx="8" fill="#1b5137" stroke="#1b5137" stroke-width="1.3"/>
+<text x="440.0" y="1021.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#ffffff">Contactar al agricultor</text>
+<rect x="820" y="644" width="680" height="436" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<rect x="846" y="669" width="100" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="896.0" y="686.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">Activa</text>
+<text x="1474" y="686.0" text-anchor="end" dominant-baseline="central" font-size="16" font-weight="400" fill="#53675a">Oferta #102</text>
+<text x="846" y="748.0" text-anchor="start" dominant-baseline="central" font-size="31" font-weight="700" fill="#1b5137">Banano</text>
+<text x="846" y="805.5" text-anchor="start" dominant-baseline="central" font-size="26" font-weight="700" fill="#1b5137">$2.800,00 / kg</text>
+<text x="846" y="857.5" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#53675a">Frutas · Dagua · 180 kg</text>
+<text x="846" y="901.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#153b2b">El Porvenir · Ana Torres</text>
+<text x="846" y="944.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">Fecha de cosecha: 23 oct 2026</text>
+<rect x="846" y="995" width="628" height="52" rx="8" fill="#1b5137" stroke="#1b5137" stroke-width="1.3"/>
+<text x="1160.0" y="1021.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#ffffff">Contactar al agricultor</text>
+</g></svg>

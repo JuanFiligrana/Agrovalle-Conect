@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** Expone el estado de la base tecnica del Sprint 0. */
+/** Expone el estado de la base tecnica del Sprint 1. */
 @RestController
 @RequestMapping("/api/v1/estado")
 public class EstadoController {
@@ -17,6 +17,6 @@ public class EstadoController {
    */
   @GetMapping
   public EstadoSistema consultarEstado() {
-    return new EstadoSistema("AgroValle Connect", "OK", "Sprint 0");
+    return new EstadoSistema("AgroValle Connect", "OK", "Sprint 1");
   }
 }

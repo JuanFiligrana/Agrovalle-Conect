@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1210" viewBox="0 0 1600 1210">
+<rect width="1600" height="1210" fill="#f1f4f0"/>
+<g font-family="DejaVu Sans, sans-serif">
+<text x="40" y="44.0" text-anchor="start" dominant-baseline="central" font-size="29" font-weight="700" fill="#153b2b">D07 / 03 · Precios regionales</text>
+<text x="40" y="90.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">HU03 · Consulta pública · Promedio simple de registros de ventas completadas en las últimas 24 horas</text>
+<rect x="1370" y="33" width="190" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1465.0" y="50.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">PROPUESTA</text>
+<text x="40" y="1179.5" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="400" fill="#53675a">AgroValle Connect · Diseño objetivo · Datos de ejemplo ficticios · Sprint de diseño · 17/10/2026</text>
+<rect x="40" y="128" width="1520" height="1020" rx="16" fill="#f6f6ee" stroke="#d5dfd1" stroke-width="1.3"/>
+<rect x="41" y="129" width="1518" height="88" rx="14" fill="#ffffff" stroke="none" stroke-width="1.3"/>
+<line x1="40" y1="217" x2="1560" y2="217" stroke="#d5dfd1" stroke-width="1"/>
+<ellipse cx="98.5" cy="173.5" rx="22.5" ry="22.5" fill="#1b5137" stroke="none" stroke-width="1.3"/>
+<text x="98.5" y="173.5" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="700" fill="#ffffff">AV</text>
+<text x="135" y="173.0" text-anchor="start" dominant-baseline="central" font-size="24" font-weight="700" fill="#1b5137">AgroValle Connect</text>
+<text x="570" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#53675a">Cosechas</text>
+<text x="725" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Precios</text>
+<line x1="725" y1="211" x2="827" y2="211" stroke="#1b5137" stroke-width="3"/>
+<text x="870" y="175.5" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#53675a">Soy agricultor</text>
+<rect x="1290" y="151" width="222" height="46" rx="8" fill="#ffffff" stroke="#1b5137" stroke-width="1.3"/>
+<text x="1401.0" y="174.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#1b5137">Iniciar sesión</text>
+<text x="100" y="278.0" text-anchor="start" dominant-baseline="central" font-size="35" font-weight="700" fill="#1b5137">Una referencia para negociar</text>
+<text x="100" y="341.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="400" fill="#53675a">Consulta el promedio de ventas completadas en el Valle del Cauca.</text>
+<text x="100" y="411.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="700" fill="#153b2b">Producto</text>
+<rect x="100" y="433" width="780" height="52" rx="7" fill="#ffffff" stroke="#a9b7a4" stroke-width="1.3"/>
+<text x="115" y="459.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#153b2b">Café</text>
+<text x="843" y="459.0" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#53675a">▾</text>
+<rect x="910" y="433" width="310" height="52" rx="8" fill="#1b5137" stroke="#1b5137" stroke-width="1.3"/>
+<text x="1065.0" y="459.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="700" fill="#ffffff">Consultar promedio</text>
+<rect x="100" y="537" width="930" height="468" rx="14" fill="#ffffff" stroke="#d5dfd1" stroke-width="1.3"/>
+<rect x="135" y="568" width="210" height="34" rx="17" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="240.0" y="585.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="700" fill="#1b5137">ÚLTIMAS 24 HORAS</text>
+<text x="135" y="649.0" text-anchor="start" dominant-baseline="central" font-size="25" font-weight="700" fill="#1b5137">Café · Promedio regional</text>
+<text x="135" y="741.0" text-anchor="start" dominant-baseline="central" font-size="54" font-weight="700" fill="#1b5137">$18.750,00</text>
+<text x="135" y="806.5" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="400" fill="#53675a">COP por kg</text>
+<line x1="135" y1="850" x2="995" y2="850" stroke="#d5dfd1" stroke-width="1"/>
+<text x="135" y="898.5" text-anchor="start" dominant-baseline="central" font-size="23" font-weight="700" fill="#1b5137">50 registros de ventas completadas</text>
+<text x="135" y="954.5" text-anchor="start" dominant-baseline="central" font-size="16" font-weight="400" fill="#53675a">Corte de ejemplo: 17 oct 2026, 02:00 · Hora de Colombia</text>
+<rect x="1070" y="537" width="430" height="468" rx="14" fill="#e9efdf" stroke="none" stroke-width="1.3"/>
+<text x="1100" y="591.0" text-anchor="start" dominant-baseline="central" font-size="23" font-weight="700" fill="#1b5137">¿Cómo leer este precio?</text>
+<text x="1100" y="671.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#153b2b">Cada registro de venta cuenta por</text>
+<text x="1100" y="698.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#153b2b">igual en el promedio.</text>
+<text x="1100" y="793.175" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#153b2b">La referencia usa ventas completadas</text>
+<text x="1100" y="818.8249999999999" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="400" fill="#153b2b">durante las últimas 24 horas.</text>
+<text x="1100" y="916.175" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="700" fill="#1b5137">El precio final lo acuerdas con el</text>
+<text x="1100" y="941.8249999999999" text-anchor="start" dominant-baseline="central" font-size="19" font-weight="700" fill="#1b5137">agricultor.</text>
+<text x="100" y="1067.0" text-anchor="start" dominant-baseline="central" font-size="17" font-weight="400" fill="#53675a">Si el producto no tiene ventas en ese período, se mostrará “Sin datos”, sin asignarle un precio de cero.</text>
+</g></svg>

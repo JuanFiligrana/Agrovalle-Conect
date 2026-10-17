@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2570" viewBox="0 0 2600 2570">
+<defs><marker id="use" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 7 L1 13" fill="none" stroke="#52677e" stroke-width="2"/></marker><marker id="realize" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L16 9 L1 17 Z" fill="white" stroke="#52677e" stroke-width="2"/></marker></defs>
+<rect width="2600" height="2570" fill="white"/><g font-family="DejaVu Sans, sans-serif">
+<path d="M30 260 V220 H870 V260 H910 V2330 H30 Z M30 260 H870" fill="#f9fbfd" stroke="#a8b6c7" stroke-width="1.6"/>
+<path d="M1000 260 V220 H1560 V260 H1600 V2330 H1000 Z M1000 260 H1560" fill="#f9fbfd" stroke="#a8b6c7" stroke-width="1.6"/>
+<path d="M1690 260 V220 H2530 V260 H2570 V2330 H1690 Z M1690 260 H2530" fill="#f9fbfd" stroke="#a8b6c7" stroke-width="1.6"/>
+<rect x="70" y="310" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="325" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="334" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="355" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="330" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="310" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="325" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="334" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="355" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="600" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="615" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="624" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="645" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="620" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="600" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="615" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="624" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="645" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="890" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="905" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="914" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="935" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="910" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="890" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="905" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="914" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="935" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="1180" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="1195" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1204" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1225" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="1200" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="1180" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="1195" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1204" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1225" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="1470" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="1485" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1494" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1515" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="1490" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="1470" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="1485" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1494" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1515" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="1760" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="1775" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1784" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="1805" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="1780" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="1760" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="1775" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1784" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="1805" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="70" y="2050" width="800" height="220" fill="#edf7f1" stroke="#276b50" stroke-width="2"/>
+<rect x="812" y="2065" width="34" height="48" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="2074" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="802" y="2095" width="19" height="10" fill="white" stroke="#276b50" stroke-width="1.6"/>
+<rect x="1060" y="2070" width="480" height="180" fill="#ffffff" stroke="#276b50" stroke-width="2"/>
+<rect x="1730" y="2050" width="800" height="220" fill="#f4eff9" stroke="#71529a" stroke-width="2"/>
+<rect x="2472" y="2065" width="34" height="48" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="2074" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<rect x="2462" y="2095" width="19" height="10" fill="white" stroke="#71529a" stroke-width="1.6"/>
+<path d="M 870 420 L 1060 420" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 420 L 1540 420" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 710 L 1060 710" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 710 L 1540 710" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 1000 L 1060 1000" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 1000 L 1540 1000" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 1290 L 1060 1290" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 1290 L 1540 1290" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 1580 L 1060 1580" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 1580 L 1540 1580" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 1870 L 1060 1870" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 1870 L 1540 1870" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<path d="M 870 2160 L 1060 2160" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#use)"/>
+<path d="M 1730 2160 L 1540 2160" fill="none" stroke="#52677e" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<text x="72" y="75.0" text-anchor="start" dominant-baseline="central" font-size="36" font-weight="700" fill="#26384b">D06 / Interfaces de negocio y adaptadores</text>
+<text x="72" y="142.5" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="400" fill="#586b7f">Detalle de diseño · El componente de negocio se repite por interfaz como referencia; los adaptadores son propuestas</text>
+<text x="72" y="2431.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#26384b">Flecha abierta discontinua: usa o requiere · Triángulo vacío discontinuo: realiza o proporciona la interfaz</text>
+<text x="72" y="2486.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#586b7f">CatalogoPort concreta las consultas de municipio, categoría y producto ya visibles en D05. Es un refinamiento de diseño.</text>
+<text x="72" y="2513.5" text-anchor="start" dominant-baseline="central" font-size="20" font-weight="400" fill="#586b7f">Los siete contratos pertenecen al negocio; las implementaciones de acceso a datos dependen de ellos.</text>
+<text x="46" y="240.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#586b7f">«package» services · referencias</text>
+<text x="1016" y="240.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#586b7f">«package» ports</text>
+<text x="1706" y="240.0" text-anchor="start" dominant-baseline="central" font-size="21" font-weight="700" fill="#586b7f">«package» repositories.jpa · propuesto</text>
+<text x="92" y="334.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="383.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="438.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="465.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">AgricultorService · FincaService</text>
+<text x="470.0" y="492.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">CosechaService · ContactoService</text>
+<text x="1300.0" y="353.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="404.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">UsuarioPort</text>
+<text x="1300.0" y="457.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">consultar usuario · comprobar duplicados</text>
+<text x="1300.0" y="482.15000000000003" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">guardar registro y subtipo</text>
+<text x="1752" y="334.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="383.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">UsuarioJpaAdapter</text>
+<text x="2130.0" y="451.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa UsuarioPort</text>
+<text x="2130.0" y="478.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="624.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="673.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="741.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="768.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">FincaService · CosechaService</text>
+<text x="1300.0" y="643.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="694.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">FincaPort</text>
+<text x="1300.0" y="747.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">consultar y guardar fincas</text>
+<text x="1300.0" y="772.15" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">recuperar propietario y municipio</text>
+<text x="1752" y="624.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="673.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">FincaJpaAdapter</text>
+<text x="2130.0" y="741.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa FincaPort</text>
+<text x="2130.0" y="768.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="914.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="963.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="1031.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="1058.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">CosechaService · ContactoService</text>
+<text x="1300.0" y="933.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="984.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">CosechaPort</text>
+<text x="1300.0" y="1037.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">guardar · buscarPorId</text>
+<text x="1300.0" y="1062.1499999999999" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">filtrarActivas</text>
+<text x="1752" y="914.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="963.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">CosechaJpaAdapter</text>
+<text x="2130.0" y="1031.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa CosechaPort</text>
+<text x="2130.0" y="1058.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="1204.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="1253.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="1321.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="1348.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">ConsultaPreciosService [nuevo]</text>
+<text x="1300.0" y="1223.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="1274.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">PrecioPort</text>
+<text x="1300.0" y="1327.85" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">promedioEntregadas24h</text>
+<text x="1300.0" y="1352.1499999999999" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">proyección histórica y conteo</text>
+<text x="1752" y="1204.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="1253.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">ConsultaPrecioJpaAdapter</text>
+<text x="2130.0" y="1321.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa PrecioPort</text>
+<text x="2130.0" y="1348.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="1494.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="1543.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="1611.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="1638.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">ContactoService</text>
+<text x="1300.0" y="1513.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="1564.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">ContactoPort</text>
+<text x="1300.0" y="1630.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">guardar y consultar contactos</text>
+<text x="1752" y="1494.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="1543.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">ContactoJpaAdapter</text>
+<text x="2130.0" y="1611.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa ContactoPort</text>
+<text x="2130.0" y="1638.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="1784.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="1833.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="1901.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="1928.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">ContactoService</text>
+<text x="1300.0" y="1803.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="1854.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">NotificacionPort</text>
+<text x="1300.0" y="1920.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">guardar aviso, origen y destinatario</text>
+<text x="1752" y="1784.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="1833.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">NotificacionJpaAdapter</text>
+<text x="2130.0" y="1901.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa NotificacionPort</text>
+<text x="2130.0" y="1928.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+<text x="92" y="2074.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«component»</text>
+<text x="470.0" y="2123.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#276b50">Casos de uso (referencia)</text>
+<text x="470.0" y="2178.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Usan este contrato:</text>
+<text x="470.0" y="2205.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">AgricultorService · FincaService</text>
+<text x="470.0" y="2232.0" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">CosechaService · detalle de catálogo D05</text>
+<text x="1300.0" y="2093.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#276b50">«interface»</text>
+<text x="1300.0" y="2144.0" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="700" fill="#276b50">CatalogoPort</text>
+<text x="1300.0" y="2210.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="400" fill="#26384b">municipios · categorías · productos</text>
+<text x="1752" y="2074.0" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="400" fill="#71529a">«component»</text>
+<text x="2130.0" y="2123.5" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="700" fill="#71529a">CatalogoJpaAdapter</text>
+<text x="2130.0" y="2191.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Implementa CatalogoPort</text>
+<text x="2130.0" y="2218.5" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="400" fill="#26384b">Acceso JPA / consultas del esquema D02</text>
+</g></svg>

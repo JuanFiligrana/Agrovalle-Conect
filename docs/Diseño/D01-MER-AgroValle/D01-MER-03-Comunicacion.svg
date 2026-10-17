@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2050" viewBox="0 0 2400 2050">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif">
+<path d="M862.0,762.0 L678.2,578.2" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M918.3,762.0 L1026.1,538.8" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M851.6,838.0 L655.4,992.2" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M944.9,838.0 L1126.9,992.0" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M300.0,338.0 L300.0,754.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M760.0,800.0 L375.0,800.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1500.0,338.0 L1500.0,464.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M984.0,762.0 L1300.0,762.0 L1300.0,510.0 L1425.0,510.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1960.0,800.0 L1775.0,800.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1040.0,800.0 L1625.0,800.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M860.5,1508.0 L659.3,1701.8" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M913.1,1508.0 L990.0,1731.1" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M998.8,1508.0 L1225.4,1595.2" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M760.0,1502.1 L508.9,1559.6" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M809.1,1508.0 L290.7,1724.6" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M900.0,838.0 L900.0,1164.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M900.0,1432.0 L900.0,1256.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1710.0,1470.0 L1515.0,1470.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1040.0,1470.0 L1365.0,1470.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M400.0,1470.0 L485.0,1470.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M760.0,1470.0 L635.0,1470.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<rect x="160.0" y="262.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="300.0" y="300.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">COMPRADOR</text>
+<rect x="1360.0" y="262.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="1500.0" y="300.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">AGRICULTOR</text>
+<rect x="1960.0" y="762.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="2100.0" y="800.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">COSECHA</text>
+<rect x="760.0" y="762.0" width="280" height="76" fill="#eaf3ff" stroke="#24354b" stroke-width="2"/>
+<text x="900.0" y="800.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">CONTACTO</text>
+<ellipse cx="650" cy="550" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="650.0" y="550.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_contacto</text>
+<ellipse cx="1040" cy="510" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1040.0" y="510.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">mensaje</text>
+<ellipse cx="620" cy="1020" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="620.0" y="1020.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">fecha_contacto</text>
+<ellipse cx="1160" cy="1020" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1160.0" y="1020.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">estado</text>
+<polygon points="300,754.0 375.0,800 300,846.0 225.0,800" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="300.0" y="800.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">ENVÍA</text>
+<polygon points="1500,464.0 1575.0,510 1500,556.0 1425.0,510" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1500.0" y="510.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">RECIBE</text>
+<polygon points="1700,754.0 1775.0,800 1700,846.0 1625.0,800" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1700.0" y="800.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">SOBRE</text>
+<rect x="760.0" y="1432.0" width="280" height="76" fill="#eaf3ff" stroke="#24354b" stroke-width="2"/>
+<text x="900.0" y="1470.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">NOTIFICACION</text>
+<ellipse cx="630" cy="1730" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="630.0" y="1730.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_notificacion</text>
+<ellipse cx="1000" cy="1760" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1000.0" y="1760.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">tipo</text>
+<ellipse cx="1290" cy="1620" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1290.0" y="1620.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">contenido</text>
+<ellipse cx="420" cy="1580" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="420.0" y="1580.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">fecha_creacion</text>
+<ellipse cx="230" cy="1750" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="230.0" y="1750.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">leida</text>
+<polygon points="900,1164.0 975.0,1210 900,1256.0 825.0,1210" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="900.0" y="1210.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">GENERA</text>
+<rect x="1710.0" y="1432.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="1850.0" y="1470.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">USUARIO</text>
+<polygon points="1440,1424.0 1515.0,1470 1440,1516.0 1365.0,1470" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1440.0" y="1470.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">RECIBE</text>
+<rect x="120.0" y="1432.0" width="280" height="76" fill="#f2f4f7" stroke="#24354b" stroke-width="2"/>
+<text x="260.0" y="1470.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">EVENTO_SEGUIMIENTO</text>
+<polygon points="560,1424.0 635.0,1470 560,1516.0 485.0,1470" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="560.0" y="1470.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">ORIGINA</text>
+<text x="75.0" y="55.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">AGROVALLE CONNECT  /  D01  /  MODELO CONCEPTUAL</text>
+<text x="75.0" y="117.5" font-size="36" fill="#24354b" text-anchor="start" dominant-baseline="central" font-weight="bold" text-decoration="none">Contacto y notificaciones</text>
+<text x="75.0" y="175.0" font-size="22" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">HU-05 y HU-13 · Mensajes vinculados a una oferta y avisos internos</text>
+<text x="75.0" y="1982.0" font-size="19" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Lectura: (mín., máx.) junto a una entidad = cuántas veces participa cada instancia en esa relación.</text>
+<text x="75.0" y="2018.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Clave subrayada · Óvalo discontinuo: atributo calculado · Gris: entidad repetida de otra vista · N: muchos</text>
+<text x="360.0" y="393.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="705.0" y="774.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="1560.0" y="393.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="1039.0" y="736.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="1905.0" y="774.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="1095.0" y="774.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="960.0" y="893.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="960.0" y="1377.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,1)</text>
+<text x="1655.0" y="1444.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="1095.0" y="1444.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="442.5" y="1405.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="705.0" y="1405.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,1)</text>
+<text x="75.0" y="1871.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Restricción de exclusión: cada notificación procede de CONTACTO o de EVENTO_SEGUIMIENTO, de exactamente uno de los dos.</text>
+<text x="75.0" y="1916.0" font-size="20" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">El destinatario del aviso de contacto es el agricultor dueño de la cosecha. La fecha del contacto no es la fecha del envío.</text>
+</g></svg>

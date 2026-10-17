@@ -1,0 +1,86 @@
+{
+  "task": "R01",
+  "verified_at": "2026-10-17T02:40:08-05:00",
+  "source_base_commit": "4c4506d07758ee1f4e292b545052de71ac37d79e",
+  "environment": {
+    "os": "Linux",
+    "java": "Temurin 25.0.4.1+1",
+    "maven": "3.9.9",
+    "spring_boot": "3.5.16"
+  },
+  "verification": "clean verify",
+  "exit_code": 0,
+  "baseline": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "covered_lines": 157,
+    "missed_lines": 18,
+    "checkstyle_violations": 0,
+    "line_coverage_percent": 89.71
+  },
+  "refactored": {
+    "tests": 29,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "covered_lines": 181,
+    "missed_lines": 10,
+    "line_coverage_percent": 94.76,
+    "checkstyle_violations": 0,
+    "suites": [
+      {
+        "suite": "co.edu.uniajc.agrovalle.AgrovalleApplicationTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "co.edu.uniajc.agrovalle.RefactorizacionEndpointsTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "co.edu.uniajc.agrovalle.Sprint1EndpointsTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "co.edu.uniajc.agrovalle.services.ConsultaPreciosServiceTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "co.edu.uniajc.agrovalle.services.ContactoServiceTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "co.edu.uniajc.agrovalle.services.CosechaServiceTests",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "toolchain_notices": [
+    "Jansi native-access warning from Maven 3.9.9 with Java 25",
+    "Guava Unsafe deprecation warning from Maven 3.9.9 with Java 25",
+    "Mockito self-attachment notice observed in the test log"
+  ],
+  "remote_ci": "pending",
+  "peer_review": "pending",
+  "windows_execution": "not_executed",
+  "functional_story_completion": "not_claimed"
+}
