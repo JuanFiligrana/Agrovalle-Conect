@@ -32,7 +32,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   /** Solo procesa las rutas que requieren identidad durante esta historia. */
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
-    return !"/api/v1/auth/me".equals(request.getServletPath());
+    String path = request.getRequestURI().substring(request.getContextPath().length());
+    return !"/api/v1/auth/me".equals(path);
   }
 
   /** Valida el token y registra al usuario en Spring Security. */
