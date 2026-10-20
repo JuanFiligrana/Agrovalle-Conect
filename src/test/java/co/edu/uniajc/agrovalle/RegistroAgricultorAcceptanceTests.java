@@ -84,7 +84,7 @@ class RegistroAgricultorAcceptanceTests {
   }
 
   @Test
-  void dadosCamposInvalidosCuandoRegistraEntoncesResponde400ConCamposYNoPersiste()
+  void dadosCamposInvalidosCuandoRegistraEntoncesRespondeBadRequestSinPersistir()
       throws Exception {
     String unique = UUID.randomUUID().toString();
     long before = usuarios.count();
