@@ -15,13 +15,14 @@ Para los productores del Valle del Cauca que necesitan vender directamente sus c
 
 ## Alcance de esta entrega
 Sprint 1: prototipo de API sobre la base del Sprint 0. Se implementan
-en memoria el registro de cuentas, el modelo de fincas, la publicación y consulta de
-cosechas, el promedio de precios, los filtros por municipio y categoría y el contacto
+con PostgreSQL el registro de cuentas y, temporalmente en memoria, el modelo de fincas,
+la publicación y consulta de cosechas, el promedio de precios, los filtros y el contacto
 entre comprador y agricultor. Las rutas y criterios están descritos en
-`docs/sprint1.md`. La corrección del arranque pasó `clean verify`: cero infracciones
-de Checkstyle y cinco pruebas aprobadas. Consulta [Verificación](docs/verificacion.md)
-para los resultados y los criterios pendientes. La persistencia PostgreSQL y la validación criptográfica de JWT se
-dejan como siguiente incremento; este prototipo no usa credenciales reales.
+`docs/sprint1.md`. La verificación automatizada se ejecuta con `clean verify` e incluye
+Checkstyle, pruebas y el umbral de cobertura. Consulta [Verificación](docs/verificacion.md)
+para los resultados y los criterios pendientes. La persistencia PostgreSQL de usuarios
+se incorpora en T01; la persistencia de los demás agregados y la validación
+criptográfica de JWT continúan pendientes.
 
 ### Rutas principales del Sprint 1
 
@@ -101,6 +102,7 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [Definition of Done](docs/dod.md): checklist y aceptación por los cuatro integrantes.
 - [Estimación](docs/estimacion.md): procedimiento y registro de Planning Poker.
 - [Arquitectura](docs/arquitectura.md): capas y límites de los incrementos.
+- [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.

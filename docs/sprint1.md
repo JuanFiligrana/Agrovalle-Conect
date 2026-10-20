@@ -25,15 +25,17 @@ y los criterios pendientes están en [Verificación](verificacion.md).
 - Controladores REST para cada contrato.
 - DTO con validaciones de campos obligatorios, correo, cantidades y fechas.
 - Servicios con reglas de propiedad de fincas, roles y ofertas activas.
-- Repositorios en memoria para poder ejecutar una demostración sin credenciales.
+- Persistencia JPA/PostgreSQL para las cuentas de usuario y repositorios temporales
+  para fincas, cosechas y contactos.
 - Pruebas MockMvc para flujos válidos y errores de duplicidad o autorización.
 
 ## Límites conocidos
 
-Los repositorios son temporales y se vacían al reiniciar la aplicación. La cabecera
-`Authorization` del contacto comprueba la presencia de una autorización, pero todavía
-no valida un JWT firmado. La siguiente iteración debe conectar PostgreSQL, agregar
-Spring Security/JWT y conservar los mismos contratos REST.
+Las cuentas de usuario se conservan en PostgreSQL desde T01. Los repositorios de fincas,
+cosechas y contactos todavía son temporales y se vacían al reiniciar la aplicación. La
+cabecera `Authorization` del contacto comprueba la presencia de una autorización, pero
+todavía no valida un JWT firmado. La siguiente iteración debe persistir los demás
+agregados, agregar Spring Security/JWT y conservar los mismos contratos REST.
 
 ## Ejecución
 

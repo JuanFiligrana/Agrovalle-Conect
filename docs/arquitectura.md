@@ -2,7 +2,8 @@
 
 Java 25 y Spring Boot 3.5.16 con Maven Wrapper 3.9.9. La clase de arranque configura
 el servidor web. Los controladores reciben DTO validados y delegan las reglas a
-servicios; los repositorios en memoria conservan el estado durante la ejecución.
+servicios. T01 persiste las cuentas mediante JPA y PostgreSQL; los repositorios de
+fincas, cosechas y contactos conservan temporalmente el estado durante la ejecución.
 R01 introduce contratos pequeños de datos para los servicios de cosechas, contacto y precios.
 La vista HTML estática vive en resources/static. EstadoController conserva el
 endpoint de salud del Sprint 0.
@@ -13,17 +14,21 @@ flowchart TD
     V --> C["Controladores REST"]
     C --> S["Servicios"]
     S --> P["Puertos de datos usados en R01"]
-    R["Repositorios en memoria"] -. "Implementan" .-> P
-    R --> D["Modelos y DTO"]
+    A["Adaptador JPA de usuarios"] -. "Implementa" .-> P
+    A --> DB[(PostgreSQL)]
+    R["Otros repositorios en memoria"] -. "Implementan" .-> P
+    A --> D["Modelos y DTO"]
+    R --> D
 ```
 
 Los paquetes separan controladores, DTO, servicios, repositorios y modelos; la vista se
 sirve desde la ubicación estándar de Spring Boot. src/main/views documenta esa
-decisión. La persistencia en memoria permite demostrar el flujo completo sin exigir
-credenciales locales de PostgreSQL.
+decisión. La conexión de PostgreSQL usa variables de entorno para no versionar
+credenciales. Las pruebas usan H2 en modo compatible con PostgreSQL.
 
 ## Decisiones
-- PostgreSQL es la base relacional prevista; incluir su driver no equivale a conectarla.
+- T01 conecta PostgreSQL para usuarios mediante Spring Data JPA, una entidad relacional
+  y restricciones únicas de correo y cédula.
 - Los repositorios de cuentas, fincas, ofertas y contacto implementan los cuatro puertos
   usados por R01. Factory y Observer se evaluarán cuando exista el caso de uso.
   Spring administra componentes compartidos por defecto; no se
@@ -34,9 +39,9 @@ credenciales locales de PostgreSQL.
   cambiar con PORT o --server.port. No se termina ningún otro proceso automáticamente.
 
 ## Funcionalidades futuras
-El backlog conserva contratos BDD para las 15 historias. PostgreSQL, JWT validado,
-transacciones y estados de pedido son requisitos para próximos incrementos; el Sprint 1
-usa repositorios en memoria para demostrar el primer flujo funcional.
+El backlog conserva contratos BDD para las 15 historias. La persistencia de fincas,
+cosechas y contactos, el JWT validado, las transacciones y los estados de pedido son
+requisitos para próximos incrementos.
 El primer pedido será de un solo agricultor. No hay pagos reales ni GPS continuo.
 
 ## Refactorización R01
@@ -44,12 +49,13 @@ El primer pedido será de un solo agricultor. No hay pagos reales ni GPS continu
 `CosechaService` se ocupa de publicar y consultar ofertas. `ConsultaPreciosService`
 conserva por separado el cálculo de precios del prototipo. `ContactoService` coordina
 las comprobaciones y el guardado de la solicitud sin llamar a servicios concretos.
-Los tres reciben sus contratos de datos por constructor y los repositorios en memoria
-los implementan; Spring selecciona el único bean disponible por contrato.
+Los tres reciben sus contratos de datos por constructor. El adaptador JPA de usuarios y
+los repositorios temporales restantes implementan esos contratos; Spring selecciona el
+único bean disponible por contrato.
 
 Los errores de recurso ausente y operación no permitida de esos casos se traducen a
-HTTP en `ApiExceptionHandler`, manteniendo el JSON anterior. `AgricultorService` y
-`FincaService` conservan su implementación previa; esta refactorización no declara que
-todo el backend ya dependa de puertos ni que se haya conectado JPA/PostgreSQL.
+HTTP en `ApiExceptionHandler`, manteniendo el JSON anterior. T01 hace que
+`AgricultorService` dependa de `UsuarioPort` y agrega el adaptador JPA; `FincaService`
+y los demás repositorios conservan todavía su almacenamiento temporal.
 
 El detalle, las pruebas y los pendientes se documentan en [R01](refactorizacion-r01.md).

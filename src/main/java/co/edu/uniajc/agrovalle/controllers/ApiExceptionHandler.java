@@ -4,6 +4,7 @@ import co.edu.uniajc.agrovalle.exceptions.OperacionNoPermitidaException;
 import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -47,6 +48,15 @@ public class ApiExceptionHandler {
         .findFirst()
         .orElse("Los datos enviados no son válidos");
     return ResponseEntity.badRequest().body(error(HttpStatus.BAD_REQUEST.toString(), message));
+  }
+
+  /** Conserva el contrato 409 si una restricción única detecta una carrera de registros. */
+  @ExceptionHandler(DataIntegrityViolationException.class)
+  public ResponseEntity<Map<String, String>> handleDataIntegrity(
+      DataIntegrityViolationException exception) {
+    return ResponseEntity.status(HttpStatus.CONFLICT)
+        .body(error(HttpStatus.CONFLICT.toString(),
+            "El correo o la cédula ya están registrados"));
   }
 
   private Map<String, String> error(String status, String message) {
