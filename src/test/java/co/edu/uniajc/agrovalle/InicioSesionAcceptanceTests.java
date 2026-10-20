@@ -1,5 +1,6 @@
 package co.edu.uniajc.agrovalle;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -55,6 +56,7 @@ class InicioSesionAcceptanceTests {
 
     JsonNode response = objectMapper.readTree(login.getResponse().getContentAsString());
     String token = response.get("accessToken").asText();
+    assertThat(tokenService.validar(token).correo()).isEqualTo(correo);
     mockMvc.perform(get("/api/v1/auth/me")
             .header(HttpHeaders.AUTHORIZATION, "Bearer " + token))
         .andExpect(status().isOk())
