@@ -4,6 +4,7 @@ import co.edu.uniajc.agrovalle.dto.RegistroAgricultorRequest;
 import co.edu.uniajc.agrovalle.models.Agricultor;
 import co.edu.uniajc.agrovalle.models.RolUsuario;
 import co.edu.uniajc.agrovalle.ports.UsuarioPort;
+import co.edu.uniajc.agrovalle.validation.MunicipiosValle;
 import java.util.Locale;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,9 +34,13 @@ public class AgricultorService {
       throw new ResponseStatusException(HttpStatus.CONFLICT,
           "El correo o la cédula ya están registrados");
     }
-    RolUsuario rol = parseRole(request.rol());
+    RolUsuario rol = request.rol() == null || request.rol().isBlank()
+        ? RolUsuario.AGRICULTOR : parseRole(request.rol());
+    String municipio = MunicipiosValle.canonicalizar(request.ubicacionValle())
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
+            "ubicacionValle: debe pertenecer al catálogo de municipios del Valle del Cauca"));
     return repository.save(new Agricultor(0, request.nombre().trim(), correo,
-        cedula, request.ubicacionValle().trim(), rol,
+        cedula, municipio, rol,
         passwordEncoder.encode(request.contrasena())));
   }
 

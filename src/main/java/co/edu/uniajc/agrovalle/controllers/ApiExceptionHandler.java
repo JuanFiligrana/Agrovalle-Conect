@@ -41,13 +41,16 @@ public class ApiExceptionHandler {
 
   /** Convierte errores de validación de los DTO en una respuesta legible. */
   @ExceptionHandler(MethodArgumentNotValidException.class)
-  public ResponseEntity<Map<String, String>> handleValidation(
+  public ResponseEntity<Map<String, Object>> handleValidation(
       MethodArgumentNotValidException exception) {
-    String message = exception.getBindingResult().getFieldErrors().stream()
-        .map(error -> error.getField() + ": " + error.getDefaultMessage())
-        .findFirst()
-        .orElse("Los datos enviados no son válidos");
-    return ResponseEntity.badRequest().body(error(HttpStatus.BAD_REQUEST.toString(), message));
+    Map<String, String> fields = new LinkedHashMap<>();
+    exception.getBindingResult().getFieldErrors().forEach(fieldError ->
+        fields.putIfAbsent(fieldError.getField(), fieldError.getDefaultMessage()));
+    Map<String, Object> body = new LinkedHashMap<>();
+    body.put("status", HttpStatus.BAD_REQUEST.toString());
+    body.put("message", "Los datos enviados no son válidos");
+    body.put("errors", fields);
+    return ResponseEntity.badRequest().body(body);
   }
 
   /** Conserva el contrato 409 si una restricción única detecta una carrera de registros. */
