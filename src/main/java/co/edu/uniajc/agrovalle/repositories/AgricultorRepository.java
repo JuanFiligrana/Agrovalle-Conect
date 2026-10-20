@@ -33,6 +33,12 @@ public class AgricultorRepository implements UsuarioPort {
     return repository.findById(id).map(this::toDomain);
   }
 
+  /** Busca una cuenta sin distinguir mayúsculas en el correo. */
+  @Override
+  public Optional<Agricultor> findByCorreo(String correo) {
+    return repository.findByCorreoIgnoreCase(correo).map(this::toDomain);
+  }
+
   /** Detecta correos o cédulas registrados sin distinguir mayúsculas. */
   @Override
   public boolean existsByCorreoOrCedula(String correo, String cedula) {
