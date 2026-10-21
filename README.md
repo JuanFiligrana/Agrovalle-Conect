@@ -21,12 +21,14 @@ entre comprador y agricultor. Las rutas y criterios están descritos en
 `docs/sprint1.md`. La verificación automatizada se ejecuta con `clean verify` e incluye
 Checkstyle, pruebas y el umbral de cobertura. Consulta [Verificación](docs/verificacion.md)
 para los resultados y los criterios pendientes. La persistencia PostgreSQL de usuarios
-se incorpora en T01; la persistencia de los demás agregados y la validación
-criptográfica de JWT continúan pendientes.
+se incorpora en T01 y T03 agrega inicio de sesión con JWT firmado. La persistencia de
+los demás agregados continúa pendiente.
 
 ### Rutas principales del Sprint 1
 
 - `POST /api/v1/auth/register`: registra un agricultor o comprador.
+- `POST /api/v1/auth/login`: valida correo y contraseña y devuelve un JWT.
+- `GET /api/v1/auth/me`: comprueba un JWT y devuelve la identidad autenticada.
 - `POST /api/v1/fincas`: crea una finca de un agricultor.
 - `POST /api/v1/productos`: publica una cosecha.
 - `GET /api/v1/productos?municipio=&categoria=`: filtra ofertas activas.
@@ -103,6 +105,7 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [Estimación](docs/estimacion.md): procedimiento y registro de Planning Poker.
 - [Arquitectura](docs/arquitectura.md): capas y límites de los incrementos.
 - [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
+- [Autenticación JWT de HU-07](docs/jwt-hu07.md): configuración y contratos seguros.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.
