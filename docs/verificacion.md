@@ -1,5 +1,10 @@
 # Verificación de la corrección del arranque
 
+> **Registro histórico:** esta evidencia corresponde al prototipo del 24 de septiembre.
+> Los pendientes de PostgreSQL, JWT, catálogo de municipios y persistencia de fincas
+> descritos abajo fueron abordados posteriormente por T01, T02, T03 y T04. El estado
+> vigente del incremento se documenta en `docs/sprint1.md` y en los checks de sus PR.
+
 Fecha: 24 de septiembre de 2026. Entorno de revisión: Linux, Temurin 25.0.4.1,
 Maven 3.9.9. Se ejecutó el ciclo `clean verify` con las reglas originales activas.
 Los scripts de Windows se incluyen para ejecución local; esta revisión no ejecutó Windows.
