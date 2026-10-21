@@ -14,22 +14,23 @@ Para los productores del Valle del Cauca que necesitan vender directamente sus c
 - Jhojan Aragón
 
 ## Alcance de esta entrega
-Sprint 1: prototipo de API sobre la base del Sprint 0. Se implementan
-con PostgreSQL el registro de cuentas y, temporalmente en memoria, el modelo de fincas,
-la publicación y consulta de cosechas, el promedio de precios, los filtros y el contacto
-entre comprador y agricultor. Las rutas y criterios están descritos en
-`docs/sprint1.md`. La verificación automatizada se ejecuta con `clean verify` e incluye
-Checkstyle, pruebas y el umbral de cobertura. Consulta [Verificación](docs/verificacion.md)
-para los resultados y los criterios pendientes. La persistencia PostgreSQL de usuarios
-se incorpora en T01 y T03 agrega inicio de sesión con JWT firmado. La persistencia de
-los demás agregados continúa pendiente.
+El Sprint 1 corregido comprende HU-01, HU-07 y HU-08, con 13 puntos en total. Incluye
+registro de agricultores, inicio de sesión con JWT y registro persistente de fincas cuyo
+propietario se obtiene del token. Las rutas y criterios están descritos en
+`docs/sprint1.md`. La verificación automatizada ejecuta `clean verify` con Checkstyle,
+pruebas y el umbral JaCoCo. Los endpoints antiguos de cosechas, precios y contacto se
+conservan como prototipo, pero no se declaran terminados dentro de este Sprint.
 
 ### Rutas principales del Sprint 1
 
 - `POST /api/v1/auth/register`: registra un agricultor o comprador.
 - `POST /api/v1/auth/login`: valida correo y contraseña y devuelve un JWT.
 - `GET /api/v1/auth/me`: comprueba un JWT y devuelve la identidad autenticada.
-- `POST /api/v1/fincas`: crea una finca de un agricultor.
+- `POST /api/v1/fincas`: crea una finca para el agricultor autenticado.
+- `GET /api/v1/fincas`: lista las fincas del agricultor autenticado.
+
+### Prototipo fuera del alcance corregido
+
 - `POST /api/v1/productos`: publica una cosecha.
 - `GET /api/v1/productos?municipio=&categoria=`: filtra ofertas activas.
 - `GET /api/v1/precios/promedio?producto=`: calcula el promedio en COP/kg.
@@ -106,6 +107,7 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [Arquitectura](docs/arquitectura.md): capas y límites de los incrementos.
 - [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
 - [Autenticación JWT de HU-07](docs/jwt-hu07.md): configuración y contratos seguros.
+- [Persistencia de fincas de HU-08](docs/fincas-hu08.md): propiedad y pruebas.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.

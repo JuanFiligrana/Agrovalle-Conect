@@ -2,7 +2,7 @@
 
 | Requisito | Archivo o evidencia | Situación |
 |---|---|---|
-| Java 25 y Spring Boot | pom.xml, src, verificar.cmd | Implementado; validación local pendiente |
+| Java 25 y Spring Boot | pom.xml, src, verificar.cmd, GitHub Actions | Implementado; validado por CI |
 | Conventional Commits | Historial remoto del equipo | Debe registrarse al integrar, sin reescribir el pasado |
 | Peer Review | PR con aprobación de otro integrante | Acción real pendiente del equipo |
 | Visión e integrantes | README.md | Documentado |
@@ -13,7 +13,7 @@
 | MoSCoW y Fibonacci | BACKLOG.md, docs/estimacion.md | Propuesta de 76 puntos por ratificar |
 | DoD firmado | docs/dod.md | Contrato completo; aceptación real pendiente |
 | PDF con nombres y URL | Informe en carpeta documentos | Preparado con el mismo backlog |
-| Sprint 1 funcional | docs/sprint1.md y src/main/java | Implementación temporal en memoria; verificación local pendiente |
+| Sprint 1 funcional | docs/sprint1.md y src/main/java | HU-01, HU-07 y HU-08 implementadas; revisión por pares pendiente |
 
 Ponderación de la rúbrica: Git 20 %, DoD y automatización 25 %, Peer Review 15 %,
 BDD e INVEST 25 %, priorización y estimación 15 %. No se asigna una nota ni se

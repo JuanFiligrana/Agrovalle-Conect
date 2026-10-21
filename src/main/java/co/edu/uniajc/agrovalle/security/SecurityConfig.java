@@ -23,7 +23,8 @@ public class SecurityConfig {
         .exceptionHandling(errors ->
             errors.authenticationEntryPoint(authenticationEntryPoint))
         .authorizeHttpRequests(authorize -> authorize
-            .requestMatchers("/api/v1/auth/me").authenticated()
+            .requestMatchers("/api/v1/auth/me", "/api/v1/fincas",
+                "/api/v1/fincas/**").authenticated()
             .anyRequest().permitAll())
         .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();

@@ -1,48 +1,53 @@
-# Sprint 1: prototipo de API
+# Sprint 1 corregido
 
 ## Objetivo
 
-Entregar un primer flujo demostrable de AgroValle Connect: registrar usuarios,
-relacionar agricultores con sus fincas, publicar cosechas, consultar precios, filtrar
-ofertas y registrar la intención de contacto de un comprador.
+Entregar el primer flujo seguro y persistente de AgroValle Connect: un agricultor crea
+su cuenta, inicia sesión y registra una finca propia. El alcance comprometido suma 13
+Story Points y se ejecuta en el orden HU-01, HU-07 y HU-08.
 
-Esta versión es un prototipo; no acredita el cierre de las historias. Los resultados
-y los criterios pendientes están en [Verificación](verificacion.md).
+## Historias comprometidas
 
-## Correspondencia con el tablero
+| Orden | Historia | Puntos | Resultado |
+|---|---|---:|---|
+| 1 | HU-01 Registro de agricultores | 5 | Cuenta persistida con BCrypt |
+| 2 | HU-07 Inicio de sesión seguro | 5 | JWT firmado y con expiración |
+| 3 | HU-08 Registro de fincas | 3 | Finca persistida para el dueño del JWT |
 
-| Tarea | Historia | Implementación |
+## Tareas técnicas integradas
+
+| Tarea | Historia | Implementación principal |
 |---|---|---|
 | T02 | HU-01 | `POST /api/v1/auth/register` |
-| T04 | HU-02 | `POST /api/v1/fincas` |
-| T06 | HU-02 | `POST /api/v1/productos` |
-| T09 | HU-03 | `GET /api/v1/precios/promedio` |
-| T11 | HU-04 | `GET /api/v1/productos?municipio=&categoria=` |
-| T14 | HU-05 | `POST /api/v1/contacto/mensaje` |
+| T03 | HU-07 | `POST /api/v1/auth/login` y `GET /api/v1/auth/me` |
+| T04 | HU-08 | `POST` y `GET /api/v1/fincas` protegidos |
 
-## Desglose técnico
+T01 proporciona la base PostgreSQL y la persistencia de usuarios requerida por T02.
+Las tareas T06, T09, T11 y T14 permanecen fuera de este Sprint corregido.
 
-- Controladores REST para cada contrato.
-- DTO con validaciones de campos obligatorios, correo, cantidades y fechas.
-- Servicios con reglas de propiedad de fincas, roles y ofertas activas.
-- Persistencia JPA/PostgreSQL para las cuentas de usuario y repositorios temporales
-  para fincas, cosechas y contactos.
-- Pruebas MockMvc para flujos válidos y errores de duplicidad o autorización.
+## Flujo demostrable
 
-## Límites conocidos
+1. El agricultor se registra con datos válidos del Valle del Cauca.
+2. La API guarda solamente el hash BCrypt de la contraseña.
+3. El agricultor inicia sesión con correo y contraseña.
+4. La API entrega un JWT firmado con identificador, rol y expiración.
+5. El agricultor registra una finca enviando el JWT como Bearer token.
+6. La API obtiene el propietario del token y persiste la finca en PostgreSQL.
 
-Las cuentas de usuario se conservan en PostgreSQL desde T01. Los repositorios de fincas,
-cosechas y contactos todavía son temporales y se vacían al reiniciar la aplicación. La
-cabecera `Authorization` del contacto comprueba la presencia de una autorización, pero
-todavía no valida un JWT firmado. La siguiente iteración debe persistir los demás
-agregados, agregar Spring Security/JWT y conservar los mismos contratos REST.
+El cuerpo de la finca no acepta al cliente como fuente de identidad. Aunque se envíe un
+campo `agricultorId`, la propiedad se deriva exclusivamente del JWT verificado.
+
+## Criterios de calidad
+
+- JDK 25 y Maven Wrapper.
+- Checkstyle sin infracciones.
+- Pruebas BDD de éxito, validación, duplicados, credenciales y tokens inválidos.
+- Umbral JaCoCo de líneas igual o superior al 60 %.
+- PostgreSQL en ejecución normal y H2 compatible con PostgreSQL en pruebas repetibles.
+- Claves y credenciales suministradas mediante variables de entorno.
+- Pull Request revisado por otro integrante antes de fusionar.
 
 ## Ejecución
 
-La tarea R01 separa la consulta de precios y desacopla `CosechaService` y
-`ContactoService` mediante interfaces. Su alcance y evidencia se describen en
-[Refactorización R01](refactorizacion-r01.md). Los pendientes funcionales del
-prototipo mantienen sus criterios BDD; esta tarea no acredita el cierre de HU01–HU05.
-
-Con JDK 25 configurado, ejecutar `mvnw.cmd clean verify` y luego `iniciar.cmd`. La
-aplicación queda disponible en `http://localhost:8081/`.
+Configurar PostgreSQL y `JWT_SECRET` según `postgresql-t01.md` y `jwt-hu07.md`. Con JDK
+25, ejecutar `mvnw.cmd clean verify` en Windows o `sh ./mvnw clean verify` en Linux.

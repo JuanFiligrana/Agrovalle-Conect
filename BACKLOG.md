@@ -1,9 +1,9 @@
 # Product Backlog de AgroValle Connect
 
-El Sprint 1 implementa un primer incremento funcional para HU-01 a HU-05 mediante
-las tareas T02, T04, T06, T09, T11 y T14. La implementación actual usa repositorios
-temporales en memoria; la persistencia PostgreSQL y la autenticación JWT quedan
-identificadas como trabajo posterior.
+El Sprint 1 corregido implementa HU-01, HU-07 y HU-08 mediante las tareas T02, T03
+y T04, para un compromiso total de 13 Story Points. El incremento incluye persistencia
+PostgreSQL de usuarios y fincas, contraseñas con BCrypt y autenticación sin sesión
+mediante JWT. Las demás historias permanecen en el Product Backlog para futuros Sprints.
 
 Versión base del Sprint 0 ampliada con el incremento del Sprint 1. Las historias que no
 están en el incremento continúan describiendo funcionalidades por desarrollar. Los puntos son estimaciones fundamentadas que el

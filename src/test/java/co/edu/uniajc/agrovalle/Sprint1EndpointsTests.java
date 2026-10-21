@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -31,13 +32,16 @@ class Sprint1EndpointsTests {
 
   @Test
   void demuestraFlujoCompletoDelSprint() throws Exception {
-    long agricultorId = registrar("AGRICULTOR");
-    long compradorId = registrar("COMPRADOR");
+    CuentaPrueba agricultor = registrar("AGRICULTOR");
+    CuentaPrueba comprador = registrar("COMPRADOR");
+    long agricultorId = agricultor.id();
+    long compradorId = comprador.id();
     String fincaJson = """
-        {"agricultorId":%d,"nombre":"La Esperanza","municipio":"Cali",
+        {"nombre":"La Esperanza","municipio":"Cali",
         "descripcion":"Finca de prueba"}
-        """.formatted(agricultorId);
+        """;
     MvcResult fincaResult = mockMvc.perform(post("/api/v1/fincas")
+            .header(HttpHeaders.AUTHORIZATION, "Bearer " + agricultor.token())
             .contentType(MediaType.APPLICATION_JSON)
             .content(fincaJson))
         .andExpect(status().isCreated())
@@ -102,8 +106,9 @@ class Sprint1EndpointsTests {
         .andExpect(status().isUnauthorized());
   }
 
-  private long registrar(String rol) throws Exception {
+  private CuentaPrueba registrar(String rol) throws Exception {
     String suffix = UUID.randomUUID().toString();
+    String correo = suffix + "@agrovalle.test";
     String request = """
         {"nombre":"Persona %s","correo":"%s@agrovalle.test",
         "contrasena":"secreto123","cedula":"%s","ubicacionValle":"Cali",
@@ -114,11 +119,23 @@ class Sprint1EndpointsTests {
             .content(request))
         .andExpect(status().isCreated())
         .andReturn();
-    return idFrom(result);
+    String login = """
+        {"correo":"%s","contrasena":"secreto123"}
+        """.formatted(correo);
+    MvcResult loginResult = mockMvc.perform(post("/api/v1/auth/login")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(login))
+        .andExpect(status().isOk())
+        .andReturn();
+    String token = objectMapper.readTree(loginResult.getResponse().getContentAsString())
+        .get("accessToken").asText();
+    return new CuentaPrueba(idFrom(result), token);
   }
 
   private long idFrom(MvcResult result) throws Exception {
     JsonNode body = objectMapper.readTree(result.getResponse().getContentAsString());
     return body.get("id").asLong();
   }
+
+  private record CuentaPrueba(long id, String token) {}
 }
