@@ -2,31 +2,47 @@ package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Finca;
 import co.edu.uniajc.agrovalle.ports.FincaPort;
-import java.util.Map;
+import co.edu.uniajc.agrovalle.repositories.jpa.FincaEntity;
+import co.edu.uniajc.agrovalle.repositories.jpa.FincaJpaRepository;
+import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Repository;
 
-/** Repositorio temporal de fincas. */
+/** Adaptador que persiste las fincas mediante Spring Data JPA. */
 @Repository
 public class FincaRepository implements FincaPort {
 
-  private final AtomicLong sequence = new AtomicLong();
-  private final Map<Long, Finca> data = new ConcurrentHashMap<>();
+  private final FincaJpaRepository repository;
 
-  /** Asigna un identificador y conserva la finca en memoria. */
+  /** Recibe el repositorio JPA generado por Spring Data. */
+  public FincaRepository(FincaJpaRepository repository) {
+    this.repository = repository;
+  }
+
+  /** Guarda una finca y obtiene su identificador. */
+  @Override
   public Finca save(Finca finca) {
-    long id = sequence.incrementAndGet();
-    Finca saved = new Finca(id, finca.agricultorId(), finca.nombre(), finca.municipio(),
-        finca.descripcion());
-    data.put(id, saved);
-    return saved;
+    FincaEntity entity = new FincaEntity(finca.agricultorId(), finca.nombre(),
+        finca.municipio(), finca.descripcion());
+    return toDomain(repository.saveAndFlush(entity));
   }
 
   /** Busca una finca por su identificador. */
   @Override
   public Optional<Finca> findById(long id) {
-    return Optional.ofNullable(data.get(id));
+    return repository.findById(id).map(this::toDomain);
+  }
+
+  /** Devuelve únicamente las fincas del agricultor solicitado. */
+  @Override
+  public List<Finca> findAllByAgricultorId(long agricultorId) {
+    return repository.findAllByAgricultorIdOrderByIdAsc(agricultorId).stream()
+        .map(this::toDomain)
+        .toList();
+  }
+
+  private Finca toDomain(FincaEntity entity) {
+    return new Finca(entity.getId(), entity.getAgricultorId(), entity.getNombre(),
+        entity.getMunicipio(), entity.getDescripcion());
   }
 }

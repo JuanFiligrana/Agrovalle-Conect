@@ -2,8 +2,8 @@
 
 Java 25 y Spring Boot 3.5.16 con Maven Wrapper 3.9.9. La clase de arranque configura
 el servidor web. Los controladores reciben DTO validados y delegan las reglas a
-servicios. T01 persiste las cuentas mediante JPA y PostgreSQL; los repositorios de
-fincas, cosechas y contactos conservan temporalmente el estado durante la ejecución.
+servicios. T01 persiste las cuentas mediante JPA y PostgreSQL; T04 hace lo mismo con
+las fincas. Los repositorios de cosechas y contactos conservan temporalmente el estado.
 R01 introduce contratos pequeños de datos para los servicios de cosechas, contacto y precios.
 La vista HTML estática vive en resources/static. EstadoController conserva el
 endpoint de salud del Sprint 0.
@@ -14,7 +14,7 @@ flowchart TD
     V --> C["Controladores REST"]
     C --> S["Servicios"]
     S --> P["Puertos de datos usados en R01"]
-    A["Adaptador JPA de usuarios"] -. "Implementa" .-> P
+    A["Adaptadores JPA de usuarios y fincas"] -. "Implementan" .-> P
     A --> DB[(PostgreSQL)]
     R["Otros repositorios en memoria"] -. "Implementan" .-> P
     A --> D["Modelos y DTO"]
@@ -27,8 +27,10 @@ decisión. La conexión de PostgreSQL usa variables de entorno para no versionar
 credenciales. Las pruebas usan H2 en modo compatible con PostgreSQL.
 
 ## Decisiones
-- T01 conecta PostgreSQL para usuarios mediante Spring Data JPA, una entidad relacional
-  y restricciones únicas de correo y cédula.
+- T01 conecta PostgreSQL para usuarios y T04 persiste fincas con una clave foránea hacia
+  su agricultor propietario.
+- T03 añade Spring Security y JWT sin sesión. La identidad de HU-08 se toma del token,
+  no de un identificador enviado por el cliente.
 - Los repositorios de cuentas, fincas, ofertas y contacto implementan los cuatro puertos
   usados por R01. Factory y Observer se evaluarán cuando exista el caso de uso.
   Spring administra componentes compartidos por defecto; no se
@@ -39,9 +41,8 @@ credenciales. Las pruebas usan H2 en modo compatible con PostgreSQL.
   cambiar con PORT o --server.port. No se termina ningún otro proceso automáticamente.
 
 ## Funcionalidades futuras
-El backlog conserva contratos BDD para las 15 historias. La persistencia de fincas,
-cosechas y contactos, el JWT validado, las transacciones y los estados de pedido son
-requisitos para próximos incrementos.
+El backlog conserva contratos BDD para las 15 historias. La persistencia de cosechas y
+contactos, las transacciones y los estados de pedido son requisitos de futuros Sprints.
 El primer pedido será de un solo agricultor. No hay pagos reales ni GPS continuo.
 
 ## Refactorización R01

@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -29,20 +30,21 @@ class RefactorizacionEndpointsTests {
 
   @Test
   void mantieneElErrorJsonDeFincaAjena() throws Exception {
-    long propietario = registrar("AGRICULTOR");
-    long otroAgricultor = registrar("AGRICULTOR");
+    CuentaPrueba propietario = registrar("AGRICULTOR");
+    CuentaPrueba otroAgricultor = registrar("AGRICULTOR");
     String finca = """
-        {"agricultorId":%d,"nombre":"Finca R01","municipio":"Dagua",
+        {"nombre":"Finca R01","municipio":"Dagua",
         "descripcion":"Finca para comprobar propiedad"}
-        """.formatted(propietario);
+        """;
     var resultado = mockMvc.perform(post("/api/v1/fincas")
+            .header(HttpHeaders.AUTHORIZATION, "Bearer " + propietario.token())
             .contentType(MediaType.APPLICATION_JSON).content(finca))
         .andExpect(status().isCreated()).andReturn();
     long fincaId = objectMapper.readTree(resultado.getResponse().getContentAsString())
         .get("id").asLong();
 
     mockMvc.perform(post("/api/v1/productos").contentType(MediaType.APPLICATION_JSON)
-            .content(publicacion(otroAgricultor, fincaId)))
+            .content(publicacion(otroAgricultor.id(), fincaId)))
         .andExpect(status().isForbidden())
         .andExpect(jsonPath("$.status").value("403 FORBIDDEN"))
         .andExpect(jsonPath("$.message").value("La finca no pertenece al agricultor"));
@@ -59,7 +61,7 @@ class RefactorizacionEndpointsTests {
 
   @Test
   void mantieneElErrorJsonDeOfertaInexistenteAlContactar() throws Exception {
-    long comprador = registrar("COMPRADOR");
+    long comprador = registrar("COMPRADOR").id();
     String solicitud = """
         {"compradorId":%d,"productoId":%d,"mensaje":"Solicitud de prueba R01"}
         """.formatted(comprador, Long.MAX_VALUE);
@@ -74,7 +76,7 @@ class RefactorizacionEndpointsTests {
 
   @Test
   void mantieneElErrorJsonDeRolIncorrectoAlContactar() throws Exception {
-    long agricultor = registrar("AGRICULTOR");
+    long agricultor = registrar("AGRICULTOR").id();
     String solicitud = """
         {"compradorId":%d,"productoId":1,"mensaje":"Solicitud de prueba R01"}
         """.formatted(agricultor);
@@ -106,8 +108,9 @@ class RefactorizacionEndpointsTests {
         .andExpect(jsonPath("$.unidad").value("COP/kg"));
   }
 
-  private long registrar(String rol) throws Exception {
+  private CuentaPrueba registrar(String rol) throws Exception {
     String identificador = UUID.randomUUID().toString();
+    String correo = identificador + "@example.invalid";
     String datos = """
         {"nombre":"Persona R01","correo":"%s@example.invalid","contrasena":"clave-prueba",
         "cedula":"%s","ubicacionValle":"Dagua","rol":"%s"}
@@ -115,7 +118,17 @@ class RefactorizacionEndpointsTests {
     var resultado = mockMvc.perform(post("/api/v1/auth/register")
             .contentType(MediaType.APPLICATION_JSON).content(datos))
         .andExpect(status().isCreated()).andReturn();
-    return objectMapper.readTree(resultado.getResponse().getContentAsString()).get("id").asLong();
+    long id = objectMapper.readTree(resultado.getResponse().getContentAsString())
+        .get("id").asLong();
+    String login = """
+        {"correo":"%s","contrasena":"clave-prueba"}
+        """.formatted(correo);
+    var loginResult = mockMvc.perform(post("/api/v1/auth/login")
+            .contentType(MediaType.APPLICATION_JSON).content(login))
+        .andExpect(status().isOk()).andReturn();
+    String token = objectMapper.readTree(loginResult.getResponse().getContentAsString())
+        .get("accessToken").asText();
+    return new CuentaPrueba(id, token);
   }
 
   private String publicacion(long agricultorId, long fincaId) {
@@ -124,4 +137,6 @@ class RefactorizacionEndpointsTests {
         "cantidadKg":250,"precioCopKg":3500,"fechaCosecha":"%s"}
         """.formatted(agricultorId, fincaId, LocalDate.now().plusDays(1));
   }
+
+  private record CuentaPrueba(long id, String token) {}
 }
