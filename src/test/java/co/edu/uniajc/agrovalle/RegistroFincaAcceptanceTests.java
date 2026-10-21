@@ -37,7 +37,7 @@ class RegistroFincaAcceptanceTests {
   @Test
   void dadoAgricultorAutenticadoCuandoRegistraFincaEntoncesPersisteComoPropietario()
       throws Exception {
-    CuentaPrueba cuenta = registrarEIniciarSesion("AGRICULTOR");
+    CuentaPrueba cuenta = crearCuentaAutenticada("AGRICULTOR");
     String request = """
         {"agricultorId":999999,"nombre":" La Esperanza ",
         "municipio":"Santiago de Cali","descripcion":" Producción familiar "}
@@ -75,7 +75,7 @@ class RegistroFincaAcceptanceTests {
   @Test
   void dadoCompradorAutenticadoCuandoRegistraFincaEntoncesRespondeForbidden()
       throws Exception {
-    CuentaPrueba cuenta = registrarEIniciarSesion("COMPRADOR");
+    CuentaPrueba cuenta = crearCuentaAutenticada("COMPRADOR");
     long before = fincas.count();
 
     mockMvc.perform(post("/api/v1/fincas")
@@ -92,7 +92,7 @@ class RegistroFincaAcceptanceTests {
   @Test
   void dadoMunicipioInvalidoCuandoRegistraFincaEntoncesNoPersiste()
       throws Exception {
-    CuentaPrueba cuenta = registrarEIniciarSesion("AGRICULTOR");
+    CuentaPrueba cuenta = crearCuentaAutenticada("AGRICULTOR");
     long before = fincas.count();
     String request = """
         {"nombre":"Finca fuera del catálogo","municipio":"Bogotá"}
@@ -107,7 +107,7 @@ class RegistroFincaAcceptanceTests {
     assertThat(fincas.count()).isEqualTo(before);
   }
 
-  private CuentaPrueba registrarEIniciarSesion(String rol) throws Exception {
+  private CuentaPrueba crearCuentaAutenticada(String rol) throws Exception {
     String unique = UUID.randomUUID().toString();
     String correo = unique + "@agrovalle.test";
     String registration = """
