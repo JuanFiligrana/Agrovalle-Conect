@@ -28,6 +28,10 @@ siendo la evidencia de compilación, estilo, pruebas y cobertura.
 El siguiente paso consistió en publicar la rama, atender cualquier fallo real de CI y
 adjuntar los enlaces del PR, la ejecución y el reporte JaCoCo.
 
+La primera ejecución remota encontró cuatro infracciones de nombres en métodos de prueba.
+El desarrollador aplicó una corrección acotada y la ejecución 35 quedó aprobada con cero
+infracciones, 55 pruebas exitosas y 97,93 % de cobertura de líneas.
+
 ## Sprint Review
 
 La revisión preparada presenta un flujo de extremo a extremo:
@@ -40,8 +44,8 @@ La revisión preparada presenta un flujo de extremo a extremo:
 6. Se calcula un flete intermedio mediante Strategy.
 7. Se muestra el Pull Request con el check `build` y el artefacto JaCoCo.
 
-El resultado se considera aceptado técnicamente únicamente cuando el check remoto está
-en verde. No se registra aprobación docente ni de otro integrante sin evidencia real.
+El check remoto del PR #52 quedó en verde en la ejecución 35. No se registra aprobación
+docente ni de otro integrante sin evidencia real.
 
 ## Sprint Retrospective
 

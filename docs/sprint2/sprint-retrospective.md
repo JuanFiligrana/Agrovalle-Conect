@@ -24,3 +24,6 @@ la exija. Mantendrá un máximo de tres elementos en curso y dos en revisión.
 La principal mejora técnica fue sustituir el repositorio temporal de cosechas por JPA sin
 cambiar el contrato consumido por otros servicios. La principal deuda restante es llevar
 los avisos y contactos a persistencia y completar las historias de pedidos del backlog.
+La primera ejecución de CI también confirmó el valor de Checkstyle como retroalimentación
+temprana: cuatro nombres fueron corregidos sin mezclar cambios funcionales. La segunda
+ejecución aprobó 55 pruebas y 97,93 % de cobertura de líneas.

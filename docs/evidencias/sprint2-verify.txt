@@ -1,0 +1,19 @@
+GitHub Actions · Java CI · ejecución 35
+Fecha: 2026-10-22
+Commit: 1377b1338fa78519b0350e24278abb0a1df7bd57
+
+[INFO] You have 0 Checkstyle violations.
+[INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Analyzed bundle 'AgroValle Connect' with 59 classes
+[INFO] All coverage checks have been met.
+[INFO] BUILD SUCCESS
+
+JaCoCo, agregado desde jacoco.csv:
+- Líneas: 473 cubiertas, 10 no cubiertas, 97,93 %.
+- Ramas: 83 cubiertas, 23 no cubiertas, 78,30 %.
+- Instrucciones: 2.522 cubiertas, 92 no cubiertas, 96,48 %.
+- Umbral configurado: 60 % de líneas.
+- Artefacto: jacoco-35, ID 12406703171.
+
+Ejecución: https://github.com/JuanFiligrana/Agrovalle-Conect/actions/runs/39735124556
+PR: https://github.com/JuanFiligrana/Agrovalle-Conect/pull/52

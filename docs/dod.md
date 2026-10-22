@@ -34,12 +34,12 @@ No se considera firmado por el simple hecho de listar los nombres.
 
 ## Evaluación del Sprint 2
 
-| Condición | Evidencia | Estado antes del PR |
+| Condición | Evidencia | Estado verificable |
 |---|---|---|
-| HU-02 y HU-04 implementadas | Código, `sprint2.md` y pruebas | Preparada |
-| TDD, JUnit, Mockito y MockMvc | Dos commits y `src/test/java` | Preparada |
-| Checkstyle, pruebas y JaCoCo | Check remoto `build` | Pendiente de ejecución |
-| Documentación técnica | README, especificación, patrones y ceremonias | Preparada |
+| HU-02 y HU-04 implementadas | Código, `sprint2.md` y pruebas | Verificada por CI |
+| TDD, JUnit, Mockito y MockMvc | Historial de PR #52 y `src/test/java` | Verificado |
+| Checkstyle, pruebas y JaCoCo | Ejecución 35: 0 infracciones, 55 pruebas y 97,93 % de líneas | Aprobado |
+| Documentación técnica | README, especificación, patrones y ceremonias | Actualizada |
 | Revisión por pares | Aprobación externa en el PR | No acreditada |
 
 Las casillas generales solo se marcan al existir evidencia. La ejecución individual no

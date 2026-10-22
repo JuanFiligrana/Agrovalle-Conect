@@ -36,3 +36,10 @@ del check `build` hasta alcanzar verde.
 
 Continuó el impedimento local de JDK 25. También se registró que la ejecución individual
 no permite acreditar una revisión por pares externa.
+
+### Resultado del cierre técnico
+
+La primera ejecución remota identificó cuatro nombres de prueba incompatibles con la
+regla `AbbreviationAsWordInName`. El desarrollador los corrigió en un commit específico.
+La ejecución 35 aprobó después Java 25, Checkstyle, 55 pruebas y el umbral JaCoCo con
+97,93 % de cobertura de líneas.

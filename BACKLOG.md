@@ -14,7 +14,7 @@ equipo debe ratificar mediante Planning Poker. No se inventan votos ni consensos
 | Sprint | Historias | Puntos | Estado verificable |
 |---|---|---:|---|
 | Sprint 1 corregido | HU-01, HU-07, HU-08 | 13 | Integrado en `main` mediante PR #26 |
-| Sprint 2 | HU-02, HU-04 | 8 | Implementado en rama; sujeto al resultado del PR y CI |
+| Sprint 2 | HU-02, HU-04 | 8 | Validado por CI en el PR #52; ejecución 35 aprobada |
 
 ## Priorización y estimación
 M = Must Have (esencial); S = Should Have (importante); C = Could Have (deseable);

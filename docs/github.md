@@ -5,21 +5,26 @@
 - Repositorio: <https://github.com/JuanFiligrana/Agrovalle-Conect>
 - Tablero: <https://github.com/users/JuanFiligrana/projects/1>
 - Rama: `feature/sprint2-hu02-hu04`
+- Pull Request: <https://github.com/JuanFiligrana/Agrovalle-Conect/pull/52>
+- CI aprobada: <https://github.com/JuanFiligrana/Agrovalle-Conect/actions/runs/39735124556>
 - Destino del Pull Request: `main`
 
-## Historial TDD previsto
+## Historial TDD observado
 
 La rama parte del merge del Sprint 1 y conserva cambios coherentes:
 
 ```text
 test: definir criterios Sprint 2 en rojo
 feat: implementar historias y patrones del Sprint 2
-docs: documentar entrega y trazabilidad del Sprint 2
+refactor: inyectar estrategias de flete
+docs: documentar entrega del Sprint 2
+test: corregir nombres exigidos por Checkstyle
 ```
 
-El primer commit debe fallar porque define las capacidades que todavía no existen. El
-segundo implementa HU-02/HU-04, persistencia, Strategy y Observer. El tercero alinea la
-entrega. No se reescribe el historial para aparentar una secuencia distinta.
+El primer commit define las capacidades antes de implementarlas. El segundo implementa
+HU-02/HU-04, persistencia, Strategy y Observer; el tercero fortalece OCP/DIP; el cuarto
+alinea la entrega. El quinto responde al primer resultado real de CI sin reescribir el
+historial para aparentar una secuencia distinta.
 
 ## Pull Request
 
@@ -35,6 +40,9 @@ El PR debe incluir:
 El check `build` ejecuta `mvnw -B verify` con JDK 25. Checkstyle, JUnit y el umbral
 JaCoCo de 60 % deben pasar antes del merge. El workflow publica el HTML de JaCoCo como
 artefacto para evitar depender de una captura aislada.
+
+La ejecución 35 aprobó `verify`: cero infracciones de Checkstyle, 55 pruebas sin fallos
+y 473 de 483 líneas cubiertas (97,93 %). El artefacto publicado se llama `jacoco-35`.
 
 ## Protección de `main`
 
@@ -56,14 +64,14 @@ Testing / Code Review → Hechos. El límite compartido es tres elementos en cur
 revisión. Cada tarjeta cerrada enlaza el PR, commit, documento o ejecución que demuestra
 su resultado. La política completa está en `kanban-policies.md`.
 
-## Evidencias que se registran al finalizar
+## Evidencias registradas
 
-- URL del PR y SHA integrado.
-- URL de la ejecución `build` aprobada.
-- número de pruebas y porcentaje de líneas reportado por JaCoCo.
-- enlace de aprobación externa, si realmente existe.
-- estado final de las tarjetas del Sprint 2.
-- informe PDF con portada y resumen de cambios.
+- PR #52 y commit validado `1377b1338fa78519b0350e24278abb0a1df7bd57`.
+- Ejecución 35 de `Java CI / build`, aprobada.
+- 55 pruebas; 0 fallos, 0 errores y 0 omitidas.
+- JaCoCo: 473/483 líneas, equivalentes a 97,93 %.
+- Artefacto `jacoco-35`, ID `12406703171`.
+- La aprobación externa permanece sin acreditarse.
 
 No se publican contraseñas, claves JWT, tokens ni archivos `.env`. Las variables reales
 se configuran fuera del repositorio.

@@ -92,7 +92,7 @@ La evidencia definitiva de verde corresponde al check remoto `build` del Pull Re
 | Identidad obtenida del JWT | `CosechaServiceTests.publicaUnaOfertaActivaUsandoLaIdentidadDelJwt` |
 | Rol agricultor y propiedad de finca | `CosechaServiceTests` y `Sprint2EndpointsTests` |
 | Fecha y categoría válidas | `CosechaServiceTests` |
-| Persistencia y filtro combinado | `Sprint2EndpointsTests.publicaYFiltraUnaCosechaPersistente` |
+| Persistencia y filtro combinado | `Sprint2EndpointsTests.publicaUnaCosechaPersistenteYpermiteFiltrarla` |
 | Strategy por zona | `CalculadoraFleteServiceTests` |
 | Observer posterior a la publicación | verificación del evento y endpoint de avisos |
 
@@ -108,3 +108,12 @@ La evidencia definitiva de verde corresponde al check remoto `build` del Pull Re
 
 La aprobación de otra persona solo se registra si realmente existe. La ejecución
 individual no se presenta como revisión por pares.
+
+## Resultado verificable
+
+El PR [#52](https://github.com/JuanFiligrana/Agrovalle-Conect/pull/52) recibió el check
+`Java CI / build` aprobado en la [ejecución 35](https://github.com/JuanFiligrana/Agrovalle-Conect/actions/runs/39735124556).
+El resultado fue: cero infracciones de Checkstyle, 55 pruebas aprobadas, cero fallos,
+cero errores, cero omitidas y 473 de 483 líneas cubiertas (97,93 %). El artefacto
+`jacoco-35` conserva el reporte HTML; el resumen reproducible está en
+[`docs/evidencias-sprint2.md`](evidencias-sprint2.md).

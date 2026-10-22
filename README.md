@@ -117,6 +117,8 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [Especificación 29148 del Sprint 2](docs/especificacion-sprint2.md): requisitos y BDD.
 - [SOLID y patrones](docs/patrones-sprint2.md): decisiones Strategy y Observer.
 - [Ceremonias](docs/ceremonias-sprint2.md): Daily, Review y Retrospective en tercera persona.
+- [Evidencia verificable del Sprint 2](docs/evidencias-sprint2.md): PR, CI, pruebas y JaCoCo.
+- [Informe de entrega del segundo corte](output/pdf/Grupo-6303B-Entrega-segundo-corte-AgroValle.pdf): portada institucional, resumen del incremento y evidencias directas.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.
@@ -127,6 +129,10 @@ y en Pull Requests hacia main. Checkstyle, JUnit y el umbral JaCoCo de 60 % form
 sola barrera; el reporte HTML de JaCoCo se conserva como artefacto de cada ejecución.
 El badge refleja el último resultado remoto. Un workflow por sí solo no bloquea merges
 si la protección de la rama no exige el check `build`.
+
+La ejecución 35 del PR #52 aprobó `verify` con Java 25: cero infracciones de
+Checkstyle, 55 pruebas sin fallos y 97,93 % de cobertura de líneas. El detalle y los
+enlaces se conservan en [la evidencia del Sprint 2](docs/evidencias-sprint2.md).
 
 ## Estructura
 - src/main/java/co/edu/uniajc/agrovalle/models: contratos de datos.

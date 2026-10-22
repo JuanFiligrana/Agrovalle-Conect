@@ -27,7 +27,8 @@ captura token e identificadores para ejecutar el flujo en orden.
 | Filtro combinado y catálogos | Pruebas unitarias y REST |
 | Strategy comprobable | Tres algoritmos y pruebas |
 | Observer desacoplado | Evento, listener y consulta autenticada |
-| Calidad automática | Checkstyle, JUnit y JaCoCo en GitHub Actions |
+| Calidad automática | Ejecución 35: Checkstyle 0, 55 pruebas y JaCoCo 97,93 % de líneas |
 
-El incremento solo se declara técnicamente aceptado cuando el check remoto está en
-verde. No se registra aprobación docente o de pares sin un enlace real.
+El check remoto del PR #52 quedó en verde en la ejecución 35. El incremento se considera
+técnicamente aceptado por la automatización; no se registra aprobación docente o de pares
+sin un enlace real.
