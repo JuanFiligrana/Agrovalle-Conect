@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-10-22",
+  "zona_horaria": "America/Bogota",
+  "pull_request": {
+    "numero": 52,
+    "url": "https://github.com/JuanFiligrana/Agrovalle-Conect/pull/52",
+    "commit_validado": "1377b1338fa78519b0350e24278abb0a1df7bd57"
+  },
+  "github_actions": {
+    "run_id": 39735124556,
+    "run_number": 35,
+    "url": "https://github.com/JuanFiligrana/Agrovalle-Conect/actions/runs/39735124556",
+    "conclusion": "success",
+    "checkstyle_violations": 0,
+    "tests": 55,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "jacoco": {
+    "artifact_id": 12406703171,
+    "artifact_name": "jacoco-35",
+    "classes": 59,
+    "line_missed": 10,
+    "line_covered": 473,
+    "line_ratio_percent": 97.93,
+    "branch_missed": 23,
+    "branch_covered": 83,
+    "branch_ratio_percent": 78.30,
+    "instruction_missed": 92,
+    "instruction_covered": 2522,
+    "instruction_ratio_percent": 96.48,
+    "required_line_ratio_percent": 60
+  },
+  "peer_review": "no_acreditada"
+}

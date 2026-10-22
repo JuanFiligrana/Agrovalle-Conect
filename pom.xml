@@ -13,7 +13,7 @@
   <artifactId>agrovalle-connect</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>AgroValle Connect</name>
-  <description>Incremento funcional del Sprint 1</description>
+  <description>Incremento funcional del Sprint 2</description>
   <properties>
     <java.version>25</java.version>
     <jjwt.version>0.13.0</jjwt.version>
