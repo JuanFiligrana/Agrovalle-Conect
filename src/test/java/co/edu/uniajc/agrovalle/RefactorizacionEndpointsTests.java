@@ -43,20 +43,26 @@ class RefactorizacionEndpointsTests {
     long fincaId = objectMapper.readTree(resultado.getResponse().getContentAsString())
         .get("id").asLong();
 
-    mockMvc.perform(post("/api/v1/productos").contentType(MediaType.APPLICATION_JSON)
-            .content(publicacion(otroAgricultor.id(), fincaId)))
+    mockMvc.perform(post("/api/v1/productos")
+            .header(HttpHeaders.AUTHORIZATION, "Bearer " + otroAgricultor.token())
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(publicacion(fincaId)))
         .andExpect(status().isForbidden())
         .andExpect(jsonPath("$.status").value("403 FORBIDDEN"))
         .andExpect(jsonPath("$.message").value("La finca no pertenece al agricultor"));
   }
 
   @Test
-  void mantieneElErrorJsonDeUsuarioInexistenteAlPublicar() throws Exception {
-    mockMvc.perform(post("/api/v1/productos").contentType(MediaType.APPLICATION_JSON)
-            .content(publicacion(Long.MAX_VALUE, 1)))
+  void mantieneElErrorJsonDeFincaInexistenteAlPublicar() throws Exception {
+    CuentaPrueba agricultor = registrar("AGRICULTOR");
+
+    mockMvc.perform(post("/api/v1/productos")
+            .header(HttpHeaders.AUTHORIZATION, "Bearer " + agricultor.token())
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(publicacion(Long.MAX_VALUE)))
         .andExpect(status().isNotFound())
         .andExpect(jsonPath("$.status").value("404 NOT_FOUND"))
-        .andExpect(jsonPath("$.message").value("No existe el usuario " + Long.MAX_VALUE));
+        .andExpect(jsonPath("$.message").value("No existe la finca " + Long.MAX_VALUE));
   }
 
   @Test
@@ -131,11 +137,11 @@ class RefactorizacionEndpointsTests {
     return new CuentaPrueba(id, token);
   }
 
-  private String publicacion(long agricultorId, long fincaId) {
+  private String publicacion(long fincaId) {
     return """
-        {"agricultorId":%d,"fincaId":%d,"tipo":"Mango R01","categoria":"Frutas",
+        {"fincaId":%d,"tipo":"Mango R01","categoria":"Frutas",
         "cantidadKg":250,"precioCopKg":3500,"fechaCosecha":"%s"}
-        """.formatted(agricultorId, fincaId, LocalDate.now().plusDays(1));
+        """.formatted(fincaId, LocalDate.now().plusDays(1));
   }
 
   private record CuentaPrueba(long id, String token) {}

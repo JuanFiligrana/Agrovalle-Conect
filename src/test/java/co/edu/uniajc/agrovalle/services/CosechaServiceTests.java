@@ -9,15 +9,13 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import co.edu.uniajc.agrovalle.dto.CosechaRequest;
-import co.edu.uniajc.agrovalle.exceptions.OperacionNoPermitidaException;
-import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
-import co.edu.uniajc.agrovalle.models.Agricultor;
+import co.edu.uniajc.agrovalle.events.CosechaPublicadaEvent;
 import co.edu.uniajc.agrovalle.models.Cosecha;
 import co.edu.uniajc.agrovalle.models.Finca;
 import co.edu.uniajc.agrovalle.models.RolUsuario;
 import co.edu.uniajc.agrovalle.ports.CosechaPort;
 import co.edu.uniajc.agrovalle.ports.FincaPort;
-import co.edu.uniajc.agrovalle.ports.UsuarioPort;
+import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -28,8 +26,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-/** Regresión de publicación, propiedad y filtros usando contratos de datos aislados. */
+/** TDD de publicación, propiedad, catálogo y filtros del Sprint 2. */
 @ExtendWith(MockitoExtension.class)
 class CosechaServiceTests {
 
@@ -40,72 +41,84 @@ class CosechaServiceTests {
   private FincaPort fincas;
 
   @Mock
-  private UsuarioPort usuarios;
+  private ApplicationEventPublisher events;
 
   private CosechaService service;
 
   @BeforeEach
   void prepararServicio() {
-    service = new CosechaService(cosechas, fincas, usuarios);
+    service = new CosechaService(cosechas, fincas, events);
   }
 
   @Test
-  void publicaUnaOfertaActivaEnLaFincaDelAgricultor() {
-    when(usuarios.findById(7)).thenReturn(Optional.of(cuenta(RolUsuario.AGRICULTOR)));
+  void publicaUnaOfertaActivaUsandoLaIdentidadDelJwt() {
+    UsuarioAutenticado usuario = usuario(7, RolUsuario.AGRICULTOR);
     when(fincas.findById(9)).thenReturn(Optional.of(finca(9, 7, "Dagua")));
     Cosecha guardada = cosecha(101, 9, "Mango", "Frutas", true);
     when(cosechas.save(any(Cosecha.class))).thenReturn(guardada);
 
-    assertSame(guardada, service.publicar(solicitud()));
+    assertSame(guardada, service.publicar(solicitud(), usuario));
 
-    ArgumentCaptor<Cosecha> captor = ArgumentCaptor.forClass(Cosecha.class);
-    verify(cosechas).save(captor.capture());
+    ArgumentCaptor<Cosecha> oferta = ArgumentCaptor.forClass(Cosecha.class);
+    verify(cosechas).save(oferta.capture());
     assertEquals(new Cosecha(0, 7, 9, "Mango", "Frutas", new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.of(2030, 1, 1), true), captor.getValue());
-  }
-
-  @Test
-  void noPublicaParaUnaCuentaInexistente() {
-    when(usuarios.findById(7)).thenReturn(Optional.empty());
-
-    var error = assertThrows(RecursoNoEncontradoException.class,
-        () -> service.publicar(solicitud()));
-
-    assertEquals("No existe el usuario 7", error.getMessage());
-    verifyNoInteractions(fincas, cosechas);
+        new BigDecimal("3500.00"), LocalDate.now().plusDays(1), true), oferta.getValue());
+    verify(events).publishEvent(new CosechaPublicadaEvent(guardada));
   }
 
   @Test
   void unCompradorNoPuedePublicarUnaCosecha() {
-    when(usuarios.findById(7)).thenReturn(Optional.of(cuenta(RolUsuario.COMPRADOR)));
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.publicar(solicitud(), usuario(7, RolUsuario.COMPRADOR)));
 
-    assertThrows(OperacionNoPermitidaException.class, () -> service.publicar(solicitud()));
-
-    verifyNoInteractions(fincas, cosechas);
+    assertEquals(HttpStatus.FORBIDDEN, error.getStatusCode());
+    verifyNoInteractions(fincas, cosechas, events);
   }
 
   @Test
   void noPublicaSiLaFincaNoExiste() {
-    when(usuarios.findById(7)).thenReturn(Optional.of(cuenta(RolUsuario.AGRICULTOR)));
     when(fincas.findById(9)).thenReturn(Optional.empty());
 
-    var error = assertThrows(RecursoNoEncontradoException.class,
-        () -> service.publicar(solicitud()));
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.publicar(solicitud(), usuario(7, RolUsuario.AGRICULTOR)));
 
-    assertEquals("No existe la finca", error.getMessage());
-    verifyNoInteractions(cosechas);
+    assertEquals(HttpStatus.NOT_FOUND, error.getStatusCode());
+    verifyNoInteractions(cosechas, events);
   }
 
   @Test
   void noGuardaUnaCosechaEnUnaFincaAjena() {
-    when(usuarios.findById(7)).thenReturn(Optional.of(cuenta(RolUsuario.AGRICULTOR)));
     when(fincas.findById(9)).thenReturn(Optional.of(finca(9, 8, "Dagua")));
 
-    var error = assertThrows(OperacionNoPermitidaException.class,
-        () -> service.publicar(solicitud()));
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.publicar(solicitud(), usuario(7, RolUsuario.AGRICULTOR)));
 
-    assertEquals("La finca no pertenece al agricultor", error.getMessage());
-    verifyNoInteractions(cosechas);
+    assertEquals(HttpStatus.FORBIDDEN, error.getStatusCode());
+    verifyNoInteractions(cosechas, events);
+  }
+
+  @Test
+  void rechazaUnaCategoriaFueraDelCatalogo() {
+    CosechaRequest request = new CosechaRequest(9, "Mango", "Electrodomesticos",
+        new BigDecimal("250"), new BigDecimal("3500"), LocalDate.now().plusDays(1));
+
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.publicar(request, usuario(7, RolUsuario.AGRICULTOR)));
+
+    assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
+    verifyNoInteractions(fincas, cosechas, events);
+  }
+
+  @Test
+  void rechazaUnaFechaAnteriorAHoyEnColombia() {
+    CosechaRequest request = new CosechaRequest(9, "Mango", "Frutas",
+        new BigDecimal("250"), new BigDecimal("3500"), LocalDate.now().minusDays(1));
+
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.publicar(request, usuario(7, RolUsuario.AGRICULTOR)));
+
+    assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
+    verifyNoInteractions(fincas, cosechas, events);
   }
 
   @Test
@@ -122,21 +135,31 @@ class CosechaServiceTests {
   }
 
   @Test
+  void unaCategoriaInvalidaProduceBadRequest() {
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.listar("Dagua", "Categoria inventada"));
+
+    assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
+    verifyNoInteractions(cosechas, fincas, events);
+  }
+
+  @Test
+  void unMunicipioInvalidoProduceBadRequest() {
+    var error = assertThrows(ResponseStatusException.class,
+        () -> service.listar("Bogota", "Frutas"));
+
+    assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
+    verifyNoInteractions(cosechas, fincas, events);
+  }
+
+  @Test
   void permiteOmitirLosFiltrosConservandoSoloLasOfertasActivas() {
     Cosecha activa = cosecha(101, 9, "Mango", "Frutas", true);
     when(cosechas.findAll()).thenReturn(List.of(activa,
         cosecha(102, 9, "Mango", "Frutas", false)));
 
     assertEquals(List.of(activa), service.listar(null, " "));
-    verifyNoInteractions(fincas, usuarios);
-  }
-
-  @Test
-  void unaOfertaSinFincaNoCoincideConElMunicipioSolicitado() {
-    when(cosechas.findAll()).thenReturn(List.of(cosecha(101, 9, "Mango", "Frutas", true)));
-    when(fincas.findById(9)).thenReturn(Optional.empty());
-
-    assertEquals(List.of(), service.listar("Dagua", null));
+    verifyNoInteractions(fincas, events);
   }
 
   @Test
@@ -149,19 +172,18 @@ class CosechaServiceTests {
 
   @Test
   void informaLaAusenciaDeUnaOferta() {
-    var error = assertThrows(RecursoNoEncontradoException.class, () -> service.require(404));
+    var error = assertThrows(ResponseStatusException.class, () -> service.require(404));
 
-    assertEquals("No existe la cosecha 404", error.getMessage());
+    assertEquals(HttpStatus.NOT_FOUND, error.getStatusCode());
   }
 
   private CosechaRequest solicitud() {
-    return new CosechaRequest(7, 9, " Mango ", " Frutas ", new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.of(2030, 1, 1));
+    return new CosechaRequest(9, " Mango ", " frutas ", new BigDecimal("250.000"),
+        new BigDecimal("3500.00"), LocalDate.now().plusDays(1));
   }
 
-  private Agricultor cuenta(RolUsuario rol) {
-    return new Agricultor(7, "Persona de prueba", "persona@example.invalid", "documento-7",
-        "Dagua", rol, "hash-de-prueba");
+  private UsuarioAutenticado usuario(long id, RolUsuario rol) {
+    return new UsuarioAutenticado(id, "persona@example.invalid", rol);
   }
 
   private Finca finca(long id, long propietario, String municipio) {
@@ -170,6 +192,6 @@ class CosechaServiceTests {
 
   private Cosecha cosecha(long id, long fincaId, String tipo, String categoria, boolean activa) {
     return new Cosecha(id, 7, fincaId, tipo, categoria, new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.of(2030, 1, 1), activa);
+        new BigDecimal("3500.00"), LocalDate.now().plusDays(1), activa);
   }
 }

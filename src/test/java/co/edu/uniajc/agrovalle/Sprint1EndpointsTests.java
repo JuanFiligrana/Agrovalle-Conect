@@ -34,7 +34,6 @@ class Sprint1EndpointsTests {
   void demuestraFlujoCompletoDelSprint() throws Exception {
     CuentaPrueba agricultor = registrar("AGRICULTOR");
     CuentaPrueba comprador = registrar("COMPRADOR");
-    long agricultorId = agricultor.id();
     long compradorId = comprador.id();
     String fincaJson = """
         {"nombre":"La Esperanza","municipio":"Cali",
@@ -50,11 +49,12 @@ class Sprint1EndpointsTests {
 
     String fecha = LocalDate.now().plusDays(1).toString();
     String cosechaJson = """
-        {"agricultorId":%d,"fincaId":%d,"tipo":"Tomate",
+        {"fincaId":%d,"tipo":"Tomate",
         "categoria":"Frutas","cantidadKg":100,"precioCopKg":1200,
         "fechaCosecha":"%s"}
-        """.formatted(agricultorId, fincaId, fecha);
+        """.formatted(fincaId, fecha);
     MvcResult cosechaResult = mockMvc.perform(post("/api/v1/productos")
+            .header(HttpHeaders.AUTHORIZATION, "Bearer " + agricultor.token())
             .contentType(MediaType.APPLICATION_JSON)
             .content(cosechaJson))
         .andExpect(status().isCreated())
