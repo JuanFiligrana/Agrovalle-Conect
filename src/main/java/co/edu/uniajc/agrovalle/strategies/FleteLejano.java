@@ -2,8 +2,12 @@ package co.edu.uniajc.agrovalle.strategies;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /** Estrategia de respaldo para los demás municipios válidos del Valle. */
+@Component
+@Order(100)
 public final class FleteLejano implements EstrategiaFlete {
 
   @Override

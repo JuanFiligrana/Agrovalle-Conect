@@ -3,7 +3,11 @@ package co.edu.uniajc.agrovalle.services;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import co.edu.uniajc.agrovalle.strategies.FleteCercano;
+import co.edu.uniajc.agrovalle.strategies.FleteIntermedio;
+import co.edu.uniajc.agrovalle.strategies.FleteLejano;
 import java.math.BigDecimal;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
@@ -11,7 +15,8 @@ import org.springframework.web.server.ResponseStatusException;
 /** Verifica la selección intercambiable de estrategias de flete. */
 class CalculadoraFleteServiceTests {
 
-  private final CalculadoraFleteService service = new CalculadoraFleteService();
+  private final CalculadoraFleteService service = new CalculadoraFleteService(
+      List.of(new FleteCercano(), new FleteIntermedio(), new FleteLejano()));
 
   @Test
   void aplicaEstrategiaCercanaParaCali() {

@@ -2,9 +2,6 @@ package co.edu.uniajc.agrovalle.services;
 
 import co.edu.uniajc.agrovalle.dto.FleteResponse;
 import co.edu.uniajc.agrovalle.strategies.EstrategiaFlete;
-import co.edu.uniajc.agrovalle.strategies.FleteCercano;
-import co.edu.uniajc.agrovalle.strategies.FleteIntermedio;
-import co.edu.uniajc.agrovalle.strategies.FleteLejano;
 import co.edu.uniajc.agrovalle.validation.MunicipiosValle;
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,9 +15,9 @@ public class CalculadoraFleteService {
 
   private final List<EstrategiaFlete> estrategias;
 
-  /** Registra las estrategias desde la más específica hasta la de respaldo. */
-  public CalculadoraFleteService() {
-    estrategias = List.of(new FleteCercano(), new FleteIntermedio(), new FleteLejano());
+  /** Recibe estrategias ordenadas, desde las específicas hasta la de respaldo. */
+  public CalculadoraFleteService(List<EstrategiaFlete> estrategias) {
+    this.estrategias = List.copyOf(estrategias);
   }
 
   /** Valida los datos, selecciona una estrategia y devuelve el cálculo auditable. */

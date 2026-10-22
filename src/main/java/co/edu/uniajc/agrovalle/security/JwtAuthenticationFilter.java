@@ -38,7 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         || "/api/v1/fincas".equals(path)
         || path.startsWith("/api/v1/fincas/")
         || "/api/v1/notificaciones/cosechas".equals(path)
-        || HttpMethod.POST.matches(request.getMethod()) && "/api/v1/productos".equals(path);
+        || (HttpMethod.POST.matches(request.getMethod()) && "/api/v1/productos".equals(path));
     return !protectedPath;
   }
 

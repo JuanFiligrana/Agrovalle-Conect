@@ -38,7 +38,7 @@ public class CosechaRepository implements CosechaPort {
     CategoriaEntity categoria = categorias.findByNombreIgnoreCase(cosecha.categoria())
         .orElseGet(() -> categorias.saveAndFlush(new CategoriaEntity(cosecha.categoria())));
     ProductoEntity producto = productos.findByNombreIgnoreCaseAndCategoriaId(
-            cosecha.tipo(), categoria.getId())
+        cosecha.tipo(), categoria.getId())
         .orElseGet(() -> productos.saveAndFlush(new ProductoEntity(categoria, cosecha.tipo())));
     CosechaEntity entity = new CosechaEntity(finca, producto, cosecha.cantidadKg(),
         cosecha.precioCopKg(), cosecha.fechaCosecha(), cosecha.activa());

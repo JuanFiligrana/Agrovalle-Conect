@@ -3,8 +3,12 @@ package co.edu.uniajc.agrovalle.strategies;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Set;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /** Estrategia para municipios ubicados a una distancia intermedia. */
+@Component
+@Order(20)
 public final class FleteIntermedio implements EstrategiaFlete {
 
   private static final Set<String> MUNICIPIOS = Set.of(
