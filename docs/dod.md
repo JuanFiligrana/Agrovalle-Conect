@@ -31,3 +31,16 @@ No se considera firmado por el simple hecho de listar los nombres.
 | Michael David Caicedo Mina | Pendiente de aceptación | Pendiente |
 | Juan Camilo Álvarez | Pendiente de aceptación | Pendiente |
 | Jhojan Aragón | Pendiente de aceptación | Pendiente |
+
+## Evaluación del Sprint 2
+
+| Condición | Evidencia | Estado antes del PR |
+|---|---|---|
+| HU-02 y HU-04 implementadas | Código, `sprint2.md` y pruebas | Preparada |
+| TDD, JUnit, Mockito y MockMvc | Dos commits y `src/test/java` | Preparada |
+| Checkstyle, pruebas y JaCoCo | Check remoto `build` | Pendiente de ejecución |
+| Documentación técnica | README, especificación, patrones y ceremonias | Preparada |
+| Revisión por pares | Aprobación externa en el PR | No acreditada |
+
+Las casillas generales solo se marcan al existir evidencia. La ejecución individual no
+convierte la autoevaluación en revisión por pares.
