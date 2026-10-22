@@ -1,0 +1,33 @@
+{
+  "task": "T01",
+  "verified_at": "2026-10-20T03:42:29Z",
+  "source_base_branch": "chore/sprint-0-completo",
+  "environment": {
+    "java": "Temurin 25.0.4.1+1",
+    "maven": "3.9.9",
+    "spring_boot": "3.5.16",
+    "test_database": "H2 2.3.232 in PostgreSQL mode",
+    "production_database": "PostgreSQL"
+  },
+  "verification": "clean verify",
+  "exit_code": 0,
+  "tests": 33,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "persistence_tests": 4,
+  "covered_lines": 199,
+  "missed_lines": 12,
+  "line_coverage_percent": 94.31,
+  "branch_coverage_percent": 85.29,
+  "checkstyle_violations": 0,
+  "database_guarantees_tested": [
+    "save and find user",
+    "normalize email before persistence",
+    "reject duplicate email",
+    "reject duplicate cedula"
+  ],
+  "postgresql_local_execution": "pending_on_developer_machine",
+  "remote_ci": "pending",
+  "peer_review": "pending"
+}

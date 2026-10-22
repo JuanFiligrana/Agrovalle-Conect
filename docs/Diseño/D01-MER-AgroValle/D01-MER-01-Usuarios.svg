@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1900" viewBox="0 0 2400 1900">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif">
+<path d="M1098.7,372.0 L865.8,284.7" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1182.1,372.0 L1133.6,268.8" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1278.5,372.0 L1456.0,286.1" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1340.0,415.5 L1586.7,425.2" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1274.0,448.0 L1518.5,573.6" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1126.1,448.0 L901.4,563.6" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1200.0,448.0 L1200.0,745.0" fill="none" stroke="#24354b" stroke-width="7"/>
+<path d="M1200.0,448.0 L1200.0,745.0" fill="none" stroke="white" stroke-width="3"/>
+<path d="M594.0,1032.0 L410.4,907.4" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M1164.0,835.0 L650.0,900.0 L650.0,1032.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M1236.0,835.0 L1750.0,900.0 L1750.0,1032.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M510.0,1510.0 L405.0,1510.0" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M790.0,1510.0 L915.0,1510.0" fill="none" stroke="#71839a" stroke-width="1.5"/>
+<path d="M650.0,1108.0 L650.0,1244.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<path d="M650.0,1472.0 L650.0,1336.0" fill="none" stroke="#24354b" stroke-width="2"/>
+<rect x="1060.0" y="372.0" width="280" height="76" fill="#eaf3ff" stroke="#24354b" stroke-width="2"/>
+<text x="1200.0" y="410.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">USUARIO</text>
+<ellipse cx="800" cy="260" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="800.0" y="260.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_usuario</text>
+<ellipse cx="1120" cy="240" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1120.0" y="240.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">nombre</text>
+<ellipse cx="1510" cy="260" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1510.0" y="260.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">correo</text>
+<ellipse cx="1710" cy="430" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1710.0" y="430.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">contrasena_hash</text>
+<ellipse cx="1570" cy="600" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1570.0" y="600.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">activo</text>
+<ellipse cx="850" cy="590" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="850.0" y="590.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">fecha_registro</text>
+<polygon points="1200,745.0 1260.0,835.0 1140.0,835.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1200.0" y="798.5" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">ISA</text>
+<rect x="510.0" y="1032.0" width="280" height="76" fill="#eaf8ef" stroke="#24354b" stroke-width="2"/>
+<text x="650.0" y="1070.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">AGRICULTOR</text>
+<ellipse cx="370" cy="880" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="370.0" y="880.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">cedula [UQ]</text>
+<rect x="1610.0" y="1032.0" width="280" height="76" fill="#eaf3ff" stroke="#24354b" stroke-width="2"/>
+<text x="1750.0" y="1070.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">COMPRADOR</text>
+<rect x="510.0" y="1472.0" width="280" height="76" fill="#eaf8ef" stroke="#24354b" stroke-width="2"/>
+<text x="650.0" y="1510.0" font-size="22" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="bold" text-decoration="none">MUNICIPIO</text>
+<ellipse cx="280" cy="1510" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="280.0" y="1510.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="underline">id_municipio</text>
+<ellipse cx="1040" cy="1510" rx="125.0" ry="29.0" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="1040.0" y="1510.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">nombre</text>
+<polygon points="650,1244.0 725.0,1290 650,1336.0 575.0,1290" fill="#ffffff" stroke="#24354b" stroke-width="2"/>
+<text x="650.0" y="1290.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">RESIDE EN</text>
+<text x="75.0" y="55.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">AGROVALLE CONNECT  /  D01  /  MODELO CONCEPTUAL</text>
+<text x="75.0" y="117.5" font-size="36" fill="#24354b" text-anchor="start" dominant-baseline="central" font-weight="bold" text-decoration="none">Usuarios y ubicación</text>
+<text x="75.0" y="175.0" font-size="22" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">HU-01, HU-06 y HU-07 · Datos comunes y especialización de cuentas</text>
+<text x="75.0" y="1832.0" font-size="19" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Lectura: (mín., máx.) junto a una entidad = cuántas veces participa cada instancia en esa relación.</text>
+<text x="75.0" y="1868.0" font-size="18" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Clave subrayada · Óvalo discontinuo: atributo calculado · Gris: entidad repetida de otra vista · N: muchos</text>
+<text x="1200.0" y="900.0" font-size="21" fill="#526477" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">total y disjunta</text>
+<text x="710.0" y="1163.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(1,1)</text>
+<text x="710.0" y="1417.0" font-size="20" fill="#24354b" text-anchor="middle" dominant-baseline="central" font-weight="normal" text-decoration="none">(0,N)</text>
+<text x="1390.0" y="1231.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">AGRICULTOR y COMPRADOR heredan id_usuario y los datos comunes.</text>
+<text x="1390.0" y="1291.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">UQ: la cédula del agricultor y el correo de usuario son únicos.</text>
+<text x="1390.0" y="1351.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Decisión de diseño: cada cuenta pertenece a un solo rol.</text>
+<text x="1390.0" y="1411.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">Si se requieren cuentas multirrol, se revisará esta especialización.</text>
+<text x="1390.0" y="1531.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">El municipio de residencia puede diferir del municipio de la finca.</text>
+<text x="75.0" y="1711.0" font-size="21" fill="#526477" text-anchor="start" dominant-baseline="central" font-weight="normal" text-decoration="none">La doble línea hacia ISA indica que toda cuenta pertenece a uno de los dos subtipos. La contraseña se almacena como hash.</text>
+</g></svg>

@@ -17,11 +17,28 @@ Para los productores del Valle del Cauca que necesitan vender directamente sus c
 - Jhojan Aragón
 
 ## Alcance de esta entrega
-Sprint 0: infraestructura, documentación y especificación BDD. La aplicación incluye
-una portada web y GET `/api/v1/estado`. Las 15 historias de negocio son el backlog futuro;
-no se declara implementado el registro, el catálogo, los pedidos, JWT ni PostgreSQL.
-El driver PostgreSQL está disponible para la próxima etapa, sin conexión activa ni
-credenciales. No hace falta una base de datos para iniciar esta base.
+El Sprint 1 corregido comprende HU-01, HU-07 y HU-08, con 13 puntos en total. Incluye
+registro de agricultores, inicio de sesión con JWT y registro persistente de fincas cuyo
+propietario se obtiene del token. Las rutas y criterios están descritos en
+`docs/sprint1.md`. La verificación automatizada ejecuta `clean verify` con Checkstyle,
+pruebas y el umbral JaCoCo. Los endpoints antiguos de cosechas, precios y contacto se
+conservan como prototipo, pero no se declaran terminados dentro de este Sprint.
+
+### Rutas principales del Sprint 1
+
+- `POST /api/v1/auth/register`: registra un agricultor o comprador.
+- `POST /api/v1/auth/login`: valida correo y contraseña y devuelve un JWT.
+- `GET /api/v1/auth/me`: comprueba un JWT y devuelve la identidad autenticada.
+- `POST /api/v1/fincas`: crea una finca para el agricultor autenticado.
+- `GET /api/v1/fincas`: lista las fincas del agricultor autenticado.
+
+### Prototipo fuera del alcance corregido
+
+- `POST /api/v1/productos`: publica una cosecha.
+- `GET /api/v1/productos?municipio=&categoria=`: filtra ofertas activas.
+- `GET /api/v1/precios/promedio?producto=`: calcula el promedio en COP/kg.
+- `POST /api/v1/contacto/mensaje`: registra una solicitud de contacto con
+  encabezado `Authorization`.
 
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
@@ -90,7 +107,10 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [BACKLOG.md](BACKLOG.md): 15 historias, 40 escenarios y 76 puntos propuestos.
 - [Definition of Done](docs/dod.md): checklist y aceptación por los cuatro integrantes.
 - [Estimación](docs/estimacion.md): procedimiento y registro de Planning Poker.
-- [Arquitectura](docs/arquitectura.md): capas y límites del Sprint 0.
+- [Arquitectura](docs/arquitectura.md): capas y límites de los incrementos.
+- [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
+- [Autenticación JWT de HU-07](docs/jwt-hu07.md): configuración y contratos seguros.
+- [Persistencia de fincas de HU-08](docs/fincas-hu08.md): propiedad y pruebas.
 - [Integración en GitHub](docs/github.md): ramas, commits, PR, revisión y checks.
 - [Verificación](docs/verificacion.md): resultados comprobados y límites.
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.

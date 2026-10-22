@@ -1,0 +1,18 @@
+T01 — resultado reproducible de verificación
+Fecha UTC: 2026-10-20T03:42:29Z
+Comando: mvnw clean verify
+JDK: Temurin 25.0.4.1+1
+Maven Wrapper: 3.9.9
+
+Checkstyle: 0 violaciones
+Pruebas: 33 ejecutadas, 0 fallos, 0 errores, 0 omitidas
+Pruebas de persistencia: 4 ejecutadas, 0 fallos, 0 errores
+Cobertura de líneas: 199/211 (94.31 %)
+Cobertura de ramas: 29/34 (85.29 %)
+Umbral JaCoCo: cumplido
+Resultado: BUILD SUCCESS
+
+La suite usa H2 en modo PostgreSQL para ser repetible en CI. La ejecución normal usa
+el controlador PostgreSQL y variables de entorno. La comprobación contra la instancia
+local del desarrollador queda pendiente hasta configurar DB_URL, DB_USERNAME y
+DB_PASSWORD conforme a docs/postgresql-t01.md.

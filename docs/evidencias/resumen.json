@@ -1,0 +1,13 @@
+{
+  "java": "Temurin 25.0.4.1",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "checkstyle_violations": 0,
+  "covered_lines": 157,
+  "missed_lines": 18,
+  "line_coverage": 89.71,
+  "root_http_status": 200,
+  "health_http_status": 200,
+  "build": "BUILD SUCCESS"
+}

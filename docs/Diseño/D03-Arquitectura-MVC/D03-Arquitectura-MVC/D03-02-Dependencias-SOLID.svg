@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1650" viewBox="0 0 1760 1650">
+<defs><marker id="call" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#526477"/></marker><marker id="realize" markerWidth="17" markerHeight="17" refX="15" refY="8.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L15 8.5 L1 16 Z" fill="white" stroke="#526477" stroke-width="1.7"/></marker></defs>
+<rect width="1760" height="1650" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif">
+<rect x="64" y="190" width="1632" height="455" rx="16" fill="#edf7f1" stroke="#25674e" stroke-width="2"/>
+<rect x="64" y="735" width="1632" height="410" rx="16" fill="#f3eff8" stroke="#6a4c94" stroke-width="2"/>
+<rect x="64" y="1210" width="1632" height="180" rx="16" fill="#fff7e9" stroke="#986319" stroke-width="2"/>
+<rect x="360" y="240" width="540" height="180" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="630.0" y="272.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">CosechaService · adaptar</text>
+<text x="630.0" y="331.7" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Publicar y validar ofertas</text><text x="630.0" y="356.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Otros contratos: UsuarioPort, FincaPort</text><text x="630.0" y="380.3" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Sin SQL ni decisiones HTTP</text>
+<rect x="1050" y="240" width="590" height="180" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="1345.0" y="272.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">ConsultaPreciosService · nuevo</text>
+<text x="1345.0" y="331.7" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Consulta del promedio de 24 horas</text><text x="1345.0" y="356.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Usa ventas entregadas y precio histórico</text><text x="1345.0" y="380.3" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Responsabilidad separada de publicar</text>
+<rect x="360" y="500" width="540" height="110" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="630.0" y="532.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">«interface» CosechaPort</text>
+<text x="630.0" y="581.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">guardar · buscarPorId · filtrarActivas</text>
+<rect x="1050" y="500" width="590" height="110" rx="10" fill="#ffffff" stroke="#25674e" stroke-width="2"/>
+<text x="1345.0" y="532.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#25674e" font-weight="700">«interface» PrecioPort</text>
+<text x="1345.0" y="581.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">promedioEntregadas24h(producto)</text>
+<rect x="360" y="780" width="540" height="140" rx="10" fill="#ffffff" stroke="#6a4c94" stroke-width="2"/>
+<text x="630.0" y="812.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#6a4c94" font-weight="700">CosechaJpaAdapter · nuevo</text>
+<text x="630.0" y="863.85" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Implementa CosechaPort</text><text x="630.0" y="888.15" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Consulta fincas, catálogo y ofertas</text>
+<rect x="1050" y="780" width="590" height="140" rx="10" fill="#ffffff" stroke="#6a4c94" stroke-width="2"/>
+<text x="1345.0" y="812.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#6a4c94" font-weight="700">ConsultaPrecioJpaAdapter · nuevo</text>
+<text x="1345.0" y="863.85" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Implementa PrecioPort</text><text x="1345.0" y="888.15" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Consulta o proyección v_precios_24h</text>
+<rect x="360" y="1000" width="1280" height="110" rx="10" fill="#ffffff" stroke="#6a4c94" stroke-width="2"/>
+<text x="1000.0" y="1032.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#6a4c94" font-weight="700">Repositories JPA / proyecciones · mapeo D02</text>
+<text x="1000.0" y="1081.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">Spring Data JPA + Hibernate · sin reglas de autorización ni formato HTTP</text>
+<rect x="360" y="1240" width="1280" height="110" rx="10" fill="#ffffff" stroke="#986319" stroke-width="2"/>
+<text x="1000.0" y="1272.0" dominant-baseline="central" text-anchor="middle" font-size="23" fill="#986319" font-weight="700">PostgreSQL · tablas y vistas D02</text>
+<text x="1000.0" y="1321.0" dominant-baseline="central" text-anchor="middle" font-size="18" fill="#223449" font-weight="400">cosecha · finca · producto · categoria · pedido · detalle_pedido · reserva</text>
+<path d="M 630 420 L 630 500" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="650" y="447" width="80" height="30" rx="5" fill="white"/>
+<text x="690.0" y="462.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">usa</text>
+<path d="M 1345 420 L 1345 500" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="1365" y="447" width="80" height="30" rx="5" fill="white"/>
+<text x="1405.0" y="462.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">usa</text>
+<path d="M 630 780 L 630 610" fill="none" stroke="#526477" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<rect x="660" y="674" width="160" height="30" rx="5" fill="white"/>
+<text x="740.0" y="689.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">implementa</text>
+<path d="M 1345 780 L 1345 610" fill="none" stroke="#526477" stroke-width="2.3" stroke-dasharray="9 6" marker-end="url(#realize)"/>
+<rect x="1375" y="674" width="160" height="30" rx="5" fill="white"/>
+<text x="1455.0" y="689.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">implementa</text>
+<path d="M 630 920 L 630 1000" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="650" y="944" width="90" height="30" rx="5" fill="white"/>
+<text x="695.0" y="959.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">delega</text>
+<path d="M 1345 920 L 1345 1000" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="1365" y="944" width="90" height="30" rx="5" fill="white"/>
+<text x="1410.0" y="959.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">delega</text>
+<path d="M 1000 1110 L 1000 1240" fill="none" stroke="#526477" stroke-width="2.3" marker-end="url(#call)"/>
+<rect x="1020" y="1161" width="80" height="30" rx="5" fill="white"/>
+<text x="1060.0" y="1176.0" dominant-baseline="central" text-anchor="middle" font-size="17" fill="#536477" font-weight="400">SQL</text>
+<text x="66" y="70.0" dominant-baseline="central" text-anchor="start" font-size="36" fill="#223449" font-weight="700">D03 / Dependencias y separación de responsabilidades</text>
+<text x="66" y="123.0" dominant-baseline="central" text-anchor="start" font-size="20" fill="#536477" font-weight="400">Detalle de diseño de publicación y consulta de precios · Los contratos y adaptadores son propuestas</text>
+<text x="90" y="240.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#25674e" font-weight="700">CAPA 2</text>
+<text x="90" y="302.15" dominant-baseline="central" text-anchor="start" font-size="22" fill="#25674e" font-weight="700">Lógica de negocio</text><text x="90" y="331.84999999999997" dominant-baseline="central" text-anchor="start" font-size="22" fill="#25674e" font-weight="700">y contratos</text>
+<text x="90" y="414.025" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">MODELO · DIP</text><text x="90" y="436.97499999999997" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">y SRP</text>
+<text x="90" y="785.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#6a4c94" font-weight="700">CAPA 3</text>
+<text x="90" y="862.0" dominant-baseline="central" text-anchor="start" font-size="22" fill="#6a4c94" font-weight="700">Acceso a datos</text>
+<text x="90" y="959.025" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">ADAPTADORES ·</text><text x="90" y="981.975" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">implementaciones</text>
+<text x="90" y="1260.0" dominant-baseline="central" text-anchor="start" font-size="29" fill="#986319" font-weight="700">CAPA 4</text>
+<text x="90" y="1312.0" dominant-baseline="central" text-anchor="start" font-size="22" fill="#986319" font-weight="700">Persistencia</text>
+<text x="90" y="1357.0" dominant-baseline="central" text-anchor="start" font-size="17" fill="#536477" font-weight="400">DATOS</text>
+<text x="66" y="1445.0" dominant-baseline="central" text-anchor="start" font-size="22" fill="#223449" font-weight="700">SRP: separar publicación de ofertas y consulta histórica de precios en servicios distintos.</text>
+<text x="66" y="1500.5" dominant-baseline="central" text-anchor="start" font-size="20" fill="#536477" font-weight="400">DIP: los servicios reciben interfaces; los adaptadores dependen de esos contratos y los implementan.</text>
+<text x="66" y="1548.85" dominant-baseline="central" text-anchor="start" font-size="18" fill="#536477" font-weight="400">Se muestra un extracto de las dependencias. Las vistas, los controladores y los demás casos están en la hoja 01.</text><text x="66" y="1573.1499999999999" dominant-baseline="central" text-anchor="start" font-size="18" fill="#536477" font-weight="400">Las transacciones y las pruebas de concurrencia siguen siendo trabajo de implementación.</text>
+</g></svg>
