@@ -31,7 +31,7 @@ class Sprint2EndpointsTests {
   private ObjectMapper objectMapper;
 
   @Test
-  void publicaYFiltraUnaCosechaPersistente() throws Exception {
+  void publicaUnaCosechaPersistenteYpermiteFiltrarla() throws Exception {
     CuentaPrueba agricultor = registrar("AGRICULTOR");
     long fincaId = crearFinca(agricultor, "Dagua");
     String body = cosechaJson(fincaId, "Mango", "Frutas", LocalDate.now().plusDays(1));
@@ -79,7 +79,7 @@ class Sprint2EndpointsTests {
   }
 
   @Test
-  void rechazaFincaAjenaFechaPasadaYCategoriaInvalida() throws Exception {
+  void rechazaFincaAjenaFechaPasadaCategoriaInvalida() throws Exception {
     CuentaPrueba propietario = registrar("AGRICULTOR");
     CuentaPrueba intruso = registrar("AGRICULTOR");
     long fincaId = crearFinca(propietario, "Cali");

@@ -43,7 +43,7 @@ class CalculadoraFleteServiceTests {
   }
 
   @Test
-  void rechazaMunicipiosAjenosAlValleYSubtotalesNoPositivos() {
+  void rechazaMunicipiosAjenosAlValleSubtotalesNoPositivos() {
     var municipio = assertThrows(ResponseStatusException.class,
         () -> service.calcular("Bogota", new BigDecimal("100000")));
     var subtotal = assertThrows(ResponseStatusException.class,

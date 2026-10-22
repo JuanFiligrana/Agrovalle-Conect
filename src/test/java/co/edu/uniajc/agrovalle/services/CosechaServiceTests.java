@@ -110,7 +110,7 @@ class CosechaServiceTests {
   }
 
   @Test
-  void rechazaUnaFechaAnteriorAHoyEnColombia() {
+  void rechazaUnaFechaAnteriorAlDiaActualEnColombia() {
     CosechaRequest request = new CosechaRequest(9, "Mango", "Frutas",
         new BigDecimal("250"), new BigDecimal("3500"), LocalDate.now().minusDays(1));
 
