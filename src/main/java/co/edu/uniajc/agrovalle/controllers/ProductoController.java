@@ -2,10 +2,12 @@ package co.edu.uniajc.agrovalle.controllers;
 
 import co.edu.uniajc.agrovalle.dto.CosechaRequest;
 import co.edu.uniajc.agrovalle.models.Cosecha;
+import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
 import co.edu.uniajc.agrovalle.services.CosechaService;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,8 +31,9 @@ public class ProductoController {
   /** Publica una cosecha asociada a una finca propia. */
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public Cosecha publicar(@Valid @RequestBody CosechaRequest request) {
-    return service.publicar(request);
+  public Cosecha publicar(@AuthenticationPrincipal UsuarioAutenticado usuario,
+      @Valid @RequestBody CosechaRequest request) {
+    return service.publicar(request, usuario);
   }
 
   /** Consulta ofertas activas aplicando filtros opcionales. */

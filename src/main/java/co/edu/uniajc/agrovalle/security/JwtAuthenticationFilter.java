@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -35,7 +36,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     String path = request.getRequestURI().substring(request.getContextPath().length());
     boolean protectedPath = "/api/v1/auth/me".equals(path)
         || "/api/v1/fincas".equals(path)
-        || path.startsWith("/api/v1/fincas/");
+        || path.startsWith("/api/v1/fincas/")
+        || "/api/v1/notificaciones/cosechas".equals(path)
+        || HttpMethod.POST.matches(request.getMethod()) && "/api/v1/productos".equals(path);
     return !protectedPath;
   }
 

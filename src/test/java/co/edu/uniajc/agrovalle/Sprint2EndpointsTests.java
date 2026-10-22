@@ -51,6 +51,14 @@ class Sprint2EndpointsTests {
         .andExpect(status().isOk())
         .andExpect(jsonPath("$", hasSize(1)))
         .andExpect(jsonPath("$[0].tipo").value("Mango"));
+
+    mockMvc.perform(get("/api/v1/notificaciones/cosechas")
+            .header(HttpHeaders.AUTHORIZATION, bearer(agricultor)))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$", hasSize(1)))
+        .andExpect(jsonPath("$[0].cosechaId").isNumber())
+        .andExpect(jsonPath("$[0].mensaje").value(
+            "Cosecha de Mango publicada correctamente"));
   }
 
   @Test
@@ -91,6 +99,22 @@ class Sprint2EndpointsTests {
     mockMvc.perform(get("/api/v1/productos").param("categoria", "Inexistente"))
         .andExpect(status().isBadRequest())
         .andExpect(jsonPath("$.message").value("categoria: no pertenece al catálogo"));
+  }
+
+  @Test
+  void calculaFleteConLaEstrategiaDeLaZona() throws Exception {
+    mockMvc.perform(get("/api/v1/fletes/calculo")
+            .param("municipio", "Dagua")
+            .param("subtotal", "100000"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.municipio").value("Dagua"))
+        .andExpect(jsonPath("$.estrategia").value("INTERMEDIO"))
+        .andExpect(jsonPath("$.valorCop").value(18000.0));
+
+    mockMvc.perform(get("/api/v1/fletes/calculo")
+            .param("municipio", "Bogota")
+            .param("subtotal", "100000"))
+        .andExpect(status().isBadRequest());
   }
 
   private CuentaPrueba registrar(String rol) throws Exception {

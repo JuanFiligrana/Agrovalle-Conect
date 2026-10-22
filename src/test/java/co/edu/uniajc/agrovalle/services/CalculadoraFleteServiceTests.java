@@ -1,9 +1,12 @@
 package co.edu.uniajc.agrovalle.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 /** Verifica la selección intercambiable de estrategias de flete. */
 class CalculadoraFleteServiceTests {
@@ -32,5 +35,16 @@ class CalculadoraFleteServiceTests {
 
     assertEquals("LEJANO", resultado.estrategia());
     assertEquals(new BigDecimal("26000.00"), resultado.valorCop());
+  }
+
+  @Test
+  void rechazaMunicipiosAjenosAlValleYSubtotalesNoPositivos() {
+    var municipio = assertThrows(ResponseStatusException.class,
+        () -> service.calcular("Bogota", new BigDecimal("100000")));
+    var subtotal = assertThrows(ResponseStatusException.class,
+        () -> service.calcular("Cali", BigDecimal.ZERO));
+
+    assertEquals(HttpStatus.BAD_REQUEST, municipio.getStatusCode());
+    assertEquals(HttpStatus.BAD_REQUEST, subtotal.getStatusCode());
   }
 }
