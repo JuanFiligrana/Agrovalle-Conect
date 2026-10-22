@@ -9,7 +9,7 @@ Para abrir el codigo en Visual Studio Code:
 Archivo > Abrir carpeta > Proyecto_AgroValle_Connect.
 
 Para comprobar compilacion, estilo, pruebas y cobertura: verificar.cmd.
-Conserva tu JDK 25 instalado. Si 8081 ya esta ocupado, detén la otra ejecucion
+Conserva tu JDK 17 LTS instalado. Si 8081 ya esta ocupado, detén la otra ejecucion
 con Ctrl+C o ejecuta iniciar.cmd 8082 y abre http://localhost:8082/.
 
 Se corrigieron los 36 errores de Checkstyle del registro enviado:

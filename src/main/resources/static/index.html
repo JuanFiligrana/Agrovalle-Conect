@@ -1,46 +1,184 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AgroValle Connect</title>
-<style>
-:root{font-family:system-ui,sans-serif;color:#153b2b;background:#f6f6ee}*{box-sizing:border-box}
-body{margin:0}header,main,footer{max-width:1080px;margin:auto;padding:24px}
-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d5dfd1}
-.brand{font-weight:750;letter-spacing:-.04em;font-size:25px}.tag{font-size:13px;border:1px solid #bdcfbe;border-radius:20px;padding:6px 12px}
-.hero{padding:68px 0 48px;max-width:800px}.eyebrow{text-transform:uppercase;font-size:12px;letter-spacing:.15em;color:#557152}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.05;letter-spacing:-.045em;margin:18px 0 26px}
-.lead{max-width:650px;font-size:19px;line-height:1.6;color:#4f6254}.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-article{border-top:2px solid #829c6e;padding-top:12px}h2{font-size:19px}p{line-height:1.65}
-.status{margin-top:44px;background:#e9efdf;padding:24px;border-radius:12px}.status h2{margin-top:0}
-a,button{display:inline-block;border:0;background:#1b5137;color:white;padding:12px 18px;border-radius:7px;font:inherit;text-decoration:none;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #bd8109;outline-offset:3px}#resultado{display:block;margin-top:14px;font-weight:600}
-footer{font-size:13px;color:#56675a;margin-top:35px;border-top:1px solid #d5dfd1}
-@media(max-width:650px){.modules{grid-template-columns:1fr}.hero{padding-top:40px}header{gap:12px}.brand{font-size:21px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mercado agrícola digital que conecta fincas del Valle del Cauca con compradores y comercios de la región.">
+  <title>AgroValle Connect · Del campo a tu negocio</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<header><div class="brand">AgroValle Connect</div><span class="tag">Valle del Cauca</span></header>
-<main>
-<section class="hero"><p class="eyebrow">Del campo al comercio</p><h1>Más cerca de quien<br>cultiva tu alimento.</h1>
-<p class="lead">Una plataforma para conectar a productores del Valle del Cauca con compradores y comercios de la región, con información clara sobre origen, disponibilidad y entrega.</p></section>
-<section class="modules" aria-label="Servicios disponibles del Sprint 2">
-<article><p class="eyebrow">01 · Origen</p><h2>Productores y cosechas</h2><p>Fincas identificadas por municipio y ofertas con cantidad, precio y fecha de recolección.</p></article>
-<article><p class="eyebrow">02 · Compra directa</p><h2>Ofertas y pedidos</h2><p>Búsqueda por categoría y municipio, contacto directo y reservas de inventario.</p></article>
-<article><p class="eyebrow">03 · Seguimiento</p><h2>Entregas con información</h2><p>Programación de despachos e historial de estados para conocer el avance de cada pedido.</p></article>
-</section>
-<section class="status"><h2>Incremento funcional del Sprint 2</h2><p>Ya están disponibles el registro seguro, las fincas, la publicación persistente de cosechas, los filtros por municipio y categoría, las notificaciones internas y el cálculo de flete por zona.</p>
-<button id="comprobar" type="button">Comprobar disponibilidad</button> <a href="/api/v1/estado">Ver respuesta del servicio</a>
-<output id="resultado" aria-live="polite"></output></section>
-</main><footer>AgroValle Connect · Proyecto académico · UNIAJC</footer>
-<script>
-const boton=document.getElementById('comprobar');
-boton.addEventListener('click',async()=>{
- const salida=document.getElementById('resultado');boton.disabled=true;salida.textContent='Comprobando…';
- try{const respuesta=await fetch('/api/v1/estado');if(!respuesta.ok)throw new Error('HTTP');
- const datos=await respuesta.json();salida.textContent=datos.estado==='OK'?'Servicio disponible.':'Servicio temporalmente no disponible.';
- }catch{salida.textContent='No se pudo conectar. Comprueba que la aplicación siga abierta en la terminal.';}
- finally{boton.disabled=false;}
-});
-</script></body></html>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="announcement">Compra directamente a fincas verificadas del Valle del Cauca · Precios y entregas transparentes</div>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html" aria-label="AgroValle Connect, inicio">
+        <img src="assets/brand-mark.svg" alt="">
+        <span>AgroValle Connect<small>Mercado agrícola</small></span>
+      </a>
+      <div class="nav-links" data-nav>
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="catalogo.html">Cosechas</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="seguimiento.html">Seguir entrega</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button button--light button--small" href="login.html">Iniciar sesión</a>
+        <a class="button button--small" href="login.html#registro">Vender mi cosecha</a>
+        <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">Fresco, local y sin intermediarios</p>
+            <h1>Del campo del Valle, directo a tu negocio.</h1>
+            <p>Encuentra cosechas frescas, conoce a quien las cultiva y reserva con información clara sobre precio, origen y entrega.</p>
+            <div class="hero-actions">
+              <a class="button button--sun" href="catalogo.html">Explorar cosechas</a>
+              <a class="button button--ghost" href="login.html#registro">Publicar mis productos</a>
+            </div>
+            <div class="hero-proof" aria-label="Beneficios principales">
+              <span>✓ Productores verificados</span>
+              <span>✓ Precios por kilogramo</span>
+              <span>✓ Entregas con seguimiento</span>
+            </div>
+          </div>
+          <div class="hero-float">
+            <span class="status-dot" aria-hidden="true"></span>
+            <div><strong>Cosechas listas hoy</strong><span>Dagua, Palmira, Jamundí y otros municipios</span></div>
+          </div>
+        </div>
+
+        <form class="search-dock" action="catalogo.html" method="get" aria-label="Buscar cosechas">
+          <div class="field">
+            <label for="buscar-inicio">¿Qué necesitas?</label>
+            <input id="buscar-inicio" name="buscar" type="search" placeholder="Ej. mango, café o tomate">
+          </div>
+          <div class="field">
+            <label for="categoria-inicio">Categoría</label>
+            <select id="categoria-inicio" name="categoria">
+              <option value="">Todas</option>
+              <option>Frutas</option>
+              <option>Verduras</option>
+              <option>Tubérculos</option>
+              <option>Granos</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="municipio-inicio">Municipio</label>
+            <select id="municipio-inicio" name="municipio">
+              <option value="">Todo el Valle</option>
+              <option>Dagua</option>
+              <option>Palmira</option>
+              <option>Jamundí</option>
+              <option>Buga</option>
+            </select>
+          </div>
+          <button class="button" type="submit">Buscar productos</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="destacadas-title">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div>
+            <p class="eyebrow">Cosechas disponibles</p>
+            <h2 id="destacadas-title">Fresco esta semana</h2>
+            <p>Ofertas recientes de productores del Valle, con disponibilidad y precio visibles.</p>
+          </div>
+          <a class="text-link" href="catalogo.html">Ver catálogo completo →</a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-media media--mango"><span class="product-badge">Recién cosechado</span></div>
+            <div class="product-body">
+              <p class="product-meta">Frutas · Dagua</p><h3>Mango Tommy</h3>
+              <p class="product-price">$3.500 <small>COP/kg</small></p><p class="product-origin">Finca La Esperanza · 250 kg disponibles</p>
+              <div class="product-actions"><a class="button button--light button--small" href="catalogo.html">Ver cosecha</a><button class="button button--small" type="button" data-demo-action data-product="mango">Reservar</button></div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media media--platano"><span class="product-badge">Precio especial</span></div>
+            <div class="product-body">
+              <p class="product-meta">Frutas · Jamundí</p><h3>Plátano hartón</h3>
+              <p class="product-price">$2.200 <small>COP/kg</small></p><p class="product-origin">Finca El Recuerdo · 430 kg disponibles</p>
+              <div class="product-actions"><a class="button button--light button--small" href="catalogo.html">Ver cosecha</a><button class="button button--small" type="button" data-demo-action data-product="plátano">Reservar</button></div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media media--tomate"><span class="product-badge">Cosecha verificada</span></div>
+            <div class="product-body">
+              <p class="product-meta">Verduras · Palmira</p><h3>Tomate chonto</h3>
+              <p class="product-price">$2.850 <small>COP/kg</small></p><p class="product-origin">Finca La Rivera · 180 kg disponibles</p>
+              <div class="product-actions"><a class="button button--light button--small" href="catalogo.html">Ver cosecha</a><button class="button button--small" type="button" data-demo-action data-product="tomate">Reservar</button></div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media media--aguacate"><span class="product-badge">Entrega disponible</span></div>
+            <div class="product-body">
+              <p class="product-meta">Frutas · Buga</p><h3>Aguacate Hass</h3>
+              <p class="product-price">$6.900 <small>COP/kg</small></p><p class="product-origin">Finca Villa Verde · 120 kg disponibles</p>
+              <div class="product-actions"><a class="button button--light button--small" href="catalogo.html">Ver cosecha</a><button class="button button--small" type="button" data-demo-action data-product="aguacate">Reservar</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="como-funciona" aria-labelledby="como-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Comprar es sencillo</p><h2 id="como-title">Una compra directa y transparente</h2><p>La plataforma muestra lo importante desde el primer momento y acompaña al comprador hasta la entrega.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="number-icon">01</div><h3>Explora y filtra</h3><p>Busca por producto, categoría, municipio o productor para encontrar la cosecha que necesita tu negocio.</p></article>
+          <article class="step-card"><div class="number-icon">02</div><h3>Reserva y acuerda</h3><p>Revisa precio, cantidad, finca y fecha de cosecha. Reserva el producto y contacta al agricultor.</p></article>
+          <article class="step-card"><div class="number-icon">03</div><h3>Sigue la entrega</h3><p>Consulta si el pedido está pendiente, listo, en camino, entregado o presenta alguna novedad.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trazabilidad-title">
+      <div class="container">
+        <div class="trace-panel">
+          <div><p class="eyebrow">Logística visible</p><h2 id="trazabilidad-title">Sabes dónde está tu pedido.</h2><p>Cada entrega conserva un historial claro. El comprador puede revisar el avance sin perseguir información por llamadas o mensajes sueltos.</p><a class="button button--sun" href="seguimiento.html">Consultar una entrega</a></div>
+          <div class="trace-steps" aria-label="Ejemplo de seguimiento">
+            <div class="trace-step"><i></i><div><strong>Pedido confirmado</strong><span>22 oct · 8:14 a. m.</span></div></div>
+            <div class="trace-step"><i></i><div><strong>Preparando en la finca</strong><span>22 oct · 10:40 a. m.</span></div></div>
+            <div class="trace-step"><i></i><div><strong>En camino a Cali</strong><span>Entrega estimada: 3:30 p. m.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="vender-title">
+      <div class="container">
+        <div class="seller-cta">
+          <div><p class="eyebrow">Para agricultores</p><h2 id="vender-title">Tu cosecha merece llegar más lejos.</h2><p>Publica productos, organiza ofertas, recibe mensajes de compradores y revisa pedidos y entregas desde un panel claro.</p><a class="button" href="login.html#registro">Crear cuenta de agricultor</a></div>
+          <div class="seller-stat" aria-label="Ventajas para agricultores">
+            <div><strong>Directo</strong><span>Contacto con compradores</span></div><div><strong>Visible</strong><span>Catálogo por municipio</span></div><div><strong>Claro</strong><span>Precio y cantidad en kg</span></div><div><strong>Seguro</strong><span>Historial de entregas</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Mercado agrícola</small></span></a><p>Conectamos la oferta agrícola de las fincas del Valle del Cauca con la demanda comercial urbana.</p><span class="api-status" data-api-status>Comprobando servicio…</span></div>
+        <div><h3>Comprar</h3><a href="catalogo.html">Ver cosechas</a><a href="catalogo.html?categoria=Frutas">Frutas</a><a href="seguimiento.html">Seguir entrega</a></div>
+        <div><h3>Vender</h3><a href="login.html#registro">Crear cuenta</a><a href="publicar-cosecha.html">Publicar cosecha</a><a href="agricultor.html">Panel del agricultor</a></div>
+        <div><h3>Proyecto</h3><a href="administrador.html">Panel administrativo</a><a href="#como-funciona">Cómo funciona</a><a href="mailto:soporte@agrovalle.local">Ayuda</a></div>
+      </div>
+      <div class="footer-bottom">AgroValle Connect · Proyecto académico UNIAJC · Prototipo web responsive</div>
+    </div>
+  </footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

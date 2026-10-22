@@ -1,5 +1,11 @@
 # R01 · Refactorización de servicios con SRP y DIP
 
+> **Nota de vigencia:** este informe describe el estado histórico de R01 y sus pruebas con
+> Java 25. Desde entonces el repositorio incorporó autenticación JWT, adaptadores
+> JPA/PostgreSQL y la aplicación web responsive; la configuración vigente usa Java 17. Los
+> pendientes y resultados citados abajo se mantienen como evidencia de aquel incremento,
+> no como diagnóstico del código actual.
+
 ## Problema y resultado
 
 `CosechaService` reunía publicación, filtros y cálculo de precios, y recibía repositorios y servicios concretos. `ContactoService` dependía de otros dos servicios concretos y de un repositorio. Ambos elegían directamente respuestas HTTP desde las reglas del caso de uso.

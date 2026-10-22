@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario para publicar una cosecha en AgroValle Connect.">
+  <title>Publicar cosecha · AgroValle Connect</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al formulario</a>
+  <main class="form-page" id="contenido">
+    <section class="form-visual" aria-label="Información para agricultores">
+      <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Panel agricultor</small></span></a>
+      <div><blockquote>Publica una cosecha clara y fácil de encontrar.</blockquote><p>La cantidad y el precio se expresan por kilogramo para evitar ambigüedades al comprador.</p></div>
+      <a class="button button--ghost button--small" href="agricultor.html">← Volver al panel</a>
+    </section>
+    <div class="form-content">
+      <div class="form-card">
+        <p class="eyebrow">Nueva publicación</p><h1>Publicar cosecha</h1><p>Completa la información que verá el comprador en el catálogo. Los campos obligatorios están claramente identificados.</p>
+        <form data-demo-form data-success="La cosecha quedó validada. En la aplicación conectada se publicaría en el catálogo.">
+          <div class="form-grid">
+            <div class="field field--full"><label for="finca">Finca que ofrece la cosecha</label><select id="finca" name="fincaId" required><option value="">Seleccionar finca</option><option value="1">Finca La Esperanza · Dagua</option><option value="2">Finca El Porvenir · Ginebra</option></select></div>
+            <div class="field"><label for="categoria-publicar">Categoría</label><select id="categoria-publicar" name="categoria" required><option value="">Seleccionar</option><option>Frutas</option><option>Verduras</option><option>Tubérculos</option><option>Granos</option></select></div>
+            <div class="field"><label for="producto-publicar">Producto o variedad</label><input id="producto-publicar" name="tipo" placeholder="Ej. Mango Tommy" required><small>Usa un nombre específico que el comprador reconozca.</small></div>
+            <div class="field"><label for="cantidad">Cantidad disponible (kg)</label><input id="cantidad" name="cantidadKg" type="number" inputmode="decimal" min="0.001" step="0.001" placeholder="250" required></div>
+            <div class="field"><label for="precio">Precio por kg (COP)</label><input id="precio" name="precioCopKg" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="3500" required></div>
+            <div class="field"><label for="fecha">Fecha de cosecha</label><input id="fecha" name="fechaCosecha" type="date" required></div>
+            <div class="field"><label for="entrega">Disponibilidad de entrega</label><select id="entrega" name="entrega"><option>Recoge en finca</option><option>Entrega en municipio</option><option>Entrega coordinada en Cali</option></select></div>
+            <div class="field field--full"><label for="descripcion">Descripción para el comprador</label><textarea id="descripcion" name="descripcion" maxlength="500" placeholder="Describe madurez, presentación, prácticas de cultivo y condiciones de entrega."></textarea><small>Máximo 500 caracteres.</small></div>
+          </div>
+          <p class="form-note">Antes de publicar, AgroValle valida la finca, la categoría, la cantidad, el precio y la fecha. La publicación siempre conserva su relación con el agricultor autenticado.</p>
+          <div class="hero-actions"><button class="button" type="submit">Publicar en el catálogo</button><a class="button button--light" href="agricultor.html">Cancelar</a></div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

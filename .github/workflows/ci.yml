@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Configurar JDK 25
+      - name: Configurar JDK 17 LTS
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25'
+          java-version: '17'
           cache: maven
       - name: Compilar y verificar calidad
         run: sh ./mvnw -B verify
