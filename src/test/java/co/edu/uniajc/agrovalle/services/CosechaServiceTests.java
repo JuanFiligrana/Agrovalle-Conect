@@ -18,6 +18,7 @@ import co.edu.uniajc.agrovalle.ports.FincaPort;
 import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,6 +34,8 @@ import org.springframework.web.server.ResponseStatusException;
 /** TDD de publicación, propiedad, catálogo y filtros del Sprint 2. */
 @ExtendWith(MockitoExtension.class)
 class CosechaServiceTests {
+
+  private static final ZoneId ZONA_COLOMBIA = ZoneId.of("America/Bogota");
 
   @Mock
   private CosechaPort cosechas;
@@ -62,7 +65,8 @@ class CosechaServiceTests {
     ArgumentCaptor<Cosecha> oferta = ArgumentCaptor.forClass(Cosecha.class);
     verify(cosechas).save(oferta.capture());
     assertEquals(new Cosecha(0, 7, 9, "Mango", "Frutas", new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.now().plusDays(1), true), oferta.getValue());
+        new BigDecimal("3500.00"), LocalDate.now(ZONA_COLOMBIA).plusDays(1), true),
+        oferta.getValue());
     verify(events).publishEvent(new CosechaPublicadaEvent(guardada));
   }
 
@@ -100,7 +104,8 @@ class CosechaServiceTests {
   @Test
   void rechazaUnaCategoriaFueraDelCatalogo() {
     CosechaRequest request = new CosechaRequest(9, "Mango", "Electrodomesticos",
-        new BigDecimal("250"), new BigDecimal("3500"), LocalDate.now().plusDays(1));
+        new BigDecimal("250"), new BigDecimal("3500"),
+        LocalDate.now(ZONA_COLOMBIA).plusDays(1));
 
     var error = assertThrows(ResponseStatusException.class,
         () -> service.publicar(request, usuario(7, RolUsuario.AGRICULTOR)));
@@ -112,7 +117,8 @@ class CosechaServiceTests {
   @Test
   void rechazaUnaFechaAnteriorAlDiaActualEnColombia() {
     CosechaRequest request = new CosechaRequest(9, "Mango", "Frutas",
-        new BigDecimal("250"), new BigDecimal("3500"), LocalDate.now().minusDays(1));
+        new BigDecimal("250"), new BigDecimal("3500"),
+        LocalDate.now(ZONA_COLOMBIA).minusDays(1));
 
     var error = assertThrows(ResponseStatusException.class,
         () -> service.publicar(request, usuario(7, RolUsuario.AGRICULTOR)));
@@ -179,7 +185,7 @@ class CosechaServiceTests {
 
   private CosechaRequest solicitud() {
     return new CosechaRequest(9, " Mango ", " frutas ", new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.now().plusDays(1));
+        new BigDecimal("3500.00"), LocalDate.now(ZONA_COLOMBIA).plusDays(1));
   }
 
   private UsuarioAutenticado usuario(long id, RolUsuario rol) {
@@ -192,6 +198,6 @@ class CosechaServiceTests {
 
   private Cosecha cosecha(long id, long fincaId, String tipo, String categoria, boolean activa) {
     return new Cosecha(id, 7, fincaId, tipo, categoria, new BigDecimal("250.000"),
-        new BigDecimal("3500.00"), LocalDate.now().plusDays(1), activa);
+        new BigDecimal("3500.00"), LocalDate.now(ZONA_COLOMBIA).plusDays(1), activa);
   }
 }

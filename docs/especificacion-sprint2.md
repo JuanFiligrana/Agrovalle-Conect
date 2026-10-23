@@ -63,9 +63,9 @@ forman parte de estas dos historias.
 
 | ID | Requisito | Evidencia prevista |
 |---|---|---|
-| RC-S2-01 | La implementación deberá usar Java 25 y Spring Boot 3.5.16. | Maven Enforcer y CI. |
+| RC-S2-01 | La implementación deberá usar Java 17 LTS y Spring Boot 3.5.16. | Maven Enforcer y CI. |
 | RC-S2-02 | La persistencia normal deberá utilizar PostgreSQL sin credenciales versionadas. | Configuración por variables y revisión del repositorio. |
-| RC-S2-03 | La suite deberá aprobarse completamente y JaCoCo deberá medir al menos 60 % de líneas. | `mvnw -B verify` y artefacto JaCoCo. |
+| RC-S2-03 | La suite deberá aprobarse completamente y JaCoCo deberá medir al menos 60 % de instrucciones, ramas y líneas. | `mvnw -B verify` y artefacto JaCoCo. |
 | RC-S2-04 | Los controladores no deberán implementar reglas de negocio ni acceso SQL. | Revisión de dependencias y Checkstyle. |
 | RC-S2-05 | Los cambios deberán integrarse mediante rama y Pull Request con check obligatorio. | Historial del PR y protección de `main`. |
 | RC-S2-06 | Los catálogos deberán normalizar mayúsculas, espacios y tildes sin aceptar valores ajenos. | Pruebas unitarias y REST. |

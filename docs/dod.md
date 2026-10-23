@@ -3,9 +3,9 @@
 Contrato de calidad propuesto para aceptación del equipo. La lista define condiciones;
 las casillas se evalúan por cada incremento y no declaran que las historias estén terminadas.
 
-- [ ] **Compilación:** El proyecto compila con JDK 25 y Maven Wrapper sin errores.
+- [ ] **Compilación:** El proyecto compila con JDK 17 LTS y Maven Wrapper sin errores.
 - [ ] **Estilo:** Checkstyle basado en Google Java Style no reporta infracciones de nivel warning o superior.
-- [ ] **Pruebas:** Pasa el 100 % de las pruebas existentes de JUnit 5; verify exige al menos 60 % de cobertura de líneas con JaCoCo.
+- [ ] **Pruebas:** Pasa el 100 % de las pruebas existentes de JUnit 5; `verify` exige al menos 60 % de instrucciones, ramas y líneas con JaCoCo.
 - [ ] **Revisión por pares:** Cada Pull Request tiene revisión y aprobación explícita de otro integrante antes del merge.
 - [ ] **Documentación:** README, BACKLOG y docs reflejan el comportamiento y las decisiones vigentes.
 - [ ] **Commits:** Los commits nuevos siguen Conventional Commits y describen cambios concretos.
@@ -36,7 +36,7 @@ No se considera firmado por el simple hecho de listar los nombres.
 
 | Condición | Evidencia | Estado verificable |
 |---|---|---|
-| HU-02 y HU-04 implementadas | Código, `sprint2.md` y pruebas | Verificada por CI |
+| HU-02 y HU-04 implementadas | Código, `sprint-2-planning.md` y pruebas | Verificada por CI |
 | TDD, JUnit, Mockito y MockMvc | Historial de PR #52 y `src/test/java` | Verificado |
 | Checkstyle, pruebas y JaCoCo | Ejecución 35: 0 infracciones, 55 pruebas y 97,93 % de líneas | Aprobado |
 | Documentación técnica | README, especificación, patrones y ceremonias | Actualizada |

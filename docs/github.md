@@ -37,8 +37,8 @@ El PR debe incluir:
 - explicación de Strategy y Observer;
 - enlace al tablero y riesgos conocidos.
 
-El check `build` ejecuta `mvnw -B verify` con JDK 25. Checkstyle, JUnit y el umbral
-JaCoCo de 60 % deben pasar antes del merge. El workflow publica el HTML de JaCoCo como
+El check `build` ejecuta `mvnw -B verify` con JDK 17 LTS. Checkstyle, JUnit y los umbrales
+JaCoCo de 60 % para instrucciones, ramas y líneas deben pasar antes del merge. El workflow publica el HTML de JaCoCo como
 artefacto para evitar depender de una captura aislada.
 
 La ejecución 35 aprobó `verify`: cero infracciones de Checkstyle, 55 pruebas sin fallos

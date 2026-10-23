@@ -3,19 +3,19 @@ rem Cambia variables solo en la terminal actual; no modifica Windows ni desinsta
 set "AGRO_JDK="
 if defined JAVA_HOME call :probar "%JAVA_HOME%"
 if defined AGRO_JDK goto :encontrado
-for /d %%J in ("C:\Program Files\Java\jdk-25*" "C:\Program Files\Eclipse Adoptium\jdk-25*" "C:\Program Files\Microsoft\jdk-25*" "C:\Program Files\Amazon Corretto\jdk25*" "%USERPROFILE%\.jdks\*25*") do call :probar "%%~J"
+for /d %%J in ("C:\Program Files\Java\jdk-17*" "C:\Program Files\Eclipse Adoptium\jdk-17*" "C:\Program Files\Microsoft\jdk-17*" "C:\Program Files\Amazon Corretto\jdk17*" "%USERPROFILE%\.jdks\*17*") do call :probar "%%~J"
 if defined AGRO_JDK goto :encontrado
 for /f "delims=" %%J in ('where java 2^>nul') do if not defined AGRO_JDK for %%K in ("%%~dpJ..") do call :probar "%%~fK"
 if defined AGRO_JDK goto :encontrado
-echo No se encontro JDK 25. Instala JDK 25 o indica su carpeta con:
-echo set "JAVA_HOME=C:\ruta\a\tu\jdk-25"
+echo No se encontro JDK 17. Instala JDK 17 LTS o indica su carpeta con:
+echo set "JAVA_HOME=C:\ruta\a\tu\jdk-17"
 echo Despues ejecuta iniciar.cmd de nuevo. Tu Java actual no se elimina.
 exit /b 1
 :probar
 if defined AGRO_JDK exit /b 0
 if not exist "%~1\bin\java.exe" exit /b 0
 if not exist "%~1\bin\javac.exe" exit /b 0
-"%~1\bin\javac.exe" -version 2>&1 | findstr /B /C:"javac 25." >nul
+"%~1\bin\javac.exe" -version 2>&1 | findstr /B /C:"javac 17." >nul
 if not errorlevel 1 set "AGRO_JDK=%~1"
 exit /b 0
 :encontrado

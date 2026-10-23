@@ -40,8 +40,8 @@ Una tarea que documenta una funcionalidad acredita ese documento o diseño. El c
 
 Además del alcance concreto de la tarea y del [DoD](dod.md):
 
-- El proyecto compila con el JDK 25 configurado en el repositorio y pasa `mvnw.cmd clean verify` en Windows o `./mvnw clean verify` en un entorno compatible.
-- Pasa el **100 % de las pruebas ejecutadas**, sin fallos, errores ni omisiones injustificadas. JaCoCo alcanza al menos el **60 % de cobertura de líneas** configurado; estas dos medidas son distintas.
+- El proyecto compila con el JDK 17 LTS configurado en el repositorio y pasa `mvnw.cmd clean verify` en Windows o `./mvnw clean verify` en un entorno compatible.
+- Pasa el **100 % de las pruebas ejecutadas**, sin fallos, errores ni omisiones injustificadas. JaCoCo alcanza al menos el **60 % de instrucciones, ramas y líneas** configurado; estas medidas son distintas.
 - Checkstyle no presenta infracciones de nivel warning o superior. Se corrigen y documentan las advertencias relevantes de la ejecución.
 - Los criterios BDD aplicables están comprobados. Una prueba del prototipo en memoria no demuestra por sí sola persistencia PostgreSQL ni autenticación JWT.
 - El PR tiene aprobación real de otro integrante y sus observaciones están resueltas. El autor no aprueba su propio PR.

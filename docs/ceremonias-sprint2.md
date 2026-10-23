@@ -1,5 +1,9 @@
 # Ceremonias del Sprint 2
 
+> **Nota de vigencia:** este documento conserva la evidencia histórica del PR #52 y su
+> ejecución con Java 25. La configuración vigente del repositorio usa Java 17; no se
+> reescriben los resultados históricos como si hubieran sido obtenidos con otra versión.
+
 ## Contexto del registro
 
 El incremento fue ejecutado individualmente por Michael David Caicedo Mina. Por ello,

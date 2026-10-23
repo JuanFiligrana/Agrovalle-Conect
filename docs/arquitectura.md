@@ -1,6 +1,6 @@
 # Arquitectura y alcance técnico
 
-Java 25 y Spring Boot 3.5.16 con Maven Wrapper 3.9.9. La clase de arranque configura
+Java 17 LTS y Spring Boot 3.5.16 con Maven Wrapper 3.9.9. La clase de arranque configura
 el servidor web. Los controladores reciben DTO validados y delegan las reglas a
 servicios. T01 persiste las cuentas mediante JPA y PostgreSQL; T04 hace lo mismo con
 las fincas. El Sprint 2 persiste categorías, productos y cosechas de HU-02. El repositorio

@@ -1,13 +1,13 @@
 # AgroValle Connect
 
 [![Java CI](https://github.com/JuanFiligrana/Agrovalle-Conect/actions/workflows/ci.yml/badge.svg)](https://github.com/JuanFiligrana/Agrovalle-Conect/actions/workflows/ci.yml)
-![Java 25](https://img.shields.io/badge/Java-25-orange)
+![Java 17](https://img.shields.io/badge/Java-17_LTS-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.16-green)
 
 ![Logo Automatic](assets/logo-automatic.jpeg)
 
 ## Visión del producto
-Para los productores del Valle del Cauca que necesitan vender directamente sus cosechas, AgroValle Connect es una plataforma web empresarial en Java 25 y Spring Boot que conecta la oferta agrícola con compradores y comercios de Cali y sus alrededores. A diferencia de la intermediación tradicional, el producto propone información transparente sobre origen, precio y disponibilidad, junto con trazabilidad de los pedidos mediante contratos de API verificables.
+Para los productores del Valle del Cauca que necesitan vender directamente sus cosechas, AgroValle Connect es una plataforma web empresarial en Java 17 LTS y Spring Boot que conecta la oferta agrícola con compradores y comercios de Cali y sus alrededores. A diferencia de la intermediación tradicional, el producto propone información transparente sobre origen, precio y disponibilidad, junto con trazabilidad de los pedidos mediante contratos de API verificables.
 
 
 ## Integrantes
@@ -22,7 +22,7 @@ Sprint 1. Un agricultor autenticado publica una cosecha en una finca propia; la 
 se persiste en PostgreSQL y puede consultarse con filtros combinados de municipio y
 categoría. El incremento también demuestra Strategy para el cálculo de flete y Observer
 para avisos de publicación. Alcance, criterios y trazabilidad se detallan en
-[Sprint 2](docs/sprint2.md).
+[Sprint 2](docs/sprint-2-planning.md).
 
 ### Rutas del incremento
 
@@ -42,20 +42,41 @@ para avisos de publicación. Alcance, criterios y trazabilidad se detallan en
 - `POST /api/v1/contacto/mensaje`: registra una solicitud de contacto con
   encabezado `Authorization`.
 
+## Interfaz web navegable
+
+Al abrir `http://localhost:8081/`, la aplicación presenta una portada pública dirigida al
+comprador, con catálogo, filtros, precios, disponibilidad y acceso al seguimiento. El
+prototipo de alta fidelidad también diferencia las herramientas del agricultor y del
+administrador:
+
+- [Portada pública](src/main/resources/static/index.html) y
+  [catálogo de cosechas](src/main/resources/static/catalogo.html).
+- [Acceso y registro por rol](src/main/resources/static/login.html).
+- [Panel del agricultor](src/main/resources/static/agricultor.html) y
+  [publicación de cosecha](src/main/resources/static/publicar-cosecha.html).
+- [Seguimiento de entregas](src/main/resources/static/seguimiento.html).
+- [Panel administrativo](src/main/resources/static/administrador.html).
+
+La interfaz es responsive y utiliza tipografía, controles y rótulos legibles para usuarios
+con distintos niveles de familiaridad digital. Los pedidos, entregas, reservas y reportes
+representan el diseño objetivo: solo las rutas REST enumeradas arriba acreditan funciones
+backend terminadas en este incremento. La justificación completa está en
+[D07 · prototipo web responsive](docs/diseno/D07-Mockups-HU01-HU05/Prototipo-Web-Responsive/README.md).
+
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
-2. Ejecutar `iniciar.cmd`. Busca un JDK 25 ya instalado en ubicaciones comunes o JAVA_HOME,
+2. Ejecutar `iniciar.cmd`. Busca un JDK 17 LTS ya instalado en ubicaciones comunes o JAVA_HOME,
    lo selecciona para esa ejecución y muestra la dirección a abrir.
 3. Al ver `Started AgrovalleApplication`, abrir http://localhost:8081/.
 4. Conservar la terminal abierta. Ctrl+C detiene la aplicación.
 
 Si el puerto 8081 está ocupado, ejecutar `iniciar.cmd 8082` y abrir localhost:8082.
-Si solo está instalado otro Java, instalar JDK 25 desde una distribución oficial.
+Si solo está instalado otro Java, instalar JDK 17 LTS desde una distribución oficial.
 El iniciador no desinstala Java ni cambia variables globales.
-Maven Enforcer exige JDK 25: compilar con target 25 usando otra JVM no sustituye ese requisito.
+Maven Enforcer exige JDK 17: compilar con otra JVM no sustituye ese requisito.
 
 ### Comandos directos
-Con JAVA_HOME apuntando al JDK 25, en PowerShell:
+Con JAVA_HOME apuntando al JDK 17, en PowerShell:
 ```powershell
 .\mvnw.cmd clean verify
 .\mvnw.cmd spring-boot:run
@@ -64,7 +85,7 @@ En Linux o Git Bash: `sh ./mvnw clean verify` y `sh ./mvnw spring-boot:run`.
 El Wrapper descarga Maven 3.9.9; la primera ejecución requiere Internet.
 
 ## Calidad local
-Con Git, Node.js 18 o posterior y JDK 25 instalados, dentro del repositorio clonado:
+Con Git, Node.js 18 o posterior y JDK 17 instalados, dentro del repositorio clonado:
 ```powershell
 npm.cmd ci
 git config --get core.hooksPath
@@ -74,7 +95,8 @@ los archivos al repositorio siguiendo [la guía de GitHub](docs/github.md).
 El hook ejecuta `sh ./mvnw -B test checkstyle:check`. Checkstyle también corre en validate.
 Husky detecta fallos antes del commit y Checkstyle impone un estilo uniforme; así se
 reduce el trabajo de corrección que se acumularía como deuda técnica.
-`verify` agrega empaquetado y el umbral JaCoCo de 60 %; reporte en target/site/jacoco/index.html.
+`verify` agrega empaquetado y exige en JaCoCo al menos 60 % de instrucciones, ramas y líneas;
+el reporte queda en `target/site/jacoco/index.html`.
 
 ## Estrategia de ramas
 El equipo propone Trunk-Based Development con ramas de tarea cortas y Pull Requests hacia main. Para cuatro integrantes y una sola versión académica activa, reduce las ramas de integración que deben mantenerse. Las tareas pequeñas, la sincronización frecuente y la revisión de un compañero antes del merge reducen esperas y conflictos. No se programa directamente sobre main después de la inicialización. La elección no elimina por sí sola los conflictos: requiere disciplina y controles de integración.
@@ -113,7 +135,10 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
 - [Autenticación JWT de HU-07](docs/jwt-hu07.md): configuración y contratos seguros.
 - [Persistencia de fincas de HU-08](docs/fincas-hu08.md): propiedad y pruebas.
-- [Incremento del Sprint 2](docs/sprint2.md): HU-02, HU-04 y demostración REST.
+- [Sprint de Diseño D01-D07](docs/diseno/README.md): modelos, UML, DDL, arquitectura y mockups.
+- [Planificación del Sprint 2](docs/sprint-2-planning.md): HU-02, HU-04 y demostración REST.
+- [Especificación formal de HU-01](docs/ieee29148-req01.md): ISO/IEC/IEEE 29148 frente a BDD.
+- [Patrones comportamentales](docs/diseno/patrones.md): problema y diagramas de clases.
 - [Especificación 29148 del Sprint 2](docs/especificacion-sprint2.md): requisitos y BDD.
 - [SOLID y patrones](docs/patrones-sprint2.md): decisiones Strategy y Observer.
 - [Ceremonias](docs/ceremonias-sprint2.md): Daily, Review y Retrospective en tercera persona.
@@ -124,15 +149,16 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [Matriz de requisitos](docs/matriz-requisitos.md): correspondencia con las guías.
 
 ## Integración continua
-El workflow `.github/workflows/ci.yml` ejecuta `verify` con Java 25 en pushes a main
-y en Pull Requests hacia main. Checkstyle, JUnit y el umbral JaCoCo de 60 % forman una
+El workflow `.github/workflows/ci.yml` ejecuta `verify` con Java 17 LTS en pushes a main
+y en Pull Requests hacia main. Checkstyle, JUnit y los umbrales JaCoCo de 60 % forman una
 sola barrera; el reporte HTML de JaCoCo se conserva como artefacto de cada ejecución.
 El badge refleja el último resultado remoto. Un workflow por sí solo no bloquea merges
 si la protección de la rama no exige el check `build`.
 
-La ejecución 35 del PR #52 aprobó `verify` con Java 25: cero infracciones de
+La ejecución 35 del PR #52 aprobó el incremento original con Java 25: cero infracciones de
 Checkstyle, 55 pruebas sin fallos y 97,93 % de cobertura de líneas. El detalle y los
-enlaces se conservan en [la evidencia del Sprint 2](docs/evidencias-sprint2.md).
+enlaces se conservan como evidencia histórica. La configuración vigente se alinea con
+Java 17 LTS y vuelve a comprobar los mismos controles en CI.
 
 ## Estructura
 - src/main/java/co/edu/uniajc/agrovalle/models: contratos de datos.

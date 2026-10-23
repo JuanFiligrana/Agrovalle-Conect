@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panel general de administración de AgroValle Connect.">
+  <title>Panel administrativo · AgroValle Connect</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="dashboard-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="dashboard-shell">
+    <aside class="sidebar" data-sidebar>
+      <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Administración</small></span></a>
+      <nav class="sidebar-nav" aria-label="Opciones administrativas">
+        <a href="administrador.html" aria-current="page"><span class="nav-symbol">⌂</span>Resumen</a>
+        <a href="#usuarios"><span class="nav-symbol">◎</span>Gestión de usuarios</a>
+        <a href="#productos"><span class="nav-symbol">▦</span>Gestión de productos</a>
+        <a href="#pedidos"><span class="nav-symbol">□</span>Pedidos</a>
+        <a href="#entregas"><span class="nav-symbol">↗</span>Logística y entregas</a>
+        <a href="#reportes"><span class="nav-symbol">↥</span>Informes y reportes</a>
+        <a href="#actividad"><span class="nav-symbol">◷</span>Actividad reciente</a>
+      </nav>
+      <div class="sidebar-profile"><div class="avatar">AD</div><div><strong>Administrador</strong><span>Acceso general</span></div></div>
+    </aside>
+    <div class="dashboard-main">
+      <header class="dash-topbar">
+        <div><p>Vista general del sistema</p><h1>Panel administrativo</h1></div>
+        <div class="topbar-actions"><span class="api-status" data-api-status>Comprobando servicio…</span><button class="icon-button sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menú">☰</button><button class="icon-button" type="button" data-notifications aria-label="Ver 4 alertas">✉<span class="notification-count">4</span></button><a class="button button--small" href="#reportes">Generar reporte</a></div>
+      </header>
+      <main class="dash-content" id="contenido">
+        <div class="welcome-row"><div><p class="eyebrow">Resumen general</p><h2>Así está AgroValle hoy.</h2><p>Usuarios, publicaciones, pedidos y entregas en una vista diferenciada del portal público.</p></div><a class="button button--light" href="index.html">Ver página pública</a></div>
+        <section class="metric-grid" aria-label="Indicadores generales">
+          <article class="metric-card" id="usuarios"><div class="metric-head"><span>Usuarios registrados</span><span class="metric-icon">◎</span></div><strong>386</strong><small>214 compradores · 172 agricultores</small></article>
+          <article class="metric-card" id="productos"><div class="metric-head"><span>Cosechas publicadas</span><span class="metric-icon">▦</span></div><strong>148</strong><small>126 activas en el catálogo</small></article>
+          <article class="metric-card" id="pedidos"><div class="metric-head"><span>Pedidos este mes</span><span class="metric-icon">□</span></div><strong>274</strong><small>18% más que el mes anterior</small></article>
+          <article class="metric-card metric-card--alert" id="entregas"><div class="metric-head"><span>Alertas de entrega</span><span class="metric-icon">!</span></div><strong>6</strong><small>Requieren revisión administrativa</small></article>
+        </section>
+
+        <div class="dash-grid">
+          <div>
+            <section class="panel" id="reportes" aria-labelledby="reportes-title">
+              <div class="panel-head"><h3 id="reportes-title">Accesos de gestión</h3><span class="pill">Administrador</span></div>
+              <div class="quick-grid">
+                <a class="quick-card" href="#usuarios"><span class="metric-icon">◎</span><strong>Gestionar usuarios</strong><span>Consultar, bloquear o habilitar →</span></a>
+                <a class="quick-card" href="#productos"><span class="metric-icon">▦</span><strong>Gestionar productos</strong><span>Revisar publicaciones →</span></a>
+                <a class="quick-card" href="#reportes"><span class="metric-icon">↥</span><strong>Reporte de cosechas</strong><span>Generar informe →</span></a>
+                <a class="quick-card" href="#reportes"><span class="metric-icon">↥</span><strong>Reporte de usuarios</strong><span>Agricultores y compradores →</span></a>
+              </div>
+            </section>
+            <section class="panel" aria-labelledby="usuarios-title">
+              <div class="panel-head"><h3 id="usuarios-title">Usuarios recientes</h3><a href="#usuarios">Gestionar usuarios</a></div>
+              <div class="table-wrap"><table class="data-table"><thead><tr><th>Usuario</th><th>Rol</th><th>Municipio</th><th>Registro</th><th>Estado</th></tr></thead><tbody>
+                <tr><td>Marta Valencia</td><td>Agricultora</td><td>Buga</td><td>Hoy, 8:14 a. m.</td><td><span class="pill">Activo</span></td></tr>
+                <tr><td>Mercado San Nicolás</td><td>Comprador</td><td>Cali</td><td>Ayer, 4:22 p. m.</td><td><span class="pill">Activo</span></td></tr>
+                <tr><td>José Ramírez</td><td>Agricultor</td><td>Palmira</td><td>21 oct, 10:06 a. m.</td><td><span class="pill pill--warning">Por verificar</span></td></tr>
+              </tbody></table></div>
+            </section>
+          </div>
+          <div>
+            <section class="panel" aria-labelledby="pedidos-estado-title">
+              <div class="panel-head"><h3 id="pedidos-estado-title">Pedidos por estado</h3><a href="#pedidos">Ver pedidos</a></div>
+              <div class="status-list">
+                <div class="status-item"><i class="warning"></i><div><strong>Pendientes</strong><span>Esperan confirmación</span></div><b>34</b></div>
+                <div class="status-item"><i></i><div><strong>Listos para despacho</strong><span>Preparados en finca</span></div><b>21</b></div>
+                <div class="status-item"><i></i><div><strong>En camino</strong><span>Seguimiento activo</span></div><b>18</b></div>
+                <div class="status-item"><i class="danger"></i><div><strong>Con retraso</strong><span>Requieren gestión</span></div><b>6</b></div>
+              </div>
+            </section>
+            <section class="panel" id="actividad" aria-labelledby="actividad-title">
+              <div class="panel-head"><h3 id="actividad-title">Actividad reciente</h3><a href="#actividad">Ver historial</a></div>
+              <div class="activity-list">
+                <div class="activity-item"><span class="metric-icon">＋</span><div><strong>Nueva cosecha publicada</strong><span>Mango Tommy · Finca La Esperanza</span></div><span>8:42</span></div>
+                <div class="activity-item"><span class="metric-icon">✓</span><div><strong>Entrega completada</strong><span>Pedido #AV-1036 · Palmira</span></div><span>8:16</span></div>
+                <div class="activity-item"><span class="metric-icon">◎</span><div><strong>Nuevo usuario</strong><span>Marta Valencia · Agricultora</span></div><span>8:14</span></div>
+              </div>
+            </section>
+            <section class="price-banner" aria-labelledby="salud-title"><p class="eyebrow">Estado del incremento</p><h3 id="salud-title">Conexión con el servicio</h3><p>La API, la autenticación y la persistencia cubren el alcance implementado. Los pedidos, la logística, las notificaciones y esta gestión administrativa se muestran como prototipo de diseño.</p><span class="api-status" data-api-status>Comprobando servicio…</span></section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

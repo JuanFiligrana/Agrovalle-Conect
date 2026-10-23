@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,6 +35,22 @@ class AgrovalleApplicationTests {
   @Test
   void portadaSeSirveComoHtml() throws Exception {
     mockMvc.perform(get("/index.html"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+        .andExpect(content().string(containsString("AgroValle Connect")));
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {
+      "/catalogo.html",
+      "/login.html",
+      "/agricultor.html",
+      "/publicar-cosecha.html",
+      "/seguimiento.html",
+      "/administrador.html"
+  })
+  void prototipoWebSirveLasVistasPorRol(String ruta) throws Exception {
+    mockMvc.perform(get(ruta))
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
         .andExpect(content().string(containsString("AgroValle Connect")));

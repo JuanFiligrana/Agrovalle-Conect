@@ -38,4 +38,4 @@ exclusiva del entorno H2; esa clave no debe reutilizarse fuera de las pruebas.
 ## Verificación
 
 `InicioSesionAcceptanceTests` cubre credenciales válidas, contraseña incorrecta, token
-alterado y token vencido. El flujo completo se verifica con `mvnw clean verify` en JDK 25.
+alterado y token vencido. El flujo completo se verifica con `mvnw clean verify` en JDK 17 LTS.

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulta de trazabilidad de entregas en AgroValle Connect.">
+  <title>Seguir una entrega · AgroValle Connect</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Mercado agrícola</small></span></a>
+      <div class="nav-links" data-nav><a href="index.html">Inicio</a><a href="catalogo.html">Cosechas</a><a href="index.html#como-funciona">Cómo funciona</a><a href="seguimiento.html" aria-current="page">Seguir entrega</a></div>
+      <div class="nav-actions"><a class="button button--light button--small" href="login.html">Iniciar sesión</a><button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menú">☰</button></div>
+    </nav>
+  </header>
+  <main id="contenido">
+    <section class="page-hero"><div class="container"><div><p class="eyebrow">Trazabilidad de entregas</p><h1>Consulta cómo avanza tu pedido</h1><p>Ingresa el código de pedido para ver sus estados y la última actualización registrada.</p></div></div></section>
+    <section class="section section--soft">
+      <div class="container">
+        <div class="tracking-card">
+          <form class="tracking-search" data-tracking-form><div class="field"><label for="codigo">Código del pedido</label><input id="codigo" name="codigo" value="AV-1042" placeholder="Ej. AV-1042" required></div><button class="button" type="submit">Consultar entrega</button></form>
+          <div class="tracking-result" data-tracking-result data-visible="true">
+            <div class="panel-head"><div><p class="eyebrow">Pedido #AV-1042</p><h2 style="font-size:32px;margin-bottom:6px">En camino a Cali</h2><p style="margin:0;color:var(--muted)">Entrega estimada: hoy entre 3:00 y 4:00 p. m.</p></div><span class="pill">En camino</span></div>
+            <div class="tracking-line" aria-label="Historial de la entrega">
+              <div class="tracking-point done"><strong>Confirmado</strong><span>22 oct · 8:14</span></div>
+              <div class="tracking-point done"><strong>Preparado</strong><span>22 oct · 10:40</span></div>
+              <div class="tracking-point done"><strong>En camino</strong><span>22 oct · 12:18</span></div>
+              <div class="tracking-point"><strong>Entregado</strong><span>Pendiente</span></div>
+            </div>
+            <div class="panel" style="box-shadow:none"><div class="panel-head"><h3>Información de la entrega</h3></div><div class="status-list"><div class="status-item"><i></i><div><strong>Origen</strong><span>Finca El Recuerdo · Jamundí</span></div></div><div class="status-item"><i></i><div><strong>Destino</strong><span>Restaurante El Prado · Cali</span></div></div><div class="status-item"><i></i><div><strong>Productos</strong><span>120 kg de plátano hartón</span></div></div><div class="status-item"><i></i><div><strong>Última novedad</strong><span>El despacho salió de la finca sin retrasos.</span></div></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom">AgroValle Connect · Seguimiento de entregas · <a href="index.html">Volver al inicio</a></div></div></footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

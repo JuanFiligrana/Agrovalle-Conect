@@ -1,5 +1,9 @@
 # Evidencia verificable del Sprint 2
 
+> **Registro histórico:** los valores siguientes pertenecen a la ejecución 35 del PR #52
+> con Java 25. La configuración actual del proyecto usa Java 17; esta tabla se conserva
+> para no alterar evidencia ya producida.
+
 Fecha de verificación: 22 de octubre de 2026, zona `America/Bogota`.
 
 ## Enlaces públicos
