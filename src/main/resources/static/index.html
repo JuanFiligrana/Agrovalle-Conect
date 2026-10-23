@@ -24,8 +24,8 @@
         <a href="seguimiento.html">Seguir entrega</a>
       </div>
       <div class="nav-actions">
-        <a class="button button--light button--small" href="login.html">Iniciar sesión</a>
-        <a class="button button--small" href="login.html#registro">Vender mi cosecha</a>
+        <a class="button button--light button--small" href="login.html" data-session-link>Iniciar sesión</a>
+        <a class="button button--small" href="login.html#registro" data-guest-only>Vender mi cosecha</a>
         <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
       </div>
     </nav>
@@ -72,12 +72,8 @@
           </div>
           <div class="field">
             <label for="municipio-inicio">Municipio</label>
-            <select id="municipio-inicio" name="municipio">
+            <select id="municipio-inicio" name="municipio" data-municipality-select>
               <option value="">Todo el Valle</option>
-              <option>Dagua</option>
-              <option>Palmira</option>
-              <option>Jamundí</option>
-              <option>Buga</option>
             </select>
           </div>
           <button class="button" type="submit">Buscar productos</button>

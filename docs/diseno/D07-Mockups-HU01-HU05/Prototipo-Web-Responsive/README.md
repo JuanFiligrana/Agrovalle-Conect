@@ -13,6 +13,7 @@ el producto a un cliente.
 | [`catalogo.html`](../../../../src/main/resources/static/catalogo.html) | Comprador | Buscar por producto, municipio, categoría o productor y comparar ofertas |
 | [`login.html`](../../../../src/main/resources/static/login.html) | Agricultor o comprador | Iniciar sesión o registrar un único perfil con campos explícitos |
 | [`agricultor.html`](../../../../src/main/resources/static/agricultor.html) | Agricultor autenticado | Atender productos, mensajes, pedidos, entregas, ofertas y precios |
+| [`registrar-finca.html`](../../../../src/main/resources/static/registrar-finca.html) | Agricultor autenticado | Registrar el origen que se asociará a sus publicaciones |
 | [`publicar-cosecha.html`](../../../../src/main/resources/static/publicar-cosecha.html) | Agricultor autenticado | Publicar desde un formulario independiente con unidades inequívocas |
 | [`seguimiento.html`](../../../../src/main/resources/static/seguimiento.html) | Comprador o agricultor | Consultar el avance y las novedades de una entrega |
 | [`administrador.html`](../../../../src/main/resources/static/administrador.html) | Administrador | Gestionar usuarios, productos, pedidos, logística y reportes |
@@ -64,12 +65,20 @@ de diseño navegable, no una afirmación de que todos esos módulos backend ya e
 
 - [`site.css`](../../../../src/main/resources/static/assets/site.css): sistema visual y
   adaptación responsive.
-- [`site.js`](../../../../src/main/resources/static/assets/site.js): navegación, filtros y
-  retroalimentación del prototipo.
+- [`site.js`](../../../../src/main/resources/static/assets/site.js): consumo de la API REST,
+  sesión JWT, navegación, filtros y retroalimentación visible.
 - [`brand-mark.svg`](../../../../src/main/resources/static/assets/brand-mark.svg): marca
   vectorial multicutivo.
 - [`agrovalle-hero.webp`](../../../../src/main/resources/static/assets/agrovalle-hero.webp):
   composición agrícola creada para AgroValle Connect y optimizada para la web.
 
-Los datos, fincas, nombres, pedidos, precios y cantidades visibles son ficticios y se usan
-únicamente para demostrar el flujo.
+## Integración funcional disponible
+
+La interfaz consume el backend para registro e inicio de sesión, consulta de identidad,
+registro y listado de fincas, publicación de cosechas y catálogo filtrable. El catálogo
+muestra productor, finca y municipio mediante un contrato público que excluye correo,
+documento, contraseña y demás datos privados. Contacto, reservas, pedidos y trazabilidad
+permanecen identificados como el siguiente incremento de programación.
+
+Los pedidos y entregas visibles son datos de diseño. Las cuentas, fincas y cosechas creadas
+desde los formularios conectados sí se leen y guardan mediante la API REST.

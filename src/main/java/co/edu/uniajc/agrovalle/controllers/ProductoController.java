@@ -1,8 +1,10 @@
 package co.edu.uniajc.agrovalle.controllers;
 
 import co.edu.uniajc.agrovalle.dto.CosechaRequest;
+import co.edu.uniajc.agrovalle.dto.OfertaCatalogoResponse;
 import co.edu.uniajc.agrovalle.models.Cosecha;
 import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
+import co.edu.uniajc.agrovalle.services.CatalogoCosechasService;
 import co.edu.uniajc.agrovalle.services.CosechaService;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -22,10 +24,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductoController {
 
   private final CosechaService service;
+  private final CatalogoCosechasService catalogo;
 
   /** Conecta la publicación y la consulta con el servicio de cosechas. */
-  public ProductoController(CosechaService service) {
+  public ProductoController(CosechaService service, CatalogoCosechasService catalogo) {
     this.service = service;
+    this.catalogo = catalogo;
   }
 
   /** Publica una cosecha asociada a una finca propia. */
@@ -38,8 +42,8 @@ public class ProductoController {
 
   /** Consulta ofertas activas aplicando filtros opcionales. */
   @GetMapping
-  public List<Cosecha> listar(@RequestParam(required = false) String municipio,
+  public List<OfertaCatalogoResponse> listar(@RequestParam(required = false) String municipio,
       @RequestParam(required = false) String categoria) {
-    return service.listar(municipio, categoria);
+    return catalogo.listar(municipio, categoria);
   }
 }

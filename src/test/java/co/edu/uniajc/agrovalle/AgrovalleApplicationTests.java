@@ -45,6 +45,7 @@ class AgrovalleApplicationTests {
       "/catalogo.html",
       "/login.html",
       "/agricultor.html",
+      "/registrar-finca.html",
       "/publicar-cosecha.html",
       "/seguimiento.html",
       "/administrador.html"
