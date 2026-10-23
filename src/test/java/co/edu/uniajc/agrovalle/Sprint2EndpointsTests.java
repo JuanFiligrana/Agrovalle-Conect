@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ import org.springframework.test.web.servlet.MvcResult;
 @AutoConfigureMockMvc
 class Sprint2EndpointsTests {
 
+  private static final ZoneId ZONA_COLOMBIA = ZoneId.of("America/Bogota");
+
   @Autowired
   private MockMvc mockMvc;
 
@@ -34,7 +37,8 @@ class Sprint2EndpointsTests {
   void publicaUnaCosechaPersistenteYpermiteFiltrarla() throws Exception {
     CuentaPrueba agricultor = registrar("AGRICULTOR");
     long fincaId = crearFinca(agricultor, "Dagua");
-    String body = cosechaJson(fincaId, "Mango", "Frutas", LocalDate.now().plusDays(1));
+    String body = cosechaJson(fincaId, "Mango", "Frutas",
+        LocalDate.now(ZONA_COLOMBIA).plusDays(1));
 
     mockMvc.perform(post("/api/v1/productos")
             .header(HttpHeaders.AUTHORIZATION, bearer(agricultor))
@@ -64,7 +68,8 @@ class Sprint2EndpointsTests {
   @Test
   void exigeJwtDeAgricultorParaPublicar() throws Exception {
     CuentaPrueba comprador = registrar("COMPRADOR");
-    String body = cosechaJson(1, "Mango", "Frutas", LocalDate.now().plusDays(1));
+    String body = cosechaJson(1, "Mango", "Frutas",
+        LocalDate.now(ZONA_COLOMBIA).plusDays(1));
 
     mockMvc.perform(post("/api/v1/productos")
             .contentType(MediaType.APPLICATION_JSON)
@@ -87,13 +92,15 @@ class Sprint2EndpointsTests {
     mockMvc.perform(post("/api/v1/productos")
             .header(HttpHeaders.AUTHORIZATION, bearer(intruso))
             .contentType(MediaType.APPLICATION_JSON)
-            .content(cosechaJson(fincaId, "Cafe", "Granos", LocalDate.now().plusDays(1))))
+            .content(cosechaJson(fincaId, "Cafe", "Granos",
+                LocalDate.now(ZONA_COLOMBIA).plusDays(1))))
         .andExpect(status().isForbidden());
 
     mockMvc.perform(post("/api/v1/productos")
             .header(HttpHeaders.AUTHORIZATION, bearer(propietario))
             .contentType(MediaType.APPLICATION_JSON)
-            .content(cosechaJson(fincaId, "Cafe", "Granos", LocalDate.now().minusDays(1))))
+            .content(cosechaJson(fincaId, "Cafe", "Granos",
+                LocalDate.now(ZONA_COLOMBIA).minusDays(1))))
         .andExpect(status().isBadRequest());
 
     mockMvc.perform(get("/api/v1/productos").param("categoria", "Inexistente"))
