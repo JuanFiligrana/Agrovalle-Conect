@@ -23,6 +23,7 @@ public final class CategoriasCosecha {
     Map<String, String> categorias = new LinkedHashMap<>();
     registrar(categorias, "Frutas", "Hortalizas", "Tubérculos", "Granos", "Cereales",
         "Legumbres", "Hierbas y aromáticas", "Otros");
+    alias(categorias, "Verduras", "Hortalizas");
     alias(categorias, "Tuberculos", "Tubérculos");
     alias(categorias, "Hierbas", "Hierbas y aromáticas");
     return Collections.unmodifiableMap(categorias);

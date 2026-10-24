@@ -6,7 +6,7 @@
   <title>Panel del agricultor · AgroValle Connect</title>
   <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="dashboard-page">
+<body class="dashboard-page" data-requires-role="AGRICULTOR">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="dashboard-shell">
     <aside class="sidebar" data-sidebar>
@@ -14,35 +14,37 @@
       <nav class="sidebar-nav" aria-label="Opciones del agricultor">
         <a href="agricultor.html" aria-current="page"><span class="nav-symbol">⌂</span>Inicio</a>
         <a href="publicar-cosecha.html"><span class="nav-symbol">＋</span>Publicar cosecha</a>
+        <a href="registrar-finca.html"><span class="nav-symbol">⌑</span>Registrar finca</a>
         <a href="#cosechas"><span class="nav-symbol">▦</span>Productos publicados</a>
         <a href="#pedidos"><span class="nav-symbol">□</span>Pedidos</a>
         <a href="#entregas"><span class="nav-symbol">↗</span>Entregas</a>
-        <a href="#mensajes"><span class="nav-symbol">✉</span>Mensajes <span class="pill pill--danger">3</span></a>
+        <a href="#mensajes"><span class="nav-symbol">✉</span>Mensajes</a>
         <a href="#ofertas"><span class="nav-symbol">%</span>Ofertas</a>
         <a href="#precios"><span class="nav-symbol">↕</span>Precios del mercado</a>
       </nav>
-      <div class="sidebar-profile"><div class="avatar">LR</div><div><strong>Luis A. Rojas</strong><span>Agricultor verificado</span></div></div>
+      <div class="sidebar-profile"><div class="avatar" data-session-initials>AV</div><div><strong data-session-name>Agricultor</strong><span data-session-email>Sesión activa</span></div></div>
     </aside>
 
     <div class="dashboard-main">
       <header class="dash-topbar">
-        <div><p>Finca La Esperanza · Dagua</p><h1>Panel del agricultor</h1></div>
+        <div><p>Tus fincas y publicaciones</p><h1>Panel del agricultor</h1></div>
         <div class="topbar-actions">
           <span class="api-status" data-api-status>Comprobando servicio…</span>
           <button class="icon-button sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
-          <button class="icon-button" type="button" data-notifications aria-label="Ver 3 mensajes nuevos">✉<span class="notification-count">3</span></button>
+          <button class="icon-button" type="button" data-notifications aria-label="Información sobre notificaciones">✉</button>
           <a class="button button--small" href="publicar-cosecha.html">＋ Publicar cosecha</a>
+          <button class="button button--light button--small" type="button" data-logout>Cerrar sesión</button>
         </div>
       </header>
 
       <main class="dash-content" id="contenido">
-        <div class="welcome-row"><div><p class="eyebrow">Mi actividad</p><h2>Buenos días, Luis.</h2><p>Tienes mensajes nuevos y dos entregas que requieren seguimiento.</p></div><a class="button button--light" href="catalogo.html">Ver el mercado</a></div>
+        <div class="welcome-row"><div><p class="eyebrow">Mi actividad</p><h2>Hola, <span data-session-name>agricultor</span>.</h2><p>Desde aquí puedes registrar fincas y publicar cosechas reales en el catálogo.</p></div><a class="button button--light" href="catalogo.html">Ver el mercado</a></div>
 
         <section class="metric-grid" aria-label="Resumen del agricultor">
-          <article class="metric-card"><div class="metric-head"><span>Productos publicados</span><span class="metric-icon">▦</span></div><strong>12</strong><small>9 activos en el catálogo</small></article>
-          <article class="metric-card"><div class="metric-head"><span>Pedidos por atender</span><span class="metric-icon">□</span></div><strong>8</strong><small>3 requieren respuesta hoy</small></article>
-          <article class="metric-card metric-card--alert"><div class="metric-head"><span>Mensajes nuevos</span><span class="metric-icon">✉</span></div><strong>3</strong><small>Responde para no perder clientes</small></article>
-          <article class="metric-card"><div class="metric-head"><span>Entregas en camino</span><span class="metric-icon">↗</span></div><strong>2</strong><small>Una llega esta tarde</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Productos publicados</span><span class="metric-icon">▦</span></div><strong data-product-count>—</strong><small>Activos en el catálogo real</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Fincas registradas</span><span class="metric-icon">⌑</span></div><strong data-farm-count>—</strong><small>Orígenes asociados a tu cuenta</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Mensajes</span><span class="metric-icon">✉</span></div><strong>Próximo</strong><small>Se programará con la historia de contacto</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Entregas</span><span class="metric-icon">↗</span></div><strong>Próximo</strong><small>Se habilitará con pedidos y logística</small></article>
         </section>
 
         <div class="dash-grid">
@@ -51,14 +53,14 @@
               <div class="panel-head"><h3 id="acciones-title">Accesos rápidos</h3><span class="pill">Lo más usado</span></div>
               <div class="quick-grid">
                 <a class="quick-card" href="publicar-cosecha.html"><span class="metric-icon">＋</span><strong>Publicar una cosecha</strong><span>Abrir formulario →</span></a>
+                <a class="quick-card" href="registrar-finca.html"><span class="metric-icon">⌑</span><strong>Registrar una finca</strong><span>Agregar origen →</span></a>
                 <a class="quick-card" href="#cosechas"><span class="metric-icon">▦</span><strong>Productos publicados</strong><span>Revisar catálogo →</span></a>
-                <a class="quick-card" href="#mensajes"><span class="metric-icon">✉</span><strong>Mensajes de compradores</strong><span>3 sin leer →</span></a>
-                <a class="quick-card" href="#entregas"><span class="metric-icon">↗</span><strong>Seguimiento de pedidos</strong><span>Ver trazabilidad →</span></a>
+                <a class="quick-card" href="catalogo.html"><span class="metric-icon">⌕</span><strong>Catálogo público</strong><span>Ver mis ofertas →</span></a>
               </div>
             </section>
 
             <section class="panel" id="pedidos" aria-labelledby="pedidos-title">
-              <div class="panel-head"><h3 id="pedidos-title">Pedidos recientes</h3><a href="#">Ver todos</a></div>
+              <div class="panel-head"><h3 id="pedidos-title">Pedidos recientes</h3><span class="pill pill--warning">Vista de diseño</span></div>
               <div class="table-wrap">
                 <table class="data-table">
                   <thead><tr><th>Pedido</th><th>Comprador</th><th>Producto</th><th>Cantidad</th><th>Estado</th></tr></thead>
@@ -76,11 +78,7 @@
               <div class="table-wrap">
                 <table class="data-table">
                   <thead><tr><th>Producto</th><th>Disponibilidad</th><th>Precio</th><th>Estado</th></tr></thead>
-                  <tbody>
-                    <tr><td>Mango Tommy</td><td>250 kg</td><td>$3.500 COP/kg</td><td><span class="pill">Publicado</span></td></tr>
-                    <tr><td>Pimentón rojo</td><td>95 kg</td><td>$4.100 COP/kg</td><td><span class="pill">Publicado</span></td></tr>
-                    <tr><td>Café pergamino</td><td>0 kg</td><td>$18.750 COP/kg</td><td><span class="pill pill--warning">Agotado</span></td></tr>
-                  </tbody>
+                  <tbody data-my-products-body><tr><td colspan="4">Consultando tus publicaciones…</td></tr></tbody>
                 </table>
               </div>
             </section>
@@ -88,7 +86,7 @@
 
           <div>
             <section class="panel" id="entregas" aria-labelledby="entregas-title">
-              <div class="panel-head"><h3 id="entregas-title">Estado de entregas</h3><a href="seguimiento.html">Abrir detalle</a></div>
+              <div class="panel-head"><h3 id="entregas-title">Estado de entregas</h3><span class="pill pill--warning">Vista de diseño</span></div>
               <div class="status-list">
                 <div class="status-item"><i class="warning"></i><div><strong>Pendientes por enviar</strong><span>Preparar y confirmar despacho</span></div><b>3</b></div>
                 <div class="status-item"><i></i><div><strong>En curso</strong><span>Ruta activa hacia Cali</span></div><b>2</b></div>
@@ -98,7 +96,7 @@
             </section>
 
             <section class="panel" id="mensajes" aria-labelledby="mensajes-title">
-              <div class="panel-head"><h3 id="mensajes-title">Mensajes recientes</h3><a href="#">Abrir bandeja</a></div>
+              <div class="panel-head"><h3 id="mensajes-title">Mensajes recientes</h3><span class="pill pill--warning">Vista de diseño</span></div>
               <div class="message-list">
                 <div class="message-item"><div class="avatar">MS</div><div><strong>Mercado San Nicolás</strong><span>¿Podemos reservar 80 kg de mango para mañana?</span></div><span class="pill pill--danger">Nuevo</span></div>
                 <div class="message-item"><div class="avatar">EP</div><div><strong>Eventos del Pacífico</strong><span>Necesitamos confirmar el horario de entrega.</span></div><span class="pill pill--danger">Nuevo</span></div>
@@ -107,7 +105,7 @@
             </section>
 
             <section class="panel" id="ofertas" aria-labelledby="ofertas-title">
-              <div class="panel-head"><h3 id="ofertas-title">Ofertas del catálogo</h3><a href="#cosechas">Gestionar productos</a></div>
+              <div class="panel-head"><h3 id="ofertas-title">Ofertas del catálogo</h3><span class="pill pill--warning">Vista de diseño</span></div>
               <div class="status-list">
                 <div class="status-item"><i></i><div><strong>Mango Tommy · 10% por volumen</strong><span>Activa para pedidos desde 100 kg</span></div><b>Activa</b></div>
                 <div class="status-item"><i class="warning"></i><div><strong>Pimentón rojo · precio especial</strong><span>Finaliza mañana a las 6:00 p. m.</span></div><b>1 día</b></div>

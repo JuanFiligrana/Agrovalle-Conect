@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registro de fincas para agricultores de AgroValle Connect.">
+  <title>Registrar finca · AgroValle Connect</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-requires-role="AGRICULTOR">
+  <a class="skip-link" href="#contenido">Saltar al formulario</a>
+  <main class="form-page" id="contenido">
+    <section class="form-visual" aria-label="Información para agricultores">
+      <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Panel agricultor</small></span></a>
+      <div><blockquote>Registra el origen real de cada cosecha.</blockquote><p>La finca permite que los compradores conozcan el municipio de procedencia y que cada publicación conserve su trazabilidad.</p></div>
+      <a class="button button--ghost button--small" href="agricultor.html">← Volver al panel</a>
+    </section>
+    <div class="form-content">
+      <div class="form-card">
+        <p class="eyebrow">Nuevo origen</p>
+        <h1>Registrar finca</h1>
+        <p>Completa la información básica. La finca quedará asociada automáticamente a tu cuenta.</p>
+        <form data-farm-form>
+          <div class="form-grid">
+            <div class="field field--full"><label for="nombre-finca">Nombre de la finca</label><input id="nombre-finca" name="nombre" maxlength="120" placeholder="Ej. Finca La Esperanza" required></div>
+            <div class="field field--full"><label for="municipio-finca">Municipio del Valle del Cauca</label><select id="municipio-finca" name="municipio" data-municipality-select required><option value="">Seleccionar</option></select></div>
+            <div class="field field--full"><label for="descripcion-finca">Dirección o descripción del lugar</label><textarea id="descripcion-finca" name="descripcion" maxlength="500" placeholder="Vereda, corregimiento o indicaciones para identificar el origen."></textarea><small>Máximo 500 caracteres.</small></div>
+          </div>
+          <p class="form-note">Solo el agricultor autenticado podrá usar esta finca para publicar cosechas.</p>
+          <div class="hero-actions"><button class="button" type="submit">Guardar finca</button><a class="button button--light" href="agricultor.html">Cancelar</a></div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

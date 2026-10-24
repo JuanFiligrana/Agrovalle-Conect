@@ -18,7 +18,7 @@
       <div class="form-card">
         <section aria-labelledby="login-title">
           <p class="eyebrow">Bienvenido de nuevo</p><h1 id="login-title">Iniciar sesión</h1><p>Ingresa con el correo y la contraseña asociados a tu cuenta.</p>
-          <form data-demo-form data-success="Datos verificados en el prototipo. Se abriría el panel correspondiente a tu rol.">
+          <form data-login-form>
             <div class="form-grid">
               <div class="field field--full"><label for="correo-login">Correo electrónico</label><input id="correo-login" name="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" required></div>
               <div class="field field--full"><label for="contrasena-login">Contraseña</label><input id="contrasena-login" name="contrasena" type="password" autocomplete="current-password" minlength="8" required></div>
@@ -30,7 +30,7 @@
 
         <section class="section" id="registro" aria-labelledby="registro-title">
           <p class="eyebrow">Primera vez en AgroValle</p><h2 id="registro-title">Crea tu cuenta</h2><p>Selecciona el perfil con el que usarás la plataforma. Los campos explican exactamente qué información se solicita.</p>
-          <form data-demo-form data-success="Registro validado en el prototipo. La cuenta quedaría pendiente de confirmación.">
+          <form data-register-form>
             <div class="form-grid">
               <fieldset class="field field--full" style="border:0;padding:0;margin:0">
                 <legend class="field-label">¿Cómo usarás AgroValle?</legend>
@@ -40,11 +40,9 @@
                 </div>
               </fieldset>
               <div class="field field--full"><label for="nombre">Nombre completo o razón social</label><input id="nombre" name="nombre" autocomplete="name" required></div>
-              <div class="field"><label for="tipo-documento">Tipo de documento</label><select id="tipo-documento" name="tipoDocumento" required><option value="">Seleccionar</option><option>Cédula de ciudadanía</option><option>Cédula de extranjería</option><option>NIT</option><option>Pasaporte</option></select></div>
-              <div class="field"><label for="documento">Número de documento</label><input id="documento" name="documento" inputmode="numeric" required></div>
-              <div class="field"><label for="municipio-registro">Municipio</label><select id="municipio-registro" name="municipio" required><option value="">Seleccionar</option><option>Dagua</option><option>Palmira</option><option>Buga</option><option>Tuluá</option><option>Jamundí</option><option>Ginebra</option><option>Cali</option></select></div>
-              <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="300 000 0000" required></div>
-              <div class="field field--full"><label for="correo-registro">Correo electrónico</label><input id="correo-registro" name="correo" type="email" autocomplete="email" required></div>
+              <div class="field field--full"><label for="documento">Número de documento</label><input id="documento" name="documento" inputmode="numeric" required></div>
+              <div class="field"><label for="municipio-registro">Municipio</label><select id="municipio-registro" name="municipio" data-municipality-select required><option value="">Seleccionar</option></select></div>
+              <div class="field"><label for="correo-registro">Correo electrónico</label><input id="correo-registro" name="correo" type="email" autocomplete="email" required></div>
               <div class="field field--full"><label for="contrasena-registro">Crea una contraseña</label><input id="contrasena-registro" name="contrasena" type="password" autocomplete="new-password" minlength="8" required><small>Mínimo 8 caracteres. No compartas esta contraseña.</small></div>
             </div>
             <p class="form-note">El rol define las herramientas que aparecerán al iniciar sesión. La información puede revisarse desde la configuración de la cuenta.</p>

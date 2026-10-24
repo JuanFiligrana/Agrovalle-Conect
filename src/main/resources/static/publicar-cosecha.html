@@ -6,7 +6,7 @@
   <title>Publicar cosecha · AgroValle Connect</title>
   <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body data-requires-role="AGRICULTOR">
   <a class="skip-link" href="#contenido">Saltar al formulario</a>
   <main class="form-page" id="contenido">
     <section class="form-visual" aria-label="Información para agricultores">
@@ -17,18 +17,22 @@
     <div class="form-content">
       <div class="form-card">
         <p class="eyebrow">Nueva publicación</p><h1>Publicar cosecha</h1><p>Completa la información que verá el comprador en el catálogo. Los campos obligatorios están claramente identificados.</p>
-        <form data-demo-form data-success="La cosecha quedó validada. En la aplicación conectada se publicaría en el catálogo.">
+        <form data-harvest-form>
+          <div class="form-message" data-farm-notice data-state="warning" hidden>
+            Primero debes registrar una finca para asociar el origen de la cosecha.
+            <a class="text-link" href="registrar-finca.html">Registrar mi finca</a>
+          </div>
           <div class="form-grid">
-            <div class="field field--full"><label for="finca">Finca que ofrece la cosecha</label><select id="finca" name="fincaId" required><option value="">Seleccionar finca</option><option value="1">Finca La Esperanza · Dagua</option><option value="2">Finca El Porvenir · Ginebra</option></select></div>
+            <div class="field field--full"><label for="finca">Finca que ofrece la cosecha</label><select id="finca" name="fincaId" required><option value="">Consultando tus fincas…</option></select><small><a class="text-link" href="registrar-finca.html">Registrar otra finca</a></small></div>
             <div class="field"><label for="categoria-publicar">Categoría</label><select id="categoria-publicar" name="categoria" required><option value="">Seleccionar</option><option>Frutas</option><option>Verduras</option><option>Tubérculos</option><option>Granos</option></select></div>
             <div class="field"><label for="producto-publicar">Producto o variedad</label><input id="producto-publicar" name="tipo" placeholder="Ej. Mango Tommy" required><small>Usa un nombre específico que el comprador reconozca.</small></div>
             <div class="field"><label for="cantidad">Cantidad disponible (kg)</label><input id="cantidad" name="cantidadKg" type="number" inputmode="decimal" min="0.001" step="0.001" placeholder="250" required></div>
             <div class="field"><label for="precio">Precio por kg (COP)</label><input id="precio" name="precioCopKg" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="3500" required></div>
             <div class="field"><label for="fecha">Fecha de cosecha</label><input id="fecha" name="fechaCosecha" type="date" required></div>
-            <div class="field"><label for="entrega">Disponibilidad de entrega</label><select id="entrega" name="entrega"><option>Recoge en finca</option><option>Entrega en municipio</option><option>Entrega coordinada en Cali</option></select></div>
-            <div class="field field--full"><label for="descripcion">Descripción para el comprador</label><textarea id="descripcion" name="descripcion" maxlength="500" placeholder="Describe madurez, presentación, prácticas de cultivo y condiciones de entrega."></textarea><small>Máximo 500 caracteres.</small></div>
+            <div class="field"><label for="entrega">Disponibilidad de entrega · próximo incremento</label><select id="entrega" disabled><option>Se habilitará con logística</option></select></div>
+            <div class="field field--full"><label for="descripcion">Descripción para el comprador · próximo incremento</label><textarea id="descripcion" maxlength="500" placeholder="Se habilitará al ampliar el esquema de cosechas." disabled></textarea><small>Este campo todavía no se guarda.</small></div>
           </div>
-          <p class="form-note">Antes de publicar, AgroValle valida la finca, la categoría, la cantidad, el precio y la fecha. La publicación siempre conserva su relación con el agricultor autenticado.</p>
+          <p class="form-note">En este incremento se guardan la finca, categoría, producto, cantidad, precio y fecha. La descripción y la logística se programarán con sus historias correspondientes.</p>
           <div class="hero-actions"><button class="button" type="submit">Publicar en el catálogo</button><a class="button button--light" href="agricultor.html">Cancelar</a></div>
         </form>
       </div>

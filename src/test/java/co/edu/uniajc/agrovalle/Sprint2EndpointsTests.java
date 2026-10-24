@@ -54,7 +54,10 @@ class Sprint2EndpointsTests {
             .param("categoria", "Frutas"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$", hasSize(1)))
-        .andExpect(jsonPath("$[0].tipo").value("Mango"));
+        .andExpect(jsonPath("$[0].tipo").value("Mango"))
+        .andExpect(jsonPath("$[0].agricultorNombre").isString())
+        .andExpect(jsonPath("$[0].fincaNombre").value("Finca Sprint 2"))
+        .andExpect(jsonPath("$[0].municipio").value("Dagua"));
 
     mockMvc.perform(get("/api/v1/notificaciones/cosechas")
             .header(HttpHeaders.AUTHORIZATION, bearer(agricultor)))

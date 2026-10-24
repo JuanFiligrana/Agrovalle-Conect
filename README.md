@@ -63,6 +63,12 @@ representan el diseño objetivo: solo las rutas REST enumeradas arriba acreditan
 backend terminadas en este incremento. La justificación completa está en
 [D07 · prototipo web responsive](docs/diseno/D07-Mockups-HU01-HU05/Prototipo-Web-Responsive/README.md).
 
+La integración web posterior conecta con esas rutas terminadas: permite registrar una
+cuenta, iniciar sesión con JWT, registrar una finca, publicar una cosecha y consultar el
+catálogo persistente con filtros. La sesión se conserva únicamente en la pestaña del
+navegador. Las acciones de contacto, reserva, pedidos y seguimiento se identifican como
+funciones del siguiente incremento y no presentan datos simulados como si fueran reales.
+
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
 2. Ejecutar `iniciar.cmd`. Busca un JDK 17 LTS ya instalado en ubicaciones comunes o JAVA_HOME,

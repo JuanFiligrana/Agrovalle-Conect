@@ -14,7 +14,7 @@ organización y la dirección de las dependencias.
 
 | Componente | Responsabilidad | Estado |
 |---|---|---|
-| Interfaz web | Portada, catálogo, registro, seguimiento y paneles por rol; consume HTTP/JSON. | Siete vistas responsive en `resources/static`. |
+| Interfaz web | Portada, catálogo, registro, seguimiento y paneles por rol; consume HTTP/JSON. | Ocho vistas responsive en `resources/static`. |
 | API REST y recursos | Sirve la web, valida DTO y traduce resultados o errores a HTTP. | Controladores de autenticación, finca, producto, precio, contacto, flete, notificación y estado. |
 | Seguridad | BCrypt, filtro JWT, identidad y rol para rutas protegidas. | Implementado para los endpoints declarados. |
 | Casos de uso | Registro, autenticación, finca, cosecha, contacto, precios, flete y avisos. | Servicios separados e inyectados por constructor. |
