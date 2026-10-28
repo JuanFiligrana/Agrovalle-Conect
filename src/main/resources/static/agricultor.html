@@ -31,7 +31,7 @@
         <div class="topbar-actions">
           <span class="api-status" data-api-status>Comprobando servicio…</span>
           <button class="icon-button sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
-          <button class="icon-button" type="button" data-notifications aria-label="Información sobre notificaciones">✉</button>
+          <a class="icon-button" href="mensajes.html" aria-label="Abrir mis mensajes">✉</a>
           <a class="button button--small" href="publicar-cosecha.html">＋ Publicar cosecha</a>
           <button class="button button--light button--small" type="button" data-logout>Cerrar sesión</button>
         </div>
@@ -43,7 +43,7 @@
         <section class="metric-grid" aria-label="Resumen del agricultor">
           <article class="metric-card"><div class="metric-head"><span>Productos publicados</span><span class="metric-icon">▦</span></div><strong data-product-count>—</strong><small>Activos en el catálogo real</small></article>
           <article class="metric-card"><div class="metric-head"><span>Fincas registradas</span><span class="metric-icon">⌑</span></div><strong data-farm-count>—</strong><small>Orígenes asociados a tu cuenta</small></article>
-          <article class="metric-card"><div class="metric-head"><span>Mensajes</span><span class="metric-icon">✉</span></div><strong>Próximo</strong><small>Se programará con la historia de contacto</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Mensajes sin leer</span><span class="metric-icon">✉</span></div><strong data-unread-messages>—</strong><small>Entre los últimos 100 recibidos</small></article>
           <article class="metric-card"><div class="metric-head"><span>Entregas</span><span class="metric-icon">↗</span></div><strong>Próximo</strong><small>Se habilitará con pedidos y logística</small></article>
         </section>
 
@@ -96,12 +96,8 @@
             </section>
 
             <section class="panel" id="mensajes" aria-labelledby="mensajes-title">
-              <div class="panel-head"><h3 id="mensajes-title">Mensajes recientes</h3><span class="pill pill--warning">Vista de diseño</span></div>
-              <div class="message-list">
-                <div class="message-item"><div class="avatar">MS</div><div><strong>Mercado San Nicolás</strong><span>¿Podemos reservar 80 kg de mango para mañana?</span></div><span class="pill pill--danger">Nuevo</span></div>
-                <div class="message-item"><div class="avatar">EP</div><div><strong>Eventos del Pacífico</strong><span>Necesitamos confirmar el horario de entrega.</span></div><span class="pill pill--danger">Nuevo</span></div>
-                <div class="message-item"><div class="avatar">RL</div><div><strong>Restaurante La Loma</strong><span>¿Tienes disponibilidad semanal?</span></div><span class="pill pill--danger">Nuevo</span></div>
-              </div>
+              <div class="panel-head"><h3 id="mensajes-title">Mensajes recientes</h3><a href="mensajes.html">Ver bandeja</a></div>
+              <div class="contact-list" data-contact-messages data-message-limit="5" aria-live="polite" aria-busy="true"><p>Consultando tus mensajes…</p></div>
             </section>
 
             <section class="panel" id="ofertas" aria-labelledby="ofertas-title">

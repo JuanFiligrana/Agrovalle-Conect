@@ -77,7 +77,7 @@ class Sprint1EndpointsTests {
         {"compradorId":%d,"productoId":%d,"mensaje":"Deseo conocer la disponibilidad"}
         """.formatted(compradorId, productoId);
     mockMvc.perform(post("/api/v1/contacto/mensaje")
-            .header("Authorization", "Bearer demo")
+            .header("Authorization", "Bearer " + comprador.token())
             .contentType(MediaType.APPLICATION_JSON)
             .content(contactoJson))
         .andExpect(status().isOk())

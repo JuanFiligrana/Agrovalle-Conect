@@ -5,11 +5,15 @@ import co.edu.uniajc.agrovalle.dto.ContactoResponse;
 import co.edu.uniajc.agrovalle.exceptions.OperacionNoPermitidaException;
 import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
 import co.edu.uniajc.agrovalle.models.Contacto;
+import co.edu.uniajc.agrovalle.models.MensajeContacto;
 import co.edu.uniajc.agrovalle.models.RolUsuario;
 import co.edu.uniajc.agrovalle.ports.ContactoPort;
 import co.edu.uniajc.agrovalle.ports.CosechaPort;
 import co.edu.uniajc.agrovalle.ports.UsuarioPort;
+import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
+import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /** Reglas para registrar la intención de contacto del comprador. */
 @Service
@@ -27,17 +31,39 @@ public class ContactoService {
   }
 
   /** Comprueba el rol comprador y la oferta antes de registrar el mensaje. */
-  public ContactoResponse registrar(ContactoRequest request) {
-    var comprador = usuarios.findById(request.compradorId()).orElseThrow(
-        () -> new RecursoNoEncontradoException("No existe el usuario " + request.compradorId()));
+  @Transactional
+  public ContactoResponse registrar(ContactoRequest request, UsuarioAutenticado usuario) {
+    if (usuario.rol() != RolUsuario.COMPRADOR) {
+      throw new OperacionNoPermitidaException("Solo un comprador puede solicitar contacto");
+    }
+    var comprador = usuarios.findById(usuario.id()).orElseThrow(
+        () -> new RecursoNoEncontradoException("No existe el usuario " + usuario.id()));
     if (comprador.rol() != RolUsuario.COMPRADOR) {
       throw new OperacionNoPermitidaException("Solo un comprador puede solicitar contacto");
     }
-    if (cosechas.findById(request.productoId()) == null) {
+    var cosecha = cosechas.findById(request.productoId());
+    if (cosecha == null || !cosecha.activa()) {
       throw new RecursoNoEncontradoException("No existe la cosecha " + request.productoId());
     }
-    Contacto saved = contactos.save(new Contacto(0, request.compradorId(), request.productoId(),
+    Contacto saved = contactos.save(new Contacto(0, usuario.id(), request.productoId(),
         request.mensaje().trim(), "REGISTRADO"));
-    return new ContactoResponse(saved.id(), saved.productoId(), saved.estado());
+    return new ContactoResponse(saved.id(), saved.productoId(), saved.estado(), true);
+  }
+
+  /** La identidad nunca se obtiene de un parámetro de la petición. */
+  @Transactional(readOnly = true)
+  public List<MensajeContacto> listar(UsuarioAutenticado usuario) {
+    return contactos.findByUsuario(usuario.id());
+  }
+
+  /** Solo el destinatario puede confirmar lectura; repetir es seguro. */
+  @Transactional
+  public void marcarLeida(long id, UsuarioAutenticado usuario) {
+    var notificacion = contactos.findNotificacion(id).orElseThrow(
+        () -> new RecursoNoEncontradoException("No existe la notificación " + id));
+    if (notificacion.destinatarioId() != usuario.id()) {
+      throw new OperacionNoPermitidaException("La notificación no pertenece al usuario");
+    }
+    contactos.marcarLeida(id, usuario.id());
   }
 }

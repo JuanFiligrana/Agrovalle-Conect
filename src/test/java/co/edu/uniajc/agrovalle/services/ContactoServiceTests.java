@@ -14,10 +14,12 @@ import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
 import co.edu.uniajc.agrovalle.models.Agricultor;
 import co.edu.uniajc.agrovalle.models.Contacto;
 import co.edu.uniajc.agrovalle.models.Cosecha;
+import co.edu.uniajc.agrovalle.models.NotificacionContacto;
 import co.edu.uniajc.agrovalle.models.RolUsuario;
 import co.edu.uniajc.agrovalle.ports.ContactoPort;
 import co.edu.uniajc.agrovalle.ports.CosechaPort;
 import co.edu.uniajc.agrovalle.ports.UsuarioPort;
+import co.edu.uniajc.agrovalle.security.UsuarioAutenticado;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
@@ -55,11 +57,12 @@ class ContactoServiceTests {
     when(contactos.save(any(Contacto.class)))
         .thenReturn(new Contacto(548, 8, 101, "Quiero conocer la disponibilidad", "REGISTRADO"));
 
-    var respuesta = service.registrar(solicitud());
+    var respuesta = service.registrar(solicitud(), identidad());
 
     assertEquals(548, respuesta.id());
     assertEquals(101, respuesta.productoId());
     assertEquals("REGISTRADO", respuesta.estado());
+    assertEquals(true, respuesta.notificacionRegistrada());
     ArgumentCaptor<Contacto> captor = ArgumentCaptor.forClass(Contacto.class);
     verify(contactos).save(captor.capture());
     assertEquals(new Contacto(0, 8, 101, "Quiero conocer la disponibilidad", "REGISTRADO"),
@@ -71,7 +74,7 @@ class ContactoServiceTests {
     when(usuarios.findById(8)).thenReturn(Optional.empty());
 
     var error = assertThrows(RecursoNoEncontradoException.class,
-        () -> service.registrar(solicitud()));
+        () -> service.registrar(solicitud(), identidad()));
 
     assertEquals("No existe el usuario 8", error.getMessage());
     verifyNoInteractions(contactos, cosechas);
@@ -81,7 +84,8 @@ class ContactoServiceTests {
   void noRegistraSolicitudesDeUnAgricultor() {
     when(usuarios.findById(8)).thenReturn(Optional.of(cuenta(RolUsuario.AGRICULTOR)));
 
-    assertThrows(OperacionNoPermitidaException.class, () -> service.registrar(solicitud()));
+    assertThrows(OperacionNoPermitidaException.class,
+        () -> service.registrar(solicitud(), identidad()));
 
     verifyNoInteractions(contactos, cosechas);
   }
@@ -91,7 +95,7 @@ class ContactoServiceTests {
     when(usuarios.findById(8)).thenReturn(Optional.of(cuenta(RolUsuario.COMPRADOR)));
 
     var error = assertThrows(RecursoNoEncontradoException.class,
-        () -> service.registrar(solicitud()));
+        () -> service.registrar(solicitud(), identidad()));
 
     assertEquals("No existe la cosecha 101", error.getMessage());
     verifyNoInteractions(contactos);
@@ -105,11 +109,63 @@ class ContactoServiceTests {
     when(contactos.save(any(Contacto.class))).thenThrow(fallo);
 
     assertSame(fallo, assertThrows(IllegalStateException.class,
-        () -> service.registrar(solicitud())));
+        () -> service.registrar(solicitud(), identidad())));
   }
 
   private ContactoRequest solicitud() {
-    return new ContactoRequest(8, 101, " Quiero conocer la disponibilidad ");
+    return new ContactoRequest(101, " Quiero conocer la disponibilidad ");
+  }
+
+  @Test
+  void rechazaRolDelTokenAntesDeConsultarDatos() {
+    var agricultor = new UsuarioAutenticado(7, "agricultor@example.invalid",
+        RolUsuario.AGRICULTOR);
+    assertThrows(OperacionNoPermitidaException.class,
+        () -> service.registrar(solicitud(), agricultor));
+    verifyNoInteractions(contactos, usuarios, cosechas);
+  }
+
+  @Test
+  void rechazaUnaOfertaInactiva() {
+    when(usuarios.findById(8)).thenReturn(Optional.of(cuenta(RolUsuario.COMPRADOR)));
+    Cosecha base = oferta();
+    when(cosechas.findById(101)).thenReturn(new Cosecha(base.id(), base.agricultorId(),
+        base.fincaId(), base.tipo(), base.categoria(), base.cantidadKg(), base.precioCopKg(),
+        base.fechaCosecha(), false));
+    assertThrows(RecursoNoEncontradoException.class,
+        () -> service.registrar(solicitud(), identidad()));
+    verifyNoInteractions(contactos);
+  }
+
+  @Test
+  void consultaSoloLaBandejaDeLaIdentidadVerificada() {
+    service.listar(identidad());
+    verify(contactos).findByUsuario(8);
+  }
+
+  @Test
+  void marcaLaNotificacionPropiaComoLeida() {
+    when(contactos.findNotificacion(1)).thenReturn(Optional.of(
+        new NotificacionContacto(1, 2, 8, false)));
+    service.marcarLeida(1, identidad());
+    verify(contactos).marcarLeida(1, 8);
+  }
+
+  @Test
+  void impideLeerLaNotificacionAjena() {
+    when(contactos.findNotificacion(1)).thenReturn(Optional.of(
+        new NotificacionContacto(1, 2, 7, false)));
+    assertThrows(OperacionNoPermitidaException.class, () -> service.marcarLeida(1, identidad()));
+  }
+
+  @Test
+  void informaUnaNotificacionInexistente() {
+    when(contactos.findNotificacion(1)).thenReturn(Optional.empty());
+    assertThrows(RecursoNoEncontradoException.class, () -> service.marcarLeida(1, identidad()));
+  }
+
+  private UsuarioAutenticado identidad() {
+    return new UsuarioAutenticado(8, "comprador@example.invalid", RolUsuario.COMPRADOR);
   }
 
   private Agricultor cuenta(RolUsuario rol) {
