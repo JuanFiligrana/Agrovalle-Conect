@@ -14,12 +14,12 @@ organización y la dirección de las dependencias.
 
 | Componente | Responsabilidad | Estado |
 |---|---|---|
-| Interfaz web | Portada, catálogo, registro, seguimiento y paneles por rol; consume HTTP/JSON. | Ocho vistas responsive en `resources/static`. |
+| Interfaz web | Portada, catálogo, detalle, registro, mensajes, seguimiento y paneles por rol; consume HTTP/JSON. | Diez vistas responsive en `resources/static`. |
 | API REST y recursos | Sirve la web, valida DTO y traduce resultados o errores a HTTP. | Controladores de autenticación, finca, producto, precio, contacto, flete, notificación y estado. |
 | Seguridad | BCrypt, filtro JWT, identidad y rol para rutas protegidas. | Implementado para los endpoints declarados. |
 | Casos de uso | Registro, autenticación, finca, cosecha, contacto, precios, flete y avisos. | Servicios separados e inyectados por constructor. |
-| Acceso a datos | Implementa puertos mediante adaptadores JPA o almacenamiento temporal. | JPA para usuarios/fincas/cosechas; memoria para contacto y avisos. |
-| PostgreSQL | Conserva el esquema incremental y aplica restricciones. | Cinco tablas implementadas; D02 conserva el modelo objetivo. |
+| Acceso a datos | Implementa puertos mediante adaptadores JPA o almacenamiento temporal. | JPA para usuarios, fincas, cosechas, contactos y sus notificaciones; los avisos Observer de publicación siguen en memoria. |
+| PostgreSQL | Conserva el esquema incremental y aplica restricciones. | Siete tablas implementadas; D02 conserva el modelo objetivo. |
 
 Los recursos web viajan dentro del mismo JAR pero se interpretan en el navegador. La
 interfaz HTTP es externa; `PasswordEncoder` y los puertos son interfaces de software; el
@@ -35,9 +35,9 @@ en el incremento y tres permanecen como objetivo:
 | `UsuarioPort` | Implementado por `AgricultorRepository` con `UsuarioJpaRepository`. |
 | `FincaPort` | Implementado por `FincaRepository` con `FincaJpaRepository`. |
 | `CosechaPort` | Implementado por `CosechaRepository` y cuatro repositorios JPA normalizados. |
-| `ContactoPort` | Implementado temporalmente por `ContactoRepository` en memoria. |
+| `ContactoPort` | Implementado por `ContactoRepository` con repositorios JPA; guarda contacto y notificación en una transacción. |
 | `PrecioPort` | Objetivo para consultar ventas históricas y `v_precios_24h`. |
-| `NotificacionPort` | Objetivo para avisos persistentes asociados al contacto. |
+| `NotificacionPort` | Separación objetivo; actualmente la notificación de contacto se persiste mediante `ContactoPort` para mantener la unidad transaccional. |
 | `CatalogoPort` | Refinamiento objetivo para catálogos compartidos; hoy esas consultas se resuelven dentro del adaptador de cosecha y validadores. |
 
 Los servicios requieren contratos y los adaptadores los implementan. Spring los inyecta
@@ -52,8 +52,9 @@ SQL ni decisiones HTTP en los servicios.
 - HU03 usa actualmente las cosechas del incremento; el histórico de pedidos entregados es
   trabajo posterior.
 - HU04 filtra ofertas activas por municipio y categoría.
-- HU05 comprueba identidad y rol, pero contacto/notificación aún debe trasladarse a una
-  transacción PostgreSQL.
+- HU05 obtiene la identidad del JWT, valida rol y oferta activa y guarda contacto y
+  notificación en PostgreSQL. Solo los participantes consultan el mensaje y solo el
+  destinatario puede marcar su notificación como leída.
 - Pedidos, reservas, envíos, eventos de seguimiento e idempotencia aparecen en D02 y en el
   prototipo visual, no como componentes backend terminados.
 

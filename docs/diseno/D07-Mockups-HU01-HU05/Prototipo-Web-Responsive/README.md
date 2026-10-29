@@ -11,6 +11,8 @@ el producto a un cliente.
 |---|---|---|
 | [`index.html`](../../../../src/main/resources/static/index.html) | Visitante o comprador | Descubrir cosechas, confiar en el origen y decidir explorar o comprar |
 | [`catalogo.html`](../../../../src/main/resources/static/catalogo.html) | Comprador | Buscar por producto, municipio, categoría o productor y comparar ofertas |
+| [`cosecha.html`](../../../../src/main/resources/static/cosecha.html) | Visitante o comprador | Consultar una oferta activa y enviar una solicitud al agricultor con sesión de comprador |
+| [`mensajes.html`](../../../../src/main/resources/static/mensajes.html) | Comprador o agricultor autenticado | Leer solicitudes propias; el agricultor puede marcar sus notificaciones como leídas |
 | [`login.html`](../../../../src/main/resources/static/login.html) | Agricultor o comprador | Iniciar sesión o registrar un único perfil con campos explícitos |
 | [`agricultor.html`](../../../../src/main/resources/static/agricultor.html) | Agricultor autenticado | Atender productos, mensajes, pedidos, entregas, ofertas y precios |
 | [`registrar-finca.html`](../../../../src/main/resources/static/registrar-finca.html) | Agricultor autenticado | Registrar el origen que se asociará a sus publicaciones |
@@ -77,8 +79,11 @@ de diseño navegable, no una afirmación de que todos esos módulos backend ya e
 La interfaz consume el backend para registro e inicio de sesión, consulta de identidad,
 registro y listado de fincas, publicación de cosechas y catálogo filtrable. El catálogo
 muestra productor, finca y municipio mediante un contrato público que excluye correo,
-documento, contraseña y demás datos privados. Contacto, reservas, pedidos y trazabilidad
-permanecen identificados como el siguiente incremento de programación.
+documento, contraseña y demás datos privados. El detalle de cosecha, las solicitudes de
+contacto y la bandeja privada también consumen la API y persisten en PostgreSQL.
+Las respuestas de chat, reservas, pedidos y trazabilidad permanecen pendientes.
 
 Los pedidos y entregas visibles son datos de diseño. Las cuentas, fincas y cosechas creadas
-desde los formularios conectados sí se leen y guardan mediante la API REST.
+desde los formularios conectados sí se leen y guardan mediante la API REST, al igual que
+los mensajes y sus notificaciones. La bandeja limita la consulta a los últimos 100 mensajes;
+el contador del agricultor identifica explícitamente ese límite.
