@@ -53,13 +53,13 @@ public class ApiExceptionHandler {
     return ResponseEntity.badRequest().body(body);
   }
 
-  /** Conserva el contrato 409 si una restricción única detecta una carrera de registros. */
+  /** Informa un conflicto de integridad sin revelar SQL ni atribuirlo a otra operación. */
   @ExceptionHandler(DataIntegrityViolationException.class)
   public ResponseEntity<Map<String, String>> handleDataIntegrity(
       DataIntegrityViolationException exception) {
     return ResponseEntity.status(HttpStatus.CONFLICT)
         .body(error(HttpStatus.CONFLICT.toString(),
-            "El correo o la cédula ya están registrados"));
+            "La operación entra en conflicto con los datos registrados"));
   }
 
   private Map<String, String> error(String status, String message) {

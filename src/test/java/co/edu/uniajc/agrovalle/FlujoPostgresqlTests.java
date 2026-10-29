@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /** Prueba HTTP contra PostgreSQL que cierra y vuelve a iniciar la aplicación. */
 @EnabledIfEnvironmentVariable(named = "AGROVALLE_TEST_POSTGRES", matches = "true")
@@ -56,6 +57,7 @@ class FlujoPostgresqlTests {
       contactoId = solicitud("POST", "/api/v1/contacto/mensaje", comprador,
           Map.of("productoId", ofertaId, "mensaje", "Mensaje que debe sobrevivir al reinicio"),
           200).get("id").asLong();
+      comprobarRollback(contexto, comprador, ofertaId);
     }
     try (var contexto = iniciar()) {
       configurarBase(contexto);
@@ -71,6 +73,30 @@ class FlujoPostgresqlTests {
       assertThat(mensajes.get(0).get("leida").asBoolean()).isFalse();
       assertThat(solicitud("GET", "/api/v1/contacto/mensajes", comprador, null, 200)
           .get(0).get("id").asLong()).isEqualTo(contactoId);
+    }
+  }
+
+  private void comprobarRollback(ServletWebServerApplicationContext contexto,
+      String comprador, long ofertaId) throws Exception {
+    var jdbc = new JdbcTemplate(contexto.getBean(DataSource.class));
+    final Long contactosAntes = jdbc.queryForObject(
+        "SELECT count(*) FROM interacciones_contacto", Long.class);
+    final Long notificacionesAntes = jdbc.queryForObject(
+        "SELECT count(*) FROM notificaciones_contacto", Long.class);
+    // Solo en la base desechable de CI: falla la segunda escritura de la transacción.
+    jdbc.execute("ALTER TABLE notificaciones_contacto ADD CONSTRAINT prueba_fallo_notificacion "
+        + "CHECK (contacto_id < 0) NOT VALID");
+    try {
+      JsonNode error = solicitud("POST", "/api/v1/contacto/mensaje", comprador,
+          Map.of("productoId", ofertaId, "mensaje", "Debe revertirse completamente"), 409);
+      assertThat(error.get("message").asText())
+          .isEqualTo("La operación entra en conflicto con los datos registrados");
+      assertThat(jdbc.queryForObject("SELECT count(*) FROM interacciones_contacto", Long.class))
+          .isEqualTo(contactosAntes);
+      assertThat(jdbc.queryForObject("SELECT count(*) FROM notificaciones_contacto", Long.class))
+          .isEqualTo(notificacionesAntes);
+    } finally {
+      jdbc.execute("ALTER TABLE notificaciones_contacto DROP CONSTRAINT prueba_fallo_notificacion");
     }
   }
 

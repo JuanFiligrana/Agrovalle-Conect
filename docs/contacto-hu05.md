@@ -27,6 +27,8 @@ o inválida, 403 por rol o propietario incorrectos y 404 por recurso inexistente
 
 `interacciones_contacto` conserva comprador, cosecha, mensaje y fecha con zona horaria.
 `notificaciones_contacto` vincula una notificación única al contacto y a su destinatario.
+La fecha de la notificación es la fecha persistida de esa interacción, creada en la misma
+operación; se consulta mediante la relación, sin duplicar el dato.
 La creación de ambos registros es transaccional: un fallo revierte la operación.
 Las claves foráneas mantienen las relaciones y el esquema es incremental, sin borrar
 datos existentes al reiniciar. Los DTO públicos no devuelven correos, documentos ni hashes.
@@ -50,6 +52,11 @@ y propiedad de las notificaciones. `ContactoAcceptanceTests` ejecuta registro �
 cosecha → catálogo → contacto → lectura, además de los casos de seguridad e invalidez.
 `FlujoPostgresqlTests` utiliza HTTP real, comprueba que el motor es PostgreSQL y vuelve a
 iniciar Spring Boot para verificar que cuentas, finca, cosecha y mensajes permanecen.
+La aceptación comprueba mensajes de 1 y 1000 caracteres, así como texto vacío, exceso de
+longitud, rol incorrecto y token vencido. En la base PostgreSQL desechable se provoca un
+fallo real de la segunda escritura mediante una restricción temporal de prueba; se
+comprueba que no queda ni el contacto ni la notificación y se retira la restricción en
+un bloque `finally`. Este procedimiento nunca debe ejecutarse sobre una base de producción.
 
 Con JDK 17 y dependencias disponibles:
 

@@ -8,11 +8,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import co.edu.uniajc.agrovalle.ports.UsuarioPort;
 import co.edu.uniajc.agrovalle.repositories.jpa.ContactoJpaRepository;
 import co.edu.uniajc.agrovalle.repositories.jpa.NotificacionContactoJpaRepository;
+import co.edu.uniajc.agrovalle.security.TokenJwtService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Map;
@@ -46,6 +49,12 @@ class ContactoAcceptanceTests {
 
   @Autowired
   private EntityManager entityManager;
+
+  @Autowired
+  private UsuarioPort usuarios;
+
+  @Autowired
+  private TokenJwtService tokens;
 
   @Test
   void completaRegistroFincaCosechaCatalogoContactoYlecturaPersistente() throws Exception {
@@ -125,7 +134,7 @@ class ContactoAcceptanceTests {
   void rechazaMensajesVaciosLargosYofertasInexistentes() throws Exception {
     Cuenta comprador = registrar("COMPRADOR");
     long antes = contactos.count();
-    for (String mensaje : new String[] {"   ", "x".repeat(1001)}) {
+    for (String mensaje : new String[] {"", "   ", "x".repeat(1001)}) {
       mockMvc.perform(post("/api/v1/contacto/mensaje")
               .header("Authorization", comprador.bearer())
               .contentType(MediaType.APPLICATION_JSON)
@@ -139,6 +148,40 @@ class ContactoAcceptanceTests {
                 "mensaje", "Mensaje válido"))))
         .andExpect(status().isNotFound());
     assertThat(contactos.count()).isEqualTo(antes);
+  }
+
+  @Test
+  void aceptaLosLimitesDeUnoYmilCaracteres() throws Exception {
+    Cuenta agricultor = registrar("AGRICULTOR");
+    Cuenta comprador = registrar("COMPRADOR");
+    long oferta = publicar(agricultor);
+    for (String mensaje : new String[] {"a", "x".repeat(1000)}) {
+      long id = enviar(comprador, oferta, mensaje);
+      entityManager.flush();
+      entityManager.clear();
+      assertThat(contactos.findById(id).orElseThrow().getMensaje()).isEqualTo(mensaje);
+    }
+    assertThat(leerBandeja(agricultor).size()).isEqualTo(2);
+  }
+
+  @Test
+  void rechazaRolAgricultorYtokenVencidoSinCrearRegistros() throws Exception {
+    Cuenta agricultor = registrar("AGRICULTOR");
+    final Cuenta comprador = registrar("COMPRADOR");
+    long oferta = publicar(agricultor);
+    final long contactosAntes = contactos.count();
+    final long notificacionesAntes = notificaciones.count();
+    String body = json.writeValueAsString(Map.of("productoId", oferta, "mensaje", "Prueba"));
+    mockMvc.perform(post("/api/v1/contacto/mensaje").header("Authorization", agricultor.bearer())
+            .contentType(MediaType.APPLICATION_JSON).content(body))
+        .andExpect(status().isForbidden());
+    String vencido = tokens.generar(usuarios.findById(comprador.id()).orElseThrow(),
+        Duration.ofSeconds(-1));
+    mockMvc.perform(post("/api/v1/contacto/mensaje").header("Authorization", "Bearer " + vencido)
+            .contentType(MediaType.APPLICATION_JSON).content(body))
+        .andExpect(status().isUnauthorized());
+    assertThat(contactos.count()).isEqualTo(contactosAntes);
+    assertThat(notificaciones.count()).isEqualTo(notificacionesAntes);
   }
 
   @Test
