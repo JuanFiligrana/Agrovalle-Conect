@@ -63,7 +63,7 @@ class ContactoAcceptanceTests {
         .andExpect(jsonPath("$.correo").doesNotExist())
         .andExpect(jsonPath("$.contrasenaHash").doesNotExist());
 
-    long totalAntes = notificaciones.count();
+    final long totalAntes = notificaciones.count();
     long contactoId = enviar(comprador, oferta, "  ¿Hay entrega el viernes?  ");
     entityManager.flush();
     entityManager.clear();
@@ -163,7 +163,7 @@ class ContactoAcceptanceTests {
   @Test
   void unaOfertaInactivaNoSePuedeConsultarNiContactar() throws Exception {
     Cuenta agricultor = registrar("AGRICULTOR");
-    Cuenta comprador = registrar("COMPRADOR");
+    final Cuenta comprador = registrar("COMPRADOR");
     long oferta = publicar(agricultor);
     entityManager.createNativeQuery("UPDATE cosechas SET activa = false WHERE id = :id")
         .setParameter("id", oferta).executeUpdate();
