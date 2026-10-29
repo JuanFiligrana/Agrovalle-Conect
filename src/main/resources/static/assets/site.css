@@ -1852,6 +1852,64 @@ h3 {
   }
 }
 
+.harvest-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.harvest-facts {
+  margin-top: 24px;
+}
+
+.harvest-facts div {
+  padding: 12px 0;
+  border-bottom: 1px solid #dbe5dc;
+}
+
+.harvest-facts dt {
+  font-weight: 700;
+}
+
+.harvest-facts dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-list {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-message {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #dbe5dc;
+  border-radius: 16px;
+}
+
+.contact-message h3 {
+  overflow-wrap: anywhere;
+}
+
+.contact-message-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+[data-contact-form] textarea {
+  width: 100%;
+  min-height: 150px;
+  font: inherit;
+}
+
+@media (max-width: 760px) {
+  .harvest-detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

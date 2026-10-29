@@ -67,13 +67,13 @@ class RefactorizacionEndpointsTests {
 
   @Test
   void mantieneElErrorJsonDeOfertaInexistenteAlContactar() throws Exception {
-    long comprador = registrar("COMPRADOR").id();
+    CuentaPrueba comprador = registrar("COMPRADOR");
     String solicitud = """
         {"compradorId":%d,"productoId":%d,"mensaje":"Solicitud de prueba R01"}
-        """.formatted(comprador, Long.MAX_VALUE);
+        """.formatted(comprador.id(), Long.MAX_VALUE);
 
     mockMvc.perform(post("/api/v1/contacto/mensaje")
-            .header("Authorization", "Bearer demo-r01")
+            .header("Authorization", "Bearer " + comprador.token())
             .contentType(MediaType.APPLICATION_JSON).content(solicitud))
         .andExpect(status().isNotFound())
         .andExpect(jsonPath("$.status").value("404 NOT_FOUND"))
@@ -82,13 +82,13 @@ class RefactorizacionEndpointsTests {
 
   @Test
   void mantieneElErrorJsonDeRolIncorrectoAlContactar() throws Exception {
-    long agricultor = registrar("AGRICULTOR").id();
+    CuentaPrueba agricultor = registrar("AGRICULTOR");
     String solicitud = """
         {"compradorId":%d,"productoId":1,"mensaje":"Solicitud de prueba R01"}
-        """.formatted(agricultor);
+        """.formatted(agricultor.id());
 
     mockMvc.perform(post("/api/v1/contacto/mensaje")
-            .header("Authorization", "Bearer demo-r01")
+            .header("Authorization", "Bearer " + agricultor.token())
             .contentType(MediaType.APPLICATION_JSON).content(solicitud))
         .andExpect(status().isForbidden())
         .andExpect(jsonPath("$.status").value("403 FORBIDDEN"))

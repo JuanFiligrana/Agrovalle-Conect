@@ -13,6 +13,18 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: agrovalle_test
+          POSTGRES_USER: agrovalle_test
+          POSTGRES_PASSWORD: solo-pruebas-ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U agrovalle_test -d agrovalle_test"
+          --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v4
       - name: Configurar JDK 17 LTS
@@ -23,6 +35,13 @@ jobs:
           cache: maven
       - name: Compilar y verificar calidad
         run: sh ./mvnw -B verify
+      - name: Verificar flujo real y persistencia con PostgreSQL
+        env:
+          AGROVALLE_TEST_POSTGRES: 'true'
+          DB_TEST_URL: jdbc:postgresql://localhost:5432/agrovalle_test
+          DB_TEST_USERNAME: agrovalle_test
+          DB_TEST_PASSWORD: solo-pruebas-ci
+        run: sh ./mvnw -B test -Dspring.profiles.active=ci-postgres
       - name: Publicar reporte JaCoCo
         if: always()
         uses: actions/upload-artifact@v4

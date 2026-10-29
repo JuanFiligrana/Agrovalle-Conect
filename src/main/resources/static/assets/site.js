@@ -115,17 +115,18 @@
     return next && /^[a-z0-9-]+\.html(?:[?#].*)?$/i.test(next) ? next : null;
   };
 
-  const currentPage = () => window.location.pathname.split('/').pop() || 'index.html';
+  const currentPage = () => (window.location.pathname.split('/').pop() || 'index.html')
+    + window.location.search;
 
   const enforceAccess = () => {
     const requiredRole = document.body.dataset.requiresRole;
-    if (!requiredRole) return true;
+    if (!requiredRole && !document.body.hasAttribute('data-requires-auth')) return true;
     const session = readSession();
     if (!session?.accessToken) {
       window.location.replace(`login.html?next=${encodeURIComponent(currentPage())}`);
       return false;
     }
-    if (session.user?.rol !== requiredRole) {
+    if (requiredRole && session.user?.rol !== requiredRole) {
       window.location.replace(dashboardFor(session));
       return false;
     }
@@ -410,14 +411,14 @@
       </div>
       <div class="product-body">
         <p class="product-meta">${escapeHtml(item.categoria)} · ${escapeHtml(item.municipio)}</p>
-        <h3>${escapeHtml(item.tipo)}</h3>
+        <h3><a href="cosecha.html?id=${encodeURIComponent(item.id)}">${escapeHtml(item.tipo)}</a></h3>
         <p class="product-price">${formatCop(item.precioCopKg)} <small>COP/kg</small></p>
         <p class="product-origin">${escapeHtml(item.agricultorNombre)} ·
           ${escapeHtml(item.fincaNombre)} · ${formatKg(item.cantidadKg)} kg</p>
         <p class="product-date">Cosecha: ${escapeHtml(item.fechaCosecha)}</p>
         <div class="product-actions">
-          <button class="button button--light button--small" type="button"
-            data-demo-action>Contactar</button>
+          <a class="button button--light button--small"
+            href="cosecha.html?id=${encodeURIComponent(item.id)}">Ver y contactar</a>
           <button class="button button--small" type="button" data-demo-action>Reservar</button>
         </div>
       </div>
@@ -523,6 +524,126 @@
     }
   };
 
+  const initializeHarvestDetail = async () => {
+    const detail = document.querySelector('[data-harvest-detail]');
+    if (!detail) return;
+    const form = document.querySelector('[data-contact-form]');
+    const access = document.querySelector('[data-contact-access]');
+    const id = new URLSearchParams(window.location.search).get('id');
+    let offer;
+    try {
+      if (!id || !/^[1-9]\d*$/.test(id)) throw new Error('Selecciona una cosecha desde el catálogo.');
+      offer = await apiRequest(`/api/v1/productos/${encodeURIComponent(id)}`);
+      detail.innerHTML = `<p class="eyebrow">${escapeHtml(offer.categoria)}</p>
+        <h2>${escapeHtml(offer.tipo)}</h2>
+        <p class="product-price">${formatCop(offer.precioCopKg)} <small>COP/kg</small></p>
+        <dl class="harvest-facts">
+          <div><dt>Agricultor</dt><dd>${escapeHtml(offer.agricultorNombre)}</dd></div>
+          <div><dt>Finca</dt><dd>${escapeHtml(offer.fincaNombre)}</dd></div>
+          <div><dt>Municipio</dt><dd>${escapeHtml(offer.municipio)}</dd></div>
+          <div><dt>Disponible</dt><dd>${formatKg(offer.cantidadKg)} kg</dd></div>
+          <div><dt>Fecha de cosecha</dt><dd>${escapeHtml(offer.fechaCosecha)}</dd></div>
+        </dl>`;
+      const session = readSession();
+      if (!session?.accessToken) {
+        access.innerHTML = `<a class="button" href="login.html?next=${encodeURIComponent(currentPage())}">Iniciar sesión para contactar</a>`;
+      } else if (session.user?.rol !== 'COMPRADOR') {
+        access.textContent = 'El contacto se envía desde una cuenta de comprador. Puedes consultar las solicitudes recibidas en Mis mensajes.';
+      } else {
+        access.textContent = 'El agricultor recibirá una notificación interna cuando se guarde tu mensaje.';
+        form.hidden = false;
+      }
+    } catch (error) {
+      detail.textContent = error.message;
+      access.textContent = 'No se puede enviar un mensaje a una oferta que no está disponible.';
+      return;
+    } finally {
+      detail.setAttribute('aria-busy', 'false');
+    }
+    let sent = false;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (sent || form.querySelector('[type="submit"]').disabled) return;
+      const message = form.elements.mensaje.value.trim();
+      if (!message) {
+        setFormMessage(form, 'Escribe un mensaje antes de enviarlo.');
+        return;
+      }
+      setFormPending(form, true, 'Enviando…');
+      setFormMessage(form, '');
+      try {
+        const result = await apiRequest('/api/v1/contacto/mensaje', {
+          method: 'POST', auth: true,
+          body: JSON.stringify({ productoId: offer.id, mensaje: message })
+        });
+        sent = true;
+        setFormMessage(form, `Mensaje #${result.id} guardado. El agricultor tiene una notificación interna.`, 'success');
+        form.elements.mensaje.readOnly = true;
+        document.querySelector('[data-contact-sent]').hidden = false;
+      } catch (error) {
+        setFormMessage(form, error.message);
+      } finally {
+        setFormPending(form, false, '');
+        form.querySelector('[type="submit"]').disabled = sent;
+      }
+    });
+  };
+
+  const loadContactMessages = async () => {
+    const lists = document.querySelectorAll('[data-contact-messages]');
+    if (!lists.length) return;
+    lists.forEach((list) => list.setAttribute('aria-busy', 'true'));
+    try {
+      const messages = await apiRequest('/api/v1/contacto/mensajes', { auth: true });
+      const farmer = readSession()?.user?.rol === 'AGRICULTOR';
+      const unread = messages.filter((message) => !message.leida).length;
+      document.querySelectorAll('[data-unread-messages]').forEach((counter) => {
+        counter.textContent = String(unread);
+      });
+      lists.forEach((list) => {
+        const limit = Number(list.dataset.messageLimit) || 100;
+        list.innerHTML = messages.length ? messages.slice(0, limit).map((message) => {
+          const date = new Intl.DateTimeFormat('es-CO', {
+            dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Bogota'
+          }).format(new Date(message.fechaCreacion));
+          return `<article class="contact-message">
+            <div class="panel-head"><h3>${escapeHtml(farmer ? message.comprador : message.agricultor)}</h3>
+              <span class="pill${message.leida ? '' : ' pill--warning'}">${message.leida ? 'Leído' : 'Sin leer'}</span></div>
+            <p><a class="text-link" href="cosecha.html?id=${encodeURIComponent(message.productoId)}">${escapeHtml(message.producto)}</a></p>
+            <p class="contact-message-text">${escapeHtml(message.mensaje)}</p>
+            <p><small>${escapeHtml(date)} · Solicitud #${message.id}</small></p>
+            ${farmer && !message.leida ? `<button class="button button--light button--small" type="button" data-read-message="${message.notificacionId}">Marcar como leído</button>` : ''}
+          </article>`;
+        }).join('') : '<p>Aún no tienes solicitudes de contacto.</p>';
+      });
+    } catch (error) {
+      lists.forEach((list) => { list.textContent = error.message; });
+      document.querySelectorAll('[data-unread-messages]').forEach((counter) => {
+        counter.textContent = '—';
+      });
+    } finally {
+      lists.forEach((list) => list.setAttribute('aria-busy', 'false'));
+    }
+  };
+
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-read-message], [data-refresh-messages]');
+    if (!button || button.disabled) return;
+    button.disabled = true;
+    try {
+      if (button.hasAttribute('data-read-message')) {
+        await apiRequest(`/api/v1/contacto/notificaciones/${encodeURIComponent(button.dataset.readMessage)}/lectura`, {
+          method: 'PATCH', auth: true
+        });
+      }
+      await loadContactMessages();
+    } catch (error) {
+      showToast(error.message);
+    } finally {
+      button.disabled = false;
+    }
+  });
+
   document.querySelectorAll('[data-demo-form]').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -566,4 +687,6 @@
   initializeHarvestForm();
   initializeCatalog();
   initializeFarmerDashboard();
+  initializeHarvestDetail();
+  loadContactMessages();
 })();

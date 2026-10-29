@@ -26,7 +26,8 @@ public class SecurityConfig {
         .authorizeHttpRequests(authorize -> authorize
             .requestMatchers(HttpMethod.POST, "/api/v1/productos").authenticated()
             .requestMatchers("/api/v1/auth/me", "/api/v1/fincas",
-                "/api/v1/fincas/**", "/api/v1/notificaciones/cosechas").authenticated()
+                "/api/v1/fincas/**", "/api/v1/notificaciones/cosechas",
+                "/api/v1/contacto", "/api/v1/contacto/**").authenticated()
             .anyRequest().permitAll())
         .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();

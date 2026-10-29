@@ -24,6 +24,11 @@ categoría. El incremento también demuestra Strategy para el cálculo de flete 
 para avisos de publicación. Alcance, criterios y trazabilidad se detallan en
 [Sprint 2](docs/sprint-2-planning.md).
 
+El incremento posterior del [PR #55](https://github.com/JuanFiligrana/Agrovalle-Conect/pull/55)
+añade HU-05 y HU-10: detalle público de cosechas activas, contacto autenticado y bandeja
+privada. El mensaje y su notificación interna se guardan en una misma transacción.
+El alcance y los controles de este incremento se documentan en [Contacto y detalle](docs/contacto-hu05.md).
+
 ### Rutas del incremento
 
 - `POST /api/v1/auth/register`: registra un agricultor o comprador.
@@ -33,14 +38,16 @@ para avisos de publicación. Alcance, criterios y trazabilidad se detallan en
 - `GET /api/v1/fincas`: lista las fincas del agricultor autenticado.
 - `POST /api/v1/productos`: publica una cosecha persistente; exige JWT de agricultor.
 - `GET /api/v1/productos?municipio=&categoria=`: filtra ofertas activas.
+- `GET /api/v1/productos/{id}`: consulta el detalle público de una cosecha activa.
+- `POST /api/v1/contacto/mensaje`: guarda el mensaje y una notificación; exige JWT de comprador.
+- `GET /api/v1/contacto/mensajes`: consulta hasta los últimos 100 mensajes propios; exige JWT.
+- `PATCH /api/v1/contacto/notificaciones/{id}/lectura`: marca como leída una notificación del destinatario.
 - `GET /api/v1/notificaciones/cosechas`: consulta avisos propios generados por Observer.
 - `GET /api/v1/fletes/calculo?municipio=&subtotal=`: calcula el flete mediante Strategy.
 
 ### Funciones heredadas aún fuera del alcance terminado
 
 - `GET /api/v1/precios/promedio?producto=`: calcula el promedio en COP/kg.
-- `POST /api/v1/contacto/mensaje`: registra una solicitud de contacto con
-  encabezado `Authorization`.
 
 ## Interfaz web navegable
 
@@ -52,6 +59,8 @@ administrador:
 - [Portada pública](src/main/resources/static/index.html) y
   [catálogo de cosechas](src/main/resources/static/catalogo.html).
 - [Acceso y registro por rol](src/main/resources/static/login.html).
+- [Detalle y contacto](src/main/resources/static/cosecha.html) y
+  [bandeja privada de mensajes](src/main/resources/static/mensajes.html).
 - [Panel del agricultor](src/main/resources/static/agricultor.html) y
   [publicación de cosecha](src/main/resources/static/publicar-cosecha.html).
 - [Seguimiento de entregas](src/main/resources/static/seguimiento.html).
@@ -66,8 +75,9 @@ backend terminadas en este incremento. La justificación completa está en
 La integración web posterior conecta con esas rutas terminadas: permite registrar una
 cuenta, iniciar sesión con JWT, registrar una finca, publicar una cosecha y consultar el
 catálogo persistente con filtros. La sesión se conserva únicamente en la pestaña del
-navegador. Las acciones de contacto, reserva, pedidos y seguimiento se identifican como
-funciones del siguiente incremento y no presentan datos simulados como si fueran reales.
+navegador. El detalle permite enviar una solicitud al agricultor, que puede leerla desde
+su panel o bandeja privada. No es un chat: las respuestas, reservas, pedidos y seguimiento
+persistente siguen pendientes y no se presentan como funciones reales.
 
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
@@ -141,6 +151,7 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 - [PostgreSQL para T01](docs/postgresql-t01.md): creación, variables y comprobación.
 - [Autenticación JWT de HU-07](docs/jwt-hu07.md): configuración y contratos seguros.
 - [Persistencia de fincas de HU-08](docs/fincas-hu08.md): propiedad y pruebas.
+- [Contacto HU-05 y detalle HU-10](docs/contacto-hu05.md): autorización, persistencia y validación con PostgreSQL.
 - [Sprint de Diseño D01-D07](docs/diseno/README.md): modelos, UML, DDL, arquitectura y mockups.
 - [Planificación del Sprint 2](docs/sprint-2-planning.md): HU-02, HU-04 y demostración REST.
 - [Especificación formal de HU-01](docs/ieee29148-req01.md): ISO/IEC/IEEE 29148 frente a BDD.
@@ -158,6 +169,8 @@ iniciales `chore/`. Las mejoras se integran mediante PR, no mediante push direct
 El workflow `.github/workflows/ci.yml` ejecuta `verify` con Java 17 LTS en pushes a main
 y en Pull Requests hacia main. Checkstyle, JUnit y los umbrales JaCoCo de 60 % forman una
 sola barrera; el reporte HTML de JaCoCo se conserva como artefacto de cada ejecución.
+Además, levanta un PostgreSQL 17 desechable, repite las pruebas con ese motor y ejecuta
+un flujo HTTP que reinicia la aplicación para comprobar la persistencia de los datos.
 El badge refleja el último resultado remoto. Un workflow por sí solo no bloquea merges
 si la protección de la rama no exige el check `build`.
 

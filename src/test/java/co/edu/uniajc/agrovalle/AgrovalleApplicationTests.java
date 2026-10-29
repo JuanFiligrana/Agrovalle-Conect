@@ -43,6 +43,8 @@ class AgrovalleApplicationTests {
   @ParameterizedTest
   @ValueSource(strings = {
       "/catalogo.html",
+      "/cosecha.html",
+      "/mensajes.html",
       "/login.html",
       "/agricultor.html",
       "/registrar-finca.html",

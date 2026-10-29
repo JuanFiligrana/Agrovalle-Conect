@@ -1,6 +1,7 @@
 package co.edu.uniajc.agrovalle.services;
 
 import co.edu.uniajc.agrovalle.dto.OfertaCatalogoResponse;
+import co.edu.uniajc.agrovalle.exceptions.RecursoNoEncontradoException;
 import co.edu.uniajc.agrovalle.models.Agricultor;
 import co.edu.uniajc.agrovalle.models.Cosecha;
 import co.edu.uniajc.agrovalle.models.Finca;
@@ -30,6 +31,16 @@ public class CatalogoCosechasService {
   @Transactional(readOnly = true)
   public List<OfertaCatalogoResponse> listar(String municipio, String categoria) {
     return cosechas.listar(municipio, categoria).stream().map(this::toResponse).toList();
+  }
+
+  /** Devuelve el detalle público de una oferta activa, sin datos privados. */
+  @Transactional(readOnly = true)
+  public OfertaCatalogoResponse detalle(long id) {
+    Cosecha cosecha = cosechas.require(id);
+    if (!cosecha.activa()) {
+      throw new RecursoNoEncontradoException("No existe la cosecha " + id);
+    }
+    return toResponse(cosecha);
   }
 
   private OfertaCatalogoResponse toResponse(Cosecha cosecha) {
