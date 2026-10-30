@@ -96,7 +96,7 @@ public class ComercioService {
     exigirRol(usuario, "COMPRADOR", true);
     if (clave == null || !clave.matches("[A-Za-z0-9._:-]{8,128}")) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-          "Idempotency-Key debe contener entre 8 y 128 letras, números, puntos, guiones o dos puntos");
+          "Idempotency-Key requiere de 8 a 128 letras, números, puntos, guiones o dos puntos");
     }
     var anterior = datos.porClave(usuario.id(), clave);
     if (anterior.isPresent()) {
@@ -223,7 +223,7 @@ public class ComercioService {
     return datos.avisos(usuario.id());
   }
 
-  /** Consulta indicadores exclusivamente con el rol administrativo vigente. */
+  /** Consulta indicadores con el rol administrativo vigente. */
   public Comercio.Resumen resumen(UsuarioAutenticado usuario) {
     exigirRol(usuario, "ADMINISTRADOR", false);
     return datos.resumen();
@@ -250,7 +250,8 @@ public class ComercioService {
 
   private Comercio.Inventario inventario(Comercio.Oferta oferta) {
     BigDecimal reservada = datos.reservada(oferta.id(), ahora());
-    return new Comercio.Inventario(oferta, reservada, oferta.cantidadFisicaKg().subtract(reservada));
+    return new Comercio.Inventario(oferta, reservada,
+        oferta.cantidadFisicaKg().subtract(reservada));
   }
 
   private Comercio.Oferta oferta(long id, boolean bloquear) {

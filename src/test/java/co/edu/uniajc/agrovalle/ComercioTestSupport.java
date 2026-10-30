@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
-/** Datos aislados exclusivamente de pruebas, sin usuarios ni permisos preconfigurados en producción. */
+/** Fixtures aislados de pruebas, sin usuarios ni permisos preconfigurados en producción. */
 abstract class ComercioTestSupport {
   @Autowired
   protected MockMvc mvc;

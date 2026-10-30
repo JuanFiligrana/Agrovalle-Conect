@@ -190,7 +190,7 @@ class ComercioAcceptanceTests extends ComercioTestSupport {
   }
 
   @Test
-  void validaCantidadesClavesYCierraAdministracionAlPublico() throws Exception {
+  void validaCantidadesClavesYcierraAdministracionAlPublico() throws Exception {
     final Cuenta comprador = cuenta("COMPRADOR");
     long oferta = oferta(cuenta("AGRICULTOR"), "10", "1000");
     for (String cantidad : new String[] {"0", "-1", "0.0001", "1000000000000"}) {

@@ -25,6 +25,7 @@ public final class Comercio {
       long productoId, String producto, BigDecimal cantidadKg, BigDecimal precioCopKg,
       OffsetDateTime venceEn) {
     /** Redondea el importe de la reserva a centavos. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subtotal")
     public BigDecimal subtotal() {
       return cantidadKg.multiply(precioCopKg).setScale(2, java.math.RoundingMode.HALF_UP);
     }
