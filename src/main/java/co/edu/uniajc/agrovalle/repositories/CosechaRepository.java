@@ -1,6 +1,7 @@
 package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Cosecha;
+import co.edu.uniajc.agrovalle.ports.ComercioPort;
 import co.edu.uniajc.agrovalle.ports.CosechaPort;
 import co.edu.uniajc.agrovalle.repositories.jpa.CategoriaEntity;
 import co.edu.uniajc.agrovalle.repositories.jpa.CategoriaJpaRepository;
@@ -9,6 +10,8 @@ import co.edu.uniajc.agrovalle.repositories.jpa.CosechaJpaRepository;
 import co.edu.uniajc.agrovalle.repositories.jpa.FincaJpaRepository;
 import co.edu.uniajc.agrovalle.repositories.jpa.ProductoEntity;
 import co.edu.uniajc.agrovalle.repositories.jpa.ProductoJpaRepository;
+import java.time.Clock;
+import java.time.OffsetDateTime;
 import java.util.Collection;
 import org.springframework.stereotype.Repository;
 
@@ -20,14 +23,19 @@ public class CosechaRepository implements CosechaPort {
   private final FincaJpaRepository fincas;
   private final CategoriaJpaRepository categorias;
   private final ProductoJpaRepository productos;
+  private final ComercioPort comercio;
+  private final Clock reloj;
 
   /** Recibe los repositorios normalizados que forman una publicación. */
   public CosechaRepository(CosechaJpaRepository cosechas, FincaJpaRepository fincas,
-      CategoriaJpaRepository categorias, ProductoJpaRepository productos) {
+      CategoriaJpaRepository categorias, ProductoJpaRepository productos,
+      ComercioPort comercio, Clock reloj) {
     this.cosechas = cosechas;
     this.fincas = fincas;
     this.categorias = categorias;
     this.productos = productos;
+    this.comercio = comercio;
+    this.reloj = reloj;
   }
 
   /** Resuelve finca, categoría y producto antes de persistir una oferta. */
@@ -61,7 +69,9 @@ public class CosechaRepository implements CosechaPort {
     var finca = entity.getFinca();
     var producto = entity.getProducto();
     return new Cosecha(entity.getId(), finca.getAgricultorId(), finca.getId(),
-        producto.getNombre(), producto.getCategoria().getNombre(), entity.getCantidadKg(),
+        producto.getNombre(), producto.getCategoria().getNombre(),
+        entity.getCantidadKg().subtract(comercio.reservada(entity.getId(),
+            OffsetDateTime.now(reloj))),
         entity.getPrecioCopKg(), entity.getFechaCosecha(), entity.isActiva());
   }
 }

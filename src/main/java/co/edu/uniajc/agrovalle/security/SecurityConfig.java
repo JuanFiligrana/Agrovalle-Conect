@@ -25,6 +25,10 @@ public class SecurityConfig {
             errors.authenticationEntryPoint(authenticationEntryPoint))
         .authorizeHttpRequests(authorize -> authorize
             .requestMatchers(HttpMethod.POST, "/api/v1/productos").authenticated()
+            .requestMatchers(HttpMethod.PUT, "/api/v1/productos/**").authenticated()
+            .requestMatchers("/api/v1/mis-ofertas", "/api/v1/carrito", "/api/v1/carrito/**",
+                "/api/v1/ordenes", "/api/v1/ordenes/**", "/api/v1/notificaciones/pedidos",
+                "/api/v1/administracion/**").authenticated()
             .requestMatchers("/api/v1/auth/me", "/api/v1/fincas",
                 "/api/v1/fincas/**", "/api/v1/notificaciones/cosechas",
                 "/api/v1/contacto", "/api/v1/contacto/**").authenticated()

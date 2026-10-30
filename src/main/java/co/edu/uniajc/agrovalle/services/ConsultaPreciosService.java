@@ -1,39 +1,33 @@
 package co.edu.uniajc.agrovalle.services;
 
 import co.edu.uniajc.agrovalle.dto.PrecioPromedioResponse;
-import co.edu.uniajc.agrovalle.models.Cosecha;
-import co.edu.uniajc.agrovalle.ports.CosechaPort;
+import co.edu.uniajc.agrovalle.ports.PrecioPort;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.List;
+import java.time.Clock;
+import java.time.OffsetDateTime;
 import org.springframework.stereotype.Service;
 
-/** Consulta de precios del prototipo; la referencia histórica de HU03 sigue pendiente. */
+/** Media aritmética no ponderada de ventas completadas en las últimas 24 horas. */
 @Service
 public class ConsultaPreciosService {
 
-  private final CosechaPort cosechas;
+  private final PrecioPort precios;
+  private final Clock reloj;
 
-  /** Recibe el contrato de ofertas sin seleccionar el adaptador que las almacena. */
-  public ConsultaPreciosService(CosechaPort cosechas) {
-    this.cosechas = cosechas;
+  /** Inyecta el historial y un reloj que permite verificar los límites temporales. */
+  public ConsultaPreciosService(PrecioPort precios, Clock reloj) {
+    this.precios = precios;
+    this.reloj = reloj;
   }
 
-  /** Conserva la media de ofertas activas que utilizaba el prototipo anterior. */
+  /** Cuenta ventas, no kilogramos, y devuelve null cuando no hay historial reciente. */
   public PrecioPromedioResponse promedio(String producto) {
-    List<Cosecha> ofertas = cosechas.findAll().stream()
-        .filter(Cosecha::activa)
-        .filter(item -> item.tipo().equalsIgnoreCase(producto.trim()))
-        .toList();
-    BigDecimal promedio = ofertas.stream()
-        .map(Cosecha::precioCopKg)
-        .reduce(BigDecimal.ZERO, BigDecimal::add);
-    if (!ofertas.isEmpty()) {
-      promedio = promedio.divide(BigDecimal.valueOf(ofertas.size()), 2,
-          RoundingMode.HALF_UP);
-    } else {
-      promedio = null;
-    }
-    return new PrecioPromedioResponse(producto, promedio, ofertas.size(), "COP/kg");
+    var hasta = OffsetDateTime.now(reloj);
+    var valores = precios.preciosFinalizados(producto.trim(), hasta.minusHours(24), hasta);
+    BigDecimal promedio = valores.isEmpty() ? null
+        : valores.stream().reduce(BigDecimal.ZERO, BigDecimal::add)
+            .divide(BigDecimal.valueOf(valores.size()), 2, RoundingMode.HALF_UP);
+    return new PrecioPromedioResponse(producto.trim(), promedio, valores.size(), "COP/kg");
   }
 }
