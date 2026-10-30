@@ -53,7 +53,11 @@ public class AgricultorService {
 
   private RolUsuario parseRole(String value) {
     try {
-      return RolUsuario.valueOf(value.trim().toUpperCase(Locale.ROOT));
+      RolUsuario rol = RolUsuario.valueOf(value.trim().toUpperCase(Locale.ROOT));
+      if (rol == RolUsuario.ADMINISTRADOR) {
+        throw new IllegalArgumentException("El registro público no admite administradores");
+      }
+      return rol;
     } catch (IllegalArgumentException exception) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
           "El rol debe ser AGRICULTOR o COMPRADOR");

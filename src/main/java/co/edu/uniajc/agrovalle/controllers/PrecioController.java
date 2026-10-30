@@ -22,7 +22,7 @@ public class PrecioController {
     this.service = service;
   }
 
-  /** Calcula el promedio de las ofertas activas de un producto. */
+  /** Calcula la media de precios de ventas finalizadas durante las últimas 24 horas. */
   @GetMapping("/promedio")
   @ResponseStatus(HttpStatus.OK)
   public PrecioPromedioResponse promedio(@RequestParam String producto) {
