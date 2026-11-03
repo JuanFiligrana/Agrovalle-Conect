@@ -65,6 +65,11 @@ class ComercioAcceptanceTests extends ComercioTestSupport {
         .getResponse().getStatus()).isEqualTo(409);
     assertThat(cuerpo(pedir(get("/api/v1/notificaciones/pedidos"), agricultor, null)).size())
         .isEqualTo(1);
+    pedir(put("/api/v1/productos/" + oferta), agricultor,
+        Map.of("cantidadFisicaKg", 13, "precioCopKg", 3000));
+    assertThat(cuerpo(pedir(get("/api/v1/ordenes/" + pedido + "/trazabilidad"),
+        comprador, null)).get("items").get(0).get("precioCopKg").decimalValue())
+        .isEqualByComparingTo("1000");
   }
 
   @Test
@@ -248,6 +253,54 @@ class ComercioAcceptanceTests extends ComercioTestSupport {
     mvc.perform(get("/api/v1/precios/promedio").param("producto", "Inexistente-historial"))
         .andExpect(status().isOk()).andExpect(jsonPath("$.promedio").value(nullValue()))
         .andExpect(jsonPath("$.cantidadTransacciones").value(0));
+  }
+
+  @Test
+  void unaReservaVencidaImpideCrearUnaOrdenParcial() throws Exception {
+    final Cuenta agricultor = cuenta("AGRICULTOR");
+    final Cuenta comprador = cuenta("COMPRADOR");
+    final long primera = oferta(agricultor, "10", "1000");
+    long segunda = oferta(agricultor, "20", "2000");
+    final long carrito = cuerpo(reservar(comprador, primera, "3")).get("id").asLong();
+    assertThat(reservar(comprador, segunda, "4").getResponse().getStatus()).isEqualTo(200);
+    jdbc.update("UPDATE reservas SET vence_en = ? WHERE carrito_id = ? AND cosecha_id = ?",
+        OffsetDateTime.now().minusSeconds(1), carrito, segunda);
+    assertThat(confirmar(comprador, carrito, "no-orden-parcial").getResponse().getStatus())
+        .isEqualTo(409);
+    assertThat(fisica(primera)).isEqualByComparingTo("10");
+    assertThat(fisica(segunda)).isEqualByComparingTo("20");
+    assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM pedidos WHERE carrito_id = ?",
+        Long.class, carrito)).isZero();
+  }
+
+  @Test
+  void elPromedioNoPonderaLaCantidadDeDosVentasEntregadas() throws Exception {
+    final Cuenta agricultor = cuenta("AGRICULTOR");
+    final Cuenta comprador = cuenta("COMPRADOR");
+    final long oferta = oferta(agricultor, "20", "1000");
+    for (int index = 0; index < 2; index++) {
+      if (index == 1) {
+        assertThat(pedir(put("/api/v1/productos/" + oferta), agricultor,
+            Map.of("cantidadFisicaKg", 19, "precioCopKg", 2000)).getResponse().getStatus())
+            .isEqualTo(200);
+      }
+      long carrito = cuerpo(reservar(comprador, oferta, index == 0 ? "1" : "9"))
+          .get("id").asLong();
+      long pedido = cuerpo(confirmar(comprador, carrito, "precio-no-ponderado-" + index))
+          .get("pedido").get("id").asLong();
+      assertThat(estado(agricultor, pedido, "LISTO_PARA_DESPACHO",
+          OffsetDateTime.now().plusDays(1)).getResponse().getStatus()).isEqualTo(200);
+      assertThat(estado(agricultor, pedido, "EN_CAMINO", null).getResponse().getStatus())
+          .isEqualTo(200);
+      assertThat(estado(agricultor, pedido, "ENTREGADO", null).getResponse().getStatus())
+          .isEqualTo(200);
+    }
+    String producto = jdbc.queryForObject(
+        "SELECT p.nombre FROM productos p JOIN cosechas c ON c.producto_id = p.id WHERE c.id = ?",
+        String.class, oferta);
+    mvc.perform(get("/api/v1/precios/promedio").param("producto", producto))
+        .andExpect(status().isOk()).andExpect(jsonPath("$.promedio").value(1500.00))
+        .andExpect(jsonPath("$.cantidad_transacciones").value(2));
   }
 
   private void transaccion(long productoId, String producto, String precio, String estado,

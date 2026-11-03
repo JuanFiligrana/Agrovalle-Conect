@@ -4,7 +4,8 @@ El Sprint 1 corregido implementa HU-01, HU-07 y HU-08 mediante las tareas T02, T
 y T04, para un compromiso de 13 Story Points. El Sprint 2 selecciona HU-02 y HU-04,
 con 8 Story Points: publicación persistente de cosechas y consulta de ofertas activas
 por municipio y categoría. Un incremento posterior incorpora contacto y detalle de
-cosecha (HU-05 y HU-10); no modifica el compromiso histórico del Sprint 2.
+cosecha (HU-05 y HU-10). El incremento de compra y logística incorpora HU-03, HU-09
+y HU-11 a HU-15; ninguno modifica el compromiso histórico del Sprint 2.
 Las demás historias no acreditadas permanecen en el Product Backlog.
 
 Versión base del Sprint 0 ampliada con los incrementos de Sprint 1 y Sprint 2. Las historias que no
@@ -18,9 +19,12 @@ equipo debe ratificar mediante Planning Poker. No se inventan votos ni consensos
 | Sprint 1 corregido | HU-01, HU-07, HU-08 | 13 | Integrado en `main` mediante PR #26 |
 | Sprint 2 | HU-02, HU-04 | 8 | Validado por CI en el PR #52; ejecución 35 aprobada |
 | Incremento posterior de contacto y detalle | HU-05, HU-10 | 8 | Implementado en PR #55; resultado de CI e integración consultables en el PR |
+| Incremento de compra y logística | HU-03, HU-09, HU-11, HU-12, HU-13, HU-14, HU-15 | 44 | Implementado en PR #56; pruebas, calidad e integración consultables en el PR |
 
-HU-03 (precios sobre ventas históricas), HU-09 (actualización de ofertas) y HU-11 a HU-15
-(carrito, órdenes y logística) no se consideran terminadas por este incremento.
+El alcance, las rutas y las pruebas del incremento de compra se describen en
+[Compra y logística](docs/compra-logistica.md). Incluye un resumen administrativo
+protegido; no incluye pagos electrónicos, GPS ni gestión de cuentas o permisos.
+La aceptación académica y la ratificación del equipo no se sustituyen por las pruebas de CI.
 
 ## Priorización y estimación
 M = Must Have (esencial); S = Should Have (importante); C = Could Have (deseable);

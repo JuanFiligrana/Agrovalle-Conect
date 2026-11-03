@@ -85,6 +85,8 @@ La API conserva la arquitectura controlador → servicio → puerto → adaptado
 de comercio usa JdbcTemplate dentro del gestor transaccional JPA ya configurado, con
 consultas parametrizadas y bloqueos SELECT FOR UPDATE. El esquema se amplía sin borrar
 cuentas, fincas, ofertas ni contactos existentes.
+La entidad TransaccionEntity y TransaccionJpaRepository implementan la consulta histórica
+con Spring Data JPA; TransaccionRepository adapta el resultado al puerto de precios.
 
 Tablas añadidas: carritos, reservas, pedidos, pedido_items, eventos_pedido, avisos_pedido y
 transacciones. Hay claves foráneas, restricciones de cantidades/precios y unicidad para
