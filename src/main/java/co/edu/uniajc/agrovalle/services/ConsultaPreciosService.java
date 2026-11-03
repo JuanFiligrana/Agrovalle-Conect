@@ -23,7 +23,7 @@ public class ConsultaPreciosService {
 
   /** Cuenta ventas, no kilogramos, y devuelve null cuando no hay historial reciente. */
   public PrecioPromedioResponse promedio(String producto) {
-    var hasta = OffsetDateTime.now(reloj);
+    var hasta = OffsetDateTime.now(reloj).truncatedTo(java.time.temporal.ChronoUnit.MICROS);
     var valores = precios.preciosFinalizados(producto.trim(), hasta.minusHours(24), hasta);
     BigDecimal promedio = valores.isEmpty() ? null
         : valores.stream().reduce(BigDecimal.ZERO, BigDecimal::add)

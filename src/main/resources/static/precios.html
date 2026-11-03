@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Una referencia basada en ventas completadas durante las últimas 24 horas, no en precios de anuncios.">
+  <title>Precios del mercado · AgroValle Connect</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/commerce.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header"><nav class="site-nav container" aria-label="Navegación principal">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>AgroValle Connect<small>Del campo a tu mesa</small></span></a>
+    <div class="nav-actions commerce-nav"><a href="catalogo.html">Cosechas</a><a href="carrito.html">Carrito</a><a href="pedidos.html">Mis pedidos</a><a href="mensajes.html">Mensajes</a><a class="button button--small" href="login.html" data-session-link>Mi cuenta</a><button class="button button--light button--small" data-auth-only data-logout hidden type="button">Salir</button></div>
+  </nav></header>
+  <main id="contenido"><section class="page-hero"><div class="container"><div><p class="eyebrow">AgroValle Connect</p><h1>Precios del mercado</h1><p>Una referencia basada en ventas completadas durante las últimas 24 horas, no en precios de anuncios.</p></div></div></section>
+    <div class="container section commerce-content"><section class="panel"><form class="commerce-form" data-prices-form><label for="producto">Nombre exacto del producto</label><input id="producto" name="producto" maxlength="100" placeholder="Ejemplo: Tomate" required><p>Escribe el nombre publicado, incluida la variedad. La consulta no distingue mayúsculas.</p><button class="button" type="submit">Consultar promedio</button><p class="form-message" data-feedback role="status" aria-live="polite"></p></form></section><section class="panel"><h2>Cómo interpretar el dato</h2><p>La media da el mismo peso a cada línea de venta entregada, sin ponderar los kilogramos. Si no existen ventas recientes, se indica expresamente; no se inventa un precio de referencia.</p></section></div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom">AgroValle Connect · <a href="index.html">Volver al inicio</a></div></div></footer>
+  <script src="assets/site.js" defer></script><script src="assets/commerce.js" defer></script>
+</body>
+</html>

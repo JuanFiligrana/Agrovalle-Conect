@@ -108,7 +108,8 @@
   };
 
   const dashboardFor = (session) => session?.user?.rol === 'AGRICULTOR'
-    ? 'agricultor.html' : 'catalogo.html';
+    ? 'agricultor.html' : session?.user?.rol === 'ADMINISTRADOR'
+      ? 'administrador.html' : 'catalogo.html';
 
   const safeNextPage = () => {
     const next = new URLSearchParams(window.location.search).get('next');
@@ -419,7 +420,7 @@
         <div class="product-actions">
           <a class="button button--light button--small"
             href="cosecha.html?id=${encodeURIComponent(item.id)}">Ver y contactar</a>
-          <button class="button button--small" type="button" data-demo-action>Reservar</button>
+          <a class="button button--small" href="cosecha.html?id=${encodeURIComponent(item.id)}#reservar">Reservar</a>
         </div>
       </div>
     </article>`;
@@ -541,7 +542,7 @@
           <div><dt>Agricultor</dt><dd>${escapeHtml(offer.agricultorNombre)}</dd></div>
           <div><dt>Finca</dt><dd>${escapeHtml(offer.fincaNombre)}</dd></div>
           <div><dt>Municipio</dt><dd>${escapeHtml(offer.municipio)}</dd></div>
-          <div><dt>Disponible</dt><dd>${formatKg(offer.cantidadKg)} kg</dd></div>
+          <div><dt>Disponible</dt><dd data-availability>${formatKg(offer.cantidadKg)} kg</dd></div>
           <div><dt>Fecha de cosecha</dt><dd>${escapeHtml(offer.fechaCosecha)}</dd></div>
         </dl>`;
       const session = readSession();

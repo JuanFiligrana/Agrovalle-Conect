@@ -50,7 +50,10 @@ class AgrovalleApplicationTests {
       "/registrar-finca.html",
       "/publicar-cosecha.html",
       "/seguimiento.html",
-      "/administrador.html"
+      "/administrador.html",
+      "/carrito.html",
+      "/pedidos.html",
+      "/precios.html"
   })
   void prototipoWebSirveLasVistasPorRol(String ruta) throws Exception {
     mockMvc.perform(get(ruta))

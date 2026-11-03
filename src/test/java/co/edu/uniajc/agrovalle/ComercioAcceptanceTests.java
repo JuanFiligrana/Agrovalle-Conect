@@ -226,7 +226,7 @@ class ComercioAcceptanceTests extends ComercioTestSupport {
         "SELECT producto_id FROM cosechas WHERE id = ?", Long.class, cosecha);
     final String producto = jdbc.queryForObject(
         "SELECT nombre FROM productos WHERE id = ?", String.class, productoId);
-    final var hasta = OffsetDateTime.now();
+    final var hasta = OffsetDateTime.now().truncatedTo(java.time.temporal.ChronoUnit.MICROS);
     for (int index = 0; index < 50; index++) {
       transaccion(productoId, producto, index < 25 ? "1000" : "2000",
           "COMPLETADA", hasta.minusHours(1));

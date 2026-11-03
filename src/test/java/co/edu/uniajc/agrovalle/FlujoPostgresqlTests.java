@@ -30,13 +30,14 @@ class FlujoPostgresqlTests {
   private String base;
 
   @Test
-  void conservaCuentasFincaOfertaYmensajesDespuesDeReiniciar() throws Exception {
+  void conservaCuentasOfertaMensajesYpedidoDespuesDeReiniciar() throws Exception {
     String unico = UUID.randomUUID().toString();
     String correoAgricultor = "agricultor-" + unico + "@example.invalid";
     String correoComprador = "comprador-" + unico + "@example.invalid";
     long fincaId;
     long ofertaId;
     long contactoId;
+    long pedidoId;
     try (var contexto = iniciar()) {
       configurarBase(contexto);
       try (var connection = contexto.getBean(DataSource.class).getConnection()) {
@@ -58,6 +59,11 @@ class FlujoPostgresqlTests {
           Map.of("productoId", ofertaId, "mensaje", "Mensaje que debe sobrevivir al reinicio"),
           200).get("id").asLong();
       comprobarRollback(contexto, comprador, ofertaId);
+      long carritoId = solicitud("POST", "/api/v1/carrito/items", comprador,
+          Map.of("cosechaId", ofertaId, "cantidadKg", 3), 200).get("id").asLong();
+      comprobarRollbackPedido(contexto, comprador, carritoId, ofertaId);
+      pedidoId = solicitud("POST", "/api/v1/ordenes", comprador,
+          Map.of("carritoId", carritoId), 201).get("pedido").get("id").asLong();
     }
     try (var contexto = iniciar()) {
       configurarBase(contexto);
@@ -66,13 +72,47 @@ class FlujoPostgresqlTests {
       JsonNode fincas = solicitud("GET", "/api/v1/fincas", agricultor, null, 200);
       assertThat(fincas.get(0).get("id").asLong()).isEqualTo(fincaId);
       JsonNode oferta = solicitud("GET", "/api/v1/productos/" + ofertaId, null, null, 200);
-      assertThat(oferta.get("cantidadKg").asInt()).isEqualTo(25);
+      assertThat(oferta.get("cantidadKg").asInt()).isEqualTo(22);
+      JsonNode pedido = solicitud("GET", "/api/v1/ordenes/" + pedidoId + "/trazabilidad",
+          comprador, null, 200);
+      assertThat(pedido.get("pedido").get("estado").asText()).isEqualTo("PENDIENTE");
+      assertThat(pedido.get("items").get(0).get("precioCopKg").asInt()).isEqualTo(4200);
+      assertThat(pedido.get("eventos").size()).isEqualTo(1);
+      for (int intento = 0; intento < 2; intento++) {
+        solicitud("POST", "/api/v1/ordenes/" + pedidoId + "/cancelacion",
+            comprador, null, 200);
+      }
+      assertThat(solicitud("GET", "/api/v1/productos/" + ofertaId, null, null, 200)
+          .get("cantidadKg").asInt()).isEqualTo(25);
       JsonNode mensajes = solicitud("GET", "/api/v1/contacto/mensajes", agricultor, null, 200);
       assertThat(mensajes.size()).isEqualTo(1);
       assertThat(mensajes.get(0).get("id").asLong()).isEqualTo(contactoId);
       assertThat(mensajes.get(0).get("leida").asBoolean()).isFalse();
       assertThat(solicitud("GET", "/api/v1/contacto/mensajes", comprador, null, 200)
           .get(0).get("id").asLong()).isEqualTo(contactoId);
+    }
+  }
+
+  private void comprobarRollbackPedido(ServletWebServerApplicationContext contexto,
+      String comprador, long carritoId, long ofertaId) throws Exception {
+    var jdbc = new JdbcTemplate(contexto.getBean(DataSource.class));
+    final Long pedidosAntes = jdbc.queryForObject("SELECT count(*) FROM pedidos", Long.class);
+    // Provoca un fallo después de crear la cabecera y descontar inventario, solo en CI.
+    jdbc.execute("ALTER TABLE pedido_items ADD CONSTRAINT prueba_fallo_linea "
+        + "CHECK (pedido_id < 0) NOT VALID");
+    try {
+      solicitud("POST", "/api/v1/ordenes", comprador, Map.of("carritoId", carritoId), 409);
+      assertThat(jdbc.queryForObject("SELECT count(*) FROM pedidos", Long.class))
+          .isEqualTo(pedidosAntes);
+      assertThat(jdbc.queryForObject("SELECT cantidad_kg FROM cosechas WHERE id = ?",
+          java.math.BigDecimal.class, ofertaId)).isEqualByComparingTo("25");
+      assertThat(jdbc.queryForObject(
+          "SELECT COUNT(*) FROM reservas WHERE carrito_id = ? AND activa = TRUE",
+          Long.class, carritoId)).isEqualTo(1);
+      assertThat(jdbc.queryForObject("SELECT abierto FROM carritos WHERE id = ?",
+          Boolean.class, carritoId)).isTrue();
+    } finally {
+      jdbc.execute("ALTER TABLE pedido_items DROP CONSTRAINT prueba_fallo_linea");
     }
   }
 
@@ -127,6 +167,9 @@ class FlujoPostgresqlTests {
         .timeout(Duration.ofSeconds(20)).header("Accept", "application/json");
     if (token != null) {
       request.header("Authorization", "Bearer " + token);
+    }
+    if ("POST".equals(metodo) && "/api/v1/ordenes".equals(ruta)) {
+      request.header("Idempotency-Key", "http-reinicio-" + body.get("carritoId"));
     }
     if (body == null) {
       request.method(metodo, HttpRequest.BodyPublishers.noBody());

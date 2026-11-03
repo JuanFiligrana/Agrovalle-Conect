@@ -283,7 +283,7 @@ public class ComercioService {
   }
 
   private OffsetDateTime ahora() {
-    return OffsetDateTime.now(reloj);
+    return OffsetDateTime.now(reloj).truncatedTo(java.time.temporal.ChronoUnit.MICROS);
   }
 
   private ResponseStatusException noExiste(String recurso) {

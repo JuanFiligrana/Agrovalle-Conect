@@ -52,9 +52,8 @@ El alcance y los controles de este incremento se documentan en [Contacto y detal
 ## Interfaz web navegable
 
 Al abrir `http://localhost:8081/`, la aplicación presenta una portada pública dirigida al
-comprador, con catálogo, filtros, precios, disponibilidad y acceso al seguimiento. El
-prototipo de alta fidelidad también diferencia las herramientas del agricultor y del
-administrador:
+comprador, con catálogo, filtros, precios, disponibilidad y acceso al seguimiento.
+La interfaz diferencia las herramientas del comprador, agricultor y administrador:
 
 - [Portada pública](src/main/resources/static/index.html) y
   [catálogo de cosechas](src/main/resources/static/catalogo.html).
@@ -64,20 +63,26 @@ administrador:
 - [Panel del agricultor](src/main/resources/static/agricultor.html) y
   [publicación de cosecha](src/main/resources/static/publicar-cosecha.html).
 - [Seguimiento de entregas](src/main/resources/static/seguimiento.html).
+- [Carrito con reservas](src/main/resources/static/carrito.html) y
+  [pedidos privados](src/main/resources/static/pedidos.html).
+- [Consulta de precios históricos](src/main/resources/static/precios.html).
 - [Panel administrativo](src/main/resources/static/administrador.html).
 
 La interfaz es responsive y utiliza tipografía, controles y rótulos legibles para usuarios
-con distintos niveles de familiaridad digital. Los pedidos, entregas, reservas y reportes
-representan el diseño objetivo: solo las rutas REST enumeradas arriba acreditan funciones
-backend terminadas en este incremento. La justificación completa está en
+con distintos niveles de familiaridad digital. Reservas, pedidos, inventario y logística
+se conectan con datos persistidos; el panel administrativo ofrece solo indicadores.
+La referencia del sprint de diseño se conserva en
 [D07 · prototipo web responsive](docs/diseno/D07-Mockups-HU01-HU05/Prototipo-Web-Responsive/README.md).
 
 La integración web posterior conecta con esas rutas terminadas: permite registrar una
 cuenta, iniciar sesión con JWT, registrar una finca, publicar una cosecha y consultar el
 catálogo persistente con filtros. La sesión se conserva únicamente en la pestaña del
 navegador. El detalle permite enviar una solicitud al agricultor, que puede leerla desde
-su panel o bandeja privada. No es un chat: las respuestas, reservas, pedidos y seguimiento
-persistente siguen pendientes y no se presentan como funciones reales.
+su panel o bandeja privada. No es un chat: las respuestas al mensaje siguen fuera del alcance.
+El incremento de compra conecta reservas de 15 minutos, confirmación idempotente,
+cancelación de pendientes, programación de despacho y trazabilidad por eventos.
+No incluye pagos electrónicos, GPS ni administración de permisos.
+Consulta los contratos, reglas y pruebas en [Compra y logística](docs/compra-logistica.md).
 
 ## Ejecutar en Windows
 1. Extraer el ZIP y abrir esta carpeta completa, donde está pom.xml.
