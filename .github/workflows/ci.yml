@@ -27,6 +27,15 @@ jobs:
           --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v4
+      - name: Configurar Node.js para pruebas del cliente
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar cliente web
+        run: |
+          node --check src/main/resources/static/assets/site.js
+          node --check src/main/resources/static/assets/commerce.js
+          node --test src/test/js/commerce.test.cjs
       - name: Configurar JDK 17 LTS
         uses: actions/setup-java@v4
         with:

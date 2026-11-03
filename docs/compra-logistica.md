@@ -48,6 +48,7 @@ se acepta desde el cuerpo de la solicitud. El servidor vuelve a consultar el rol
 Se admiten también los nombres del backlog: `id_producto`, `cantidad_kg`,
 `cantidad_fisica_kg`, `precio_cop_kg`, `carrito_id` y `fecha_programada`.
 La media devuelve `cantidadTransacciones` y su alias `cantidad_transacciones`.
+La comparación del nombre ignora mayúsculas, espacios exteriores y tildes (Café = Cafe).
 
 Los errores devuelven 400 para entradas inválidas, 401 para falta de sesión válida,
 403 para rol o propiedad incorrectos, 404 para recursos inexistentes y 409 para
@@ -101,6 +102,8 @@ Su aprovisionamiento requiere una decisión explícita del responsable del siste
   mismas pruebas contra PostgreSQL y prueba HTTP de reinicio.
 - `node --check src/main/resources/static/assets/site.js` y
   `node --check src/main/resources/static/assets/commerce.js`: sintaxis del cliente.
+- `node --test src/test/js/commerce.test.cjs`: pruebas del comportamiento del cliente,
+  con API y DOM simulados; no sustituyen una revisión visual en navegador.
 
 ComercioAcceptanceTests cubre propiedad, roles, contratos, expiración, inventario,
 confirmación/reintentos, cancelación, estados, avisos y precios. ComercioConcurrencyTests

@@ -2,22 +2,21 @@ package co.edu.uniajc.agrovalle.repositories;
 
 import co.edu.uniajc.agrovalle.models.Comercio;
 import co.edu.uniajc.agrovalle.ports.ComercioPort;
-import co.edu.uniajc.agrovalle.ports.PrecioPort;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.time.OffsetDateTime;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 /** Adaptador SQL que comparte conexión y transacción con el gestor JPA de Spring. */
 @Repository
-public class ComercioRepository implements ComercioPort, PrecioPort {
+public class ComercioRepository implements ComercioPort {
   private static final String OFERTA_SQL = """
       SELECT c.id, f.agricultor_id, c.producto_id, p.nombre AS producto,
              c.cantidad_kg, c.precio_cop_kg, c.activa
@@ -223,16 +222,6 @@ public class ComercioRepository implements ComercioPort, PrecioPort {
   }
 
   @Override
-  public List<BigDecimal> preciosFinalizados(String producto, OffsetDateTime desde,
-      OffsetDateTime hasta) {
-    return jdbc.query("""
-        SELECT precio_cop_kg FROM transacciones
-        WHERE LOWER(TRIM(producto)) = LOWER(TRIM(?)) AND estado = 'COMPLETADA'
-        AND finalizada_en >= ? AND finalizada_en <= ? ORDER BY id
-        """, (rs, row) -> rs.getBigDecimal(1), producto, desde, hasta);
-  }
-
-  @Override
   public Comercio.Resumen resumen() {
     return new Comercio.Resumen(contar("usuarios"), contar("fincas"), contar("cosechas"),
         contar("pedidos"), contarEstado("PENDIENTE"), contarEstado("ENTREGADO"),
@@ -249,12 +238,18 @@ public class ComercioRepository implements ComercioPort, PrecioPort {
   }
 
   private long insertar(String tabla, Object... pares) {
-    Map<String, Object> valores = new LinkedHashMap<>();
+    var valores = new MapSqlParameterSource();
     for (int index = 0; index < pares.length; index += 2) {
-      valores.put((String) pares[index], pares[index + 1]);
+      String columna = (String) pares[index];
+      Object valor = pares[index + 1];
+      if (valor instanceof OffsetDateTime) {
+        valores.addValue(columna, valor, Types.TIMESTAMP_WITH_TIMEZONE);
+      } else {
+        valores.addValue(columna, valor);
+      }
     }
     return new SimpleJdbcInsert(jdbc).withTableName(tabla).usingGeneratedKeyColumns("id")
-        .usingColumns(valores.keySet().toArray(String[]::new)).executeAndReturnKey(valores)
+        .usingColumns(valores.getParameterNames()).executeAndReturnKey(valores)
         .longValue();
   }
 }

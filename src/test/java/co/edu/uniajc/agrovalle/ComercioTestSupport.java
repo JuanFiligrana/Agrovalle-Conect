@@ -10,6 +10,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -49,9 +50,17 @@ abstract class ComercioTestSupport {
   }
 
   protected long insertar(String tabla, Map<String, Object> valores) {
+    var parametros = new MapSqlParameterSource();
+    valores.forEach((columna, valor) -> {
+      if (valor instanceof java.time.OffsetDateTime) {
+        parametros.addValue(columna, valor, java.sql.Types.TIMESTAMP_WITH_TIMEZONE);
+      } else {
+        parametros.addValue(columna, valor);
+      }
+    });
     return new SimpleJdbcInsert(jdbc).withTableName(tabla).usingGeneratedKeyColumns("id")
         .usingColumns(valores.keySet().toArray(String[]::new))
-        .executeAndReturnKey(valores).longValue();
+        .executeAndReturnKey(parametros).longValue();
   }
 
   protected MvcResult pedir(MockHttpServletRequestBuilder solicitud, Cuenta cuenta,

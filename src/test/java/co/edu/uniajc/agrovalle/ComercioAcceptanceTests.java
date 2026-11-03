@@ -241,6 +241,10 @@ class ComercioAcceptanceTests extends ComercioTestSupport {
     transaccion(productoId, producto, "1000", "COMPLETADA", hasta.minusHours(24));
     transaccion(productoId, producto, "2000", "COMPLETADA", hasta);
     assertThat(precios.preciosFinalizados(producto, hasta.minusHours(24), hasta)).hasSize(52);
+    transaccion(productoId, "Café de prueba con tilde", "2300", "COMPLETADA", hasta.minusHours(1));
+    mvc.perform(get("/api/v1/precios/promedio").param("producto", " cafe DE prueba con tilde "))
+        .andExpect(status().isOk()).andExpect(jsonPath("$.promedio").value(2300))
+        .andExpect(jsonPath("$.cantidadTransacciones").value(1));
     mvc.perform(get("/api/v1/precios/promedio").param("producto", "Inexistente-historial"))
         .andExpect(status().isOk()).andExpect(jsonPath("$.promedio").value(nullValue()))
         .andExpect(jsonPath("$.cantidadTransacciones").value(0));
