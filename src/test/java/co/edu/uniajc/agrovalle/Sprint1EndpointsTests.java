@@ -70,8 +70,8 @@ class Sprint1EndpointsTests {
 
     mockMvc.perform(get("/api/v1/precios/promedio").param("producto", "Tomate"))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.promedio").value(1200.0))
-        .andExpect(jsonPath("$.cantidadTransacciones").value(1));
+        .andExpect(jsonPath("$.promedio").value(org.hamcrest.Matchers.nullValue()))
+        .andExpect(jsonPath("$.cantidadTransacciones").value(0));
 
     String contactoJson = """
         {"compradorId":%d,"productoId":%d,"mensaje":"Deseo conocer la disponibilidad"}

@@ -4,10 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
-import co.edu.uniajc.agrovalle.models.Cosecha;
-import co.edu.uniajc.agrovalle.ports.CosechaPort;
+import co.edu.uniajc.agrovalle.ports.PrecioPort;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,57 +17,46 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-/** Caracteriza el cálculo existente; estas pruebas no representan ventas históricas de HU03. */
+/** Ventana determinista y redondeo del promedio histórico de HU03. */
 @ExtendWith(MockitoExtension.class)
 class ConsultaPreciosServiceTests {
-
+  private static final Clock RELOJ = Clock.fixed(
+      Instant.parse("2026-10-30T12:00:00Z"), ZoneOffset.UTC);
   @Mock
-  private CosechaPort cosechas;
-
+  private PrecioPort precios;
   private ConsultaPreciosService service;
 
   @BeforeEach
   void prepararServicio() {
-    service = new ConsultaPreciosService(cosechas);
+    service = new ConsultaPreciosService(precios, RELOJ);
   }
 
   @Test
-  void conservaElPromedioDeOfertasActivasDelProductoSinPonderarCantidades() {
-    when(cosechas.findAll()).thenReturn(List.of(
-        oferta(1, "Cafe", "18500", "1", true),
-        oferta(2, "CAFE", "19000", "100", true),
-        oferta(3, "Cafe", "90000", "1", false),
-        oferta(4, "Mango", "3500", "250", true)));
-
+  void consultaUltimasVeinticuatroHorasYcalculaMediaNoPonderada() {
+    historial("cafe", List.of(new BigDecimal("18500"), new BigDecimal("19000")));
     var respuesta = service.promedio(" cafe ");
-
     assertEquals(new BigDecimal("18750.00"), respuesta.promedio());
     assertEquals(2, respuesta.cantidadTransacciones());
     assertEquals("COP/kg", respuesta.unidad());
-    assertEquals(" cafe ", respuesta.producto());
+    assertEquals("cafe", respuesta.producto());
   }
 
   @Test
   void redondeaElPromedioConDosDecimalesUsandoHalfUp() {
-    when(cosechas.findAll()).thenReturn(List.of(
-        oferta(1, "Cafe", "1.00", "1", true),
-        oferta(2, "Cafe", "1.01", "1", true)));
-
+    historial("Cafe", List.of(new BigDecimal("1.00"), new BigDecimal("1.01")));
     assertEquals(new BigDecimal("1.01"), service.promedio("Cafe").promedio());
   }
 
   @Test
   void devuelvePromedioNuloConConteoCeroSiNoHayCoincidencias() {
-    when(cosechas.findAll()).thenReturn(List.of(oferta(1, "Mango", "3500", "250", true)));
-
+    historial("Cafe", List.of());
     var respuesta = service.promedio("Cafe");
-
     assertNull(respuesta.promedio());
     assertEquals(0, respuesta.cantidadTransacciones());
   }
 
-  private Cosecha oferta(long id, String producto, String precio, String cantidad, boolean activa) {
-    return new Cosecha(id, 7, 9, producto, "Categoria de prueba", new BigDecimal(cantidad),
-        new BigDecimal(precio), LocalDate.of(2030, 1, 1), activa);
+  private void historial(String producto, List<BigDecimal> valores) {
+    var hasta = OffsetDateTime.now(RELOJ);
+    when(precios.preciosFinalizados(producto, hasta.minusHours(24), hasta)).thenReturn(valores);
   }
 }

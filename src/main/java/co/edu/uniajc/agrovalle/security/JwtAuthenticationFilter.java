@@ -40,6 +40,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         || "/api/v1/notificaciones/cosechas".equals(path)
         || "/api/v1/contacto".equals(path)
         || path.startsWith("/api/v1/contacto/")
+        || "/api/v1/mis-ofertas".equals(path)
+        || "/api/v1/carrito".equals(path) || path.startsWith("/api/v1/carrito/")
+        || "/api/v1/ordenes".equals(path) || path.startsWith("/api/v1/ordenes/")
+        || "/api/v1/notificaciones/pedidos".equals(path)
+        || path.startsWith("/api/v1/administracion/")
+        || (HttpMethod.PUT.matches(request.getMethod()) && path.startsWith("/api/v1/productos/"))
         || (HttpMethod.POST.matches(request.getMethod()) && "/api/v1/productos".equals(path));
     return !protectedPath;
   }

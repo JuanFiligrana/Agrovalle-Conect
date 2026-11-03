@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Panel del agricultor de AgroValle Connect.">
   <title>Panel del agricultor · AgroValle Connect</title>
-  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/commerce.css">
 </head>
 <body class="dashboard-page" data-requires-role="AGRICULTOR">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -16,10 +16,10 @@
         <a href="publicar-cosecha.html"><span class="nav-symbol">＋</span>Publicar cosecha</a>
         <a href="registrar-finca.html"><span class="nav-symbol">⌑</span>Registrar finca</a>
         <a href="#cosechas"><span class="nav-symbol">▦</span>Productos publicados</a>
-        <a href="#pedidos"><span class="nav-symbol">□</span>Pedidos</a>
-        <a href="#entregas"><span class="nav-symbol">↗</span>Entregas</a>
+        <a href="pedidos.html"><span class="nav-symbol">□</span>Pedidos</a>
+        <a href="seguimiento.html"><span class="nav-symbol">↗</span>Entregas</a>
         <a href="#mensajes"><span class="nav-symbol">✉</span>Mensajes</a>
-        <a href="#ofertas"><span class="nav-symbol">%</span>Ofertas</a>
+        <a href="#cosechas"><span class="nav-symbol">%</span>Editar inventario</a>
         <a href="#precios"><span class="nav-symbol">↕</span>Precios del mercado</a>
       </nav>
       <div class="sidebar-profile"><div class="avatar" data-session-initials>AV</div><div><strong data-session-name>Agricultor</strong><span data-session-email>Sesión activa</span></div></div>
@@ -44,7 +44,7 @@
           <article class="metric-card"><div class="metric-head"><span>Productos publicados</span><span class="metric-icon">▦</span></div><strong data-product-count>—</strong><small>Activos en el catálogo real</small></article>
           <article class="metric-card"><div class="metric-head"><span>Fincas registradas</span><span class="metric-icon">⌑</span></div><strong data-farm-count>—</strong><small>Orígenes asociados a tu cuenta</small></article>
           <article class="metric-card"><div class="metric-head"><span>Mensajes sin leer</span><span class="metric-icon">✉</span></div><strong data-unread-messages>—</strong><small>Entre los últimos 100 recibidos</small></article>
-          <article class="metric-card"><div class="metric-head"><span>Entregas</span><span class="metric-icon">↗</span></div><strong>Próximo</strong><small>Se habilitará con pedidos y logística</small></article>
+          <article class="metric-card"><div class="metric-head"><span>Entregas</span><span class="metric-icon">↗</span></div><strong data-order-count>—</strong><small>Pedidos asociados a tu cuenta</small></article>
         </section>
 
         <div class="dash-grid">
@@ -60,39 +60,22 @@
             </section>
 
             <section class="panel" id="pedidos" aria-labelledby="pedidos-title">
-              <div class="panel-head"><h3 id="pedidos-title">Pedidos recientes</h3><span class="pill pill--warning">Vista de diseño</span></div>
-              <div class="table-wrap">
-                <table class="data-table">
-                  <thead><tr><th>Pedido</th><th>Comprador</th><th>Producto</th><th>Cantidad</th><th>Estado</th></tr></thead>
-                  <tbody>
-                    <tr><td>#AV-1048</td><td>Mercado San Nicolás</td><td>Mango Tommy</td><td>80 kg</td><td><span class="pill pill--warning">Pendiente</span></td></tr>
-                    <tr><td>#AV-1042</td><td>Restaurante El Prado</td><td>Plátano hartón</td><td>120 kg</td><td><span class="pill">En camino</span></td></tr>
-                    <tr><td>#AV-1036</td><td>Frutas La 14</td><td>Limón Tahití</td><td>60 kg</td><td><span class="pill">Entregado</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
+              <div class="panel-head"><h3 id="pedidos-title">Tus pedidos</h3><a href="pedidos.html">Ver pedidos y avisos</a></div>
+              <div data-orders data-order-limit="5" aria-live="polite">Consultando tus pedidos…</div>
             </section>
 
             <section class="panel" id="cosechas" aria-labelledby="cosechas-title">
-              <div class="panel-head"><h3 id="cosechas-title">Productos publicados</h3><a href="publicar-cosecha.html">＋ Nueva cosecha</a></div>
-              <div class="table-wrap">
-                <table class="data-table">
-                  <thead><tr><th>Producto</th><th>Disponibilidad</th><th>Precio</th><th>Estado</th></tr></thead>
-                  <tbody data-my-products-body><tr><td colspan="4">Consultando tus publicaciones…</td></tr></tbody>
-                </table>
-              </div>
+              <div class="panel-head"><h3 id="cosechas-title">Inventario y precios</h3><a href="publicar-cosecha.html">＋ Nueva cosecha</a></div>
+              <p>Las existencias físicas incluyen las unidades reservadas. No puedes reducirlas por debajo de las reservas vigentes. Los pedidos confirmados conservan su precio.</p>
+              <div data-inventory aria-live="polite">Consultando tu inventario…</div>
             </section>
           </div>
 
           <div>
             <section class="panel" id="entregas" aria-labelledby="entregas-title">
-              <div class="panel-head"><h3 id="entregas-title">Estado de entregas</h3><span class="pill pill--warning">Vista de diseño</span></div>
-              <div class="status-list">
-                <div class="status-item"><i class="warning"></i><div><strong>Pendientes por enviar</strong><span>Preparar y confirmar despacho</span></div><b>3</b></div>
-                <div class="status-item"><i></i><div><strong>En curso</strong><span>Ruta activa hacia Cali</span></div><b>2</b></div>
-                <div class="status-item"><i></i><div><strong>Entregadas</strong><span>Completadas este mes</span></div><b>18</b></div>
-                <div class="status-item"><i class="danger"></i><div><strong>Con retraso</strong><span>Requiere actualización</span></div><b>1</b></div>
-              </div>
+              <div class="panel-head"><h3 id="entregas-title">Preparar una entrega</h3></div>
+              <p>Abre un pedido pendiente, indica la fecha y la ruta acordada y márcalo listo para despacho. Actualiza su estado cuando salga y cuando se entregue.</p>
+              <a class="button button--light" href="pedidos.html">Gestionar mis pedidos</a>
             </section>
 
             <section class="panel" id="mensajes" aria-labelledby="mensajes-title">
@@ -100,20 +83,17 @@
               <div class="contact-list" data-contact-messages data-message-limit="5" aria-live="polite" aria-busy="true"><p>Consultando tus mensajes…</p></div>
             </section>
 
-            <section class="panel" id="ofertas" aria-labelledby="ofertas-title">
-              <div class="panel-head"><h3 id="ofertas-title">Ofertas del catálogo</h3><span class="pill pill--warning">Vista de diseño</span></div>
-              <div class="status-list">
-                <div class="status-item"><i></i><div><strong>Mango Tommy · 10% por volumen</strong><span>Activa para pedidos desde 100 kg</span></div><b>Activa</b></div>
-                <div class="status-item"><i class="warning"></i><div><strong>Pimentón rojo · precio especial</strong><span>Finaliza mañana a las 6:00 p. m.</span></div><b>1 día</b></div>
-              </div>
+            <section class="panel" id="ofertas" aria-labelledby="avisos-title">
+              <div class="panel-head"><h3 id="avisos-title">Avisos de pedidos</h3></div>
+              <div data-order-alerts aria-live="polite">Consultando tus avisos…</div>
             </section>
 
-            <section class="price-banner" id="precios" aria-labelledby="precios-title"><p class="eyebrow">Información para decidir</p><h3 id="precios-title">Consulta el comportamiento de precios</h3><p>Compara el precio promedio regional por kilogramo antes de actualizar una oferta.</p><button class="button button--sun button--small" type="button" data-demo-action data-product="precios del mercado">Consultar precios</button></section>
+            <section class="price-banner" id="precios" aria-labelledby="precios-title"><p class="eyebrow">Información para decidir</p><h3 id="precios-title">Consulta el comportamiento de precios</h3><p>Compara el precio promedio regional por kilogramo antes de actualizar una oferta.</p><a class="button button--sun button--small" href="precios.html">Consultar precios</a></section>
           </div>
         </div>
       </main>
     </div>
   </div>
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js" defer></script><script src="assets/commerce.js" defer></script>
 </body>
 </html>
