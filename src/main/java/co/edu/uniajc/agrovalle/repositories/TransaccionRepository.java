@@ -21,7 +21,8 @@ public class TransaccionRepository implements PrecioPort {
   }
 
   /** Selecciona ventas completas en el período y compara nombres sin mayúsculas ni tildes. */
-  public List<Transaccion> completadas(String producto, OffsetDateTime desde, OffsetDateTime hasta) {
+  public List<Transaccion> completadas(String producto, OffsetDateTime desde,
+      OffsetDateTime hasta) {
     final String buscado = normalizar(producto);
     return jdbc.query("""
         SELECT id, producto_id, producto, precio_cop_kg, estado, finalizada_en

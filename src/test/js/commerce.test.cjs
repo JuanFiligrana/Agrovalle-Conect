@@ -177,3 +177,31 @@ test('un token vencido elimina la sesión y muestra un mensaje de error', async 
   assert.equal(app.storage.has('agrovalle.session'), false);
   assert.equal(cart.textContent, 'Sesión vencida');
 });
+
+test('la portada renderiza ofertas reales, enlaces de reserva y texto escapado', async () => {
+  const grid = element({ setAttribute(name, value) { this[name] = value; } });
+  const mockStorage = { getItem: () => null };
+  const document = {
+    body: { dataset: {}, hasAttribute: () => false },
+    querySelector: (selector) => selector === '[data-featured-products]' ? grid : null,
+    querySelectorAll: () => [],
+    addEventListener() {}
+  };
+  const window = { sessionStorage: mockStorage, location: { search: '', pathname: '/index.html' } };
+  const siteSource = fs.readFileSync('src/main/resources/static/assets/site.js', 'utf8');
+  vm.runInNewContext(siteSource, {
+    document, window, Headers, URLSearchParams, Intl,
+    fetch: async () => ({
+      ok: true, headers: { get: () => 'application/json' },
+      json: async () => [{ id: 88, agricultorNombre: 'Cultivador', fincaNombre: 'Finca',
+        tipo: '<img onerror=alert(1)>', categoria: 'Frutas', municipio: 'Vijes',
+        cantidadKg: 5, precioCopKg: 1234.50, fechaCosecha: '2030-01-01' }]
+    })
+  });
+  await flush();
+  assert.match(grid.innerHTML, /cosecha\.html\?id=88#reservar/);
+  assert.match(grid.innerHTML, /&lt;img onerror=alert\(1\)&gt;/);
+  assert.doesNotMatch(grid.innerHTML, /<img onerror/);
+  assert.match(grid.innerHTML, /1\.234,5/);
+  assert.equal(grid['aria-busy'], 'false');
+});

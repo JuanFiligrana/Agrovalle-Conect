@@ -386,7 +386,7 @@
   };
 
   const formatCop = (value) => new Intl.NumberFormat('es-CO', {
-    style: 'currency', currency: 'COP', maximumFractionDigits: 0
+    style: 'currency', currency: 'COP', minimumFractionDigits: 0, maximumFractionDigits: 2
   }).format(Number(value));
 
   const formatKg = (value) => new Intl.NumberFormat('es-CO', {
@@ -420,7 +420,9 @@
         <div class="product-actions">
           <a class="button button--light button--small"
             href="cosecha.html?id=${encodeURIComponent(item.id)}">Ver y contactar</a>
-          <a class="button button--small" href="cosecha.html?id=${encodeURIComponent(item.id)}#reservar">Reservar</a>
+          ${Number(item.cantidadKg) > 0
+            ? `<a class="button button--small" href="cosecha.html?id=${encodeURIComponent(item.id)}#reservar">Reservar</a>`
+            : '<span class="pill pill--warning">Sin disponibilidad</span>'}
         </div>
       </div>
     </article>`;
@@ -496,6 +498,21 @@
     form.elements.categoria?.addEventListener('change', load);
     form.addEventListener('reset', () => window.setTimeout(load));
     load();
+  };
+
+  const initializeFeaturedProducts = async () => {
+    const grid = document.querySelector('[data-featured-products]');
+    if (!grid) return;
+    try {
+      const products = await apiRequest('/api/v1/productos');
+      const available = products.filter((item) => Number(item.cantidadKg) > 0).slice(-4).reverse();
+      grid.innerHTML = available.length ? available.map(productCard).join('')
+        : '<p>Pronto encontrarás nuevas cosechas. <a href="catalogo.html">Explora el catálogo</a>.</p>';
+    } catch (error) {
+      grid.innerHTML = `<p>${escapeHtml(error.message)} <a href="catalogo.html">Ir al catálogo</a>.</p>`;
+    } finally {
+      grid.setAttribute('aria-busy', 'false');
+    }
   };
 
   const initializeFarmerDashboard = async () => {
@@ -687,6 +704,7 @@
   initializeFarmForm();
   initializeHarvestForm();
   initializeCatalog();
+  initializeFeaturedProducts();
   initializeFarmerDashboard();
   initializeHarvestDetail();
   loadContactMessages();
